@@ -1,0 +1,61 @@
+{
+  "INTEGRATION_SETTINGS": {
+    "HEADER": "Integrációk",
+    "WEBHOOK": {
+      "TITLE": "Webhook",
+      "CONFIGURE": "Beállítások",
+      "HEADER": "Webhook beállítások",
+      "HEADER_BTN_TXT": "Új webhook hozzáadása",
+      "LOADING": "Kapcsolódó Webhookok betöltése",
+      "SEARCH_404": "Nincs megfelelő elem",
+      "SIDEBAR_TXT": "<p><b>Webhook</b>-ok</p><p>A Webhook-ok HTTP visszahívások, melyek minden fiókhoz bállíthatóak. Chatwoot események, például beérkező üzenetek aktiválhatják a webhookokat. Több webhookot is beállíthatsz a fiókodhoz. <br /><br /> Egy <b>webhook</b> létrehozásához kattints a <b>Webhook hozzáadása</b> gombra. Le is törölheted a létrejött webhookokat a Törlés gombra kattintva.</p>",
+      "LIST": {
+        "404": "Nincs a fiókhoz rendelt Webhook.",
+        "TITLE": "Webhook kezelés",
+        "TABLE_HEADER": [
+          "Webhook végpont",
+          "Műveletek"
+        ]
+      },
+      "ADD": {
+        "CANCEL": "Mégse",
+        "TITLE": "Új webhook hozzáadása",
+        "DESC": "Webhook események valós idejű információt adnak arról, hogy mi történik a Chatwoot fiókodban. Kérünk a visszahívás beállításánál egy helyes URL-t adj meg.",
+        "FORM": {
+          "END_POINT": {
+            "LABEL": "Webhook URL",
+            "PLACEHOLDER": "Például: https://példa.com/api/webhook",
+            "ERROR": "Kérjük helyes URL-t adj meg"
+          },
+          "SUBMIT": "Webhook létrehozása"
+        },
+        "API": {
+          "SUCCESS_MESSAGE": "Webhook sikeresen hozzáadva",
+          "ERROR_MESSAGE": "Nem sikerült csatlakozni a Woot szerverhez, kérjük próbáld később"
+        }
+      },
+      "DELETE": {
+        "BUTTON_TEXT": "Törlés",
+        "API": {
+          "SUCCESS_MESSAGE": "Webhook sikeresen törölve",
+          "ERROR_MESSAGE": "Nem sikerült csatlakozni a Woot szerverhez, kérjük próbáld később"
+        },
+        "CONFIRM": {
+          "TITLE": "Törlés megerősítése",
+          "MESSAGE": "Biztos abban, hogy törli ",
+          "YES": "Igen, Törlés ",
+          "NO": "Nem, tartsa meg"
+        }
+      }
+    },
+    "DELETE": {
+      "BUTTON_TEXT": "Törlés",
+      "API": {
+        "SUCCESS_MESSAGE": "Integráció sikeresen törölve"
+      }
+    },
+    "CONNECT": {
+      "BUTTON_TEXT": "Kapcsolódás"
+    }
+  }
+}

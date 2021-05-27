@@ -1,0 +1,55 @@
+{
+  "COMPONENTS": {
+    "FILE_BUBBLE": {
+      "DOWNLOAD": "Letöltés",
+      "UPLOADING": "Frissítés..."
+    },
+    "FORM_BUBBLE": {
+      "SUBMIT": "Elküldés"
+    }
+  },
+  "TEAM_AVAILABILITY": {
+    "ONLINE": "Online vagyunk",
+    "OFFLINE": "Jelenleg nem vagyunk elérhetőek"
+  },
+  "REPLY_TIME": {
+    "IN_A_FEW_MINUTES": "Néhány percen belül válaszol",
+    "IN_A_FEW_HOURS": "Néhány órán belül válaszol",
+    "IN_A_DAY": "Általánban egy napon belül válaszol"
+  },
+  "START_CONVERSATION": "Beszélgetés megkezdése",
+  "UNREAD_VIEW": {
+    "VIEW_MESSAGES_BUTTON": "Új üzenetek",
+    "CLOSE_MESSAGES_BUTTON": "Bezárás",
+    "COMPANY_FROM": "from",
+    "BOT": "Bot"
+  },
+  "BUBBLE": {
+    "LABEL": "Chatelj velünk"
+  },
+  "POWERED_BY": "Chatwoot",
+  "EMAIL_PLACEHOLDER": "Add meg az e-mailed",
+  "CHAT_PLACEHOLDER": "Gépeld be üzeneted",
+  "TODAY": "Ma",
+  "YESTERDAY": "Tegnap",
+  "PRE_CHAT_FORM": {
+    "FIELDS": {
+      "FULL_NAME": {
+        "LABEL": "Teljes név",
+        "PLACEHOLDER": "Kérjük a teljes nevedet add meg",
+        "ERROR": "A teljes név megadása kötelező"
+      },
+      "EMAIL_ADDRESS": {
+        "LABEL": "Email cím",
+        "PLACEHOLDER": "Kérjük helyes e-mailcímet adj meg",
+        "ERROR": "Helytelen e-mailcím"
+      },
+      "MESSAGE": {
+        "LABEL": "Üzenet",
+        "PLACEHOLDER": "Írd be az üzeneted",
+        "ERROR": "Az üzenet túl rövid"
+      }
+    }
+  },
+  "FILE_SIZE_LIMIT": "A file mérete meghaladja a {MAXIMUM_FILE_UPLOAD_SIZE} limitet"
+}

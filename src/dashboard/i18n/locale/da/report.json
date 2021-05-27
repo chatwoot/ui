@@ -1,0 +1,56 @@
+{
+  "REPORT": {
+    "HEADER": "Rapporter",
+    "LOADING_CHART": "Indlæser diagramdata...",
+    "NO_ENOUGH_DATA": "Vi har ikke modtaget nok datapunkter til at generere rapport. Prøv igen senere.",
+    "DOWNLOAD_AGENT_REPORTS": "Download agent reports",
+    "METRICS": {
+      "CONVERSATIONS": {
+        "NAME": "Samtaler",
+        "DESC": "( Total )"
+      },
+      "INCOMING_MESSAGES": {
+        "NAME": "Indkommende Beskeder",
+        "DESC": "( Total )"
+      },
+      "OUTGOING_MESSAGES": {
+        "NAME": "Udgående beskeder",
+        "DESC": "( Total )"
+      },
+      "FIRST_RESPONSE_TIME": {
+        "NAME": "Første svartid",
+        "DESC": "( Gns. )"
+      },
+      "RESOLUTION_TIME": {
+        "NAME": "Løsnings Tid",
+        "DESC": "( Gns. )"
+      },
+      "RESOLUTION_COUNT": {
+        "NAME": "Antal Afsluttede",
+        "DESC": "( Total )"
+      }
+    },
+    "DATE_RANGE": [
+      {
+        "id": 0,
+        "name": "Seneste 7 dage"
+      },
+      {
+        "id": 1,
+        "name": "Seneste 30 dage"
+      },
+      {
+        "id": 2,
+        "name": "Last 3 months"
+      },
+      {
+        "id": 3,
+        "name": "Last 6 months"
+      },
+      {
+        "id": 4,
+        "name": "Last year"
+      }
+    ]
+  }
+}

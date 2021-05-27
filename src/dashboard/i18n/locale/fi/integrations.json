@@ -1,0 +1,61 @@
+{
+  "INTEGRATION_SETTINGS": {
+    "HEADER": "Integraatiot",
+    "WEBHOOK": {
+      "TITLE": "Webhook",
+      "CONFIGURE": "Määrittele",
+      "HEADER": "Webhook-asetukset",
+      "HEADER_BTN_TXT": "Lisää uusi webhook",
+      "LOADING": "Haetaan liitettyjä webhookeja",
+      "SEARCH_404": "Tätä hakua vastaavia kohteita ei löydy",
+      "SIDEBAR_TXT": "<p><b>Webhookit</b> </p> <p>Webhookit ovat HTTP-kutsuja, jotka voidaan määritellä jokaiselle tilille. Ne laukaisevat tapahtumia, kuten viestin luonti Chatwootissa. Voit luoda useamman kuin yhden webhookin tälle tilille. <br /><br /> Luodaksesi <b>webhookiin</b>, napsauta <b>Lisää uusi Webhook</b> -painiketta. Voit myös poistaa minkä tahansa olemassa olevan Webhookiin klikkaamalla Poista -painiketta.</p>",
+      "LIST": {
+        "404": "Tälle tilille ei ole määritetty webhookeja.",
+        "TITLE": "Hallitse webhookeja",
+        "TABLE_HEADER": [
+          "Webhookin päätepiste",
+          "Toiminnot"
+        ]
+      },
+      "ADD": {
+        "CANCEL": "Peruuta",
+        "TITLE": "Lisää uusi webhook",
+        "DESC": "Webhook-tapahtumat antavat sinulle reaaliaikaista tietoa siitä, mitä Chatwot-tililläsi tapahtuu. Syötä kelvollinen URL-osoite, jotta voit määrittää callbackin.",
+        "FORM": {
+          "END_POINT": {
+            "LABEL": "Webhookin URL",
+            "PLACEHOLDER": "Esimerkki: https://example/api/webhook",
+            "ERROR": "Anna kelvollinen URL-osoite"
+          },
+          "SUBMIT": "Luo webhook"
+        },
+        "API": {
+          "SUCCESS_MESSAGE": "Webhook lisätty onnistuneesti",
+          "ERROR_MESSAGE": "Yhteyden muodostaminen Woot-palvelimelle ei onnistunut, yritä myöhemmin uudelleen"
+        }
+      },
+      "DELETE": {
+        "BUTTON_TEXT": "Poista",
+        "API": {
+          "SUCCESS_MESSAGE": "Webhook poistettu onnistuneesti",
+          "ERROR_MESSAGE": "Yhteyden muodostaminen Woot-palvelimelle ei onnistunut, yritä myöhemmin uudelleen"
+        },
+        "CONFIRM": {
+          "TITLE": "Vahvista poistaminen",
+          "MESSAGE": "Oletko varma että haluat poistaa ",
+          "YES": "Kyllä, poista ",
+          "NO": "Ei, säilytä"
+        }
+      }
+    },
+    "DELETE": {
+      "BUTTON_TEXT": "Poista",
+      "API": {
+        "SUCCESS_MESSAGE": "Integrointi poistettu onnistuneesti"
+      }
+    },
+    "CONNECT": {
+      "BUTTON_TEXT": "Yhdistä"
+    }
+  }
+}

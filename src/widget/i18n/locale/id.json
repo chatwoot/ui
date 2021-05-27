@@ -1,0 +1,55 @@
+{
+  "COMPONENTS": {
+    "FILE_BUBBLE": {
+      "DOWNLOAD": "Unduh",
+      "UPLOADING": "Mengunggah..."
+    },
+    "FORM_BUBBLE": {
+      "SUBMIT": "Kirim"
+    }
+  },
+  "TEAM_AVAILABILITY": {
+    "ONLINE": "Kami sedang online",
+    "OFFLINE": "We are away at the moment"
+  },
+  "REPLY_TIME": {
+    "IN_A_FEW_MINUTES": "Biasanya membalas dalam beberapa menit",
+    "IN_A_FEW_HOURS": "Biasanya membalas dalam beberapa jam",
+    "IN_A_DAY": "Biasanya membalas dalam sehari"
+  },
+  "START_CONVERSATION": "Mulai Percakapan",
+  "UNREAD_VIEW": {
+    "VIEW_MESSAGES_BUTTON": "Lihat pesan baru",
+    "CLOSE_MESSAGES_BUTTON": "Tutup",
+    "COMPANY_FROM": "from",
+    "BOT": "Bot"
+  },
+  "BUBBLE": {
+    "LABEL": "Chat dengan kami"
+  },
+  "POWERED_BY": "Powered by Chatwoot",
+  "EMAIL_PLACEHOLDER": "Masukkan email Anda",
+  "CHAT_PLACEHOLDER": "Ketik pesan Anda",
+  "TODAY": "Hari ini",
+  "YESTERDAY": "Kemarin",
+  "PRE_CHAT_FORM": {
+    "FIELDS": {
+      "FULL_NAME": {
+        "LABEL": "Nama Lengkap",
+        "PLACEHOLDER": "Harap masukkan nama lengkap anda yang valid",
+        "ERROR": "Nama Lengkap dibutuhkan"
+      },
+      "EMAIL_ADDRESS": {
+        "LABEL": "Alamat email",
+        "PLACEHOLDER": "Harap masukkan alamat email Anda",
+        "ERROR": "Alamat email salah"
+      },
+      "MESSAGE": {
+        "LABEL": "Pesan",
+        "PLACEHOLDER": "Harap masukkan pesan Anda",
+        "ERROR": "Pesan terlalu pendek"
+      }
+    }
+  },
+  "FILE_SIZE_LIMIT": "File exceeds the {MAXIMUM_FILE_UPLOAD_SIZE} attachment limit"
+}

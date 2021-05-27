@@ -1,0 +1,154 @@
+{
+  "PROFILE_SETTINGS": {
+    "LINK": "Profilindstillinger",
+    "TITLE": "Profilindstillinger",
+    "BTN_TEXT": "Opdater Profil",
+    "UPDATE_SUCCESS": "Your profile has been updated successfully",
+    "PASSWORD_UPDATE_SUCCESS": "Din adgangskode er blevet ændret",
+    "AFTER_EMAIL_CHANGED": "Din profil er blevet opdateret. Log venligst ind igen, da dine loginoplysninger er ændret",
+    "FORM": {
+      "AVATAR": "Profilbillede",
+      "ERROR": "Ret venligst formularfejl",
+      "REMOVE_IMAGE": "Fjern",
+      "UPLOAD_IMAGE": "Upload billede",
+      "UPDATE_IMAGE": "Opdater billede",
+      "PROFILE_SECTION": {
+        "TITLE": "Profil",
+        "NOTE": "Din e-mailadresse er din identitet og bruges til at logge ind."
+      },
+      "PASSWORD_SECTION": {
+        "TITLE": "Adgangskode",
+        "NOTE": "Opdatering af din adgangskode vil nulstille dine logins på flere enheder.",
+        "BTN_TEXT": "Change password"
+      },
+      "ACCESS_TOKEN": {
+        "TITLE": "Adgangs Token",
+        "NOTE": "Denne token kan bruges, hvis du bygger en API-baseret integration"
+      },
+      "AUDIO_NOTIFICATIONS_SECTION": {
+        "TITLE": "Audio Notifications",
+        "NOTE": "Enable audio notifications in dashboard for new messages and conversations.",
+        "ENABLE_AUDIO": "Play audio notification when a new conversation is created or new messages arrives"
+      },
+      "EMAIL_NOTIFICATIONS_SECTION": {
+        "TITLE": "E-Mail Notifikationer",
+        "NOTE": "Opdater dine e-mail notifikationspræferencer her",
+        "CONVERSATION_ASSIGNMENT": "Send e-mail notifikationer når en samtale er tildelt mig",
+        "CONVERSATION_CREATION": "Send e-mail notifikationer når en ny samtale er oprettet",
+        "CONVERSATION_MENTION": "Send email notifications when you are mentioned in a conversation",
+        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Send e-mail notifikationer når en ny besked er oprettet i en tildelt samtale"
+      },
+      "API": {
+        "UPDATE_SUCCESS": "Dine notifikationsindstillinger er opdateret",
+        "UPDATE_ERROR": "Der er en fejl under opdatering af indstillingerne, prøv venligst igen"
+      },
+      "PUSH_NOTIFICATIONS_SECTION": {
+        "TITLE": "Push Notifikationer",
+        "NOTE": "Opdater dine push-notifikationspræferencer her",
+        "CONVERSATION_ASSIGNMENT": "Send push-notifikationer, når en samtale er tildelt mig",
+        "CONVERSATION_CREATION": "Send push-notifikationer, når en ny samtale er oprettet",
+        "CONVERSATION_MENTION": "Send push notifications when you are mentioned in a conversation",
+        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Send push-notifikationer, når en ny besked oprettes i en tildelt samtale",
+        "HAS_ENABLED_PUSH": "Du har aktiveret push for denne browser.",
+        "REQUEST_PUSH": "Aktivér push-notifikationer"
+      },
+      "PROFILE_IMAGE": {
+        "LABEL": "Profilbillede"
+      },
+      "NAME": {
+        "LABEL": "Dit fulde navn",
+        "ERROR": "Indtast et gyldigt fuldt navn",
+        "PLACEHOLDER": "Indtast venligst dit fulde navn"
+      },
+      "DISPLAY_NAME": {
+        "LABEL": "Display navn",
+        "ERROR": "Angiv et gyldigt displaynavn",
+        "PLACEHOLDER": "Angiv venligst et displaynavn, dette vil blive vist i samtaler"
+      },
+      "AVAILABILITY": {
+        "LABEL": "Tilgængelighed",
+        "STATUSES_LIST": [
+          "Online",
+          "Optaget",
+          "Offline"
+        ]
+      },
+      "EMAIL": {
+        "LABEL": "Din e-mail adresse",
+        "ERROR": "Indtast venligst en gyldig e-mailadresse",
+        "PLACEHOLDER": "Indtast venligst din e-mailadresse, dette vil blive vist i samtaler"
+      },
+      "PASSWORD": {
+        "LABEL": "Adgangskode",
+        "ERROR": "Indtast en adgangskode med længde 6 eller flere",
+        "PLACEHOLDER": "Indtast venligst en ny adgangskode"
+      },
+      "PASSWORD_CONFIRMATION": {
+        "LABEL": "Bekræft ny adgangskode",
+        "ERROR": "Bekræftelses adgangskoden skal matche adgangskoden",
+        "PLACEHOLDER": "Indtast venligst din adgangskode igen"
+      }
+    }
+  },
+  "SIDEBAR_ITEMS": {
+    "CHANGE_AVAILABILITY_STATUS": "Skift",
+    "CHANGE_ACCOUNTS": "Skift Konto",
+    "SELECTOR_SUBTITLE": "Vælg en konto fra følgende liste",
+    "PROFILE_SETTINGS": "Profilindstillinger",
+    "LOGOUT": "Log Ud"
+  },
+  "APP_GLOBAL": {
+    "TRIAL_MESSAGE": "dage prøveperiode tilbage.",
+    "TRAIL_BUTTON": "Køb Nu"
+  },
+  "COMPONENTS": {
+    "CODE": {
+      "BUTTON_TEXT": "Kopiér",
+      "COPY_SUCCESSFUL": "Kode kopieret til udklipsholder med succes"
+    },
+    "FILE_BUBBLE": {
+      "DOWNLOAD": "Download",
+      "UPLOADING": "Uploader..."
+    },
+    "FORM_BUBBLE": {
+      "SUBMIT": "Send"
+    }
+  },
+  "CONFIRM_EMAIL": "Verificerer...",
+  "SETTINGS": {
+    "INBOXES": {
+      "NEW_INBOX": "Tilføj Indbakke"
+    }
+  },
+  "SIDEBAR": {
+    "CONVERSATIONS": "Samtaler",
+    "REPORTS": "Rapporter",
+    "CONTACTS": "Kontakter",
+    "SETTINGS": "Indstillinger",
+    "HOME": "Hjem",
+    "AGENTS": "Agenter",
+    "INBOXES": "Indbakker",
+    "NOTIFICATIONS": "Notifications",
+    "CANNED_RESPONSES": "Standardsvar Svar",
+    "INTEGRATIONS": "Integrationer",
+    "ACCOUNT_SETTINGS": "Kontoindstillinger",
+    "LABELS": "Etiketter",
+    "TEAMS": "Teams"
+  },
+  "CREATE_ACCOUNT": {
+    "NEW_ACCOUNT": "Ny Konto",
+    "SELECTOR_SUBTITLE": "Opret en ny konto",
+    "API": {
+      "SUCCESS_MESSAGE": "Konto oprettet med succes",
+      "EXIST_MESSAGE": "Konto findes allerede",
+      "ERROR_MESSAGE": "Kunne ikke oprette forbindelse til Woot Server, Prøv igen senere"
+    },
+    "FORM": {
+      "NAME": {
+        "LABEL": "Kontonavn",
+        "PLACEHOLDER": "Wayne Enterprises"
+      },
+      "SUBMIT": "Send"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "REPORT": {
+    "HEADER": "Báo cáo",
+    "LOADING_CHART": "Đang tải các biểu đồ dữ liệu...",
+    "NO_ENOUGH_DATA": "Chúng tôi không nhận được đủ điểm dữ liệu để tạo báo cáo, Vui lòng thử lại sau.",
+    "DOWNLOAD_AGENT_REPORTS": "Download agent reports",
+    "METRICS": {
+      "CONVERSATIONS": {
+        "NAME": "Các cuộc trò chuyện",
+        "DESC": "( Tổng cộng )"
+      },
+      "INCOMING_MESSAGES": {
+        "NAME": "Tin nhắn nhận được",
+        "DESC": "( Tổng cộng )"
+      },
+      "OUTGOING_MESSAGES": {
+        "NAME": "Tin nhắn gửi đi",
+        "DESC": "( Tổng cộng )"
+      },
+      "FIRST_RESPONSE_TIME": {
+        "NAME": "Thời gian phản hồi đầu tiên",
+        "DESC": "( Trung bình )"
+      },
+      "RESOLUTION_TIME": {
+        "NAME": "Thời gian giải quyết",
+        "DESC": "( Trung bình )"
+      },
+      "RESOLUTION_COUNT": {
+        "NAME": "Số lượng giải quyết",
+        "DESC": "( Tổng cộng )"
+      }
+    },
+    "DATE_RANGE": [
+      {
+        "id": 0,
+        "name": "7 ngày cuối"
+      },
+      {
+        "id": 1,
+        "name": "30 ngày cuối"
+      },
+      {
+        "id": 2,
+        "name": "Last 3 months"
+      },
+      {
+        "id": 3,
+        "name": "Last 6 months"
+      },
+      {
+        "id": 4,
+        "name": "Last year"
+      }
+    ]
+  }
+}

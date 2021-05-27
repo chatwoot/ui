@@ -1,0 +1,118 @@
+{
+  "CONVERSATION": {
+    "404": "Por favor, selecciona una conversación del panel izquierdo",
+    "NO_MESSAGE_1": "¡Oh oh! Parece que no hay mensajes de los clientes en tu bandeja de entrada.",
+    "NO_MESSAGE_2": " para enviar un mensaje a tu página!",
+    "NO_INBOX_1": "¡Hola! Parece que aún no has añadido ninguna bandeja de entrada.",
+    "NO_INBOX_2": " para empezar",
+    "NO_INBOX_AGENT": "¡Uh Oh! Parece que no eres parte de ninguna bandeja de entrada. Por favor, contacta con tu administrador",
+    "SEARCH_MESSAGES": "Buscar mensajes en conversaciones",
+    "SEARCH": {
+      "TITLE": "Buscar mensajes",
+      "LOADING_MESSAGE": "Cruzando datos...",
+      "PLACEHOLDER": "Escriba cualquier texto para buscar mensajes",
+      "NO_MATCHING_RESULTS": "No se encontraron resultados."
+    },
+    "UNREAD_MESSAGES": "Mensajes no leídos",
+    "UNREAD_MESSAGE": "Mensaje sin leer",
+    "CLICK_HERE": "Haz clic aquí",
+    "LOADING_INBOXES": "Cargando bandeja de entrada",
+    "LOADING_CONVERSATIONS": "Cargando conversaciones",
+    "CANNOT_REPLY": "No puede responder debido a",
+    "24_HOURS_WINDOW": "Restricción de la ventana de mensajes de 24 horas",
+    "TWILIO_WHATSAPP_CAN_REPLY": "Sólo puede responder a esta conversación usando una plantilla de mensaje debido a",
+    "TWILIO_WHATSAPP_24_HOURS_WINDOW": "Restricción de la ventana de mensajes de 24 horas",
+    "LAST_INCOMING_TWEET": "Esta respondiendo al último tweet",
+    "REPLYING_TO": "Esta respondiendo a:",
+    "REMOVE_SELECTION": "Eliminar selección",
+    "DOWNLOAD": "Descargar",
+    "UPLOADING_ATTACHMENTS": "Subiendo archivos adjuntos...",
+    "NO_RESPONSE": "No hay respuesta",
+    "HEADER": {
+      "RESOLVE_ACTION": "Resolver",
+      "REOPEN_ACTION": "Reabrir",
+      "OPEN_ACTION": "Abrir",
+      "OPEN": "Más",
+      "CLOSE": "Cerrar",
+      "DETAILS": "detalles"
+    },
+    "RESOLVE_DROPDOWN": {
+      "OPEN_BOT": "Abrir con bot"
+    },
+    "FOOTER": {
+      "MSG_INPUT": "Shift + enter for new line. Comience con '/' para seleccionar una respuesta predefinida.",
+      "PRIVATE_MSG_INPUT": "Mayús + entrar para una nueva línea. Esto será visible sólo para los agentes"
+    },
+    "REPLYBOX": {
+      "REPLY": "Responder",
+      "PRIVATE_NOTE": "Nota privada",
+      "SEND": "Enviar",
+      "CREATE": "Añadir nota",
+      "TWEET": "Tweet",
+      "TIP_FORMAT_ICON": "Mostrar editor de textos",
+      "TIP_EMOJI_ICON": "Mostrar selector de emoji",
+      "TIP_ATTACH_ICON": "Adjuntar archivos",
+      "ENTER_TO_SEND": "Ingresar para enviar"
+    },
+    "VISIBLE_TO_AGENTS": "Nota privada: solo visible para ti y tu equipo",
+    "CHANGE_STATUS": "Estado de la conversación cambiado",
+    "CHANGE_AGENT": "Conversación cambiada de asignatario",
+    "CHANGE_TEAM": "Equipo de conversación cambiado",
+    "FILE_SIZE_LIMIT": "El archivo excede el límite de los archivos adjuntos {MAXIMUM_FILE_UPLOAD_SIZE}",
+    "SENT_BY": "Enviado por:",
+    "ASSIGNMENT": {
+      "SELECT_AGENT": "Seleccionar agente",
+      "REMOVE": "Eliminar",
+      "ASSIGN": "Asignar"
+    }
+  },
+  "EMAIL_TRANSCRIPT": {
+    "TITLE": "Enviar transcripción de la conversación",
+    "DESC": "Enviar un copia de la transcripción a un dirección de correo especificada",
+    "SUBMIT": "Enviar",
+    "CANCEL": "Cancelar",
+    "SEND_EMAIL_SUCCESS": "La transcripción ha sido enviada",
+    "SEND_EMAIL_ERROR": "Hubo un error, por favor inténtelo de nuevo",
+    "FORM": {
+      "SEND_TO_CONTACT": "Enviar la transcripción al cliente",
+      "SEND_TO_AGENT": "Enviar la transcripción al agente asignado",
+      "SEND_TO_OTHER_EMAIL_ADDRESS": "Enviar la transcripción a otra dirección de correo",
+      "EMAIL": {
+        "PLACEHOLDER": "Escriba la dirección de correo",
+        "ERROR": "Por favor, introduzca una dirección de correo válida"
+      }
+    }
+  },
+  "ONBOARDING": {
+    "TITLE": "Hola 👋, ¡Bienvenido a %{installationName}!",
+    "DESCRIPTION": "Gracias por registrarse. Queremos que saque el máximo provecho de %{installationName}. Aquí hay algunas cosas que puede hacer en %{installationName} para hacer que la experiencia sea agradable.",
+    "READ_LATEST_UPDATES": "Leer nuestras últimas actualizaciones",
+    "ALL_CONVERSATION": {
+      "TITLE": "Todas sus conversaciones en un solo lugar",
+      "DESCRIPTION": "Ver todas las conversaciones de sus clientes en un solo panel de control. Puede filtrar las conversaciones por el canal entrante, etiqueta y estado."
+    },
+    "TEAM_MEMBERS": {
+      "TITLE": "Invite a los miembros de su equipo",
+      "DESCRIPTION": "Ya que usted se está preparando para hablar con su cliente, traiga a sus compañeros para asistirle. Puedes invitar a sus compañeros de equipo añadiendo su dirección de correo electrónico a la lista de agentes.",
+      "NEW_LINK": "Haga clic aquí para invitar a un miembro del equipo"
+    },
+    "INBOXES": {
+      "TITLE": "Conectar bandejas de entrada",
+      "DESCRIPTION": "Conecte varios canales a través de los cuales sus clientes le hablarían. Puede ser un sitio web en vivo, su página de Facebook o Twitter o incluso su número de WhatsApp.",
+      "NEW_LINK": "Haga clic aquí para crear una bandeja de entrada"
+    },
+    "LABELS": {
+      "TITLE": "Organice las conversaciones con etiquetas",
+      "DESCRIPTION": "Las etiquetas proporcionan una forma fácil de clasificar su conversación. Cree algunas etiquetas como #pregunta-soporte, #pregunta-dacturación etc., para que pueda usarlas en una conversación más tarde.",
+      "NEW_LINK": "Haga clic aquí para crear etiquetas"
+    }
+  },
+  "CONVERSATION_SIDEBAR": {
+    "DETAILS_TITLE": "Detalles de la conversación",
+    "ASSIGNEE_LABEL": "Agente asignado",
+    "TEAM_LABEL": "Equipo asignado",
+    "SELECT": {
+      "PLACEHOLDER": "Ninguna"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "CANNED_MGMT": {
+    "HEADER": "Tallennetut vastaukset",
+    "HEADER_BTN_TXT": "Lisää tallennettu vastaus",
+    "LOADING": "Haetaan tallennettuja vastauksia",
+    "SEARCH_404": "Tätä hakua vastaavia kohteita ei löydy",
+    "SIDEBAR_TXT": "<p><b>Tallennetut vastaukset</b> </p><p> Tallennetut vastaukset ovat malleja, jotka on helppo valita, muokata ja lähettää vastaus keskusteluun nopeasti. </p><p> Jotta voit luoda Tallennetun vastauksen, klikkaa <b>Lisää tallennettu vastaus</b>. Voit myös muokata tai poistaa olemassa olevia tallennettuja vastauksia klikkaamalla Muokkaa- tai Poista-painiketta. </p><p> Tallennettuja vastauksia käytetään <b>oikoteiden</b> avulla. Agentit voivat käyttää vastausten säilykkeitä chatissa kirjoittamalla <b>'/'</b> ja sen perään oikotien. </p>",
+    "LIST": {
+      "404": "Tällä tilillä ei ole tallennettuja vastauksia.",
+      "TITLE": "Hallitse tallennettuja vastauksia",
+      "DESC": "Tallennetut vastaukset ovat ennalta valmisteltuja vastausmalleja, joita voidaan käyttää nopeasti lähettää vastaukset tukipyyntöihin.",
+      "TABLE_HEADER": [
+        "Oikotie",
+        "Sisältö",
+        "Toiminnot"
+      ]
+    },
+    "ADD": {
+      "TITLE": "Lisää tallennettu vastaus",
+      "DESC": "Tallennetut vastaukset ovat ennalta valmisteltuja vastausmalleja, joita voidaan käyttää nopeasti lähettää vastaukset keskusteluihin.",
+      "CANCEL_BUTTON_TEXT": "Peruuta",
+      "FORM": {
+        "SHORT_CODE": {
+          "LABEL": "Oikotie",
+          "PLACEHOLDER": "Ole hyvä ja syötä oikotie",
+          "ERROR": "Oikotie on vaadittu"
+        },
+        "CONTENT": {
+          "LABEL": "Sisältö",
+          "PLACEHOLDER": "Ole hyvä ja syötä sisältö",
+          "ERROR": "Sisältö on vaadittu"
+        },
+        "SUBMIT": "Lähetä"
+      },
+      "API": {
+        "SUCCESS_MESSAGE": "Tallennettu vastaus lisätty onnistuneesti",
+        "ERROR_MESSAGE": "Yhteyden muodostaminen Woot-palvelimelle ei onnistunut, yritä myöhemmin uudelleen"
+      }
+    },
+    "EDIT": {
+      "TITLE": "Muokkaa tallennettua vastausta",
+      "CANCEL_BUTTON_TEXT": "Peruuta",
+      "FORM": {
+        "SHORT_CODE": {
+          "LABEL": "Oikotie",
+          "PLACEHOLDER": "Ole hyvä ja syötä oikotie",
+          "ERROR": "Oikotie on vaadittu"
+        },
+        "CONTENT": {
+          "LABEL": "Sisältö",
+          "PLACEHOLDER": "Ole hyvä ja syötä sisältö",
+          "ERROR": "Sisältö on vaadittu"
+        },
+        "SUBMIT": "Lähetä"
+      },
+      "BUTTON_TEXT": "Muokkaa",
+      "API": {
+        "SUCCESS_MESSAGE": "Tallennettu vastaus päivitetty onnistuneesti",
+        "ERROR_MESSAGE": "Yhteyden muodostaminen Woot-palvelimelle ei onnistunut, yritä myöhemmin uudelleen"
+      }
+    },
+    "DELETE": {
+      "BUTTON_TEXT": "Poista",
+      "API": {
+        "SUCCESS_MESSAGE": "Tallennettu vastaus poistettu onnistuneesti",
+        "ERROR_MESSAGE": "Yhteyden muodostaminen Woot-palvelimelle ei onnistunut, yritä myöhemmin uudelleen"
+      },
+      "CONFIRM": {
+        "TITLE": "Vahvista poistaminen",
+        "MESSAGE": "Oletko varma että haluat poistaa ",
+        "YES": "Kyllä, poista ",
+        "NO": "Ei, säilytä "
+      }
+    }
+  }
+}

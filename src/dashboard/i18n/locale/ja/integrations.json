@@ -1,0 +1,61 @@
+{
+  "INTEGRATION_SETTINGS": {
+    "HEADER": "連携",
+    "WEBHOOK": {
+      "TITLE": "Webhook",
+      "CONFIGURE": "設定",
+      "HEADER": "Webhookの設定",
+      "HEADER_BTN_TXT": "新しいWebhookを追加",
+      "LOADING": "添付されたWebhookを取得しています",
+      "SEARCH_404": "検索内容（クエリ）に一致する項目はありませんでした",
+      "SIDEBAR_TXT": "<p><b>Webhooks</b> </p> <p>Webhooks は、すべてのアカウントで定義可能なHTTP コールバックです。これらは、メッセージの作成などChatwoot上でのイベントをきっかけに実行されます。このアカウントでは、1つ以上のwebhookが作成できます。 <br /><br /> <b>webhook</b>を作成するには、<b>webhookを作成</b>ボタンをクリックしてください。また、作成した webhook を削除ボタンを押して削除することもできます。</p>",
+      "LIST": {
+        "404": "このアカウントに紐付けされたWebフックはありません。",
+        "TITLE": "Webhookの管理",
+        "TABLE_HEADER": [
+          "Webhookエンドポイント",
+          "操作"
+        ]
+      },
+      "ADD": {
+        "CANCEL": "キャンセル",
+        "TITLE": "新しいWebhookを追加",
+        "DESC": "Webhookイベントは、Chatwootアカウントで何が起こっているかについてのリアルタイムの情報を提供します。コールバックを設定するには有効なURLを入力してください。",
+        "FORM": {
+          "END_POINT": {
+            "LABEL": "Webhook URL",
+            "PLACEHOLDER": "例: https://example/api/webhook",
+            "ERROR": "有効な URL を入力してください"
+          },
+          "SUBMIT": "Webhookを作成"
+        },
+        "API": {
+          "SUCCESS_MESSAGE": "Webhookの追加に成功しました",
+          "ERROR_MESSAGE": "Woot Serverに接続できませんでした。後でもう一度お試しください。"
+        }
+      },
+      "DELETE": {
+        "BUTTON_TEXT": "削除",
+        "API": {
+          "SUCCESS_MESSAGE": "Webhookの削除に成功しました",
+          "ERROR_MESSAGE": "Woot Serverに接続できませんでした。後でもう一度お試しください。"
+        },
+        "CONFIRM": {
+          "TITLE": "削除の確認",
+          "MESSAGE": "削除してもよろしいですか？ ",
+          "YES": "削除する ",
+          "NO": "いいえ、保存しておきます"
+        }
+      }
+    },
+    "DELETE": {
+      "BUTTON_TEXT": "削除",
+      "API": {
+        "SUCCESS_MESSAGE": "連携が正常に削除されました"
+      }
+    },
+    "CONNECT": {
+      "BUTTON_TEXT": "接続"
+    }
+  }
+}

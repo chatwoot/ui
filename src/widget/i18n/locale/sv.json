@@ -1,0 +1,55 @@
+{
+  "COMPONENTS": {
+    "FILE_BUBBLE": {
+      "DOWNLOAD": "Hämta",
+      "UPLOADING": "Laddar upp..."
+    },
+    "FORM_BUBBLE": {
+      "SUBMIT": "Skicka"
+    }
+  },
+  "TEAM_AVAILABILITY": {
+    "ONLINE": "Vi är online",
+    "OFFLINE": "We are away at the moment"
+  },
+  "REPLY_TIME": {
+    "IN_A_FEW_MINUTES": "Svarar vanligtvis inom några minuter",
+    "IN_A_FEW_HOURS": "Svarar vanligtvis inom några timmar",
+    "IN_A_DAY": "Svar vanligtvis inom en dag"
+  },
+  "START_CONVERSATION": "Starta konversation",
+  "UNREAD_VIEW": {
+    "VIEW_MESSAGES_BUTTON": "Se nya meddelanden",
+    "CLOSE_MESSAGES_BUTTON": "Stäng",
+    "COMPANY_FROM": "from",
+    "BOT": "Bot"
+  },
+  "BUBBLE": {
+    "LABEL": "Chatta med oss"
+  },
+  "POWERED_BY": "Drivs av Chatwoot",
+  "EMAIL_PLACEHOLDER": "Ange din e-postadress",
+  "CHAT_PLACEHOLDER": "Skriv ditt meddelande",
+  "TODAY": "Idag",
+  "YESTERDAY": "Igår",
+  "PRE_CHAT_FORM": {
+    "FIELDS": {
+      "FULL_NAME": {
+        "LABEL": "Fullständigt namn",
+        "PLACEHOLDER": "Vänligen ange ditt fullständiga namn",
+        "ERROR": "Full Name is required"
+      },
+      "EMAIL_ADDRESS": {
+        "LABEL": "E-postadress",
+        "PLACEHOLDER": "Please enter your email address",
+        "ERROR": "Invalid email address"
+      },
+      "MESSAGE": {
+        "LABEL": "Message",
+        "PLACEHOLDER": "Please enter your message",
+        "ERROR": "Message too short"
+      }
+    }
+  },
+  "FILE_SIZE_LIMIT": "File exceeds the {MAXIMUM_FILE_UPLOAD_SIZE} attachment limit"
+}

@@ -1,0 +1,192 @@
+{
+  "CONTACT_PANEL": {
+    "NOT_AVAILABLE": "Ei saatavilla",
+    "EMAIL_ADDRESS": "Sähköpostiosoite",
+    "PHONE_NUMBER": "Puhelinnumero",
+    "COPY_SUCCESSFUL": "Kopioitu leikepöydälle onnistuneesti",
+    "COMPANY": "Yritys",
+    "LOCATION": "Sijainti",
+    "CONVERSATION_TITLE": "Keskustelutiedot",
+    "BROWSER": "Selain",
+    "OS": "Käyttöjärjestelmä",
+    "INITIATED_FROM": "Aloitettu lähteestä",
+    "INITIATED_AT": "Aloitettu lähteestä",
+    "IP_ADDRESS": "IP-osoite",
+    "NEW_MESSAGE": "Uusi viesti",
+    "CONVERSATIONS": {
+      "NO_RECORDS_FOUND": "Tähän yhteystietoon ei liity aikaisempia keskusteluja.",
+      "TITLE": "Edelliset keskustelut"
+    },
+    "LABELS": {
+      "TITLE": "Keskustelutunnisteet",
+      "MODAL": {
+        "TITLE": "Tunnisteet kohteelle",
+        "ACTIVE_LABELS": "Keskusteluun lisätyt tunnisteet",
+        "INACTIVE_LABELS": "Tilissä saatavilla olevat tunnisteet",
+        "REMOVE": "Napsauta X-kuvaketta poistaaksesi tunnisteen",
+        "ADD": "Napsauta + kuvaketta lisätäksesi tunnisteen",
+        "ADD_BUTTON": "Add Labels",
+        "UPDATE_BUTTON": "Päivitä tunnisteet",
+        "UPDATE_ERROR": "Tunnisteita ei voitu päivittää, yritä uudelleen."
+      },
+      "NO_LABELS_TO_ADD": "Tällä tilillä ei ole enempää tunnisteita.",
+      "NO_AVAILABLE_LABELS": "Tälle keskustelulle ei ole lisätty tunnisteita.",
+      "LABEL_SELECT": {
+        "TITLE": "Add Labels",
+        "PLACEHOLDER": "Search labels",
+        "NO_RESULT": "No labels found"
+      }
+    },
+    "MUTE_CONTACT": "Mykistä Keskustelu",
+    "UNMUTE_CONTACT": "Poista keskustelun mykistys",
+    "MUTED_SUCCESS": "Tämä keskustelu on mykistetty 6 tunniksi",
+    "UNMUTED_SUCCESS": "Tätä keskustelua ei ole hiljennetty",
+    "SEND_TRANSCRIPT": "Lähetä keskustelu",
+    "EDIT_LABEL": "Muokkaa"
+  },
+  "EDIT_CONTACT": {
+    "BUTTON_LABEL": "Muokkaa yhteystietoa",
+    "TITLE": "Muokkaa yhteystietoa",
+    "DESC": "Muokkaa yhteystietoja"
+  },
+  "CREATE_CONTACT": {
+    "BUTTON_LABEL": "Uusi kontakti",
+    "TITLE": "Luo uusi kontakti",
+    "DESC": "Lisää kontaktin yhteystiedot."
+  },
+  "CONTACT_FORM": {
+    "FORM": {
+      "SUBMIT": "Lähetä",
+      "CANCEL": "Peruuta",
+      "AVATAR": {
+        "LABEL": "Yhteystiedon profiilikuva"
+      },
+      "NAME": {
+        "PLACEHOLDER": "Syötä yhteystiedon koko nimi",
+        "LABEL": "Koko nimi"
+      },
+      "BIO": {
+        "PLACEHOLDER": "Kirjoita yhteystiedon kuvaus",
+        "LABEL": "Kuvaus"
+      },
+      "EMAIL_ADDRESS": {
+        "PLACEHOLDER": "Anna yhteyshenkilön sähköpostiosoite",
+        "LABEL": "Sähköpostiosoite"
+      },
+      "PHONE_NUMBER": {
+        "PLACEHOLDER": "Anna yhteystiedon puhelinnumero",
+        "LABEL": "Puhelinnumero",
+        "HELP": "Phone number should be of E.164 format eg: +1415555555 [+][country code][area code][local phone number]",
+        "ERROR": "Phone number should be either empty or of E.164 format"
+      },
+      "LOCATION": {
+        "PLACEHOLDER": "Anna yhteystiedon sijainti",
+        "LABEL": "Sijainti"
+      },
+      "COMPANY_NAME": {
+        "PLACEHOLDER": "Anna yrityksen nimi",
+        "LABEL": "Yrityksen nimi"
+      },
+      "SOCIAL_PROFILES": {
+        "FACEBOOK": {
+          "PLACEHOLDER": "Syötä Facebookin käyttäjätunnus",
+          "LABEL": "Facebook"
+        },
+        "TWITTER": {
+          "PLACEHOLDER": "Syötä Twitterin käyttäjätunnus",
+          "LABEL": "Twitter"
+        },
+        "LINKEDIN": {
+          "PLACEHOLDER": "Syötä LinkedIn-käyttäjänimi",
+          "LABEL": "LinkedIn"
+        },
+        "GITHUB": {
+          "PLACEHOLDER": "Syötä Github-käyttäjänimi",
+          "LABEL": "Github"
+        }
+      }
+    },
+    "SUCCESS_MESSAGE": "Kontakti tallennettu onnistuneesti",
+    "CONTACT_ALREADY_EXIST": "Tämä sähköpostiosoite on käytössä toiselle yhteyshenkilölle.",
+    "ERROR_MESSAGE": "Tapahtui virhe, yritä uudelleen"
+  },
+  "NEW_CONVERSATION": {
+    "BUTTON_LABEL": "Aloita keskustelu",
+    "TITLE": "Uusi keskustelu",
+    "DESC": "Aloita uusi keskustelu lähettämällä uusi viesti.",
+    "NO_INBOX": "Couldn't find an inbox to initiate a new conversation with this contact.",
+    "FORM": {
+      "TO": {
+        "LABEL": "To"
+      },
+      "INBOX": {
+        "LABEL": "Inbox",
+        "ERROR": "Select an inbox"
+      },
+      "MESSAGE": {
+        "LABEL": "Message",
+        "PLACEHOLDER": "Write your message here",
+        "ERROR": "Message can't be empty"
+      },
+      "SUBMIT": "Send message",
+      "CANCEL": "Peruuta",
+      "SUCCESS_MESSAGE": "Message sent!",
+      "ERROR_MESSAGE": "Couldn't send! try again"
+    }
+  },
+  "CONTACTS_PAGE": {
+    "HEADER": "Yhteystiedot",
+    "SEARCH_BUTTON": "Etsi",
+    "SEARCH_INPUT_PLACEHOLDER": "Etsi yhteystietoja",
+    "LIST": {
+      "LOADING_MESSAGE": "Ladataan yhteystietoja...",
+      "404": "Ei hakua vastaavia yhteystietoja 🔍",
+      "TABLE_HEADER": {
+        "NAME": "Nimi",
+        "PHONE_NUMBER": "Puhelinnumero",
+        "CONVERSATIONS": "Keskustelut",
+        "LAST_ACTIVITY": "Last Activity",
+        "COUNTRY": "Country",
+        "CITY": "City",
+        "SOCIAL_PROFILES": "Social Profiles",
+        "COMPANY": "Yritys",
+        "EMAIL_ADDRESS": "Sähköpostiosoite"
+      },
+      "VIEW_DETAILS": "View details"
+    }
+  },
+  "NOTES": {
+    "HEADER": {
+      "TITLE": "Notes"
+    },
+    "ADD": {
+      "BUTTON": "Add",
+      "PLACEHOLDER": "Add a note",
+      "TITLE": "Shift + Enter to create a note"
+    },
+    "FOOTER": {
+      "BUTTON": "View all notes"
+    }
+  },
+  "CUSTOM_ATTRIBUTES": {
+    "TITLE": "Mukautetut attribuutit",
+    "BUTTON": "Add custom attribute",
+    "ADD": {
+      "TITLE": "Create custom attribute",
+      "DESC": "Add custom information to this contact."
+    },
+    "FORM": {
+      "CREATE": "Add attribute",
+      "CANCEL": "Peruuta",
+      "NAME": {
+        "LABEL": "Custom attribute name",
+        "PLACEHOLDER": "Eg: shopify id",
+        "ERROR": "Invalid custom attribute name"
+      },
+      "VALUE": {
+        "LABEL": "Attribute value",
+        "PLACEHOLDER": "Eg: 11901 "
+      }
+    }
+  }
+}

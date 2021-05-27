@@ -1,0 +1,192 @@
+{
+  "CONTACT_PANEL": {
+    "NOT_AVAILABLE": "No Disponible",
+    "EMAIL_ADDRESS": "Dirección de correo",
+    "PHONE_NUMBER": "Número de teléfono",
+    "COPY_SUCCESSFUL": "Copiado al portapapeles satisfactoriamente",
+    "COMPANY": "Empresa",
+    "LOCATION": "Ubicación",
+    "CONVERSATION_TITLE": "Detalles de la conversación",
+    "BROWSER": "Navegador",
+    "OS": "Sistema operativo",
+    "INITIATED_FROM": "Iniciado desde",
+    "INITIATED_AT": "Iniciado el",
+    "IP_ADDRESS": "Dirección IP",
+    "NEW_MESSAGE": "Nuevo mensaje",
+    "CONVERSATIONS": {
+      "NO_RECORDS_FOUND": "No hay conversaciones previas asociadas a este contacto.",
+      "TITLE": "Conversaciones anteriores"
+    },
+    "LABELS": {
+      "TITLE": "Etiquetas de conversación",
+      "MODAL": {
+        "TITLE": "Etiquetas para",
+        "ACTIVE_LABELS": "Etiquetas añadidas a la conversación",
+        "INACTIVE_LABELS": "Etiquetas disponibles en la cuenta",
+        "REMOVE": "Haga clic en el icono X para quitar la etiqueta",
+        "ADD": "Haga clic en el icono + para añadir la etiqueta",
+        "ADD_BUTTON": "Añadir etiquetas",
+        "UPDATE_BUTTON": "Actualizar etiquetas",
+        "UPDATE_ERROR": "No se han podido actualizar las etiquetas, inténtelo de nuevo."
+      },
+      "NO_LABELS_TO_ADD": "No hay más etiquetas definidas en la cuenta.",
+      "NO_AVAILABLE_LABELS": "No hay etiquetas añadidas a esta conversación.",
+      "LABEL_SELECT": {
+        "TITLE": "Añadir etiquetas",
+        "PLACEHOLDER": "Buscar etiquetas",
+        "NO_RESULT": "No se encontraron etiquetas"
+      }
+    },
+    "MUTE_CONTACT": "Silenciar Conversación",
+    "UNMUTE_CONTACT": "Dessilenciar conversación",
+    "MUTED_SUCCESS": "Ésta conversación está silenciada por 6 horas",
+    "UNMUTED_SUCCESS": "Ésta conversación ya no está silenciada",
+    "SEND_TRANSCRIPT": "Enviar Transcripción",
+    "EDIT_LABEL": "Editar"
+  },
+  "EDIT_CONTACT": {
+    "BUTTON_LABEL": "Editar Contacto",
+    "TITLE": "Editar Contacto",
+    "DESC": "Editar detalles del contacto"
+  },
+  "CREATE_CONTACT": {
+    "BUTTON_LABEL": "Nuevo contacto",
+    "TITLE": "Crear un contacto nuevo",
+    "DESC": "Añadir información básica sobre el contacto."
+  },
+  "CONTACT_FORM": {
+    "FORM": {
+      "SUBMIT": "Enviar",
+      "CANCEL": "Cancelar",
+      "AVATAR": {
+        "LABEL": "Avatar"
+      },
+      "NAME": {
+        "PLACEHOLDER": "Escriba el nombre completo del contacto",
+        "LABEL": "Nombre completo"
+      },
+      "BIO": {
+        "PLACEHOLDER": "Escriba la bio del contacto",
+        "LABEL": "Biografía"
+      },
+      "EMAIL_ADDRESS": {
+        "PLACEHOLDER": "Escriba la dirección email del contacto",
+        "LABEL": "Dirección de correo"
+      },
+      "PHONE_NUMBER": {
+        "PLACEHOLDER": "Escriba el número de teléfono del contacto",
+        "LABEL": "Número telefónico",
+        "HELP": "El número telefónico debe tener el formato E.164, por ejemplo: +753001234567 [+][código del país][código de área][número teléfonico]",
+        "ERROR": "El número telefónico debe estar vacío o en formato E.164"
+      },
+      "LOCATION": {
+        "PLACEHOLDER": "Escriba la ubicación del contacto",
+        "LABEL": "Ubicación"
+      },
+      "COMPANY_NAME": {
+        "PLACEHOLDER": "Escriba el nombre de la empresa",
+        "LABEL": "Empresa"
+      },
+      "SOCIAL_PROFILES": {
+        "FACEBOOK": {
+          "PLACEHOLDER": "Escriba el usuario de Facebook",
+          "LABEL": "Facebook"
+        },
+        "TWITTER": {
+          "PLACEHOLDER": "Escriba el usuario de Twitter",
+          "LABEL": "Twitter"
+        },
+        "LINKEDIN": {
+          "PLACEHOLDER": "Escriba el usuario de LinkedIn",
+          "LABEL": "LinkedIn"
+        },
+        "GITHUB": {
+          "PLACEHOLDER": "Escriba el usuario de Github",
+          "LABEL": "Github"
+        }
+      }
+    },
+    "SUCCESS_MESSAGE": "Contacto guardado correctamente",
+    "CONTACT_ALREADY_EXIST": "Ésta dirección de correo está siendo utilizada por otro contacto.",
+    "ERROR_MESSAGE": "Hubo un error, por favor inténtelo de nuevo"
+  },
+  "NEW_CONVERSATION": {
+    "BUTTON_LABEL": "Iniciar conversación",
+    "TITLE": "Nueva conversación",
+    "DESC": "Iniciar una conversación enviando un mensaje nuevo.",
+    "NO_INBOX": "No se encontró la bandeja de entrada para iniciar una nueva conversación con este contacto.",
+    "FORM": {
+      "TO": {
+        "LABEL": "Para"
+      },
+      "INBOX": {
+        "LABEL": "Bandeja de entrada",
+        "ERROR": "Seleccione una bandeja de entrada"
+      },
+      "MESSAGE": {
+        "LABEL": "Mensaje",
+        "PLACEHOLDER": "Escriba su mensaje aquí",
+        "ERROR": "El mensaje no puede estar vacío"
+      },
+      "SUBMIT": "Enviar mensaje",
+      "CANCEL": "Cancelar",
+      "SUCCESS_MESSAGE": "¡Mensaje enviado!",
+      "ERROR_MESSAGE": "¡No se pudo enviar! intente nuevamente"
+    }
+  },
+  "CONTACTS_PAGE": {
+    "HEADER": "Contactos",
+    "SEARCH_BUTTON": "Buscar",
+    "SEARCH_INPUT_PLACEHOLDER": "Buscar contactos",
+    "LIST": {
+      "LOADING_MESSAGE": "Cargando contactos...",
+      "404": "No hay contactos que coincidan con tu búsqueda 🔍",
+      "TABLE_HEADER": {
+        "NAME": "Nombre",
+        "PHONE_NUMBER": "Número telefónico",
+        "CONVERSATIONS": "Conversaciones",
+        "LAST_ACTIVITY": "Última actividad",
+        "COUNTRY": "País",
+        "CITY": "Ciudad",
+        "SOCIAL_PROFILES": "Perfiles Sociales",
+        "COMPANY": "Empresa",
+        "EMAIL_ADDRESS": "Dirección de correo"
+      },
+      "VIEW_DETAILS": "Ver detalles"
+    }
+  },
+  "NOTES": {
+    "HEADER": {
+      "TITLE": "Notas"
+    },
+    "ADD": {
+      "BUTTON": "Añadir",
+      "PLACEHOLDER": "Añadir nota",
+      "TITLE": "Shift + Enter para crear una nota"
+    },
+    "FOOTER": {
+      "BUTTON": "Ver todas las notas"
+    }
+  },
+  "CUSTOM_ATTRIBUTES": {
+    "TITLE": "Atributos personalizados",
+    "BUTTON": "Add custom attribute",
+    "ADD": {
+      "TITLE": "Create custom attribute",
+      "DESC": "Add custom information to this contact."
+    },
+    "FORM": {
+      "CREATE": "Add attribute",
+      "CANCEL": "Cancelar",
+      "NAME": {
+        "LABEL": "Custom attribute name",
+        "PLACEHOLDER": "Eg: shopify id",
+        "ERROR": "Invalid custom attribute name"
+      },
+      "VALUE": {
+        "LABEL": "Attribute value",
+        "PLACEHOLDER": "Eg: 11901 "
+      }
+    }
+  }
+}

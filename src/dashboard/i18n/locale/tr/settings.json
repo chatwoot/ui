@@ -1,0 +1,154 @@
+{
+  "PROFILE_SETTINGS": {
+    "LINK": "Profil ayarları",
+    "TITLE": "Profil ayarları",
+    "BTN_TEXT": "Profili Güncelle",
+    "UPDATE_SUCCESS": "Profiliniz başarıyla güncellendi",
+    "PASSWORD_UPDATE_SUCCESS": "Şifreniz başarıyla değiştirildi",
+    "AFTER_EMAIL_CHANGED": "Profiliniz başarıyla güncellendi, lütfen giriş bilgileriniz değiştiği için tekrar giriş yapın",
+    "FORM": {
+      "AVATAR": "Profil Resmi",
+      "ERROR": "Lütfen form hatalarını düzeltin",
+      "REMOVE_IMAGE": "Kaldır",
+      "UPLOAD_IMAGE": "Resim yükleniyor",
+      "UPDATE_IMAGE": "Resmi güncelle",
+      "PROFILE_SECTION": {
+        "TITLE": "Profil",
+        "NOTE": "E-posta adresiniz kimliğinizdir ve oturum açmak için kullanılır."
+      },
+      "PASSWORD_SECTION": {
+        "TITLE": "Parola",
+        "NOTE": "Parolanızı güncellemek, giriş bilgilerinizi birden fazla cihazda sıfırlar.",
+        "BTN_TEXT": "Change password"
+      },
+      "ACCESS_TOKEN": {
+        "TITLE": "Erişim Jetonu",
+        "NOTE": "Bu simge, API tabanlı bir entegrasyon oluşturuyorsanız kullanılabilir"
+      },
+      "AUDIO_NOTIFICATIONS_SECTION": {
+        "TITLE": "Sesli Bildirimler",
+        "NOTE": "Enable audio notifications in dashboard for new messages and conversations.",
+        "ENABLE_AUDIO": "Play audio notification when a new conversation is created or new messages arrives"
+      },
+      "EMAIL_NOTIFICATIONS_SECTION": {
+        "TITLE": "E-posta Bildirimleri",
+        "NOTE": "E-posta bildirim tercihlerinizi buradan güncelleyin",
+        "CONVERSATION_ASSIGNMENT": "Bana bir konuşma atandığında e-posta bildirimleri gönder",
+        "CONVERSATION_CREATION": "Yeni bir görüşme oluşturulduğunda e-posta bildirimleri gönderin",
+        "CONVERSATION_MENTION": "Send email notifications when you are mentioned in a conversation",
+        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Atanmış bir görüşmede yeni bir mesaj oluşturulduğunda e-posta bildirimleri gönderin"
+      },
+      "API": {
+        "UPDATE_SUCCESS": "Bildirim tercihleriniz başarıyla güncellendi",
+        "UPDATE_ERROR": "Tercihler güncellenirken bir hata oluştu, lütfen tekrar deneyin"
+      },
+      "PUSH_NOTIFICATIONS_SECTION": {
+        "TITLE": "Bildirimler",
+        "NOTE": "Bildirim tercihlerinizi buradan güncelleyin",
+        "CONVERSATION_ASSIGNMENT": "Bana bir konuşma atandığında anında bildirim gönder",
+        "CONVERSATION_CREATION": "Yeni bir görüşme oluşturulduğunda anlık bildirimler gönderin",
+        "CONVERSATION_MENTION": "Send push notifications when you are mentioned in a conversation",
+        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Atanan bir görüşmede yeni bir mesaj oluşturulduğunda anlık bildirimler gönderin",
+        "HAS_ENABLED_PUSH": "Bu tarayıcı için bildirim özelliğini etkinleştirdiniz.",
+        "REQUEST_PUSH": "Bildirimlerini etkinleştirin"
+      },
+      "PROFILE_IMAGE": {
+        "LABEL": "Profil Resmi"
+      },
+      "NAME": {
+        "LABEL": "Tam adınız",
+        "ERROR": "Lütfen geçerli bir tam ad girin",
+        "PLACEHOLDER": "lütfen tam adınızı giriniz"
+      },
+      "DISPLAY_NAME": {
+        "LABEL": "Ekran adı",
+        "ERROR": "Lütfen geçerli bir tam ad girin",
+        "PLACEHOLDER": "Lütfen bir görünen ad girin, bu görüşmelerde görüntülenecektir"
+      },
+      "AVAILABILITY": {
+        "LABEL": "Uygun",
+        "STATUSES_LIST": [
+          "Çevirimiçi",
+          "Meşgul",
+          "Çevirimdışı"
+        ]
+      },
+      "EMAIL": {
+        "LABEL": "Sizin E-posta Adresiniz",
+        "ERROR": "Lütfen geçerli bir tam e-posta adresi",
+        "PLACEHOLDER": "Lütfen e-posta adresinizi girin, bu görüşmelerde görüntülenecektir"
+      },
+      "PASSWORD": {
+        "LABEL": "Parola",
+        "ERROR": "Lütfen 6 veya daha uzun bir şifre girin",
+        "PLACEHOLDER": "Lütfen yeni bir şifre girin"
+      },
+      "PASSWORD_CONFIRMATION": {
+        "LABEL": "Yeni şifreyi onayla",
+        "ERROR": "Onay parolası, parolayla eşleşmelidir",
+        "PLACEHOLDER": "lütfen şifrenizi tekrar girin"
+      }
+    }
+  },
+  "SIDEBAR_ITEMS": {
+    "CHANGE_AVAILABILITY_STATUS": "Değişiktir",
+    "CHANGE_ACCOUNTS": "Hesap değiştir",
+    "SELECTOR_SUBTITLE": "Aşağıdaki listeden bir hesap seçin",
+    "PROFILE_SETTINGS": "Profil ayarları",
+    "LOGOUT": "Çıkış Yap"
+  },
+  "APP_GLOBAL": {
+    "TRIAL_MESSAGE": "gün deneme kaldı.",
+    "TRAIL_BUTTON": "Şimdi satın al"
+  },
+  "COMPONENTS": {
+    "CODE": {
+      "BUTTON_TEXT": "Kopyala",
+      "COPY_SUCCESSFUL": "Kod panoya başarıyla kopyalandı"
+    },
+    "FILE_BUBBLE": {
+      "DOWNLOAD": "İndir",
+      "UPLOADING": "Yükleniyor ..."
+    },
+    "FORM_BUBBLE": {
+      "SUBMIT": "Yolla"
+    }
+  },
+  "CONFIRM_EMAIL": "Doğrulanıyor...",
+  "SETTINGS": {
+    "INBOXES": {
+      "NEW_INBOX": "Gelen Kutusu Ekle"
+    }
+  },
+  "SIDEBAR": {
+    "CONVERSATIONS": "Konuşmalar",
+    "REPORTS": "Raporlar",
+    "CONTACTS": "Kişiler",
+    "SETTINGS": "Ayarlar",
+    "HOME": "Anasayfa",
+    "AGENTS": "Kullanıcılar",
+    "INBOXES": "Gelen kutuları",
+    "NOTIFICATIONS": "Bildirimler",
+    "CANNED_RESPONSES": "Hazır Yanıtlar",
+    "INTEGRATIONS": "Entegrasyonlar",
+    "ACCOUNT_SETTINGS": "Hesap ayarları",
+    "LABELS": "Etiketler",
+    "TEAMS": "Teams"
+  },
+  "CREATE_ACCOUNT": {
+    "NEW_ACCOUNT": "Yeni hesap",
+    "SELECTOR_SUBTITLE": "Yeni bir hesap oluştur",
+    "API": {
+      "SUCCESS_MESSAGE": "Hesap başarıyla oluşturuldu",
+      "EXIST_MESSAGE": "Bu Hesap Zaten Mevcut",
+      "ERROR_MESSAGE": "Woot Sunucusuna bağlanılamadı, Lütfen daha sonra tekrar deneyin"
+    },
+    "FORM": {
+      "NAME": {
+        "LABEL": "Hesap adı",
+        "PLACEHOLDER": "Şirketiniz"
+      },
+      "SUBMIT": "Yolla"
+    }
+  }
+}

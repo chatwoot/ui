@@ -1,0 +1,192 @@
+{
+  "CONTACT_PANEL": {
+    "NOT_AVAILABLE": "Không có sẵn",
+    "EMAIL_ADDRESS": "Địa chỉ email",
+    "PHONE_NUMBER": "Số điện thoại",
+    "COPY_SUCCESSFUL": "Copied to clipboard successfully",
+    "COMPANY": "Công ty",
+    "LOCATION": "Vị trí",
+    "CONVERSATION_TITLE": "Chi tiết của cuộc trò chuyện",
+    "BROWSER": "Trình duyệt",
+    "OS": "Hệ điều hành",
+    "INITIATED_FROM": "Bắt đầu từ",
+    "INITIATED_AT": "Bắt đầu lúc",
+    "IP_ADDRESS": "IP Address",
+    "NEW_MESSAGE": "New message",
+    "CONVERSATIONS": {
+      "NO_RECORDS_FOUND": "Không có cuộc trò chuyện trước đó được liên kết với liên hệ này.",
+      "TITLE": "Cuộc trò chuyện trước đó"
+    },
+    "LABELS": {
+      "TITLE": "Nhãn hội thoại",
+      "MODAL": {
+        "TITLE": "Nhãn cho",
+        "ACTIVE_LABELS": "Đã thêm nhãn vào cuộc trò chuyện",
+        "INACTIVE_LABELS": "Các nhãn có sẵn trong tài khoản",
+        "REMOVE": "Click vào X icon xóa nhãn",
+        "ADD": "Click vào + icon thêm nhãn",
+        "ADD_BUTTON": "Add Labels",
+        "UPDATE_BUTTON": "Cập nhật nhãn",
+        "UPDATE_ERROR": "Không thể cập nhật nhãn, hãy thử lại."
+      },
+      "NO_LABELS_TO_ADD": "Không có thêm nhãn nào được xác định trong tài khoản.",
+      "NO_AVAILABLE_LABELS": "Không có nhãn nào được thêm vào cuộc trò chuyện này.",
+      "LABEL_SELECT": {
+        "TITLE": "Add Labels",
+        "PLACEHOLDER": "Search labels",
+        "NO_RESULT": "No labels found"
+      }
+    },
+    "MUTE_CONTACT": "Tắt tiếng cuộc trò chuyện",
+    "UNMUTE_CONTACT": "Unmute Conversation",
+    "MUTED_SUCCESS": "Cuộc trò chuyện này bị tắt tiếng trong 6 giờ",
+    "UNMUTED_SUCCESS": "This conversation is unmuted",
+    "SEND_TRANSCRIPT": "Gửi bản ghi",
+    "EDIT_LABEL": "Chỉnh sửa"
+  },
+  "EDIT_CONTACT": {
+    "BUTTON_LABEL": "Chỉnh sửa liên hệ",
+    "TITLE": "Chỉnh sửa liên hệ",
+    "DESC": "Chỉnh sửa liên hệ chi tiết"
+  },
+  "CREATE_CONTACT": {
+    "BUTTON_LABEL": "New Contact",
+    "TITLE": "Create new contact",
+    "DESC": "Add basic information details about the contact."
+  },
+  "CONTACT_FORM": {
+    "FORM": {
+      "SUBMIT": "Gửi",
+      "CANCEL": "Huỷ",
+      "AVATAR": {
+        "LABEL": "Avatar của liên hệ"
+      },
+      "NAME": {
+        "PLACEHOLDER": "Nhập tên đầy đủ của liên hệ",
+        "LABEL": "Tên đầy đủ"
+      },
+      "BIO": {
+        "PLACEHOLDER": "Nhập tiểu sử của liên hệ",
+        "LABEL": "Tiểu sử"
+      },
+      "EMAIL_ADDRESS": {
+        "PLACEHOLDER": "Nhập địa chỉ email của liên hệ",
+        "LABEL": "Email"
+      },
+      "PHONE_NUMBER": {
+        "PLACEHOLDER": "Nhập số điện thoại của liên hệ",
+        "LABEL": "Số điện thoại",
+        "HELP": "Phone number should be of E.164 format eg: +1415555555 [+][country code][area code][local phone number]",
+        "ERROR": "Phone number should be either empty or of E.164 format"
+      },
+      "LOCATION": {
+        "PLACEHOLDER": "Nhập vị trí của liên hệ",
+        "LABEL": "Địa điểm"
+      },
+      "COMPANY_NAME": {
+        "PLACEHOLDER": "Nhập tên công ty",
+        "LABEL": "Tên công ty"
+      },
+      "SOCIAL_PROFILES": {
+        "FACEBOOK": {
+          "PLACEHOLDER": "Nhập tên người dùng Facebook",
+          "LABEL": "Facebook"
+        },
+        "TWITTER": {
+          "PLACEHOLDER": "Nhập tên người dùng Twitter",
+          "LABEL": "Twitter"
+        },
+        "LINKEDIN": {
+          "PLACEHOLDER": "Nhập tên người dùng LinkedIn",
+          "LABEL": "LinkedIn"
+        },
+        "GITHUB": {
+          "PLACEHOLDER": "Nhập tên người dùng Github",
+          "LABEL": "Github"
+        }
+      }
+    },
+    "SUCCESS_MESSAGE": "Contact saved successfully",
+    "CONTACT_ALREADY_EXIST": "Địa chỉ email này đang được sử dụng cho một liên hệ khác.",
+    "ERROR_MESSAGE": "Đã có lỗi, vui lòng thử lại"
+  },
+  "NEW_CONVERSATION": {
+    "BUTTON_LABEL": "Start conversation",
+    "TITLE": "New conversation",
+    "DESC": "Start a new conversation by sending a new message.",
+    "NO_INBOX": "Couldn't find an inbox to initiate a new conversation with this contact.",
+    "FORM": {
+      "TO": {
+        "LABEL": "To"
+      },
+      "INBOX": {
+        "LABEL": "Inbox",
+        "ERROR": "Select an inbox"
+      },
+      "MESSAGE": {
+        "LABEL": "Message",
+        "PLACEHOLDER": "Write your message here",
+        "ERROR": "Message can't be empty"
+      },
+      "SUBMIT": "Send message",
+      "CANCEL": "Huỷ",
+      "SUCCESS_MESSAGE": "Message sent!",
+      "ERROR_MESSAGE": "Couldn't send! try again"
+    }
+  },
+  "CONTACTS_PAGE": {
+    "HEADER": "Contacts",
+    "SEARCH_BUTTON": "Search",
+    "SEARCH_INPUT_PLACEHOLDER": "Search for contacts",
+    "LIST": {
+      "LOADING_MESSAGE": "Loading contacts...",
+      "404": "No contacts matches your search 🔍",
+      "TABLE_HEADER": {
+        "NAME": "Tên",
+        "PHONE_NUMBER": "Số điện thoại",
+        "CONVERSATIONS": "Các cuộc hội thoại",
+        "LAST_ACTIVITY": "Last Activity",
+        "COUNTRY": "Country",
+        "CITY": "City",
+        "SOCIAL_PROFILES": "Social Profiles",
+        "COMPANY": "Công ty",
+        "EMAIL_ADDRESS": "Email"
+      },
+      "VIEW_DETAILS": "View details"
+    }
+  },
+  "NOTES": {
+    "HEADER": {
+      "TITLE": "Notes"
+    },
+    "ADD": {
+      "BUTTON": "Add",
+      "PLACEHOLDER": "Add a note",
+      "TITLE": "Shift + Enter to create a note"
+    },
+    "FOOTER": {
+      "BUTTON": "View all notes"
+    }
+  },
+  "CUSTOM_ATTRIBUTES": {
+    "TITLE": "Thuộc tính tùy chỉnh",
+    "BUTTON": "Add custom attribute",
+    "ADD": {
+      "TITLE": "Create custom attribute",
+      "DESC": "Add custom information to this contact."
+    },
+    "FORM": {
+      "CREATE": "Add attribute",
+      "CANCEL": "Huỷ",
+      "NAME": {
+        "LABEL": "Custom attribute name",
+        "PLACEHOLDER": "Eg: shopify id",
+        "ERROR": "Invalid custom attribute name"
+      },
+      "VALUE": {
+        "LABEL": "Attribute value",
+        "PLACEHOLDER": "Eg: 11901 "
+      }
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "PROFILE_SETTINGS": {
+    "LINK": "Nastavení profilu",
+    "TITLE": "Nastavení profilu",
+    "BTN_TEXT": "Aktualizovat profil",
+    "UPDATE_SUCCESS": "Your profile has been updated successfully",
+    "PASSWORD_UPDATE_SUCCESS": "Your password has been changed successfully",
+    "AFTER_EMAIL_CHANGED": "Váš profil byl úspěšně aktualizován, přihlaste se prosím znovu, protože se vaše přihlašovací údaje změnily",
+    "FORM": {
+      "AVATAR": "Profilový obrázek",
+      "ERROR": "Opravte chyby formuláře",
+      "REMOVE_IMAGE": "Odebrat",
+      "UPLOAD_IMAGE": "Nahrát obrázek",
+      "UPDATE_IMAGE": "Aktualizovat obrázek",
+      "PROFILE_SECTION": {
+        "TITLE": "Profil",
+        "NOTE": "Vaše e-mailová adresa je Vaše identita a používá se k přihlášení."
+      },
+      "PASSWORD_SECTION": {
+        "TITLE": "Heslo",
+        "NOTE": "Aktualizace hesla by obnovila vaše přihlašovací údaje na více zařízeních.",
+        "BTN_TEXT": "Change password"
+      },
+      "ACCESS_TOKEN": {
+        "TITLE": "Přístupový token",
+        "NOTE": "Tento token může být použit při vytváření integrace založené na API"
+      },
+      "AUDIO_NOTIFICATIONS_SECTION": {
+        "TITLE": "Audio Notifications",
+        "NOTE": "Enable audio notifications in dashboard for new messages and conversations.",
+        "ENABLE_AUDIO": "Play audio notification when a new conversation is created or new messages arrives"
+      },
+      "EMAIL_NOTIFICATIONS_SECTION": {
+        "TITLE": "E-mailová oznámení",
+        "NOTE": "Zde aktualizujte nastavení e-mailových oznámení",
+        "CONVERSATION_ASSIGNMENT": "Odeslat e-mailová oznámení, když je mi přiřazena konverzace",
+        "CONVERSATION_CREATION": "Odeslat oznámení e-mailem při vytváření nové konverzace",
+        "CONVERSATION_MENTION": "Odeslat oznámení e-mailem, pokud jste zmíněni v konverzaci",
+        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Odeslat oznámení e-mailem, když je nová zpráva vytvořena v přiřazené konverzaci"
+      },
+      "API": {
+        "UPDATE_SUCCESS": "Vaše předvolby oznámení byly úspěšně aktualizovány",
+        "UPDATE_ERROR": "Při aktualizaci nastavení došlo k chybě, zkuste to prosím znovu"
+      },
+      "PUSH_NOTIFICATIONS_SECTION": {
+        "TITLE": "Push oznámení",
+        "NOTE": "Zde aktualizujte předvolby push oznámení",
+        "CONVERSATION_ASSIGNMENT": "Odeslat push oznámení, když je mi přiřazena konverzace",
+        "CONVERSATION_CREATION": "Odeslat push oznámení při vytváření nové konverzace",
+        "CONVERSATION_MENTION": "Poslat push oznámení, když jste zmíněni v konverzaci",
+        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Odeslat push oznámení, když je nová zpráva vytvořena v přiřazené konverzaci",
+        "HAS_ENABLED_PUSH": "Povolili jste push pro tento prohlížeč.",
+        "REQUEST_PUSH": "Povolit push oznámení"
+      },
+      "PROFILE_IMAGE": {
+        "LABEL": "Profil obrázek"
+      },
+      "NAME": {
+        "LABEL": "Vaše celé jméno",
+        "ERROR": "Zadejte prosím platné celé jméno",
+        "PLACEHOLDER": "Zadejte své celé jméno"
+      },
+      "DISPLAY_NAME": {
+        "LABEL": "Zobrazované jméno",
+        "ERROR": "Zadejte prosím platné zobrazované jméno",
+        "PLACEHOLDER": "Zadejte prosím zobrazované jméno, bude zobrazeno v konverzacích"
+      },
+      "AVAILABILITY": {
+        "LABEL": "Dostupnost",
+        "STATUSES_LIST": [
+          "Online",
+          "Zaneprázdněn",
+          "Offline"
+        ]
+      },
+      "EMAIL": {
+        "LABEL": "Vaše e-mailová adresa",
+        "ERROR": "Zadejte prosím platnou e-mailovou adresu",
+        "PLACEHOLDER": "Prosím, zadejte vaši e-mailovou adresu, bude zobrazena v konverzacích"
+      },
+      "PASSWORD": {
+        "LABEL": "Heslo",
+        "ERROR": "Zadejte prosím heslo o délce 6 nebo více",
+        "PLACEHOLDER": "Zadejte prosím nové heslo"
+      },
+      "PASSWORD_CONFIRMATION": {
+        "LABEL": "Potvrdit nové heslo",
+        "ERROR": "Potvrzení hesla by mělo odpovídat heslu",
+        "PLACEHOLDER": "Zadejte prosím znovu své heslo"
+      }
+    }
+  },
+  "SIDEBAR_ITEMS": {
+    "CHANGE_AVAILABILITY_STATUS": "Změnit",
+    "CHANGE_ACCOUNTS": "Přepnout účet",
+    "SELECTOR_SUBTITLE": "Vyberte účet z následujícího seznamu",
+    "PROFILE_SETTINGS": "Nastavení profilu",
+    "LOGOUT": "Odhlásit se"
+  },
+  "APP_GLOBAL": {
+    "TRIAL_MESSAGE": "dní zbývá zkušební verze.",
+    "TRAIL_BUTTON": "Koupit nyní"
+  },
+  "COMPONENTS": {
+    "CODE": {
+      "BUTTON_TEXT": "Kopírovat",
+      "COPY_SUCCESSFUL": "Kód byl úspěšně zkopírován do schránky"
+    },
+    "FILE_BUBBLE": {
+      "DOWNLOAD": "Stáhnout",
+      "UPLOADING": "Nahrávání..."
+    },
+    "FORM_BUBBLE": {
+      "SUBMIT": "Odeslat"
+    }
+  },
+  "CONFIRM_EMAIL": "Ověřování...",
+  "SETTINGS": {
+    "INBOXES": {
+      "NEW_INBOX": "Přidat schránku"
+    }
+  },
+  "SIDEBAR": {
+    "CONVERSATIONS": "Konverzace",
+    "REPORTS": "Zprávy",
+    "CONTACTS": "Kontakty",
+    "SETTINGS": "Nastavení",
+    "HOME": "Domů",
+    "AGENTS": "Agenti",
+    "INBOXES": "Schránky",
+    "NOTIFICATIONS": "Oznámení",
+    "CANNED_RESPONSES": "Konzervované odpovědi",
+    "INTEGRATIONS": "Integrace",
+    "ACCOUNT_SETTINGS": "Nastavení účtu",
+    "LABELS": "Štítky",
+    "TEAMS": "Týmy"
+  },
+  "CREATE_ACCOUNT": {
+    "NEW_ACCOUNT": "Nový účet",
+    "SELECTOR_SUBTITLE": "Vytvořit nový účet",
+    "API": {
+      "SUCCESS_MESSAGE": "Účet byl úspěšně vytvořen",
+      "EXIST_MESSAGE": "Účet již existuje",
+      "ERROR_MESSAGE": "Nelze se připojit k Woot serveru, opakujte akci později"
+    },
+    "FORM": {
+      "NAME": {
+        "LABEL": "Název účtu",
+        "PLACEHOLDER": "Wayne podniky"
+      },
+      "SUBMIT": "Odeslat"
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "CHAT_LIST": {
+    "LOADING": "대화 가져오기",
+    "LOAD_MORE_CONVERSATIONS": "더 많은 대화 불러오기",
+    "EOF": "모든 대화 불러오기🎉",
+    "LIST": {
+      "404": "이 그룹에는 활성 대화가 없습니다."
+    },
+    "TAB_HEADING": "대화",
+    "SEARCH": {
+      "INPUT": "사람 검색, 채팅, 저장된 응답..."
+    },
+    "STATUS_TABS": [
+      {
+        "NAME": "열기",
+        "KEY": "openCount"
+      },
+      {
+        "NAME": "해결됨",
+        "KEY": "allConvCount"
+      }
+    ],
+    "ASSIGNEE_TYPE_TABS": [
+      {
+        "NAME": "나에게 할당",
+        "KEY": "me",
+        "COUNT_KEY": "mineCount"
+      },
+      {
+        "NAME": "지정되지 않음",
+        "KEY": "unassigned",
+        "COUNT_KEY": "unAssignedCount"
+      },
+      {
+        "NAME": "모두",
+        "KEY": "all",
+        "COUNT_KEY": "allCount"
+      }
+    ],
+    "CHAT_STATUS_ITEMS": [
+      {
+        "TEXT": "열기",
+        "VALUE": "open"
+      },
+      {
+        "TEXT": "해결됨",
+        "VALUE": "resolved"
+      },
+      {
+        "TEXT": "봇",
+        "VALUE": "봇"
+      }
+    ],
+    "ATTACHMENTS": {
+      "image": {
+        "ICON": "ion-image",
+        "CONTENT": "사진 메시지"
+      },
+      "audio": {
+        "ICON": "ion-volume-high",
+        "CONTENT": "음성 메시지"
+      },
+      "video": {
+        "ICON": "ion-ios-videocam",
+        "CONTENT": "영상 메시지"
+      },
+      "file": {
+        "ICON": "ion-document",
+        "CONTENT": "파일 첨부"
+      },
+      "location": {
+        "ICON": "ion-ios-location",
+        "CONTENT": "장소"
+      },
+      "fallback": {
+        "ICON": "ion-link",
+        "CONTENT": "URL을 공유함"
+      }
+    },
+    "RECEIVED_VIA_EMAIL": "이메일을 통해 수신됨",
+    "VIEW_TWEET_IN_TWITTER": "트위터에서 트윗 보기",
+    "REPLY_TO_TWEET": "트윗에 응답하기",
+    "NO_MESSAGES": "메시지 없음",
+    "NO_CONTENT": "No content available"
+  }
+}

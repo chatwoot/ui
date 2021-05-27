@@ -1,0 +1,154 @@
+{
+  "PROFILE_SETTINGS": {
+    "LINK": "Profiilin asetukset",
+    "TITLE": "Profiilin asetukset",
+    "BTN_TEXT": "Päivitä profiili",
+    "UPDATE_SUCCESS": "Your profile has been updated successfully",
+    "PASSWORD_UPDATE_SUCCESS": "Salasanasi on vaihdettu onnistuneesti",
+    "AFTER_EMAIL_CHANGED": "Profiilisi on päivitetty onnistuneesti, ole hyvä ja kirjaudu uudelleen kun kirjautumistunnuksesi muuttuvat",
+    "FORM": {
+      "AVATAR": "Profiilikuva",
+      "ERROR": "Korjaa lomakkeen virheet",
+      "REMOVE_IMAGE": "Poista",
+      "UPLOAD_IMAGE": "Lataa kuva",
+      "UPDATE_IMAGE": "Päivitä kuva",
+      "PROFILE_SECTION": {
+        "TITLE": "Profiili",
+        "NOTE": "Sähköpostiosoitteesi on identiteettisi ja sitä käytetään sisäänkirjautumiseen."
+      },
+      "PASSWORD_SECTION": {
+        "TITLE": "Salasana",
+        "NOTE": "Salasanan vaihtaminen kirjaa sinut ulos muilta laitteilta.",
+        "BTN_TEXT": "Change password"
+      },
+      "ACCESS_TOKEN": {
+        "TITLE": "Access Token",
+        "NOTE": "Tätä tunnusta voidaan käyttää, jos olet rakentamassa API-pohjaista integraatiota"
+      },
+      "AUDIO_NOTIFICATIONS_SECTION": {
+        "TITLE": "Audio Notifications",
+        "NOTE": "Enable audio notifications in dashboard for new messages and conversations.",
+        "ENABLE_AUDIO": "Play audio notification when a new conversation is created or new messages arrives"
+      },
+      "EMAIL_NOTIFICATIONS_SECTION": {
+        "TITLE": "Sähköposti-ilmoitukset",
+        "NOTE": "Päivitä sähköposti-ilmoitusasetukset täällä",
+        "CONVERSATION_ASSIGNMENT": "Lähetä sähköposti-ilmoitus, kun keskustelu on määritetty minulle",
+        "CONVERSATION_CREATION": "Lähetä sähköposti-ilmoitus, kun keskustelu on määritetty minulle",
+        "CONVERSATION_MENTION": "Send email notifications when you are mentioned in a conversation",
+        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Lähetä sähköposti-ilmoitus, kun uusi viesti saapuu minulle osoitettuun keskusteluun"
+      },
+      "API": {
+        "UPDATE_SUCCESS": "Ilmoitusasetuksesi päivitetään onnistuneesti",
+        "UPDATE_ERROR": "Asetuksia päivitettäessä tapahtui virhe. Ole hyvä ja yritä uudelleen"
+      },
+      "PUSH_NOTIFICATIONS_SECTION": {
+        "TITLE": "Push-ilmoitukset",
+        "NOTE": "Päivitä push-ilmoitusasetukset täällä",
+        "CONVERSATION_ASSIGNMENT": "Lähetä push-ilmoitus, kun keskustelu on määritetty minulle",
+        "CONVERSATION_CREATION": "Lähetä push-ilmoitus, kun keskustelu on määritetty minulle",
+        "CONVERSATION_MENTION": "Send push notifications when you are mentioned in a conversation",
+        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Lähetä push-ilmoitus, kun uusi viesti saapuu minulle osoitettuun keskusteluun",
+        "HAS_ENABLED_PUSH": "Tämän selaimen push-ilmoitukset on otettu käyttöön.",
+        "REQUEST_PUSH": "Ota push-ilmoitukset käyttöön"
+      },
+      "PROFILE_IMAGE": {
+        "LABEL": "Profiilikuva"
+      },
+      "NAME": {
+        "LABEL": "Koko nimesi",
+        "ERROR": "Anna kelvollinen koko nimi",
+        "PLACEHOLDER": "Syötä koko nimesi"
+      },
+      "DISPLAY_NAME": {
+        "LABEL": "Näyttönimi",
+        "ERROR": "Anna kelvollinen näyttönimi",
+        "PLACEHOLDER": "Näyttöniminimi, joka näytetään keskusteluissa"
+      },
+      "AVAILABILITY": {
+        "LABEL": "Saatavuus",
+        "STATUSES_LIST": [
+          "Paikalla",
+          "Kiireinen",
+          "Poissa"
+        ]
+      },
+      "EMAIL": {
+        "LABEL": "Sinun sähköpostiosoitteesi",
+        "ERROR": "Ole hyvä ja syötä validi sähköposti",
+        "PLACEHOLDER": "Sähköposti, joka näytetään keskusteluissa"
+      },
+      "PASSWORD": {
+        "LABEL": "Salasana",
+        "ERROR": "Anna salasana jonka pituus on 6 tai enemmän",
+        "PLACEHOLDER": "Anna uusi salasana"
+      },
+      "PASSWORD_CONFIRMATION": {
+        "LABEL": "Vahvista salasana",
+        "ERROR": "Salasanat eivät täsmää",
+        "PLACEHOLDER": "Syötä salasana uudelleen"
+      }
+    }
+  },
+  "SIDEBAR_ITEMS": {
+    "CHANGE_AVAILABILITY_STATUS": "Vaihda",
+    "CHANGE_ACCOUNTS": "Vaihda tili",
+    "SELECTOR_SUBTITLE": "Valitse tili tästä luettelosta",
+    "PROFILE_SETTINGS": "Profiilin asetukset",
+    "LOGOUT": "Kirjaudu ulos"
+  },
+  "APP_GLOBAL": {
+    "TRIAL_MESSAGE": "päivää jäljellä.",
+    "TRAIL_BUTTON": "Osta nyt"
+  },
+  "COMPONENTS": {
+    "CODE": {
+      "BUTTON_TEXT": "Kopioi",
+      "COPY_SUCCESSFUL": "Koodi kopioitu leikepöydälle onnistuneesti"
+    },
+    "FILE_BUBBLE": {
+      "DOWNLOAD": "Lataa",
+      "UPLOADING": "Lähetetään..."
+    },
+    "FORM_BUBBLE": {
+      "SUBMIT": "Lähetä"
+    }
+  },
+  "CONFIRM_EMAIL": "Vahvistetaan...",
+  "SETTINGS": {
+    "INBOXES": {
+      "NEW_INBOX": "Lisää kansio"
+    }
+  },
+  "SIDEBAR": {
+    "CONVERSATIONS": "Keskustelut",
+    "REPORTS": "Raportit",
+    "CONTACTS": "Yhteystiedot",
+    "SETTINGS": "Asetukset",
+    "HOME": "Koti",
+    "AGENTS": "Edustajat",
+    "INBOXES": "Kansiot",
+    "NOTIFICATIONS": "Ilmoitukset",
+    "CANNED_RESPONSES": "Tallennetut vastaukset",
+    "INTEGRATIONS": "Integraatiot",
+    "ACCOUNT_SETTINGS": "Tilin asetukset",
+    "LABELS": "Tunnisteet",
+    "TEAMS": "Teams"
+  },
+  "CREATE_ACCOUNT": {
+    "NEW_ACCOUNT": "Uusi tili",
+    "SELECTOR_SUBTITLE": "Luo uusi tili",
+    "API": {
+      "SUCCESS_MESSAGE": "Tilin luominen onnistui",
+      "EXIST_MESSAGE": "Tili on jo olemassa",
+      "ERROR_MESSAGE": "Yhteyden muodostaminen Woot-palvelimelle ei onnistunut, yritä myöhemmin uudelleen"
+    },
+    "FORM": {
+      "NAME": {
+        "LABEL": "Tilin nimi",
+        "PLACEHOLDER": "Wayne Enterprises"
+      },
+      "SUBMIT": "Lähetä"
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "CHAT_LIST": {
+    "LOADING": "Загружаем диалоги",
+    "LOAD_MORE_CONVERSATIONS": "Загрузить больше диалогов",
+    "EOF": "Все диалоги загружены 🎉",
+    "LIST": {
+      "404": "В этой группе нет активных диалогов."
+    },
+    "TAB_HEADING": "Диалоги",
+    "SEARCH": {
+      "INPUT": "Искать людей, чаты, сохраненные ответы .."
+    },
+    "STATUS_TABS": [
+      {
+        "NAME": "Открыть",
+        "KEY": "openCount"
+      },
+      {
+        "NAME": "Закрыт",
+        "KEY": "allConvCount"
+      }
+    ],
+    "ASSIGNEE_TYPE_TABS": [
+      {
+        "NAME": "Мои",
+        "KEY": "me",
+        "COUNT_KEY": "mineCount"
+      },
+      {
+        "NAME": "Неназначен",
+        "KEY": "unassigned",
+        "COUNT_KEY": "unAssignedCount"
+      },
+      {
+        "NAME": "Все",
+        "KEY": "all",
+        "COUNT_KEY": "allCount"
+      }
+    ],
+    "CHAT_STATUS_ITEMS": [
+      {
+        "TEXT": "Открытые",
+        "VALUE": "open"
+      },
+      {
+        "TEXT": "Закрытые",
+        "VALUE": "resolved"
+      },
+      {
+        "TEXT": "Бот",
+        "VALUE": "бот"
+      }
+    ],
+    "ATTACHMENTS": {
+      "image": {
+        "ICON": "ion-image",
+        "CONTENT": "Изображение"
+      },
+      "audio": {
+        "ICON": "ion-volume-high",
+        "CONTENT": "Аудиосообщение"
+      },
+      "video": {
+        "ICON": "ion-ios-videocam",
+        "CONTENT": "Видео"
+      },
+      "file": {
+        "ICON": "ion-document",
+        "CONTENT": "Прикрепленный файл"
+      },
+      "location": {
+        "ICON": "ion-ios-location",
+        "CONTENT": "Местоположение"
+      },
+      "fallback": {
+        "ICON": "ion-link",
+        "CONTENT": "поделился ссылкой"
+      }
+    },
+    "RECEIVED_VIA_EMAIL": "Получено по email",
+    "VIEW_TWEET_IN_TWITTER": "Просмотреть твит в Twitter",
+    "REPLY_TO_TWEET": "Ответить на этот твит",
+    "NO_MESSAGES": "Нет сообщений",
+    "NO_CONTENT": "Содержимое отсутствует"
+  }
+}

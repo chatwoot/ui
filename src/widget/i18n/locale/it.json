@@ -1,0 +1,55 @@
+{
+  "COMPONENTS": {
+    "FILE_BUBBLE": {
+      "DOWNLOAD": "Download",
+      "UPLOADING": "Caricamento..."
+    },
+    "FORM_BUBBLE": {
+      "SUBMIT": "Invia"
+    }
+  },
+  "TEAM_AVAILABILITY": {
+    "ONLINE": "Siamo online",
+    "OFFLINE": "We are away at the moment"
+  },
+  "REPLY_TIME": {
+    "IN_A_FEW_MINUTES": "In genere risponde in pochi minuti",
+    "IN_A_FEW_HOURS": "In genere risponde in poche ore",
+    "IN_A_DAY": "In genere le risposte in un giorno"
+  },
+  "START_CONVERSATION": "Avvia Conversazione",
+  "UNREAD_VIEW": {
+    "VIEW_MESSAGES_BUTTON": "Vedi nuovi messaggi",
+    "CLOSE_MESSAGES_BUTTON": "Chiudi",
+    "COMPANY_FROM": "from",
+    "BOT": "Bot"
+  },
+  "BUBBLE": {
+    "LABEL": "Chatta con noi"
+  },
+  "POWERED_BY": "Powered by Chatwoot",
+  "EMAIL_PLACEHOLDER": "Inserisci la tua email",
+  "CHAT_PLACEHOLDER": "Scrivi il tuo messaggio",
+  "TODAY": "Oggi",
+  "YESTERDAY": "Ieri",
+  "PRE_CHAT_FORM": {
+    "FIELDS": {
+      "FULL_NAME": {
+        "LABEL": "Nome Completo",
+        "PLACEHOLDER": "Per favore inserisci il nome completo",
+        "ERROR": "Nome completo è richiesto"
+      },
+      "EMAIL_ADDRESS": {
+        "LABEL": "Indirizzo email",
+        "PLACEHOLDER": "Inserisci il tuo indirizzo e-mail",
+        "ERROR": "Indirizzo email non valido"
+      },
+      "MESSAGE": {
+        "LABEL": "Messaggio",
+        "PLACEHOLDER": "Per favore inserisci il tuo messaggio",
+        "ERROR": "Messaggio troppo corto"
+      }
+    }
+  },
+  "FILE_SIZE_LIMIT": "File exceeds the {MAXIMUM_FILE_UPLOAD_SIZE} attachment limit"
+}

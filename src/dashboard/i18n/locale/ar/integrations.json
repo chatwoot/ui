@@ -1,0 +1,61 @@
+{
+  "INTEGRATION_SETTINGS": {
+    "HEADER": "خيارات الربط",
+    "WEBHOOK": {
+      "TITLE": "Webhook",
+      "CONFIGURE": "تهيئة",
+      "HEADER": "إعدادات الـ Webhook",
+      "HEADER_BTN_TXT": "إضافة webhook جديد",
+      "LOADING": "جار جلب الـ Webhooks",
+      "SEARCH_404": "لا توجد عناصر مطابقة لهذا الاستعلام",
+      "SIDEBAR_TXT": "<p><b>Webhooks</b> </p> <p>Webhooks هي إعادات HTTP callbacks التي يمكن تعريفها لكل حساب. يتم تشغيلها بأحداث مثل إنشاء الرسائل في Chatwoot. يمكنك إنشاء أكثر من Webhook واحد لهذا الحساب. <br /><br /> لإنشاء <b>webhook</b>، انقر فوق <b>إضافة Webhooks جديد</b>. يمكنك أيضا إزالة أي رابط ويب موجود بالنقر على زر الحذف.</p>",
+      "LIST": {
+        "404": "لا توجد webhooks مكونة لهذا الحساب.",
+        "TITLE": "إدارة الـ webhooks",
+        "TABLE_HEADER": [
+          "Webhook endpoint",
+          "الإجراءات"
+        ]
+      },
+      "ADD": {
+        "CANCEL": "إلغاء",
+        "TITLE": "إضافة webhook جديد",
+        "DESC": "أحداث Webhook توفر لك معلومات في الوقت الحقيقي حول ما يحدث في حساب Chatwoot الخاص بك. الرجاء إدخال عنوان URL صالح لتكوين callback.",
+        "FORM": {
+          "END_POINT": {
+            "LABEL": "رابط Webhook",
+            "PLACEHOLDER": "مثال: https://example/api/webhook",
+            "ERROR": "الرجاء إدخال عنوان URL صالح"
+          },
+          "SUBMIT": "إنشاء webhook"
+        },
+        "API": {
+          "SUCCESS_MESSAGE": "تم إضافة Webhook بنجاح",
+          "ERROR_MESSAGE": "تعذر الاتصال بالخادم، الرجاء المحاولة مرة أخرى لاحقاً"
+        }
+      },
+      "DELETE": {
+        "BUTTON_TEXT": "حذف",
+        "API": {
+          "SUCCESS_MESSAGE": "تم حذف Webhook بنجاح",
+          "ERROR_MESSAGE": "تعذر الاتصال بالخادم، الرجاء المحاولة مرة أخرى لاحقاً"
+        },
+        "CONFIRM": {
+          "TITLE": "تأكيد الحذف",
+          "MESSAGE": "هل أنت متأكد من الحذف ",
+          "YES": "نعم، احذف ",
+          "NO": "لا، احتفظ به"
+        }
+      }
+    },
+    "DELETE": {
+      "BUTTON_TEXT": "حذف",
+      "API": {
+        "SUCCESS_MESSAGE": "تم حذف التكامل بنجاح"
+      }
+    },
+    "CONNECT": {
+      "BUTTON_TEXT": "ربط الاتصال"
+    }
+  }
+}

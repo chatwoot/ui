@@ -1,0 +1,75 @@
+{
+  "GENERAL_SETTINGS": {
+    "TITLE": "Configurações da conta",
+    "SUBMIT": "Atualizar configurações",
+    "BACK": "Back",
+    "UPDATE": {
+      "ERROR": "Não foi possível atualizar as configurações, tente novamente!",
+      "SUCCESS": "Configurações de conta atualizadas com sucesso"
+    },
+    "FORM": {
+      "ERROR": "Por favor, corrigir erros de formulário",
+      "GENERAL_SECTION": {
+        "TITLE": "Configurações gerais",
+        "NOTE": ""
+      },
+      "NAME": {
+        "LABEL": "Nome da Conta",
+        "PLACEHOLDER": "Nome da sua conta",
+        "ERROR": "Por favor, insira um nome de conta válido"
+      },
+      "LANGUAGE": {
+        "LABEL": "Idioma do site (Beta)",
+        "PLACEHOLDER": "Nome da sua conta",
+        "ERROR": ""
+      },
+      "DOMAIN": {
+        "LABEL": "Incoming Email Domain",
+        "PLACEHOLDER": "The domain where you will receive the emails",
+        "ERROR": ""
+      },
+      "SUPPORT_EMAIL": {
+        "LABEL": "E-mail de Suporte",
+        "PLACEHOLDER": "E-mail de suporte da sua empresa",
+        "ERROR": ""
+      },
+      "AUTO_RESOLVE_DURATION": {
+        "LABEL": "Number of days after a ticket should auto resolve if there is no activity",
+        "PLACEHOLDER": "30",
+        "ERROR": "Please enter a valid auto resolve duration (minimum 1 day)"
+      },
+      "FEATURES": {
+        "INBOUND_EMAIL_ENABLED": "Conversation continuity with emails is enabled for your account.",
+        "CUSTOM_EMAIL_DOMAIN_ENABLED": "You can receive emails in your custom domain now."
+      }
+    },
+    "UPDATE_CHATWOOT": "An update %{latestChatwootVersion} for Chatwoot is available. Please update your instance."
+  },
+  "FORMS": {
+    "MULTISELECT": {
+      "ENTER_TO_SELECT": "Press enter to select",
+      "ENTER_TO_REMOVE": "Press enter to remove",
+      "SELECT_ONE": "Select one"
+    }
+  },
+  "NOTIFICATIONS_PAGE": {
+    "HEADER": "Notifications",
+    "MARK_ALL_DONE": "Mark All Done",
+    "LIST": {
+      "LOADING_MESSAGE": "Loading notifications...",
+      "404": "No Notifications",
+      "TABLE_HEADER": [
+        "Nome:",
+        "Phone Number",
+        "Conversas",
+        "Last Contacted"
+      ]
+    },
+    "TYPE_LABEL": {
+      "conversation_creation": "New conversation",
+      "conversation_assignment": "Conversation Assigned",
+      "assigned_conversation_new_message": "New Message",
+      "conversation_mention": "Mention"
+    }
+  }
+}

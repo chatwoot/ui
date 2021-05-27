@@ -1,0 +1,44 @@
+.dropdown-pane {
+  @include elegant-card;
+  @include border-light;
+  box-sizing: content-box;
+  width: fit-content;
+  z-index: 999;
+
+  &.dropdown-pane--open {
+    display: block;
+    visibility: visible;
+  }
+
+  &.dropdowm--bottom {
+    &::before {
+      @include arrow(top, var(--color-border-light), 14px);
+      position: absolute;
+      right: 6px;
+      top: -14px;
+    }
+
+    &::after {
+      @include arrow(top, $color-white, var(--space-slab));
+      position: absolute;
+      right: var(--space-small);
+      top: -12px;
+    }
+  }
+
+  &.dropdowm--top {
+    &::before {
+      @include arrow(bottom, var(--color-border-light), 14px);
+      bottom: -14px;
+      position: absolute;
+      right: 6px;
+    }
+
+    &::after {
+      @include arrow(bottom, $color-white, var(--space-slab));
+      bottom: -12px;
+      position: absolute;
+      right: var(--space-small);
+    }
+  }
+}

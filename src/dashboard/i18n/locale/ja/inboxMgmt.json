@@ -1,0 +1,295 @@
+{
+  "INBOX_MGMT": {
+    "HEADER": "受信トレイ",
+    "SIDEBAR_TXT": "<p><b>受信トレイ</b></p> <p>ウェブサイトと接続した場合、またはFacebookページとChatwootを接続した場合、受信トレイが作成されます。1つのChatwootアカウントにつき、受信トレイは無制限で作成することができます。</p><p><b>受信トレイ作成</b>ボタンをクリックすると、ウェブサイトまたはFacebookと接続できるようになります。</p><p> 管理画面では、受信トレイ内にあるすべての会話がひとつの場所で確認でき、会話タブにて返信することができます。</p><p> 管理画面の左パネルから受信トレイの名前をクリックすることでも、特定の会話を見ることができます。</p>",
+    "LIST": {
+      "404": "このアカウントに紐付けられている受信トレイはありません。"
+    },
+    "CREATE_FLOW": [
+      {
+        "title": "チャンネルを選択",
+        "route": "settings_inbox_new",
+        "body": "Chatwootと統合するプロバイダを選択してください。"
+      },
+      {
+        "title": "受信トレイを作成",
+        "route": "settings_inboxes_page_channel",
+        "body": "アカウントを認証し、受信トレイを作成します。"
+      },
+      {
+        "title": "担当者を追加",
+        "route": "settings_inboxes_add_agents",
+        "body": "作成した受信トレイに担当者を追加します。"
+      },
+      {
+        "title": "ほら、",
+        "route": "settings_inbox_finish",
+        "body": "すべての準備が完了しました！"
+      }
+    ],
+    "ADD": {
+      "FB": {
+        "HELP": "PS: サインインすることで、私たちはあなたのページのメッセージにのみアクセスできます。あなたのプライベートメッセージはChatwootによってアクセスすることはできません。",
+        "CHOOSE_PAGE": "ページを選択",
+        "CHOOSE_PLACEHOLDER": "リストからページを選択",
+        "INBOX_NAME": "受信トレイ名",
+        "ADD_NAME": "受信トレイに名前をつける",
+        "PICK_NAME": "受信トレイの名前を選択",
+        "PICK_A_VALUE": "値を選択"
+      },
+      "TWITTER": {
+        "HELP": "Twitterプロフィールをチャンネルとして追加するには、「Twitterでサインイン」をクリックしてTwitterプロフィールを認証する必要があります。 ",
+        "ERROR_MESSAGE": "There was an error connecting to Twitter, please try again"
+      },
+      "WEBSITE_CHANNEL": {
+        "TITLE": "ウェブサイトのチャンネル",
+        "DESC": "ウェブサイトのためのチャネルを作成し、ウェブサイトウィジェットを介してあなたの顧客をサポートを開始してください。",
+        "LOADING_MESSAGE": "ウェブサイトサポートチャンネルの作成",
+        "CHANNEL_AVATAR": {
+          "LABEL": "チャネルアバター"
+        },
+        "CHANNEL_NAME": {
+          "LABEL": "ウェブサイト名",
+          "PLACEHOLDER": "ウェブサイト名を入力してください(例：Acme Inc)"
+        },
+        "CHANNEL_DOMAIN": {
+          "LABEL": "ウェブサイトのドメイン",
+          "PLACEHOLDER": "ウェブサイトのドメインを入力してください(例：acme.com)"
+        },
+        "CHANNEL_WELCOME_TITLE": {
+          "LABEL": "冒頭の見出し",
+          "PLACEHOLDER": "こんにちは！"
+        },
+        "CHANNEL_WELCOME_TAGLINE": {
+          "LABEL": "冒頭のタグライン",
+          "PLACEHOLDER": "簡単に連絡が取れる状態です。なんでも聞いてください。フィードバックの共有も歓迎です。"
+        },
+        "CHANNEL_GREETING_MESSAGE": {
+          "LABEL": "チャンネルグリーティングメッセージ",
+          "PLACEHOLDER": "Acme Incは通常数時間で返信します。"
+        },
+        "CHANNEL_GREETING_TOGGLE": {
+          "LABEL": "チャンネルグリーティングを有効にする",
+          "HELP_TEXT": "会話を開始したときに、ユーザーに挨拶メッセージを送信します。",
+          "ENABLED": "有効です",
+          "DISABLED": "無効です"
+        },
+        "REPLY_TIME": {
+          "TITLE": "Set Reply time",
+          "IN_A_FEW_MINUTES": "In a few minutes",
+          "IN_A_FEW_HOURS": "In a few hours",
+          "IN_A_DAY": "In a day",
+          "HELP_TEXT": "This reply time will be displayed on the live chat widget"
+        },
+        "WIDGET_COLOR": {
+          "LABEL": "ウィジェットの色",
+          "PLACEHOLDER": "ウィジェットで使用されている色を更新"
+        },
+        "SUBMIT_BUTTON": "受信トレイを作成"
+      },
+      "TWILIO": {
+        "TITLE": "Twilio SMS/Whatsapp チャンネル",
+        "DESC": "Twilio を統合し、SMS または Whatsapp を介して顧客のサポートを開始します。",
+        "ACCOUNT_SID": {
+          "LABEL": "アカウント SID",
+          "PLACEHOLDER": "Twilio アカウント SIDを入力してください",
+          "ERROR": "このフィールドは必須項目です"
+        },
+        "CHANNEL_TYPE": {
+          "LABEL": "チャンネルタイプ",
+          "ERROR": "チャンネルタイプを選択してください"
+        },
+        "AUTH_TOKEN": {
+          "LABEL": "認証トークン",
+          "PLACEHOLDER": "Twilio 認証トークンを入力してください",
+          "ERROR": "このフィールドは必須項目です"
+        },
+        "CHANNEL_NAME": {
+          "LABEL": "チャンネル名",
+          "PLACEHOLDER": "チャンネル名を入力してください",
+          "ERROR": "このフィールドは必須項目です"
+        },
+        "PHONE_NUMBER": {
+          "LABEL": "電話番号",
+          "PLACEHOLDER": "送信先の電話番号を入力してください。",
+          "ERROR": "正しい値を入力してください。電話番号は `+` 記号で始める必要があります。"
+        },
+        "API_CALLBACK": {
+          "TITLE": "コールバック URL",
+          "SUBTITLE": "Twilio のメッセージコールバックURLをここで指定する必要があります。"
+        },
+        "SUBMIT_BUTTON": "Twilio チャンネルを作成",
+        "API": {
+          "ERROR_MESSAGE": "Twilio の認証ができませんでした。もう一度やり直してください。"
+        }
+      },
+      "API_CHANNEL": {
+        "TITLE": "APIチャンネル",
+        "DESC": "APIチャンネルと連携し、顧客のサポートを開始します。",
+        "CHANNEL_NAME": {
+          "LABEL": "チャンネル名",
+          "PLACEHOLDER": "チャンネル名を入力してください",
+          "ERROR": "このフィールドは必須項目です"
+        },
+        "WEBHOOK_URL": {
+          "LABEL": "Webhook URL",
+          "SUBTITLE": "イベントのコールバックを受信するURLを設定してください。",
+          "PLACEHOLDER": "Webhook URL"
+        },
+        "SUBMIT_BUTTON": "API チャンネルを作成",
+        "API": {
+          "ERROR_MESSAGE": "APIチャンネルを保存できませんでした"
+        }
+      },
+      "EMAIL_CHANNEL": {
+        "TITLE": "Eメールチャンネル",
+        "DESC": "メール受信トレイを連携する",
+        "CHANNEL_NAME": {
+          "LABEL": "チャンネル名",
+          "PLACEHOLDER": "チャンネル名を入力してください",
+          "ERROR": "このフィールドは必須項目です"
+        },
+        "EMAIL": {
+          "LABEL": "Eメール",
+          "SUBTITLE": "Email where your customers sends you support tickets",
+          "PLACEHOLDER": "Eメール"
+        },
+        "SUBMIT_BUTTON": "Eメールチャンネルを作成",
+        "API": {
+          "ERROR_MESSAGE": "Eメールチャンネルを保存できませんでした"
+        },
+        "FINISH_MESSAGE": "以下のメールアドレスにメールを転送します。"
+      },
+      "AUTH": {
+        "TITLE": "チャンネル",
+        "DESC": "Currently we support Website live chat widgets, Facebook Pages and Twitter profiles as platforms. We have more platforms like Whatsapp, Email, Telegram and Line in the works, which will be out soon."
+      },
+      "AGENTS": {
+        "TITLE": "担当者",
+        "DESC": "ここでは、新しく作成した受信トレイを管理するエージェントを追加できます。選択された担当者のみが受信トレイにアクセスできます。 この受信トレイに割り当てられていない担当者は、ログイン時にこの受信トレイ内のメッセージを表示または応答することができません。 <br> <b>PS:</b> 管理者として、すべての受信ボックスにアクセスする必要がある場合、 あなたが作成したすべての受信トレイに担当者として自分自身を追加する必要があります。",
+        "VALIDATION_ERROR": "Add atleast one agent to your new Inbox",
+        "PICK_AGENTS": "Pick agents for the inbox"
+      },
+      "DETAILS": {
+        "TITLE": "受信トレイの詳細",
+        "DESC": "下のドロップダウンから、Chatwoot に接続する Facebook ページを選択してください。 わかりやすくするために受信トレイの名前をカスタマイズすることもできます。"
+      },
+      "FINISH": {
+        "TITLE": "ばっちりです！",
+        "DESC": "FacebookページとChatwootとの統合が正常に完了しました。次回から、あなたのページに送信された顧客からのメッセージや会話は、自動的に受信トレイに表示されます。<br>また、ウェブサイトに簡単に追加できるウィジェットスクリプトを提供しています。 一度これをあなたのウェブサイトに設定すれば、 顧客は他のツールの助けを借りずにWebサイトから直接メッセージを送信でき、Chatwoot上に会話が表示されます。 <br><br>素敵でしょ？まあ、私たちはきっとそうしますけどね:)"
+      }
+    },
+    "DETAILS": {
+      "LOADING_FB": "Facebook を認証中...",
+      "ERROR_FB_AUTH": "問題が発生しました。ページを更新してください...",
+      "CREATING_CHANNEL": "受信トレイを作成しています...",
+      "TITLE": "受信トレイの詳細の設定",
+      "DESC": ""
+    },
+    "AGENTS": {
+      "BUTTON_TEXT": "担当者を追加",
+      "ADD_AGENTS": "受信トレイに担当者を追加しています..."
+    },
+    "FINISH": {
+      "TITLE": "受信トレイの準備ができました！",
+      "MESSAGE": "新しいチャネルを通じてお客様と交流できるようになりました。 ",
+      "BUTTON_TEXT": "Take me there",
+      "MORE_SETTINGS": "More settings",
+      "WEBSITE_SUCCESS": "ウェブサイトチャンネルの作成が正常に完了しました。以下のコードをコピーしてウェブサイトに貼り付けてください。 次回、お客様がライブチャットを使用すると、会話は自動的に受信トレイに表示されます。"
+    },
+    "REAUTH": "再認証",
+    "VIEW": "表示",
+    "EDIT": {
+      "API": {
+        "SUCCESS_MESSAGE": "受信トレイの設定が正常に更新されました",
+        "AUTO_ASSIGNMENT_SUCCESS_MESSAGE": "自動割り当ての更新に成功しました",
+        "ERROR_MESSAGE": "ウィジェットの色を更新できませんでした。後でもう一度お試しください"
+      },
+      "AUTO_ASSIGNMENT": {
+        "ENABLED": "有効です",
+        "DISABLED": "無効です"
+      }
+    },
+    "DELETE": {
+      "BUTTON_TEXT": "削除",
+      "CONFIRM": {
+        "TITLE": "削除の確認",
+        "MESSAGE": "削除してもよろしいですか？ ",
+        "YES": "削除する ",
+        "NO": "いいえ、保存しておきます "
+      },
+      "API": {
+        "SUCCESS_MESSAGE": "受信トレイの削除に成功しました",
+        "ERROR_MESSAGE": "受信箱を削除できませんでした。後でもう一度お試しください。"
+      }
+    },
+    "TABS": {
+      "SETTINGS": "設定",
+      "COLLABORATORS": "共同編集者",
+      "CONFIGURATION": "設定",
+      "CAMPAIGN": "Campaigns",
+      "PRE_CHAT_FORM": "Pre Chat Form",
+      "BUSINESS_HOURS": "Business Hours"
+    },
+    "SETTINGS": "設定",
+    "FEATURES": {
+      "LABEL": "機能",
+      "DISPLAY_FILE_PICKER": "ウィジェットにファイルピッカーを表示する",
+      "DISPLAY_EMOJI_PICKER": "ウィジェットに絵文字ピッカーを表示する"
+    },
+    "SETTINGS_POPUP": {
+      "MESSENGER_HEADING": "Messengerスクリプト",
+      "MESSENGER_SUB_HEAD": "このボタンをbodyタグの中に配置してください。",
+      "INBOX_AGENTS": "担当者",
+      "INBOX_AGENTS_SUB_TEXT": "この受信トレイから担当者を追加または削除する",
+      "UPDATE": "更新",
+      "AUTO_ASSIGNMENT": "自動割り当てを有効にする",
+      "INBOX_UPDATE_TITLE": "受信トレイの設定",
+      "INBOX_UPDATE_SUB_TEXT": "受信トレイの設定を更新する",
+      "AUTO_ASSIGNMENT_SUB_TEXT": "この受信トレイに追加された担当者への新しい会話の自動割り当てを有効または無効にします。",
+      "HMAC_VERIFICATION": "User Identity Validation",
+      "HMAC_DESCRIPTION": "Inorder validate the users identity, the SDK allows you to pass an `identity_hash` for each user. You can generate HMAC using 'sha256' with the key shown here."
+    },
+    "FACEBOOK_REAUTHORIZE": {
+      "TITLE": "再認証",
+      "SUBTITLE": "Facebookの接続が期限切れになりました。サービスを継続するには、Facebookページを再接続してください。",
+      "MESSAGE_SUCCESS": "再接続に成功しました",
+      "MESSAGE_ERROR": "エラーが発生しました。もう一度お試しください。"
+    },
+    "PRE_CHAT_FORM": {
+      "DESCRIPTION": "Pre chat forms enable you to capture user information before they start conversation with you.",
+      "ENABLE": {
+        "LABEL": "Enable pre chat form",
+        "OPTIONS": {
+          "ENABLED": "Yes",
+          "DISABLED": "No"
+        }
+      },
+      "PRE_CHAT_MESSAGE": {
+        "LABEL": "Pre Chat Message",
+        "PLACEHOLDER": "This message would be visible to the users along with the form"
+      },
+      "REQUIRE_EMAIL": {
+        "LABEL": "Visitors should provide their name and email address before starting the chat"
+      }
+    },
+    "BUSINESS_HOURS": {
+      "TITLE": "Set your availability",
+      "SUBTITLE": "Set your availability on your livechat widget",
+      "WEEKLY_TITLE": "Set your weekly hours",
+      "TIMEZONE_LABEL": "Select timezone",
+      "UPDATE": "Update business hours settings",
+      "TOGGLE_AVAILABILITY": "Enable business availability for this inbox",
+      "UNAVAILABLE_MESSAGE_LABEL": "Unavailable message for vistors",
+      "UNAVAILABLE_MESSAGE_DEFAULT": "We are unavailable at the moment. Leave a message we will respond once we are back.",
+      "TOGGLE_HELP": "Enabling business availability will show the available hours on live chat widget even if all the agents are offline. Outside available hours vistors can be warned with a message and a pre-chat form.",
+      "DAY": {
+        "ENABLE": "Enable availability for this day",
+        "UNAVAILABLE": "Unavailable",
+        "HOURS": "hours",
+        "VALIDATION_ERROR": "Starting time should be before closing time.",
+        "CHOOSE": "Choose"
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "GENERAL_SETTINGS": {
+    "TITLE": "帐户设置",
+    "SUBMIT": "更新设置",
+    "BACK": "后退",
+    "UPDATE": {
+      "ERROR": "无法更新设置，请重试！",
+      "SUCCESS": "已成功更新账户设置"
+    },
+    "FORM": {
+      "ERROR": "请修正表单错误",
+      "GENERAL_SECTION": {
+        "TITLE": "常规设置",
+        "NOTE": ""
+      },
+      "NAME": {
+        "LABEL": "帐户名称",
+        "PLACEHOLDER": "您的帐户名称",
+        "ERROR": "请输入有效的帐户名称"
+      },
+      "LANGUAGE": {
+        "LABEL": "网站语言(Beta)",
+        "PLACEHOLDER": "您的帐户名称",
+        "ERROR": ""
+      },
+      "DOMAIN": {
+        "LABEL": "接收电子邮件的域名",
+        "PLACEHOLDER": "接收邮件的域名",
+        "ERROR": ""
+      },
+      "SUPPORT_EMAIL": {
+        "LABEL": "支持邮件",
+        "PLACEHOLDER": "您公司的支持邮件",
+        "ERROR": ""
+      },
+      "AUTO_RESOLVE_DURATION": {
+        "LABEL": "非活跃工单的自动结单的天数",
+        "PLACEHOLDER": "30",
+        "ERROR": "请输入一个合法的自动结单日期(最少1天)"
+      },
+      "FEATURES": {
+        "INBOUND_EMAIL_ENABLED": "您的帐户启用了与电子邮件的对话连续性。",
+        "CUSTOM_EMAIL_DOMAIN_ENABLED": "您现在可以在您的自定义域名的电子邮件中接收消息。"
+      }
+    },
+    "UPDATE_CHATWOOT": "Chatwoot 有可用更新%{latestChatwootVersion}，请更新您的应用。"
+  },
+  "FORMS": {
+    "MULTISELECT": {
+      "ENTER_TO_SELECT": "按回车键选择",
+      "ENTER_TO_REMOVE": "按回车键删除",
+      "SELECT_ONE": "请选择一个"
+    }
+  },
+  "NOTIFICATIONS_PAGE": {
+    "HEADER": "消息通知",
+    "MARK_ALL_DONE": "Mark All Done",
+    "LIST": {
+      "LOADING_MESSAGE": "Loading notifications...",
+      "404": "No Notifications",
+      "TABLE_HEADER": [
+        "姓名：",
+        "电话号码",
+        "会话",
+        "Last Contacted"
+      ]
+    },
+    "TYPE_LABEL": {
+      "conversation_creation": "New conversation",
+      "conversation_assignment": "Conversation Assigned",
+      "assigned_conversation_new_message": "New Message",
+      "conversation_mention": "Mention"
+    }
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "CONTACT_PANEL": {
+    "NOT_AVAILABLE": "不可用",
+    "EMAIL_ADDRESS": "电子邮件地址",
+    "PHONE_NUMBER": "电话号码",
+    "COPY_SUCCESSFUL": "已成功复制到剪贴板",
+    "COMPANY": "公司",
+    "LOCATION": "位置",
+    "CONVERSATION_TITLE": "对话详情",
+    "BROWSER": "浏览器",
+    "OS": "操作系统",
+    "INITIATED_FROM": "启动自：",
+    "INITIATED_AT": "发起于",
+    "IP_ADDRESS": "IP 地址",
+    "NEW_MESSAGE": "New message",
+    "CONVERSATIONS": {
+      "NO_RECORDS_FOUND": "此联系人没有关联到以前的会话。",
+      "TITLE": "上一次对话"
+    },
+    "LABELS": {
+      "TITLE": "对话标记",
+      "MODAL": {
+        "TITLE": "标记为",
+        "ACTIVE_LABELS": "添加到对话的标签",
+        "INACTIVE_LABELS": "账户中可用的标签",
+        "REMOVE": "点击 X 图标删除标签",
+        "ADD": "点击 + 图标添加标签",
+        "ADD_BUTTON": "Add Labels",
+        "UPDATE_BUTTON": "更新标签",
+        "UPDATE_ERROR": "无法更新标签，请重试。"
+      },
+      "NO_LABELS_TO_ADD": "帐户中没有更多标签。",
+      "NO_AVAILABLE_LABELS": "没有标签添加到此对话。",
+      "LABEL_SELECT": {
+        "TITLE": "Add Labels",
+        "PLACEHOLDER": "Search labels",
+        "NO_RESULT": "No labels found"
+      }
+    },
+    "MUTE_CONTACT": "Mute Conversation",
+    "UNMUTE_CONTACT": "Unmute Conversation",
+    "MUTED_SUCCESS": "This conversation is muted for 6 hours",
+    "UNMUTED_SUCCESS": "This conversation is unmuted",
+    "SEND_TRANSCRIPT": "Send Transcript",
+    "EDIT_LABEL": "编辑"
+  },
+  "EDIT_CONTACT": {
+    "BUTTON_LABEL": "编辑联系人",
+    "TITLE": "Edit contact",
+    "DESC": "Edit contact details"
+  },
+  "CREATE_CONTACT": {
+    "BUTTON_LABEL": "New Contact",
+    "TITLE": "Create new contact",
+    "DESC": "Add basic information details about the contact."
+  },
+  "CONTACT_FORM": {
+    "FORM": {
+      "SUBMIT": "提交",
+      "CANCEL": "取消",
+      "AVATAR": {
+        "LABEL": "Contact Avatar"
+      },
+      "NAME": {
+        "PLACEHOLDER": "Enter the full name of the contact",
+        "LABEL": "名字"
+      },
+      "BIO": {
+        "PLACEHOLDER": "Enter the bio of the contact",
+        "LABEL": "Bio"
+      },
+      "EMAIL_ADDRESS": {
+        "PLACEHOLDER": "Enter the email address of the contact",
+        "LABEL": "电子邮件地址"
+      },
+      "PHONE_NUMBER": {
+        "PLACEHOLDER": "Enter the phone number of the contact",
+        "LABEL": "电话号码",
+        "HELP": "Phone number should be of E.164 format eg: +1415555555 [+][country code][area code][local phone number]",
+        "ERROR": "Phone number should be either empty or of E.164 format"
+      },
+      "LOCATION": {
+        "PLACEHOLDER": "Enter the location of the contact",
+        "LABEL": "位置"
+      },
+      "COMPANY_NAME": {
+        "PLACEHOLDER": "Enter the company name",
+        "LABEL": "Company Name"
+      },
+      "SOCIAL_PROFILES": {
+        "FACEBOOK": {
+          "PLACEHOLDER": "Enter the Facebook username",
+          "LABEL": "Facebook"
+        },
+        "TWITTER": {
+          "PLACEHOLDER": "输入 Twitter 用户名",
+          "LABEL": "推特"
+        },
+        "LINKEDIN": {
+          "PLACEHOLDER": "Enter the LinkedIn username",
+          "LABEL": "LinkedIn"
+        },
+        "GITHUB": {
+          "PLACEHOLDER": "输入Github用户名",
+          "LABEL": "Github"
+        }
+      }
+    },
+    "SUCCESS_MESSAGE": "Contact saved successfully",
+    "CONTACT_ALREADY_EXIST": "This email address is in use for another contact.",
+    "ERROR_MESSAGE": "出现错误，请重试"
+  },
+  "NEW_CONVERSATION": {
+    "BUTTON_LABEL": "Start conversation",
+    "TITLE": "New conversation",
+    "DESC": "Start a new conversation by sending a new message.",
+    "NO_INBOX": "Couldn't find an inbox to initiate a new conversation with this contact.",
+    "FORM": {
+      "TO": {
+        "LABEL": "To"
+      },
+      "INBOX": {
+        "LABEL": "Inbox",
+        "ERROR": "Select an inbox"
+      },
+      "MESSAGE": {
+        "LABEL": "Message",
+        "PLACEHOLDER": "Write your message here",
+        "ERROR": "Message can't be empty"
+      },
+      "SUBMIT": "Send message",
+      "CANCEL": "取消",
+      "SUCCESS_MESSAGE": "Message sent!",
+      "ERROR_MESSAGE": "Couldn't send! try again"
+    }
+  },
+  "CONTACTS_PAGE": {
+    "HEADER": "Contacts",
+    "SEARCH_BUTTON": "搜索",
+    "SEARCH_INPUT_PLACEHOLDER": "搜索联系人",
+    "LIST": {
+      "LOADING_MESSAGE": "正在加载联系人列表...",
+      "404": "没有搜索到联系人🔍",
+      "TABLE_HEADER": {
+        "NAME": "姓名：",
+        "PHONE_NUMBER": "电话号码",
+        "CONVERSATIONS": "会话",
+        "LAST_ACTIVITY": "Last Activity",
+        "COUNTRY": "Country",
+        "CITY": "City",
+        "SOCIAL_PROFILES": "Social Profiles",
+        "COMPANY": "公司",
+        "EMAIL_ADDRESS": "电子邮件地址"
+      },
+      "VIEW_DETAILS": "View details"
+    }
+  },
+  "NOTES": {
+    "HEADER": {
+      "TITLE": "Notes"
+    },
+    "ADD": {
+      "BUTTON": "Add",
+      "PLACEHOLDER": "Add a note",
+      "TITLE": "Shift + Enter to create a note"
+    },
+    "FOOTER": {
+      "BUTTON": "View all notes"
+    }
+  },
+  "CUSTOM_ATTRIBUTES": {
+    "TITLE": "自定义属性",
+    "BUTTON": "Add custom attribute",
+    "ADD": {
+      "TITLE": "Create custom attribute",
+      "DESC": "Add custom information to this contact."
+    },
+    "FORM": {
+      "CREATE": "Add attribute",
+      "CANCEL": "取消",
+      "NAME": {
+        "LABEL": "Custom attribute name",
+        "PLACEHOLDER": "Eg: shopify id",
+        "ERROR": "Invalid custom attribute name"
+      },
+      "VALUE": {
+        "LABEL": "Attribute value",
+        "PLACEHOLDER": "Eg: 11901 "
+      }
+    }
+  }
+}

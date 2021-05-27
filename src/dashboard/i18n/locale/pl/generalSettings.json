@@ -1,0 +1,75 @@
+{
+  "GENERAL_SETTINGS": {
+    "TITLE": "Ustawienia konta",
+    "SUBMIT": "Aktualizuj ustawienia",
+    "BACK": "Powrót",
+    "UPDATE": {
+      "ERROR": "Nie można zaktualizować ustawień, spróbuj ponownie!",
+      "SUCCESS": "Pomyślnie zaktualizowano ustawienia konta"
+    },
+    "FORM": {
+      "ERROR": "Proszę naprawić błędy formularza",
+      "GENERAL_SECTION": {
+        "TITLE": "Ustawienia ogólne",
+        "NOTE": ""
+      },
+      "NAME": {
+        "LABEL": "Nazwa konta",
+        "PLACEHOLDER": "Nazwa konta",
+        "ERROR": "Wprowadź prawidłową nazwę konta"
+      },
+      "LANGUAGE": {
+        "LABEL": "Język witryny (beta)",
+        "PLACEHOLDER": "Nazwa konta",
+        "ERROR": ""
+      },
+      "DOMAIN": {
+        "LABEL": "Domena poczty przychodzącej",
+        "PLACEHOLDER": "Domena, w której otrzymasz wiadomości e-mail",
+        "ERROR": ""
+      },
+      "SUPPORT_EMAIL": {
+        "LABEL": "E-mail pomocy technicznej",
+        "PLACEHOLDER": "E-mail Twojej firmy do obsługi klienta",
+        "ERROR": ""
+      },
+      "AUTO_RESOLVE_DURATION": {
+        "LABEL": "Liczba dni, po upływie których, zgłoszenie powinno zostać automatycznie rozwiązane z powodu braku aktywności",
+        "PLACEHOLDER": "30",
+        "ERROR": "Wprowadź prawidłowy czas automatycznego rozwiązywania (minimum 1 dzień)"
+      },
+      "FEATURES": {
+        "INBOUND_EMAIL_ENABLED": "Kontynuacja rozmów za pomocą wiadomości e-mail jest włączona dla Twojego konta.",
+        "CUSTOM_EMAIL_DOMAIN_ENABLED": "Możesz teraz otrzymywać e-maile w swojej niestandardowej domenie."
+      }
+    },
+    "UPDATE_CHATWOOT": "Aktualizacja %{latestChatwootVersion} dla Chatwoot jest dostępna. Proszę zaktualizować swoją instancję."
+  },
+  "FORMS": {
+    "MULTISELECT": {
+      "ENTER_TO_SELECT": "Naciśnij Enter, aby wybrać",
+      "ENTER_TO_REMOVE": "Naciśnij Enter, aby usunąć",
+      "SELECT_ONE": "Wybierz jeden"
+    }
+  },
+  "NOTIFICATIONS_PAGE": {
+    "HEADER": "Powiadomienia",
+    "MARK_ALL_DONE": "Zaznacz wszystko jako zakończone",
+    "LIST": {
+      "LOADING_MESSAGE": "Wczytywanie powiadomień...",
+      "404": "Brak powiadomień",
+      "TABLE_HEADER": [
+        "Nazwisko",
+        "Numer telefonu",
+        "Rozmowy",
+        "Ostatnio nawiązano kontakt"
+      ]
+    },
+    "TYPE_LABEL": {
+      "conversation_creation": "Nowa rozmowa",
+      "conversation_assignment": "Rozmowa przypisana",
+      "assigned_conversation_new_message": "Nowa wiadomość",
+      "conversation_mention": "Wzmianka"
+    }
+  }
+}

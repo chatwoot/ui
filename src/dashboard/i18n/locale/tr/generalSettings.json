@@ -1,0 +1,75 @@
+{
+  "GENERAL_SETTINGS": {
+    "TITLE": "Hesap ayarları",
+    "SUBMIT": "Ayarları güncelle",
+    "BACK": "Geri",
+    "UPDATE": {
+      "ERROR": "Ayarlar güncellenemedi, tekrar deneyin!",
+      "SUCCESS": "Hesap ayarları başarıyla güncellendi"
+    },
+    "FORM": {
+      "ERROR": "Lütfen form hatalarını düzeltin",
+      "GENERAL_SECTION": {
+        "TITLE": "Genel Ayarlar",
+        "NOTE": ""
+      },
+      "NAME": {
+        "LABEL": "Hesap adı",
+        "PLACEHOLDER": "Hesap adınız",
+        "ERROR": "Lütfen geçerli bir hesap adı girin"
+      },
+      "LANGUAGE": {
+        "LABEL": "Site dili (Beta)",
+        "PLACEHOLDER": "Hesap adınız",
+        "ERROR": ""
+      },
+      "DOMAIN": {
+        "LABEL": "Gelen E-posta Alanı",
+        "PLACEHOLDER": "E-postaları alacağınız alan",
+        "ERROR": ""
+      },
+      "SUPPORT_EMAIL": {
+        "LABEL": "Destek E-postası",
+        "PLACEHOLDER": "Şirketinizin destek e-postası",
+        "ERROR": ""
+      },
+      "AUTO_RESOLVE_DURATION": {
+        "LABEL": "Etkinlik yoksa, bir biletin otomatik olarak çözülmesi gereken gün sayısı",
+        "PLACEHOLDER": "30",
+        "ERROR": "Lütfen geçerli bir otomatik çözüm süresi girin (minimum 1 gün)"
+      },
+      "FEATURES": {
+        "INBOUND_EMAIL_ENABLED": "Hesabınız için e-postalarla görüşme sürekliliği etkinleştirildi.",
+        "CUSTOM_EMAIL_DOMAIN_ENABLED": "Artık özel alan adınızda e-postalar alabilirsiniz."
+      }
+    },
+    "UPDATE_CHATWOOT": "An update %{latestChatwootVersion} for Chatwoot is available. Please update your instance."
+  },
+  "FORMS": {
+    "MULTISELECT": {
+      "ENTER_TO_SELECT": "Seçmek için enter tuşuna basın",
+      "ENTER_TO_REMOVE": "Kaldırmak için enter tuşuna basın",
+      "SELECT_ONE": "Birini seç"
+    }
+  },
+  "NOTIFICATIONS_PAGE": {
+    "HEADER": "Bildirimler",
+    "MARK_ALL_DONE": "Mark All Done",
+    "LIST": {
+      "LOADING_MESSAGE": "Bildirimler yükleniyor...",
+      "404": "Bildirim yok",
+      "TABLE_HEADER": [
+        "İsim",
+        "Telefon numarası",
+        "Konuşmalar",
+        "Son Görüşülen"
+      ]
+    },
+    "TYPE_LABEL": {
+      "conversation_creation": "Yeni görüşme",
+      "conversation_assignment": "Atanan görüşme",
+      "assigned_conversation_new_message": "Yeni Mesaj",
+      "conversation_mention": "Mention"
+    }
+  }
+}

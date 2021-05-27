@@ -1,0 +1,154 @@
+{
+  "PROFILE_SETTINGS": {
+    "LINK": "Configuració del Perfil",
+    "TITLE": "Configuració del Perfil",
+    "BTN_TEXT": "Actualització del Perfil",
+    "UPDATE_SUCCESS": "Your profile has been updated successfully",
+    "PASSWORD_UPDATE_SUCCESS": "La teva contrasenya ha estat canviada correctament",
+    "AFTER_EMAIL_CHANGED": "El vostre perfil s'ha actualitzat correctament. Torneu a iniciar la sessió ja que les vostres credencials d'inici de sessió han canviat",
+    "FORM": {
+      "AVATAR": "Imatge del Perfil",
+      "ERROR": "Corregiu els errors del formulari",
+      "REMOVE_IMAGE": "Suprimeix",
+      "UPLOAD_IMAGE": "Puja imatge",
+      "UPDATE_IMAGE": "Puja imatge",
+      "PROFILE_SECTION": {
+        "TITLE": "Perfil",
+        "NOTE": "La vostra adreça de correu electrònic és la vostra identitat i s'utilitza per iniciar la sessió."
+      },
+      "PASSWORD_SECTION": {
+        "TITLE": "Contrasenya",
+        "NOTE": "L'actualització de la contrasenya restableix els vostres inicis de sessió en múltiples dispositius.",
+        "BTN_TEXT": "Change password"
+      },
+      "ACCESS_TOKEN": {
+        "TITLE": "Token d'accés",
+        "NOTE": "Aquest token es pot utilitzar si creeu una integració basada en l'API"
+      },
+      "AUDIO_NOTIFICATIONS_SECTION": {
+        "TITLE": "Audio Notifications",
+        "NOTE": "Enable audio notifications in dashboard for new messages and conversations.",
+        "ENABLE_AUDIO": "Play audio notification when a new conversation is created or new messages arrives"
+      },
+      "EMAIL_NOTIFICATIONS_SECTION": {
+        "TITLE": "Notificacions per correu electrònic",
+        "NOTE": "Actualitza aqui les preferències de les notificacions per correu electrònic",
+        "CONVERSATION_ASSIGNMENT": "Envieu notificacions per correu electrònic quan se m’assigni una conversa",
+        "CONVERSATION_CREATION": "Envieu notificacions per correu electrònic quan es crea una nova conversa",
+        "CONVERSATION_MENTION": "Enviar notificacions per mail quan siguis esmentat en una conversació",
+        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Envia notificacions per correu electrònic quan es creï un missatge nou en una conversa assignada"
+      },
+      "API": {
+        "UPDATE_SUCCESS": "Les teves preferències de notificació s’han actualitzat correctament",
+        "UPDATE_ERROR": "Hi ha un error en actualitzar les preferències; tornau-ho a provar"
+      },
+      "PUSH_NOTIFICATIONS_SECTION": {
+        "TITLE": "Notificacions automàtiques",
+        "NOTE": "Actualitzeu les preferències de notificació aquí",
+        "CONVERSATION_ASSIGNMENT": "Envia notificacions automàtiques quan se m'assigna una conversa",
+        "CONVERSATION_CREATION": "Envia notificacions automàtiques quan es creï una conversa nova",
+        "CONVERSATION_MENTION": "Enviar notificacions push quan siguis esmentat en una conversació",
+        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Envia notificacions automàtiques quan es creï un missatge nou en una conversa assignada",
+        "HAS_ENABLED_PUSH": "Heu activat les notificacions per a aquest navegador.",
+        "REQUEST_PUSH": "Activa les notificacions"
+      },
+      "PROFILE_IMAGE": {
+        "LABEL": "Imatge del Perfil"
+      },
+      "NAME": {
+        "LABEL": "El teu nom complet",
+        "ERROR": "Introdueix un nom complet vàlid",
+        "PLACEHOLDER": "Introdueix el vostre nom complet"
+      },
+      "DISPLAY_NAME": {
+        "LABEL": "Nom visible",
+        "ERROR": "Introduïu un nom de visualització vàlid",
+        "PLACEHOLDER": "Introdueix un nom visible, que es mostrarà a les converses"
+      },
+      "AVAILABILITY": {
+        "LABEL": "Disponibilitat",
+        "STATUSES_LIST": [
+          "En línia",
+          "Ocupat",
+          "Fora de línia"
+        ]
+      },
+      "EMAIL": {
+        "LABEL": "La teva adreça de correu electrònic",
+        "ERROR": "Introduïu una adreça de correu electrònic vàlida",
+        "PLACEHOLDER": "Introduïu la vostra adreça de correu electrònic, que es mostrarà a les converses"
+      },
+      "PASSWORD": {
+        "LABEL": "Contrasenya",
+        "ERROR": "Introduïu una contrasenya d'una longitud de 6 o més",
+        "PLACEHOLDER": "Introduïu una nova contrasenya"
+      },
+      "PASSWORD_CONFIRMATION": {
+        "LABEL": "Confirmació de la nova contrasenya",
+        "ERROR": "Confirmeu que les contrasenyes coincideixin",
+        "PLACEHOLDER": "Torneu a introduir la vostra contrasenya"
+      }
+    }
+  },
+  "SIDEBAR_ITEMS": {
+    "CHANGE_AVAILABILITY_STATUS": "Canvia",
+    "CHANGE_ACCOUNTS": "Canvia de compte",
+    "SELECTOR_SUBTITLE": "Selecciona un compte de la llista següent",
+    "PROFILE_SETTINGS": "Configuració del Perfil",
+    "LOGOUT": "Sortir"
+  },
+  "APP_GLOBAL": {
+    "TRIAL_MESSAGE": "dies de prova restants.",
+    "TRAIL_BUTTON": "Compra ara"
+  },
+  "COMPONENTS": {
+    "CODE": {
+      "BUTTON_TEXT": "Copia",
+      "COPY_SUCCESSFUL": "El codi s'ha copiat al porta-retalls amb èxit"
+    },
+    "FILE_BUBBLE": {
+      "DOWNLOAD": "Descarrega",
+      "UPLOADING": "S'està carregant..."
+    },
+    "FORM_BUBBLE": {
+      "SUBMIT": "Envia"
+    }
+  },
+  "CONFIRM_EMAIL": "S'està verificant...",
+  "SETTINGS": {
+    "INBOXES": {
+      "NEW_INBOX": "Afegeix Safata d'entrada"
+    }
+  },
+  "SIDEBAR": {
+    "CONVERSATIONS": "Converses",
+    "REPORTS": "Informes",
+    "CONTACTS": "Contactes",
+    "SETTINGS": "Configuracions",
+    "HOME": "Inici",
+    "AGENTS": "Agents",
+    "INBOXES": "Safates d'entrada",
+    "NOTIFICATIONS": "Notificacions",
+    "CANNED_RESPONSES": "Respostes predeterminades",
+    "INTEGRATIONS": "Integracions",
+    "ACCOUNT_SETTINGS": "Configuració del compte",
+    "LABELS": "Etiquetes",
+    "TEAMS": "Equips"
+  },
+  "CREATE_ACCOUNT": {
+    "NEW_ACCOUNT": "Compte nou",
+    "SELECTOR_SUBTITLE": "Crear un compte nou",
+    "API": {
+      "SUCCESS_MESSAGE": "El compte s'ha creat correctament",
+      "EXIST_MESSAGE": "El compte ja existeix",
+      "ERROR_MESSAGE": "No s'ha pogut connectar amb el servidor Woot. Torna-ho a provar més endavant"
+    },
+    "FORM": {
+      "NAME": {
+        "LABEL": "Nom del compte",
+        "PLACEHOLDER": "Wayne Enterprises"
+      },
+      "SUBMIT": "Envia"
+    }
+  }
+}

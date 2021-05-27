@@ -1,0 +1,75 @@
+{
+  "GENERAL_SETTINGS": {
+    "TITLE": "Cài đặt tài khoản",
+    "SUBMIT": "Cập nhật cài đặt",
+    "BACK": "Trờ về",
+    "UPDATE": {
+      "ERROR": "Không thể cập nhật cài đặt, hãy thử lại!",
+      "SUCCESS": "Đã cập nhật thành công cài đặt tài khoản"
+    },
+    "FORM": {
+      "ERROR": "Vui lòng sửa lỗi biểu mẫu",
+      "GENERAL_SECTION": {
+        "TITLE": "Cài đặt chung",
+        "NOTE": ""
+      },
+      "NAME": {
+        "LABEL": "Tên tài khoản",
+        "PLACEHOLDER": "Tên tài khoản của bạn",
+        "ERROR": "Vui lòng nhập tên tài khoản hợp lệ"
+      },
+      "LANGUAGE": {
+        "LABEL": "Ngôn ngữ trang web (Beta)",
+        "PLACEHOLDER": "Tên tài khoản của bạn",
+        "ERROR": ""
+      },
+      "DOMAIN": {
+        "LABEL": "Tên miền email đến",
+        "PLACEHOLDER": "Miền mà bạn sẽ nhận được email",
+        "ERROR": ""
+      },
+      "SUPPORT_EMAIL": {
+        "LABEL": "Email hỗ trợ",
+        "PLACEHOLDER": "Email hỗ trợ của công ty bạn",
+        "ERROR": ""
+      },
+      "AUTO_RESOLVE_DURATION": {
+        "LABEL": "Number of days after a ticket should auto resolve if there is no activity",
+        "PLACEHOLDER": "30",
+        "ERROR": "Please enter a valid auto resolve duration (minimum 1 day)"
+      },
+      "FEATURES": {
+        "INBOUND_EMAIL_ENABLED": "Tính liên tục của cuộc trò chuyện với email được kích hoạt cho tài khoản của bạn.",
+        "CUSTOM_EMAIL_DOMAIN_ENABLED": "Bạn có thể nhận email trong miền tùy chỉnh của mình ngay bây giờ."
+      }
+    },
+    "UPDATE_CHATWOOT": "An update %{latestChatwootVersion} for Chatwoot is available. Please update your instance."
+  },
+  "FORMS": {
+    "MULTISELECT": {
+      "ENTER_TO_SELECT": "Press enter to select",
+      "ENTER_TO_REMOVE": "Press enter to remove",
+      "SELECT_ONE": "Select one"
+    }
+  },
+  "NOTIFICATIONS_PAGE": {
+    "HEADER": "Notifications",
+    "MARK_ALL_DONE": "Mark All Done",
+    "LIST": {
+      "LOADING_MESSAGE": "Loading notifications...",
+      "404": "No Notifications",
+      "TABLE_HEADER": [
+        "Tên",
+        "Số điện thoại",
+        "Các cuộc hội thoại",
+        "Last Contacted"
+      ]
+    },
+    "TYPE_LABEL": {
+      "conversation_creation": "New conversation",
+      "conversation_assignment": "Conversation Assigned",
+      "assigned_conversation_new_message": "New Message",
+      "conversation_mention": "Mention"
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "PROFILE_SETTINGS": {
+    "LINK": "Paramètres de profil",
+    "TITLE": "Paramètres de profil",
+    "BTN_TEXT": "Mettre à jour le profil",
+    "UPDATE_SUCCESS": "Votre profil a été mis à jour avec succès",
+    "PASSWORD_UPDATE_SUCCESS": "Votre mot de passe a été modifié avec succès",
+    "AFTER_EMAIL_CHANGED": "Votre profil a été mis à jour avec succès, veuillez vous reconnecter car vos identifiants de connexion ont été modifiés",
+    "FORM": {
+      "AVATAR": "Image de profil",
+      "ERROR": "Veuillez corriger les erreurs du formulaire",
+      "REMOVE_IMAGE": "Supprimer",
+      "UPLOAD_IMAGE": "Téléverser une image",
+      "UPDATE_IMAGE": "Mettre à jour l'image",
+      "PROFILE_SECTION": {
+        "TITLE": "Profil",
+        "NOTE": "Votre adresse de courriel est votre identité et est utilisée pour vous connecter."
+      },
+      "PASSWORD_SECTION": {
+        "TITLE": "Mot de passe",
+        "NOTE": "Mettre à jour votre mot de passe réinitialisera vos connexions sur plusieurs appareils.",
+        "BTN_TEXT": "Modifier le mot de passe"
+      },
+      "ACCESS_TOKEN": {
+        "TITLE": "Jeton d'accès",
+        "NOTE": "Ce jeton peut être utilisé si vous construisez une intégration basée sur l'API"
+      },
+      "AUDIO_NOTIFICATIONS_SECTION": {
+        "TITLE": "Notifications audio",
+        "NOTE": "Activer les notifications audio dans le tableau de bord pour les nouveaux messages et conversations.",
+        "ENABLE_AUDIO": "Jouer une notification audio lorsqu'une nouvelle conversation est créée ou que de nouveaux messages arrivent"
+      },
+      "EMAIL_NOTIFICATIONS_SECTION": {
+        "TITLE": "Notifications par courriel",
+        "NOTE": "Mettez à jour vos préférences de notification par courriel ici",
+        "CONVERSATION_ASSIGNMENT": "Envoyer des notifications par courriel lorsqu'une conversation m'est assignée",
+        "CONVERSATION_CREATION": "Envoyer des notifications par courriel quand une nouvelle conversation est créée",
+        "CONVERSATION_MENTION": "Envoyer des notifications par courriel lorsque vous êtes mentionné dans une conversation",
+        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Envoyer des notifications par courriel lorsqu'un nouveau message est créé dans une conversation assignée"
+      },
+      "API": {
+        "UPDATE_SUCCESS": "Vos préférences de notifications ont été mises à jour avec succès",
+        "UPDATE_ERROR": "Une erreur est survenue lors de la mise à jour des préférences, veuillez réessayer"
+      },
+      "PUSH_NOTIFICATIONS_SECTION": {
+        "TITLE": "Notifications push",
+        "NOTE": "Mettez à jour vos préférences de notification push ici",
+        "CONVERSATION_ASSIGNMENT": "Envoyer des notifications push lorsqu'une conversation m'est assignée",
+        "CONVERSATION_CREATION": "Envoyer des notifications push quand une nouvelle conversation est créée",
+        "CONVERSATION_MENTION": "Envoyer des notifications push lorsque vous êtes mentionné dans une conversation",
+        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Envoyer des notifications push lorsqu'un nouveau message est créé dans une conversation assignée",
+        "HAS_ENABLED_PUSH": "Vous avez activé les notifications pour ce navigateur.",
+        "REQUEST_PUSH": "Activer les notifications push"
+      },
+      "PROFILE_IMAGE": {
+        "LABEL": "Image de profil"
+      },
+      "NAME": {
+        "LABEL": "Votre nom complet",
+        "ERROR": "Veuillez entrer un nom complet valide",
+        "PLACEHOLDER": "Veuillez entrer votre nom complet"
+      },
+      "DISPLAY_NAME": {
+        "LABEL": "Nom affiché",
+        "ERROR": "Veuillez entrer un nom d’affichage valide",
+        "PLACEHOLDER": "Veuillez entrer un nom d’affichage, il s’affichera dans les conversations"
+      },
+      "AVAILABILITY": {
+        "LABEL": "Disponibilité",
+        "STATUSES_LIST": [
+          "En ligne",
+          "Occupé(e)",
+          "Hors-ligne"
+        ]
+      },
+      "EMAIL": {
+        "LABEL": "Votre adresse de courriel",
+        "ERROR": "Veuillez saisir une adresse de courriel valide",
+        "PLACEHOLDER": "Veuillez entrer votre adresse de courriel, cela sera affiché dans les conversations"
+      },
+      "PASSWORD": {
+        "LABEL": "Mot de passe",
+        "ERROR": "Veuillez entrer un mot de passe de 6 caractères ou plus",
+        "PLACEHOLDER": "Veuillez entrer un nouveau mot de passe"
+      },
+      "PASSWORD_CONFIRMATION": {
+        "LABEL": "Confirmer le nouveau mot de passe",
+        "ERROR": "La confirmation du mot de passe doit correspondre au mot de passe",
+        "PLACEHOLDER": "Veuillez saisir à nouveau votre mot de passe"
+      }
+    }
+  },
+  "SIDEBAR_ITEMS": {
+    "CHANGE_AVAILABILITY_STATUS": "Modifier",
+    "CHANGE_ACCOUNTS": "Changer de compte",
+    "SELECTOR_SUBTITLE": "Sélectionnez un compte dans la liste suivante",
+    "PROFILE_SETTINGS": "Paramètres de profil",
+    "LOGOUT": "Se déconnecter"
+  },
+  "APP_GLOBAL": {
+    "TRIAL_MESSAGE": "jours d'essai restants.",
+    "TRAIL_BUTTON": "Acheter Maintenant"
+  },
+  "COMPONENTS": {
+    "CODE": {
+      "BUTTON_TEXT": "Copier",
+      "COPY_SUCCESSFUL": "Code copié dans le presse-papier avec succès"
+    },
+    "FILE_BUBBLE": {
+      "DOWNLOAD": "Télécharger",
+      "UPLOADING": "Téléversement..."
+    },
+    "FORM_BUBBLE": {
+      "SUBMIT": "Envoyer"
+    }
+  },
+  "CONFIRM_EMAIL": "Vérification...",
+  "SETTINGS": {
+    "INBOXES": {
+      "NEW_INBOX": "Ajouter une boîte de réception"
+    }
+  },
+  "SIDEBAR": {
+    "CONVERSATIONS": "Conversations",
+    "REPORTS": "Rapports",
+    "CONTACTS": "Contacts",
+    "SETTINGS": "Paramètres",
+    "HOME": "Accueil",
+    "AGENTS": "Agents",
+    "INBOXES": "Boîtes de réception",
+    "NOTIFICATIONS": "Notifications",
+    "CANNED_RESPONSES": "Réponses standardisées",
+    "INTEGRATIONS": "Intégrations",
+    "ACCOUNT_SETTINGS": "Paramètres du compte",
+    "LABELS": "Étiquettes",
+    "TEAMS": "Équipes"
+  },
+  "CREATE_ACCOUNT": {
+    "NEW_ACCOUNT": "Nouveau compte",
+    "SELECTOR_SUBTITLE": "Créer un nouveau compte",
+    "API": {
+      "SUCCESS_MESSAGE": "Compte créé avec succès",
+      "EXIST_MESSAGE": "Ce compte existe déjà",
+      "ERROR_MESSAGE": "Impossible de se connecter au serveur Woot, veuillez réessayer plus tard"
+    },
+    "FORM": {
+      "NAME": {
+        "LABEL": "Nom du compte",
+        "PLACEHOLDER": "Entreprises Wayne"
+      },
+      "SUBMIT": "Envoyer"
+    }
+  }
+}

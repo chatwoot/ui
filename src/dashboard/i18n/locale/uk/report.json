@@ -1,0 +1,56 @@
+{
+  "REPORT": {
+    "HEADER": "Звіти",
+    "LOADING_CHART": "Завантаження даних діаграми...",
+    "NO_ENOUGH_DATA": "Ми не отримали достатньо даних для генерації звіту. Будь ласка, спробуйте ще раз пізніше.",
+    "DOWNLOAD_AGENT_REPORTS": "Download agent reports",
+    "METRICS": {
+      "CONVERSATIONS": {
+        "NAME": "Бесіди",
+        "DESC": "(Загалом)"
+      },
+      "INCOMING_MESSAGES": {
+        "NAME": "Вхідні повідомлення",
+        "DESC": "(Загалом)"
+      },
+      "OUTGOING_MESSAGES": {
+        "NAME": "Вихідні повідомлення",
+        "DESC": "(Загалом)"
+      },
+      "FIRST_RESPONSE_TIME": {
+        "NAME": "Час першої відповіді",
+        "DESC": "( Середнє )"
+      },
+      "RESOLUTION_TIME": {
+        "NAME": "Час до вирішення",
+        "DESC": "( Середнє )"
+      },
+      "RESOLUTION_COUNT": {
+        "NAME": "Кількість вирішень",
+        "DESC": "(Загалом)"
+      }
+    },
+    "DATE_RANGE": [
+      {
+        "id": 0,
+        "name": "Останні 7 днів"
+      },
+      {
+        "id": 1,
+        "name": "Останні 30 днів"
+      },
+      {
+        "id": 2,
+        "name": "Last 3 months"
+      },
+      {
+        "id": 3,
+        "name": "Last 6 months"
+      },
+      {
+        "id": 4,
+        "name": "Last year"
+      }
+    ]
+  }
+}

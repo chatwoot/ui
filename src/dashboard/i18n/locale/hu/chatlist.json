@@ -1,0 +1,86 @@
+{
+  "CHAT_LIST": {
+    "LOADING": "Beszélgetések betöltése",
+    "LOAD_MORE_CONVERSATIONS": "További beszélgetések betöltése",
+    "EOF": "Minden beszélgetés betöltve 🎉",
+    "LIST": {
+      "404": "Nincs aktív üzenetváltás ebben a csoportban."
+    },
+    "TAB_HEADING": "Beszélgetések",
+    "SEARCH": {
+      "INPUT": "Keresés: emberek, beszélgetése, mentett válaszok .."
+    },
+    "STATUS_TABS": [
+      {
+        "NAME": "Megnyitás",
+        "KEY": "openCount"
+      },
+      {
+        "NAME": "Megoldva",
+        "KEY": "allConvCount"
+      }
+    ],
+    "ASSIGNEE_TYPE_TABS": [
+      {
+        "NAME": "Enyém",
+        "KEY": "me",
+        "COUNT_KEY": "mineCount"
+      },
+      {
+        "NAME": "Gazdátlan",
+        "KEY": "unassigned",
+        "COUNT_KEY": "unAssignedCount"
+      },
+      {
+        "NAME": "Mind",
+        "KEY": "all",
+        "COUNT_KEY": "allCount"
+      }
+    ],
+    "CHAT_STATUS_ITEMS": [
+      {
+        "TEXT": "Megnyitás",
+        "VALUE": "open"
+      },
+      {
+        "TEXT": "Megoldva",
+        "VALUE": "resolved"
+      },
+      {
+        "TEXT": "Bot",
+        "VALUE": "bot"
+      }
+    ],
+    "ATTACHMENTS": {
+      "image": {
+        "ICON": "ion-image",
+        "CONTENT": "Képüzenet"
+      },
+      "audio": {
+        "ICON": "ion-volume-high",
+        "CONTENT": "Hangüzenet"
+      },
+      "video": {
+        "ICON": "ion-ios-videocam",
+        "CONTENT": "Videoüzenet"
+      },
+      "file": {
+        "ICON": "ion-document",
+        "CONTENT": "Csatolt file"
+      },
+      "location": {
+        "ICON": "ion-ios-location",
+        "CONTENT": "Hely"
+      },
+      "fallback": {
+        "ICON": "ion-link",
+        "CONTENT": "megosztott URL-t tartalmaz"
+      }
+    },
+    "RECEIVED_VIA_EMAIL": "E-mailen keresztül érkezett",
+    "VIEW_TWEET_IN_TWITTER": "Üzenet megtekintése Twitteren",
+    "REPLY_TO_TWEET": "Válasz",
+    "NO_MESSAGES": "Nincs üzenet",
+    "NO_CONTENT": "No content available"
+  }
+}

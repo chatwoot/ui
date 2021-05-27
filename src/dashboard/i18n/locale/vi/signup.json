@@ -1,0 +1,38 @@
+{
+  "REGISTER": {
+    "TRY_WOOT": "Đăng kí tài khoản",
+    "TITLE": "Đăng kí",
+    "TERMS_ACCEPT": "Bằng cách đăng ký, bạn đồng ý với <a href=\"https://www.chatwoot.com/terms\">T & C</a> và <a href=\"https://www.chatwoot.com/privacy-policy\">Chính sách bảo mật</a>",
+    "ACCOUNT_NAME": {
+      "LABEL": "Tên tài khoản",
+      "PLACEHOLDER": "Enter an account name. eg: Wayne Enterprises",
+      "ERROR": "Account name is too short"
+    },
+    "FULL_NAME": {
+      "LABEL": "Full name",
+      "PLACEHOLDER": "Enter your full name. eg: Bruce Wayne",
+      "ERROR": "Full name is too short"
+    },
+    "EMAIL": {
+      "LABEL": "Work email",
+      "PLACEHOLDER": "Enter your work email address. eg: bruce@wayne.enterprises",
+      "ERROR": "Email address is invalid"
+    },
+    "PASSWORD": {
+      "LABEL": "Mật khẩu",
+      "PLACEHOLDER": "Mật khẩu",
+      "ERROR": "Mật khẩu quá ngắn"
+    },
+    "CONFIRM_PASSWORD": {
+      "LABEL": "Xác nhận mật khẩu",
+      "PLACEHOLDER": "Xác nhận mật khẩu",
+      "ERROR": "Mật khẩu không khớp"
+    },
+    "API": {
+      "SUCCESS_MESSAGE": "Đăng Kí Thành Công",
+      "ERROR_MESSAGE": "Không thể kết nối với Máy chủ Woot, Vui lòng thử lại sau."
+    },
+    "SUBMIT": "Gửi",
+    "HAVE_AN_ACCOUNT": "Already have an account?"
+  }
+}

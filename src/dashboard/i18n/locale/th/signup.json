@@ -1,0 +1,38 @@
+{
+  "REGISTER": {
+    "TRY_WOOT": "Register an account",
+    "TITLE": "Register",
+    "TERMS_ACCEPT": "By signing up, you agree to our <a href=\"https://www.chatwoot.com/terms\">T & C</a> and <a href=\"https://www.chatwoot.com/privacy-policy\">Privacy policy</a>",
+    "ACCOUNT_NAME": {
+      "LABEL": "ชื่อบัญชี",
+      "PLACEHOLDER": "Enter an account name. eg: Wayne Enterprises",
+      "ERROR": "Account name is too short"
+    },
+    "FULL_NAME": {
+      "LABEL": "Full name",
+      "PLACEHOLDER": "Enter your full name. eg: Bruce Wayne",
+      "ERROR": "Full name is too short"
+    },
+    "EMAIL": {
+      "LABEL": "Work email",
+      "PLACEHOLDER": "Enter your work email address. eg: bruce@wayne.enterprises",
+      "ERROR": "Email address is invalid"
+    },
+    "PASSWORD": {
+      "LABEL": "Password",
+      "PLACEHOLDER": "Password",
+      "ERROR": "หรัสผ่านนั้นสั้นเกินไป"
+    },
+    "CONFIRM_PASSWORD": {
+      "LABEL": "ยืนยันหรัสผ่าน",
+      "PLACEHOLDER": "ยืนยันหรัสผ่าน",
+      "ERROR": "Password doesnot match"
+    },
+    "API": {
+      "SUCCESS_MESSAGE": "Registration Successfull",
+      "ERROR_MESSAGE": "ไม่สามารถเชื่อมต่อเซิฟเวอร์ได้โปรดลองอีกครั้งในภายหลัง"
+    },
+    "SUBMIT": "ส่ง",
+    "HAVE_AN_ACCOUNT": "Already have an account?"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "GENERAL_SETTINGS": {
+    "TITLE": "Kontoeinstellungen",
+    "SUBMIT": "Update Einstellungen",
+    "BACK": "Zurück",
+    "UPDATE": {
+      "ERROR": "Einstellungen konnten nicht aktualisiert werden, versuchen Sie es erneut!",
+      "SUCCESS": "Kontoeinstellungen erfolgreich aktualisiert"
+    },
+    "FORM": {
+      "ERROR": "Bitte korrigieren Sie Formularfehler",
+      "GENERAL_SECTION": {
+        "TITLE": "Allgemeine Einstellungen",
+        "NOTE": ""
+      },
+      "NAME": {
+        "LABEL": "Kontobezeichnung",
+        "PLACEHOLDER": "Ihr Kontoname",
+        "ERROR": "Bitte geben Sie einen gültigen Kontonamen ein"
+      },
+      "LANGUAGE": {
+        "LABEL": "Site-Sprache (Beta)",
+        "PLACEHOLDER": "Ihr Kontoname",
+        "ERROR": ""
+      },
+      "DOMAIN": {
+        "LABEL": "Eingehende E-Mail-Domain",
+        "PLACEHOLDER": "Die Domain, von der E-Mails empfangen werden",
+        "ERROR": ""
+      },
+      "SUPPORT_EMAIL": {
+        "LABEL": "Support-E-Mail",
+        "PLACEHOLDER": "Support E-Mail deines Unternehmens",
+        "ERROR": ""
+      },
+      "AUTO_RESOLVE_DURATION": {
+        "LABEL": "Anzahl der Tage, nach denen ein Ticket automatisch geschlossen wird, wenn keine Aktivität erfolgt",
+        "PLACEHOLDER": "30",
+        "ERROR": "Bitte gebe eine gültige automatische Auflösungsdauer ein (mindestens 1 Tag)"
+      },
+      "FEATURES": {
+        "INBOUND_EMAIL_ENABLED": "Für dein Konto wurde der Empfang von E-Mails aktiviert.",
+        "CUSTOM_EMAIL_DOMAIN_ENABLED": "Du kannst E-Mails jetzt von der festgelegten Domain erhalten."
+      }
+    },
+    "UPDATE_CHATWOOT": "Ein Update %{latestChatwootVersion} für Chatwoot ist verfügbar. Bitte aktualisiere deine Installation."
+  },
+  "FORMS": {
+    "MULTISELECT": {
+      "ENTER_TO_SELECT": "Drücke Enter zum Auswählen",
+      "ENTER_TO_REMOVE": "Drücke Enter zum Entfernen",
+      "SELECT_ONE": "Eine Option wählen"
+    }
+  },
+  "NOTIFICATIONS_PAGE": {
+    "HEADER": "Push-Benachrichtigungen",
+    "MARK_ALL_DONE": "Alle als Erledigt markieren",
+    "LIST": {
+      "LOADING_MESSAGE": "Benachrichtigungen werden geladen...",
+      "404": "Keine Benachrichtigungen",
+      "TABLE_HEADER": [
+        "Name",
+        "Telefonnummer",
+        "Gespräche",
+        "Letzter Kontakt"
+      ]
+    },
+    "TYPE_LABEL": {
+      "conversation_creation": "Neue Unterhaltung",
+      "conversation_assignment": "Unterhaltung zugewiesen",
+      "assigned_conversation_new_message": "Neue Nachricht",
+      "conversation_mention": "Erwähnung"
+    }
+  }
+}

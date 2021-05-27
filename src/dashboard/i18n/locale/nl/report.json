@@ -1,0 +1,56 @@
+{
+  "REPORT": {
+    "HEADER": "Rapporten",
+    "LOADING_CHART": "Kaartgegevens laden...",
+    "NO_ENOUGH_DATA": "We hebben niet genoeg datapunten ontvangen om een rapport te genereren, probeer het later opnieuw.",
+    "DOWNLOAD_AGENT_REPORTS": "Download agent reports",
+    "METRICS": {
+      "CONVERSATIONS": {
+        "NAME": "Gesprekken",
+        "DESC": "( Totaal )"
+      },
+      "INCOMING_MESSAGES": {
+        "NAME": "Inkomende berichten",
+        "DESC": "( Totaal )"
+      },
+      "OUTGOING_MESSAGES": {
+        "NAME": "Uitgaande berichten",
+        "DESC": "( Totaal )"
+      },
+      "FIRST_RESPONSE_TIME": {
+        "NAME": "Eerste reactietijd",
+        "DESC": "(Gem. )"
+      },
+      "RESOLUTION_TIME": {
+        "NAME": "Resolutie Tijd",
+        "DESC": "(Gem. )"
+      },
+      "RESOLUTION_COUNT": {
+        "NAME": "Aantal Resoluties",
+        "DESC": "( Totaal )"
+      }
+    },
+    "DATE_RANGE": [
+      {
+        "id": 0,
+        "name": "Afgelopen 7 dagen"
+      },
+      {
+        "id": 1,
+        "name": "Laatste 30 dagen"
+      },
+      {
+        "id": 2,
+        "name": "Last 3 months"
+      },
+      {
+        "id": 3,
+        "name": "Last 6 months"
+      },
+      {
+        "id": 4,
+        "name": "Last year"
+      }
+    ]
+  }
+}

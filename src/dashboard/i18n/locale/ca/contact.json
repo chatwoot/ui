@@ -1,0 +1,192 @@
+{
+  "CONTACT_PANEL": {
+    "NOT_AVAILABLE": "No disponible",
+    "EMAIL_ADDRESS": "Adreça de correu electrònic",
+    "PHONE_NUMBER": "Número de telèfon",
+    "COPY_SUCCESSFUL": "S'ha copiat al porta-retalls amb èxit",
+    "COMPANY": "Companyia",
+    "LOCATION": "Ubicació",
+    "CONVERSATION_TITLE": "Detalls de les converses",
+    "BROWSER": "Navegador",
+    "OS": "Sistema operatiu",
+    "INITIATED_FROM": "Iniciada des de",
+    "INITIATED_AT": "Iniciada a les",
+    "IP_ADDRESS": "Adreça IP",
+    "NEW_MESSAGE": "New message",
+    "CONVERSATIONS": {
+      "NO_RECORDS_FOUND": "No hi han converses prèvies associades a aquest contacte.",
+      "TITLE": "Converses prèvies"
+    },
+    "LABELS": {
+      "TITLE": "Etiquetes de converses",
+      "MODAL": {
+        "TITLE": "Etiquetes per a",
+        "ACTIVE_LABELS": "S'han afegit etiquetes a la conversa",
+        "INACTIVE_LABELS": "Etiquetes disponibles al compte",
+        "REMOVE": "Fes clic a la icona X per eliminar l'etiqueta",
+        "ADD": "Fes clic a la icona + per afegir l'etiqueta",
+        "ADD_BUTTON": "Add Labels",
+        "UPDATE_BUTTON": "Actualitza les etiquetes",
+        "UPDATE_ERROR": "No s'han pogut actualitzar les etiquetes, torna-ho a provar."
+      },
+      "NO_LABELS_TO_ADD": "No hi ha cap etiqueta definida al compte.",
+      "NO_AVAILABLE_LABELS": "No hi ha etiquetes afegides a aquesta conversa.",
+      "LABEL_SELECT": {
+        "TITLE": "Add Labels",
+        "PLACEHOLDER": "Search labels",
+        "NO_RESULT": "No labels found"
+      }
+    },
+    "MUTE_CONTACT": "Silencia la conversa",
+    "UNMUTE_CONTACT": "Desactiva el silenci de la conversa",
+    "MUTED_SUCCESS": "Aquesta conversa s'ha silenciat durant 6 hores",
+    "UNMUTED_SUCCESS": "La conversa te desactivat el silenci",
+    "SEND_TRANSCRIPT": "Envia la transcripció",
+    "EDIT_LABEL": "Edita"
+  },
+  "EDIT_CONTACT": {
+    "BUTTON_LABEL": "Edita el contacte",
+    "TITLE": "Edita el contacte",
+    "DESC": "Edita els detalls de contacte"
+  },
+  "CREATE_CONTACT": {
+    "BUTTON_LABEL": "Nou Contacte",
+    "TITLE": "Crear un nou contacte",
+    "DESC": "Afegir informació bàsica sobre el contacte."
+  },
+  "CONTACT_FORM": {
+    "FORM": {
+      "SUBMIT": "Envia",
+      "CANCEL": "Cancel·la",
+      "AVATAR": {
+        "LABEL": "Avatar del contacte"
+      },
+      "NAME": {
+        "PLACEHOLDER": "Introdueix el nom complet del contacte",
+        "LABEL": "Nom complet"
+      },
+      "BIO": {
+        "PLACEHOLDER": "Introdueix la biografia del contacte",
+        "LABEL": "Bio"
+      },
+      "EMAIL_ADDRESS": {
+        "PLACEHOLDER": "Introdueix l'adreça de correu electrònic del contacte",
+        "LABEL": "Adreça de correu electrònic"
+      },
+      "PHONE_NUMBER": {
+        "PLACEHOLDER": "Introdueix el número de telèfon del contacte",
+        "LABEL": "Número de telèfon",
+        "HELP": "Phone number should be of E.164 format eg: +1415555555 [+][country code][area code][local phone number]",
+        "ERROR": "Phone number should be either empty or of E.164 format"
+      },
+      "LOCATION": {
+        "PLACEHOLDER": "Introdueix la ubicació del contacte",
+        "LABEL": "Ubicació"
+      },
+      "COMPANY_NAME": {
+        "PLACEHOLDER": "Introdueix el nom de la companyia",
+        "LABEL": "Nom de la companyia"
+      },
+      "SOCIAL_PROFILES": {
+        "FACEBOOK": {
+          "PLACEHOLDER": "Introduïu el nom d'usuari de Facebook",
+          "LABEL": "Facebook"
+        },
+        "TWITTER": {
+          "PLACEHOLDER": "Introduïu el nom d'usuari de Twitter",
+          "LABEL": "Twitter"
+        },
+        "LINKEDIN": {
+          "PLACEHOLDER": "Introduïu el nom d'usuari de LinkedIn",
+          "LABEL": "LinkedIn"
+        },
+        "GITHUB": {
+          "PLACEHOLDER": "Introdueix el nom d'usuari de Github",
+          "LABEL": "Github"
+        }
+      }
+    },
+    "SUCCESS_MESSAGE": "Contacte guardat correctament",
+    "CONTACT_ALREADY_EXIST": "Aquesta adreça de correu electrònic s’utilitza per a un altre contacte.",
+    "ERROR_MESSAGE": "S'ha produït un error; tornau-ho a provar"
+  },
+  "NEW_CONVERSATION": {
+    "BUTTON_LABEL": "Start conversation",
+    "TITLE": "Nova conversació",
+    "DESC": "Start a new conversation by sending a new message.",
+    "NO_INBOX": "Couldn't find an inbox to initiate a new conversation with this contact.",
+    "FORM": {
+      "TO": {
+        "LABEL": "To"
+      },
+      "INBOX": {
+        "LABEL": "Inbox",
+        "ERROR": "Select an inbox"
+      },
+      "MESSAGE": {
+        "LABEL": "Missatge",
+        "PLACEHOLDER": "Write your message here",
+        "ERROR": "Message can't be empty"
+      },
+      "SUBMIT": "Send message",
+      "CANCEL": "Cancel·la",
+      "SUCCESS_MESSAGE": "Message sent!",
+      "ERROR_MESSAGE": "Couldn't send! try again"
+    }
+  },
+  "CONTACTS_PAGE": {
+    "HEADER": "Contactes",
+    "SEARCH_BUTTON": "Cercar",
+    "SEARCH_INPUT_PLACEHOLDER": "Cerca de contactes",
+    "LIST": {
+      "LOADING_MESSAGE": "Carregant contactes...",
+      "404": "No hi ha cap contacte que coincideixi amb la vostra cerca 🔍",
+      "TABLE_HEADER": {
+        "NAME": "Nom",
+        "PHONE_NUMBER": "Número de telèfon",
+        "CONVERSATIONS": "Converses",
+        "LAST_ACTIVITY": "Last Activity",
+        "COUNTRY": "Country",
+        "CITY": "City",
+        "SOCIAL_PROFILES": "Social Profiles",
+        "COMPANY": "Companyia",
+        "EMAIL_ADDRESS": "Adreça de correu electrònic"
+      },
+      "VIEW_DETAILS": "View details"
+    }
+  },
+  "NOTES": {
+    "HEADER": {
+      "TITLE": "Notes"
+    },
+    "ADD": {
+      "BUTTON": "Add",
+      "PLACEHOLDER": "Add a note",
+      "TITLE": "Shift + Enter to create a note"
+    },
+    "FOOTER": {
+      "BUTTON": "View all notes"
+    }
+  },
+  "CUSTOM_ATTRIBUTES": {
+    "TITLE": "Atributs personalitzats",
+    "BUTTON": "Add custom attribute",
+    "ADD": {
+      "TITLE": "Create custom attribute",
+      "DESC": "Add custom information to this contact."
+    },
+    "FORM": {
+      "CREATE": "Add attribute",
+      "CANCEL": "Cancel·la",
+      "NAME": {
+        "LABEL": "Custom attribute name",
+        "PLACEHOLDER": "Eg: shopify id",
+        "ERROR": "Invalid custom attribute name"
+      },
+      "VALUE": {
+        "LABEL": "Attribute value",
+        "PLACEHOLDER": "Eg: 11901 "
+      }
+    }
+  }
+}

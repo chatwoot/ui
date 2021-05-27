@@ -1,0 +1,154 @@
+{
+  "PROFILE_SETTINGS": {
+    "LINK": "تنظیمات پروفایل",
+    "TITLE": "تنظیمات پروفایل",
+    "BTN_TEXT": "تغییر دادن پروفایل",
+    "UPDATE_SUCCESS": "پروفایل شما با موفقیت به روز شد",
+    "PASSWORD_UPDATE_SUCCESS": "رمز عبورتان عوض شد",
+    "AFTER_EMAIL_CHANGED": "پروفایلتان با موفقیت تغییر یافت، اطلاعات ورود به سیستم تغییر کرده لذا لطفا مجددا به سیستم وارد شوید",
+    "FORM": {
+      "AVATAR": "عکس پروفایل",
+      "ERROR": "لطفا ایرادات ذکر شده را برطرف کنید",
+      "REMOVE_IMAGE": "حذف",
+      "UPLOAD_IMAGE": "آپلود عکس",
+      "UPDATE_IMAGE": "تغییر عکس",
+      "PROFILE_SECTION": {
+        "TITLE": "پروفایل",
+        "NOTE": "ایمیل عامل شناسایی شما برای ورود به سیستم است"
+      },
+      "PASSWORD_SECTION": {
+        "TITLE": "رمز عبور",
+        "NOTE": "تغییر دادن رمز عبور باعث می‌شود مجبور شوید دوباره به سیستم وارد شوید",
+        "BTN_TEXT": "تغییر رمز عبور"
+      },
+      "ACCESS_TOKEN": {
+        "TITLE": "توکن دسترسی",
+        "NOTE": "از این توکن برای دسترسی از طریق API استفاده می‌شود"
+      },
+      "AUDIO_NOTIFICATIONS_SECTION": {
+        "TITLE": "Audio Notifications",
+        "NOTE": "Enable audio notifications in dashboard for new messages and conversations.",
+        "ENABLE_AUDIO": "Play audio notification when a new conversation is created or new messages arrives"
+      },
+      "EMAIL_NOTIFICATIONS_SECTION": {
+        "TITLE": "اعلامیه‌ به ایمیل",
+        "NOTE": "اینجا می‌توانید تنظیمات اعلامیه‌هایی که به ایمیل ارسال می‌شود تغییر دهید",
+        "CONVERSATION_ASSIGNMENT": "هر وقت گفتگویی به من اختصاص داده شد،‌ ایمیل بفرست",
+        "CONVERSATION_CREATION": "هر وقت گفتگوی جدیدی شروع شد برای من ایمیل بفرست",
+        "CONVERSATION_MENTION": "هنگامی که از شما در گفتگو نام برده می‌شود، از طریق ایمیل آگاه‌سازی ارسال کن",
+        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "با ایجاد پیام جدید در مکالمه اختصاصی ، اعلان های ایمیل را ارسال کنید"
+      },
+      "API": {
+        "UPDATE_SUCCESS": "تغییرات تنظیمات اعلامیه‌ها با موفقیت ثبت شد",
+        "UPDATE_ERROR": "در ثبت تغییرات اعلامیه‌ها اشکالی پیش آمد، لطفا دوباره امتحان کنید"
+      },
+      "PUSH_NOTIFICATIONS_SECTION": {
+        "TITLE": "پوش نوتیفیکیشن",
+        "NOTE": "اینجا می‌توانید تنظیمات پوش نوتیفیکیشن را تغییر دهید",
+        "CONVERSATION_ASSIGNMENT": "هر وقت گفتگویی به من اختصاص داده شد، برای من پوش نوتیفیکیشن بفرست",
+        "CONVERSATION_CREATION": "هر وقت گفتگوی جدیدی شروع شد برای من پوش نوتیفیکیشن بفرست",
+        "CONVERSATION_MENTION": "هنگامی که از شما در مکالمه نام برده می شود پوش نوتیفیکیشن ارسال کنید",
+        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "وقتی پیام جدیدی در مکالمه اختصاص داده شده ایجاد می شود ، پوش نوتیفیکیشن را ارسال کنید",
+        "HAS_ENABLED_PUSH": "در این مرورگر پوش نوتیفیکیشن را فعال کرده‌اید",
+        "REQUEST_PUSH": "فعال کردن پوش نوتیفیکیشن"
+      },
+      "PROFILE_IMAGE": {
+        "LABEL": "عکس پروفایل"
+      },
+      "NAME": {
+        "LABEL": "نام کامل شما",
+        "ERROR": "لطفا نام کامل معتبر وارد کنید",
+        "PLACEHOLDER": "لطفا نام کامل خود را وارد کنید"
+      },
+      "DISPLAY_NAME": {
+        "LABEL": "نام نمایشی",
+        "ERROR": "لطفا یک نام نمایشی معتبر وارد کنید",
+        "PLACEHOLDER": "لطفا یک نام نمایشی وارد کنید، این نام در مکالمات نمایش داده می‌شود"
+      },
+      "AVAILABILITY": {
+        "LABEL": "در دسترس",
+        "STATUSES_LIST": [
+          "آنلاین",
+          "مشغول",
+          "آفلاین"
+        ]
+      },
+      "EMAIL": {
+        "LABEL": "ایمیل شما",
+        "ERROR": "لطفا ایمیل خود را به شکل صحیح وارد کنید",
+        "PLACEHOLDER": "لطفا ایمیل خود را وارد کنید، این ایمیل در گفتگوها دیده می‌شود"
+      },
+      "PASSWORD": {
+        "LABEL": "رمز عبور",
+        "ERROR": "رمز عبور می‌بایست ۶ کاراکتر یا بیشتر باشد",
+        "PLACEHOLDER": "لطفا رمز عبور جدیدی وارد کنید"
+      },
+      "PASSWORD_CONFIRMATION": {
+        "LABEL": "تکرار رمز عبور",
+        "ERROR": "تکرار رمز عبور می‌بایست با رمز عبور یکسان باشد",
+        "PLACEHOLDER": "لطفا رمز عبور را مجددا وارد کنید"
+      }
+    }
+  },
+  "SIDEBAR_ITEMS": {
+    "CHANGE_AVAILABILITY_STATUS": "عوض شدن",
+    "CHANGE_ACCOUNTS": "سوییچ به یک حساب دیگر",
+    "SELECTOR_SUBTITLE": "از لیست یکی از حساب‌ها را انتخاب کنید",
+    "PROFILE_SETTINGS": "تنظیمات پروفایل",
+    "LOGOUT": "خروج از حساب"
+  },
+  "APP_GLOBAL": {
+    "TRIAL_MESSAGE": "روز تا اتمام دوره آزمایشی باقی است.",
+    "TRAIL_BUTTON": "الان بخرید"
+  },
+  "COMPONENTS": {
+    "CODE": {
+      "BUTTON_TEXT": "کپی",
+      "COPY_SUCCESSFUL": "کد به حافظه کپی شد"
+    },
+    "FILE_BUBBLE": {
+      "DOWNLOAD": "دانلود",
+      "UPLOADING": "در حال آپلود..."
+    },
+    "FORM_BUBBLE": {
+      "SUBMIT": "ثبت"
+    }
+  },
+  "CONFIRM_EMAIL": "در حال تایید...",
+  "SETTINGS": {
+    "INBOXES": {
+      "NEW_INBOX": "اضافه کردن صندوق ورودی"
+    }
+  },
+  "SIDEBAR": {
+    "CONVERSATIONS": "گفتگوها",
+    "REPORTS": "گزارشات",
+    "CONTACTS": "مخاطبین",
+    "SETTINGS": "تنظیمات",
+    "HOME": "صفحه اصلی",
+    "AGENTS": "اپراتورها",
+    "INBOXES": "صندوق‌های ورودی",
+    "NOTIFICATIONS": "اعلان ها",
+    "CANNED_RESPONSES": "پاسخ‌های آماده",
+    "INTEGRATIONS": "برنامه‌های تلفیق شده",
+    "ACCOUNT_SETTINGS": "تنظیمات حساب",
+    "LABELS": "برچسب‌ها",
+    "TEAMS": "تیم‌ها"
+  },
+  "CREATE_ACCOUNT": {
+    "NEW_ACCOUNT": "حساب‌کاربری جدید",
+    "SELECTOR_SUBTITLE": "ایجاد حساب‌کاربری جدید",
+    "API": {
+      "SUCCESS_MESSAGE": "حساب‌کاربری با موفقیت ایجاد شد",
+      "EXIST_MESSAGE": "این حساب‌کاربری از قبل وجود دارد",
+      "ERROR_MESSAGE": "ارتباط با سرور برقرار نشد، لطفا مجددا امتحان کنید"
+    },
+    "FORM": {
+      "NAME": {
+        "LABEL": "عنوان حساب",
+        "PLACEHOLDER": "شرکت ایران ناسیونال"
+      },
+      "SUBMIT": "ثبت"
+    }
+  }
+}

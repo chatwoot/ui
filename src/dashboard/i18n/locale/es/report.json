@@ -1,0 +1,56 @@
+{
+  "REPORT": {
+    "HEADER": "Informes",
+    "LOADING_CHART": "Cargando datos del gráfico...",
+    "NO_ENOUGH_DATA": "No hemos recibido suficientes puntos de datos para generar el informe. Inténtalo de nuevo más tarde.",
+    "DOWNLOAD_AGENT_REPORTS": "Descargar reportes de agente",
+    "METRICS": {
+      "CONVERSATIONS": {
+        "NAME": "Conversaciones",
+        "DESC": "( Total )"
+      },
+      "INCOMING_MESSAGES": {
+        "NAME": "Mensajes entrantes",
+        "DESC": "( Total )"
+      },
+      "OUTGOING_MESSAGES": {
+        "NAME": "Mensajes salientes",
+        "DESC": "( Total )"
+      },
+      "FIRST_RESPONSE_TIME": {
+        "NAME": "Primera respuesta",
+        "DESC": "( Media )"
+      },
+      "RESOLUTION_TIME": {
+        "NAME": "Tiempo de resolución",
+        "DESC": "( Media )"
+      },
+      "RESOLUTION_COUNT": {
+        "NAME": "Número de resoluciones",
+        "DESC": "( Total )"
+      }
+    },
+    "DATE_RANGE": [
+      {
+        "id": 0,
+        "name": "Últimos 7 días"
+      },
+      {
+        "id": 1,
+        "name": "Últimos 30 días"
+      },
+      {
+        "id": 2,
+        "name": "Últimos 3 meses"
+      },
+      {
+        "id": 3,
+        "name": "Últimos 6 meses"
+      },
+      {
+        "id": 4,
+        "name": "Último año"
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "COMPONENTS": {
+    "FILE_BUBBLE": {
+      "DOWNLOAD": "Κατέβασμα",
+      "UPLOADING": "Ανέβασμα..."
+    },
+    "FORM_BUBBLE": {
+      "SUBMIT": "Καταχώρηση"
+    }
+  },
+  "TEAM_AVAILABILITY": {
+    "ONLINE": "Είμαστε online",
+    "OFFLINE": "Προς το παρόν, είμαστε εκτός"
+  },
+  "REPLY_TIME": {
+    "IN_A_FEW_MINUTES": "Τυπικά έχετε απάντηση σε μερικά λεπτά",
+    "IN_A_FEW_HOURS": "Τυπικά έχετε απάντηση σε μερικές σε μερικές ώρες",
+    "IN_A_DAY": "Τυπικά έχετε απάντηση σε μία ημέρα"
+  },
+  "START_CONVERSATION": "Έναρξη Συνομιλίας",
+  "UNREAD_VIEW": {
+    "VIEW_MESSAGES_BUTTON": "Δείτε τα νέα μηνύματα",
+    "CLOSE_MESSAGES_BUTTON": "Κλείσιμο",
+    "COMPANY_FROM": "από",
+    "BOT": "Bot"
+  },
+  "BUBBLE": {
+    "LABEL": "Συνομιλήστε μαζί μας"
+  },
+  "POWERED_BY": "με την δύναμη του Chatwoot",
+  "EMAIL_PLACEHOLDER": "Παρακαλώ εισάγετε το email σας",
+  "CHAT_PLACEHOLDER": "Πληκτρολογήστε το μήνυμά σας",
+  "TODAY": "Σήμερα",
+  "YESTERDAY": "Χτες",
+  "PRE_CHAT_FORM": {
+    "FIELDS": {
+      "FULL_NAME": {
+        "LABEL": "Πλήρες Όνομα",
+        "PLACEHOLDER": "Παρακαλώ συμπληρώστε το πλήρες όνομα σας",
+        "ERROR": "Απαιτείται πλήρες όνομα"
+      },
+      "EMAIL_ADDRESS": {
+        "LABEL": "Διεύθυνση Email",
+        "PLACEHOLDER": "Παρακαλούμε εισάγετε τη διεύθυνση email σας",
+        "ERROR": "Μη έγκυρη διεύθυνση email"
+      },
+      "MESSAGE": {
+        "LABEL": "Μήνυμα",
+        "PLACEHOLDER": "Παρακαλώ εισάγετε το μήνυμά σας",
+        "ERROR": "Πολύ σύντομο μήνυμα"
+      }
+    }
+  },
+  "FILE_SIZE_LIMIT": "Το αρχείο υπερβαίνει το όριο συνημμένου {MAXIMUM_FILE_UPLOAD_SIZE}"
+}

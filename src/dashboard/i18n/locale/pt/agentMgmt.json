@@ -1,0 +1,96 @@
+{
+  "AGENT_MGMT": {
+    "HEADER": "Agentes",
+    "HEADER_BTN_TXT": "Adicionar Agente",
+    "LOADING": "Buscando lista de agente",
+    "SIDEBAR_TXT": "<p><b>Agents</b></p> <p> An <b>Agent</b> is a member of your Customer Support team. </p><p> Agents will be able to view and reply to messages from your users. The list shows all agents currently in your account. </p><p> Click on <b>Add Agent</b> to add a new agent. Agent you add will receive an email with a confirmation link to activate their account, after which they can access Chatwoot and respond to messages. </p><p> Access to Chatwoot's features are based on following roles. </p><p> <b>Agent</b> - Agents with this role can only access inboxes, reports and conversations. They can assign conversations to other agents or themselves and resolve conversations.</p><p> <b>Administrator</b> - Administrator will have access to all Chatwoot features enabled for your account, including settings, along with all of a normal agents' privileges.</p>",
+    "AGENT_TYPES": {
+      "ADMINISTRATOR": "Administrador",
+      "AGENT": "Representante"
+    },
+    "LIST": {
+      "404": "Não há agentes associados a esta conta",
+      "TITLE": "Gerenciar agentes na sua equipe",
+      "DESC": "Você pode adicionar/remover agentes para/da sua equipe.",
+      "NAME": "Nome:",
+      "EMAIL": "E-mail:",
+      "STATUS": "SItuação",
+      "ACTIONS": "Ações.",
+      "VERIFIED": "Verificada",
+      "VERIFICATION_PENDING": "Verificação pendente"
+    },
+    "ADD": {
+      "TITLE": "Adicionar agente à sua equipe",
+      "DESC": "Você pode adicionar pessoas que serão capazes de lidar com o suporte de suas caixas de entrada.",
+      "CANCEL_BUTTON_TEXT": "cancelar",
+      "FORM": {
+        "NAME": {
+          "LABEL": "Nome do Representante",
+          "PLACEHOLDER": "Por favor, insira um nome para o agente"
+        },
+        "AGENT_TYPE": {
+          "LABEL": "Tipo de agente",
+          "PLACEHOLDER": "Por favor, selecione um tipo",
+          "ERROR": "O tipo de agente é obrigatório"
+        },
+        "EMAIL": {
+          "LABEL": "Endereço de e-mail",
+          "PLACEHOLDER": "Por favor insira um endereço de e-mail do agente"
+        },
+        "SUBMIT": "Adicionar Agente"
+      },
+      "API": {
+        "SUCCESS_MESSAGE": "Agente adicionado com sucesso",
+        "EXIST_MESSAGE": "E-mail do representante já está em uso, por favor tente outro endereço de e-mail",
+        "ERROR_MESSAGE": "Não foi possível conectar ao servidor Woot, por favor tente novamente mais tarde"
+      }
+    },
+    "DELETE": {
+      "BUTTON_TEXT": "excluir",
+      "API": {
+        "SUCCESS_MESSAGE": "Agente excluído com sucesso",
+        "ERROR_MESSAGE": "Não foi possível conectar ao servidor Woot, por favor tente novamente mais tarde"
+      },
+      "CONFIRM": {
+        "TITLE": "Confirmar Exclusão",
+        "MESSAGE": "Tem certeza que deseja excluir ",
+        "YES": "Sim, excluir ",
+        "NO": "Não, Manter "
+      }
+    },
+    "EDIT": {
+      "TITLE": "Editar Representante",
+      "FORM": {
+        "NAME": {
+          "LABEL": "Nome do Representante",
+          "PLACEHOLDER": "Por favor, insira um nome para o agente"
+        },
+        "AGENT_TYPE": {
+          "LABEL": "Tipo de agente",
+          "PLACEHOLDER": "Por favor, selecione um tipo",
+          "ERROR": "O tipo de agente é obrigatório"
+        },
+        "EMAIL": {
+          "LABEL": "Endereço de e-mail",
+          "PLACEHOLDER": "Por favor insira um endereço de e-mail do agente"
+        },
+        "SUBMIT": "Editar Agente"
+      },
+      "BUTTON_TEXT": "Alterar",
+      "CANCEL_BUTTON_TEXT": "cancelar",
+      "API": {
+        "SUCCESS_MESSAGE": "Agente atualizado com sucesso",
+        "ERROR_MESSAGE": "Não foi possível conectar ao servidor Woot, por favor tente novamente mais tarde"
+      },
+      "PASSWORD_RESET": {
+        "ADMIN_RESET_BUTTON": "Redefinir a senha",
+        "ADMIN_SUCCESS_MESSAGE": "Um e-mail com instruções de redefinição de senha foi enviado para o agente",
+        "SUCCESS_MESSAGE": "Senha do agente redefinida com sucesso",
+        "ERROR_MESSAGE": "Não foi possível conectar ao servidor Woot, por favor tente novamente mais tarde"
+      }
+    },
+    "SEARCH": {
+      "NO_RESULTS": "Nenhum agente encontrado."
+    }
+  }
+}

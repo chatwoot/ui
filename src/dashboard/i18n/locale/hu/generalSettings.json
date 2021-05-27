@@ -1,0 +1,75 @@
+{
+  "GENERAL_SETTINGS": {
+    "TITLE": "Fiókbeállítások",
+    "SUBMIT": "Beállítások frissítése",
+    "BACK": "Vissza",
+    "UPDATE": {
+      "ERROR": "Beállítás frissítés sikertelen, kérjük próbáld később!",
+      "SUCCESS": "Fiókbeállítások frissítve"
+    },
+    "FORM": {
+      "ERROR": "Kérjük javítsd ki az űrlaphibákat",
+      "GENERAL_SECTION": {
+        "TITLE": "Általános beállítások",
+        "NOTE": ""
+      },
+      "NAME": {
+        "LABEL": "Fióknév",
+        "PLACEHOLDER": "A fiókneved",
+        "ERROR": "Kérjük helyes fióknevet adj meg"
+      },
+      "LANGUAGE": {
+        "LABEL": "Oldal nyelve (Béta)",
+        "PLACEHOLDER": "A fiókneved",
+        "ERROR": ""
+      },
+      "DOMAIN": {
+        "LABEL": "Beérkező e-mail domain",
+        "PLACEHOLDER": "A domain melyen az e-maileket fogadod",
+        "ERROR": ""
+      },
+      "SUPPORT_EMAIL": {
+        "LABEL": "Támogatási e-mail",
+        "PLACEHOLDER": "A vállalati támogatási e-mailcímed",
+        "ERROR": ""
+      },
+      "AUTO_RESOLVE_DURATION": {
+        "LABEL": "A napok száma, mely után a ticketek automatikusan megoldódnak, ha nincs aktivitás",
+        "PLACEHOLDER": "30",
+        "ERROR": "Kérjük helyes auto megoldási időszakot adj meg (minimum 1 nap)"
+      },
+      "FEATURES": {
+        "INBOUND_EMAIL_ENABLED": "A beszélgetésfolytonosság e-maillel már elérhető a fiókodban.",
+        "CUSTOM_EMAIL_DOMAIN_ENABLED": "Most már goadhatsz e-maileket az egyedi domaineden."
+      }
+    },
+    "UPDATE_CHATWOOT": "Egy frissítés elérhető a Chatwoothoz %{latestChatwootVersion}. Kérjük frissítsd a telepítésed."
+  },
+  "FORMS": {
+    "MULTISELECT": {
+      "ENTER_TO_SELECT": "Enter-rel válaszd ki",
+      "ENTER_TO_REMOVE": "Enter-rel távolítsd el",
+      "SELECT_ONE": "Válassz egyet"
+    }
+  },
+  "NOTIFICATIONS_PAGE": {
+    "HEADER": "Értesítések",
+    "MARK_ALL_DONE": "Mind kész",
+    "LIST": {
+      "LOADING_MESSAGE": "Értesítések betöltése...",
+      "404": "Nincs értesítés",
+      "TABLE_HEADER": [
+        "Név",
+        "Telefonszám",
+        "Beszélgetések",
+        "Utoljára kapcsolatban"
+      ]
+    },
+    "TYPE_LABEL": {
+      "conversation_creation": "Új beszélgetés",
+      "conversation_assignment": "Beszélgetés hozzárendelve",
+      "assigned_conversation_new_message": "Új üzenet",
+      "conversation_mention": "Megemlítés"
+    }
+  }
+}

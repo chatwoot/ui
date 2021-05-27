@@ -1,0 +1,56 @@
+{
+  "REPORT": {
+    "HEADER": "Jelentések",
+    "LOADING_CHART": "Táblázat adatok betöltése...",
+    "NO_ENOUGH_DATA": "Nem érkezett elég adat hogy jelentést generáljunk, kérjük próbáld később.",
+    "DOWNLOAD_AGENT_REPORTS": "Ügynök jelentések letöltése",
+    "METRICS": {
+      "CONVERSATIONS": {
+        "NAME": "Beszélgetések",
+        "DESC": "( Teljes )"
+      },
+      "INCOMING_MESSAGES": {
+        "NAME": "Beérkező üznetek",
+        "DESC": "( Teljes )"
+      },
+      "OUTGOING_MESSAGES": {
+        "NAME": "Kimenő üzenetek",
+        "DESC": "( Teljes )"
+      },
+      "FIRST_RESPONSE_TIME": {
+        "NAME": "Első reakció idő",
+        "DESC": "( Átlag )"
+      },
+      "RESOLUTION_TIME": {
+        "NAME": "Megoldási idő",
+        "DESC": "( Átlag )"
+      },
+      "RESOLUTION_COUNT": {
+        "NAME": "Megoldások száma",
+        "DESC": "( Teljes )"
+      }
+    },
+    "DATE_RANGE": [
+      {
+        "id": 0,
+        "name": "Utolsó 7 nap"
+      },
+      {
+        "id": 1,
+        "name": "Utolsó 30 nap"
+      },
+      {
+        "id": 2,
+        "name": "Last 3 months"
+      },
+      {
+        "id": 3,
+        "name": "Last 6 months"
+      },
+      {
+        "id": 4,
+        "name": "Last year"
+      }
+    ]
+  }
+}

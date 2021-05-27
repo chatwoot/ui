@@ -1,0 +1,55 @@
+{
+  "COMPONENTS": {
+    "FILE_BUBBLE": {
+      "DOWNLOAD": "Download",
+      "UPLOADING": "Uploader..."
+    },
+    "FORM_BUBBLE": {
+      "SUBMIT": "Send"
+    }
+  },
+  "TEAM_AVAILABILITY": {
+    "ONLINE": "Vi er online",
+    "OFFLINE": "We are away at the moment"
+  },
+  "REPLY_TIME": {
+    "IN_A_FEW_MINUTES": "Svarer typisk på et par minutter",
+    "IN_A_FEW_HOURS": "Svarer typisk på et par timer",
+    "IN_A_DAY": "Svarer typisk på en dag"
+  },
+  "START_CONVERSATION": "Start Samtale",
+  "UNREAD_VIEW": {
+    "VIEW_MESSAGES_BUTTON": "Se nye beskeder",
+    "CLOSE_MESSAGES_BUTTON": "Luk",
+    "COMPANY_FROM": "from",
+    "BOT": "Bot"
+  },
+  "BUBBLE": {
+    "LABEL": "Chat med os"
+  },
+  "POWERED_BY": "Drevet af Chatwoot",
+  "EMAIL_PLACEHOLDER": "Indtast venligst din e-mail",
+  "CHAT_PLACEHOLDER": "Skriv din besked",
+  "TODAY": "Today",
+  "YESTERDAY": "Yesterday",
+  "PRE_CHAT_FORM": {
+    "FIELDS": {
+      "FULL_NAME": {
+        "LABEL": "Fulde Navn",
+        "PLACEHOLDER": "Indtast venligst dit fulde navn",
+        "ERROR": "Full Name is required"
+      },
+      "EMAIL_ADDRESS": {
+        "LABEL": "E-Mail Adresse",
+        "PLACEHOLDER": "Please enter your email address",
+        "ERROR": "Invalid email address"
+      },
+      "MESSAGE": {
+        "LABEL": "Message",
+        "PLACEHOLDER": "Please enter your message",
+        "ERROR": "Message too short"
+      }
+    }
+  },
+  "FILE_SIZE_LIMIT": "File exceeds the {MAXIMUM_FILE_UPLOAD_SIZE} attachment limit"
+}

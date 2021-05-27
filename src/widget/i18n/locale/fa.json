@@ -1,0 +1,55 @@
+{
+  "COMPONENTS": {
+    "FILE_BUBBLE": {
+      "DOWNLOAD": "دانلود",
+      "UPLOADING": "در حال آپلود..."
+    },
+    "FORM_BUBBLE": {
+      "SUBMIT": "ثبت"
+    }
+  },
+  "TEAM_AVAILABILITY": {
+    "ONLINE": "ما آنلاین هستیم",
+    "OFFLINE": "We are away at the moment"
+  },
+  "REPLY_TIME": {
+    "IN_A_FEW_MINUTES": "معمولاً در عرض چند دقیقه پاسخ می دهند",
+    "IN_A_FEW_HOURS": "معمولاً در عرض چند ساعت پاسخ می دهند",
+    "IN_A_DAY": "به طور معمول در یک روز پاسخ می دهند"
+  },
+  "START_CONVERSATION": "شروع گفتگو",
+  "UNREAD_VIEW": {
+    "VIEW_MESSAGES_BUTTON": "مشاهده پیام‌های جدید",
+    "CLOSE_MESSAGES_BUTTON": "بستن",
+    "COMPANY_FROM": "از",
+    "BOT": "ربات"
+  },
+  "BUBBLE": {
+    "LABEL": "با ما گفتگو کنید"
+  },
+  "POWERED_BY": "قدرت یافته از چت ووت",
+  "EMAIL_PLACEHOLDER": "لطفا ایمیل خود را وارد کنید",
+  "CHAT_PLACEHOLDER": "پیام خود را وارد کنید",
+  "TODAY": "امروز",
+  "YESTERDAY": "دیروز",
+  "PRE_CHAT_FORM": {
+    "FIELDS": {
+      "FULL_NAME": {
+        "LABEL": "نام کامل",
+        "PLACEHOLDER": "لطفا نام کامل خود را وارد کنید",
+        "ERROR": "Full Name is required"
+      },
+      "EMAIL_ADDRESS": {
+        "LABEL": "ایمیل",
+        "PLACEHOLDER": "Please enter your email address",
+        "ERROR": "Invalid email address"
+      },
+      "MESSAGE": {
+        "LABEL": "Message",
+        "PLACEHOLDER": "Please enter your message",
+        "ERROR": "Message too short"
+      }
+    }
+  },
+  "FILE_SIZE_LIMIT": "File exceeds the {MAXIMUM_FILE_UPLOAD_SIZE} attachment limit"
+}

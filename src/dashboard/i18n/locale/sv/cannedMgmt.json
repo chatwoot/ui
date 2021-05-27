@@ -1,0 +1,76 @@
+{
+  "CANNED_MGMT": {
+    "HEADER": "Svarsmallar",
+    "HEADER_BTN_TXT": "Lägg till svarsmall",
+    "LOADING": "Hämtar svarsmallar",
+    "SEARCH_404": "Det finns inga objekt som matchar denna fråga",
+    "SIDEBAR_TXT": "<p><b>Svarsmallar</b> </p><p> Svarsmallar är sparade mallar som kan användas för att snabbt skicka ett svar till en konversation. </p><p> För att skapa en svarsmall, klicka bara på <b>Lägg till svarsmall</b>. Du kan också redigera eller ta bort en befintlig svarsmall genom att klicka på knapparna Redigera eller Ta bort </p><p> Svarsmallar används med hjälp av <b>korta koder</b>. Agenter kan komma åt svarsmallar medan de är på en chatt genom att skriva <b>'/'</b> följt av kortkoden. </p>",
+    "LIST": {
+      "404": "Det finns inga svarsmallar tillgängliga på detta konto.",
+      "TITLE": "Hantera svarsmallar",
+      "DESC": "Svarsmallar är fördefinierade mallar som kan användas för att snabbt skicka ut svar till ärenden.",
+      "TABLE_HEADER": [
+        "Kortkod",
+        "Innehåll",
+        "Åtgärder"
+      ]
+    },
+    "ADD": {
+      "TITLE": "Lägg till svarsmall",
+      "DESC": "Svarsmallar är fördefinierade mallar som kan användas för att snabbt skicka ut svar till konversationer.",
+      "CANCEL_BUTTON_TEXT": "Avbryt",
+      "FORM": {
+        "SHORT_CODE": {
+          "LABEL": "Kortkod",
+          "PLACEHOLDER": "Ange en kortkod",
+          "ERROR": "Kortkod krävs"
+        },
+        "CONTENT": {
+          "LABEL": "Innehåll",
+          "PLACEHOLDER": "Ange ett innehåll",
+          "ERROR": "Innehåll krävs"
+        },
+        "SUBMIT": "Skicka"
+      },
+      "API": {
+        "SUCCESS_MESSAGE": "Svarsmallen har lagts till",
+        "ERROR_MESSAGE": "Kunde inte ansluta till Woot Server, försök igen senare"
+      }
+    },
+    "EDIT": {
+      "TITLE": "Redigera svarsmall",
+      "CANCEL_BUTTON_TEXT": "Avbryt",
+      "FORM": {
+        "SHORT_CODE": {
+          "LABEL": "Kortkod",
+          "PLACEHOLDER": "Ange en kortkod",
+          "ERROR": "Kortkod krävs"
+        },
+        "CONTENT": {
+          "LABEL": "Innehåll",
+          "PLACEHOLDER": "Ange ett innehåll",
+          "ERROR": "Innehåll krävs"
+        },
+        "SUBMIT": "Skicka"
+      },
+      "BUTTON_TEXT": "Redigera",
+      "API": {
+        "SUCCESS_MESSAGE": "Svarsmallen har uppdaterats",
+        "ERROR_MESSAGE": "Kunde inte ansluta till Woot Server, försök igen senare"
+      }
+    },
+    "DELETE": {
+      "BUTTON_TEXT": "Radera",
+      "API": {
+        "SUCCESS_MESSAGE": "Svarsmallen har tagits bort",
+        "ERROR_MESSAGE": "Kunde inte ansluta till Woot Server, försök igen senare"
+      },
+      "CONFIRM": {
+        "TITLE": "Bekräfta borttagning",
+        "MESSAGE": "Är du säker på att ta bort ",
+        "YES": "Ja, ta bort ",
+        "NO": "Nej, behåll "
+      }
+    }
+  }
+}

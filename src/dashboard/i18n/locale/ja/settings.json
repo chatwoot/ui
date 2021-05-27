@@ -1,0 +1,154 @@
+{
+  "PROFILE_SETTINGS": {
+    "LINK": "プロフィール設定",
+    "TITLE": "プロフィール設定",
+    "BTN_TEXT": "プロフィールを更新",
+    "UPDATE_SUCCESS": "Your profile has been updated successfully",
+    "PASSWORD_UPDATE_SUCCESS": "Your password has been changed successfully",
+    "AFTER_EMAIL_CHANGED": "あなたのプロフィールは正常に更新されました。ログイン情報（パスワード等）が変更されたため、再度ログインしてください。",
+    "FORM": {
+      "AVATAR": "プロフィール画像",
+      "ERROR": "正しくフォームに入力してください",
+      "REMOVE_IMAGE": "削除",
+      "UPLOAD_IMAGE": "画像をアップロード",
+      "UPDATE_IMAGE": "画像を更新",
+      "PROFILE_SECTION": {
+        "TITLE": "プロフィール",
+        "NOTE": "あなたのメールアドレスはあなたのIDであり、ログインに使用されます。"
+      },
+      "PASSWORD_SECTION": {
+        "TITLE": "パスワード",
+        "NOTE": "パスワードを更新すると、複数のデバイスでログインがリセットされます。",
+        "BTN_TEXT": "Change password"
+      },
+      "ACCESS_TOKEN": {
+        "TITLE": "アクセストークン",
+        "NOTE": "このトークンは、API 連携を構築する場合に利用します。"
+      },
+      "AUDIO_NOTIFICATIONS_SECTION": {
+        "TITLE": "Audio Notifications",
+        "NOTE": "Enable audio notifications in dashboard for new messages and conversations.",
+        "ENABLE_AUDIO": "Play audio notification when a new conversation is created or new messages arrives"
+      },
+      "EMAIL_NOTIFICATIONS_SECTION": {
+        "TITLE": "Eメール通知",
+        "NOTE": "メール通知設定を更新する",
+        "CONVERSATION_ASSIGNMENT": "会話が自分に割り当てられたときにメールで通知を送信する",
+        "CONVERSATION_CREATION": "新しい会話が作成されたときにメールで通知を送信する",
+        "CONVERSATION_MENTION": "Send email notifications when you are mentioned in a conversation",
+        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "割り当てられた会話で新しいメッセージが作成されたときにメールで通知を送信します"
+      },
+      "API": {
+        "UPDATE_SUCCESS": "通知設定が正常に更新されました",
+        "UPDATE_ERROR": "設定の更新中にエラーが発生しました。もう一度やり直して下さい。"
+      },
+      "PUSH_NOTIFICATIONS_SECTION": {
+        "TITLE": "プッシュ通知",
+        "NOTE": "ここでプッシュ通知の設定を更新します",
+        "CONVERSATION_ASSIGNMENT": "会話が自分に割り当てられたときにプッシュ通知を送信する",
+        "CONVERSATION_CREATION": "新しい会話が作成されたときにプッシュ通知を送信する",
+        "CONVERSATION_MENTION": "Send push notifications when you are mentioned in a conversation",
+        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "割り当てられた会話で新しいメッセージが作成されたときにプッシュ通知を送信する",
+        "HAS_ENABLED_PUSH": "このブラウザーでプッシュ通知を有効にしました。",
+        "REQUEST_PUSH": "プッシュ通知を有効にする"
+      },
+      "PROFILE_IMAGE": {
+        "LABEL": "プロフィール画像"
+      },
+      "NAME": {
+        "LABEL": "あなたのフルネーム",
+        "ERROR": "有効な氏名を入力してください",
+        "PLACEHOLDER": "氏名を入力してください。"
+      },
+      "DISPLAY_NAME": {
+        "LABEL": "表示名",
+        "ERROR": "有効な表示名を入力してください",
+        "PLACEHOLDER": "表示名を入力してください。これは会話に表示されます。"
+      },
+      "AVAILABILITY": {
+        "LABEL": "利用可能期間",
+        "STATUSES_LIST": [
+          "オンライン",
+          "取り込み中",
+          "オフライン"
+        ]
+      },
+      "EMAIL": {
+        "LABEL": "あなたのメールアドレス",
+        "ERROR": "正しいメールアドレスを入力してください",
+        "PLACEHOLDER": "メールアドレスを入力してください。これは会話に表示されます"
+      },
+      "PASSWORD": {
+        "LABEL": "パスワード",
+        "ERROR": "6文字以上のパスワードを入力してください",
+        "PLACEHOLDER": "新しいパスワードを入力してください"
+      },
+      "PASSWORD_CONFIRMATION": {
+        "LABEL": "パスワードの確認",
+        "ERROR": "パスワードは一致している必要があります",
+        "PLACEHOLDER": "パスワードを再入力してください"
+      }
+    }
+  },
+  "SIDEBAR_ITEMS": {
+    "CHANGE_AVAILABILITY_STATUS": "Change",
+    "CHANGE_ACCOUNTS": "アカウントの切り替え",
+    "SELECTOR_SUBTITLE": "次のリストからアカウントを選択してください",
+    "PROFILE_SETTINGS": "プロフィール設定",
+    "LOGOUT": "ログアウト"
+  },
+  "APP_GLOBAL": {
+    "TRIAL_MESSAGE": "日、トライアル期間が残っています。",
+    "TRAIL_BUTTON": "今すぐ購入"
+  },
+  "COMPONENTS": {
+    "CODE": {
+      "BUTTON_TEXT": "コピー",
+      "COPY_SUCCESSFUL": "コードが正常にクリップボードにコピーされました"
+    },
+    "FILE_BUBBLE": {
+      "DOWNLOAD": "ダウンロード",
+      "UPLOADING": "アップロード中..."
+    },
+    "FORM_BUBBLE": {
+      "SUBMIT": "送信"
+    }
+  },
+  "CONFIRM_EMAIL": "確認中...",
+  "SETTINGS": {
+    "INBOXES": {
+      "NEW_INBOX": "受信トレイを追加"
+    }
+  },
+  "SIDEBAR": {
+    "CONVERSATIONS": "会話データ",
+    "REPORTS": "レポート",
+    "CONTACTS": "Contacts",
+    "SETTINGS": "設定",
+    "HOME": "ホーム",
+    "AGENTS": "担当者",
+    "INBOXES": "受信トレイ",
+    "NOTIFICATIONS": "Notifications",
+    "CANNED_RESPONSES": "定型文",
+    "INTEGRATIONS": "連携",
+    "ACCOUNT_SETTINGS": "アカウント設定",
+    "LABELS": "ラベル",
+    "TEAMS": "Teams"
+  },
+  "CREATE_ACCOUNT": {
+    "NEW_ACCOUNT": "新規アカウント",
+    "SELECTOR_SUBTITLE": "新しいアカウントを作成",
+    "API": {
+      "SUCCESS_MESSAGE": "アカウントが正常に作成されました",
+      "EXIST_MESSAGE": "アカウントはすでに存在します",
+      "ERROR_MESSAGE": "Woot Serverに接続できませんでした。後でもう一度お試しください。"
+    },
+    "FORM": {
+      "NAME": {
+        "LABEL": "アカウント名",
+        "PLACEHOLDER": "Wayne Enterprise"
+      },
+      "SUBMIT": "送信"
+    }
+  }
+}

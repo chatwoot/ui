@@ -1,0 +1,56 @@
+{
+  "REPORT": {
+    "HEADER": "Zprávy",
+    "LOADING_CHART": "Načítání dat mapy...",
+    "NO_ENOUGH_DATA": "Pro vytvoření hlášení jsme neobdrželi dostatek dat, zkuste to prosím později.",
+    "DOWNLOAD_AGENT_REPORTS": "Stáhnout reporty agentů",
+    "METRICS": {
+      "CONVERSATIONS": {
+        "NAME": "Konverzace",
+        "DESC": "( celkem)"
+      },
+      "INCOMING_MESSAGES": {
+        "NAME": "Příchozí zprávy",
+        "DESC": "( celkem)"
+      },
+      "OUTGOING_MESSAGES": {
+        "NAME": "Odchozí zprávy",
+        "DESC": "( celkem)"
+      },
+      "FIRST_RESPONSE_TIME": {
+        "NAME": "Čas první odpovědi",
+        "DESC": "(Průměrný)"
+      },
+      "RESOLUTION_TIME": {
+        "NAME": "Čas rozlišení",
+        "DESC": "(Průměrný)"
+      },
+      "RESOLUTION_COUNT": {
+        "NAME": "Počet rozlišení",
+        "DESC": "( celkem)"
+      }
+    },
+    "DATE_RANGE": [
+      {
+        "id": 0,
+        "name": "Posledních 7 dní"
+      },
+      {
+        "id": 1,
+        "name": "Posledních 30 dní"
+      },
+      {
+        "id": 2,
+        "name": "Last 3 months"
+      },
+      {
+        "id": 3,
+        "name": "Last 6 months"
+      },
+      {
+        "id": 4,
+        "name": "Last year"
+      }
+    ]
+  }
+}

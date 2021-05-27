@@ -1,0 +1,61 @@
+{
+  "INTEGRATION_SETTINGS": {
+    "HEADER": "Integrări",
+    "WEBHOOK": {
+      "TITLE": "Webhook",
+      "CONFIGURE": "Configurare",
+      "HEADER": "Setări Webhook",
+      "HEADER_BTN_TXT": "Adaugă un nou webhook",
+      "LOADING": "Preluare webhook-uri atașate",
+      "SEARCH_404": "Nu există elemente care să corespundă acestei interogări",
+      "SIDEBAR_TXT": "<p><b>Webhooks</b> </p> <p>Webhooks sunt request-uri HTTP care pot fi definite pentru fiecare cont. Acestea sunt declanșate de evenimente precum crearea de mesaje în Chatwoot. Poți crea mai mult de un singur webhook pentru acest cont. <br /><br /> Pentru a crea un webhook <b></b>, apasă pe butonul <b>Adaugă un nou webhook</b>. De asemenea, puteți elimina orice webhook existent făcând clic pe butonul Ștergere.</p>",
+      "LIST": {
+        "404": "Nu există webhook-uri configurate pentru acest cont.",
+        "TITLE": "Gestionează webhook-uri",
+        "TABLE_HEADER": [
+          "Webhook endpoint",
+          "Actiuni"
+        ]
+      },
+      "ADD": {
+        "CANCEL": "Renunță",
+        "TITLE": "Adaugă un nou webhook",
+        "DESC": "Evenimentele Webhook vă oferă informații în timp real despre ce se întâmplă în contul dvs. Chatwoot. Introduceți un URL valid pentru a configura un callback.",
+        "FORM": {
+          "END_POINT": {
+            "LABEL": "URL Webhook",
+            "PLACEHOLDER": "Exemplu: https://example/api/webhook",
+            "ERROR": "Te rog introdu un URL valid"
+          },
+          "SUBMIT": "Creează webhook"
+        },
+        "API": {
+          "SUCCESS_MESSAGE": "Webhook adăugat cu succes",
+          "ERROR_MESSAGE": "Nu s-a putut conecta la Woot Server, încercați din nou mai târziu"
+        }
+      },
+      "DELETE": {
+        "BUTTON_TEXT": "Şterge",
+        "API": {
+          "SUCCESS_MESSAGE": "Webhook șters cu succes",
+          "ERROR_MESSAGE": "Nu s-a putut conecta la Woot Server, încercați din nou mai târziu"
+        },
+        "CONFIRM": {
+          "TITLE": "Confirmă ștergerea",
+          "MESSAGE": "Sigur doriți să ștergeți ",
+          "YES": "Da, șterge ",
+          "NO": "Nu, păstreaza"
+        }
+      }
+    },
+    "DELETE": {
+      "BUTTON_TEXT": "Şterge",
+      "API": {
+        "SUCCESS_MESSAGE": "Integrare ștearsă cu succes"
+      }
+    },
+    "CONNECT": {
+      "BUTTON_TEXT": "Conectează-te"
+    }
+  }
+}

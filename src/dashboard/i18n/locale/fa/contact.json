@@ -1,0 +1,192 @@
+{
+  "CONTACT_PANEL": {
+    "NOT_AVAILABLE": "در دسترس نیست",
+    "EMAIL_ADDRESS": "ایمیل",
+    "PHONE_NUMBER": "شماره تلفن",
+    "COPY_SUCCESSFUL": "با موفقیت در کلیپ‌بورد کپی شد",
+    "COMPANY": "شرکت",
+    "LOCATION": "مکان",
+    "CONVERSATION_TITLE": "جزئیات مکالمه",
+    "BROWSER": "مرورگر",
+    "OS": "سیستم عامل",
+    "INITIATED_FROM": "شروع شده از",
+    "INITIATED_AT": "شروع شده در",
+    "IP_ADDRESS": "آدرس آی‌پی",
+    "NEW_MESSAGE": "پیام جدید",
+    "CONVERSATIONS": {
+      "NO_RECORDS_FOUND": "این اولین گفتگوی این کاربر است.",
+      "TITLE": "گفتگوهای قبلی"
+    },
+    "LABELS": {
+      "TITLE": "برچسب‌های گفتگو",
+      "MODAL": {
+        "TITLE": "برچسب‌ها برای",
+        "ACTIVE_LABELS": "برچسب‌ها اضافه شد به گفتگو",
+        "INACTIVE_LABELS": "برچسب‌های موجود در حساب‌کاربری",
+        "REMOVE": "برای پاک کردن برچسب، روی آیکون X کلیک کنید",
+        "ADD": "برای افزودن برچسب بر روی آیکون + کلیک کنید",
+        "ADD_BUTTON": "افزودن برچسب‌ها",
+        "UPDATE_BUTTON": "تغییر برچسب‌ها",
+        "UPDATE_ERROR": "برچسب‌ها تغییری نکردند، لطفا بعدا امتحان کنید."
+      },
+      "NO_LABELS_TO_ADD": "هیچ برچسبی در حساب‌کاربری تعریف نشده است.",
+      "NO_AVAILABLE_LABELS": "هیچ برچسبی به این گفتگو اضافه نشده است.",
+      "LABEL_SELECT": {
+        "TITLE": "افزودن برچسب‌ها",
+        "PLACEHOLDER": "جستجو برچسب‌ها",
+        "NO_RESULT": "هیچ برچسبی یافت نشد"
+      }
+    },
+    "MUTE_CONTACT": "بی‌صدا کردن گفتگو",
+    "UNMUTE_CONTACT": "خارج کردن از حالت بی صدا",
+    "MUTED_SUCCESS": "این گفتگو به مدت ۶ ساعت بی‌صدا است",
+    "UNMUTED_SUCCESS": "این گفتگو از حالت بی صدا خارج شده است",
+    "SEND_TRANSCRIPT": "ارسال متن",
+    "EDIT_LABEL": "ویرایش"
+  },
+  "EDIT_CONTACT": {
+    "BUTTON_LABEL": "ویرایش مخاطب",
+    "TITLE": "ویرایش مخاطب",
+    "DESC": "ویرایش اطلاعات مخاطب"
+  },
+  "CREATE_CONTACT": {
+    "BUTTON_LABEL": "New Contact",
+    "TITLE": "Create new contact",
+    "DESC": "Add basic information details about the contact."
+  },
+  "CONTACT_FORM": {
+    "FORM": {
+      "SUBMIT": "ثبت",
+      "CANCEL": "انصراف",
+      "AVATAR": {
+        "LABEL": "آواتار مخاطب"
+      },
+      "NAME": {
+        "PLACEHOLDER": "نام کامل مخاطب را وارد کنید",
+        "LABEL": "نام کامل"
+      },
+      "BIO": {
+        "PLACEHOLDER": "بیوگرافی مخاطب را وارد کنید",
+        "LABEL": "بیوگرافی"
+      },
+      "EMAIL_ADDRESS": {
+        "PLACEHOLDER": "آدرس ایمیل مخاطب را وارد کنید",
+        "LABEL": "ایمیل"
+      },
+      "PHONE_NUMBER": {
+        "PLACEHOLDER": "شماره تلفن مخاطب را وارد کنید",
+        "LABEL": "شماره تلفن",
+        "HELP": "Phone number should be of E.164 format eg: +1415555555 [+][country code][area code][local phone number]",
+        "ERROR": "Phone number should be either empty or of E.164 format"
+      },
+      "LOCATION": {
+        "PLACEHOLDER": "مکان مخاطب را وارد کنید",
+        "LABEL": "مکان"
+      },
+      "COMPANY_NAME": {
+        "PLACEHOLDER": "نام شرکت را وارد کنید",
+        "LABEL": "نام شرکت"
+      },
+      "SOCIAL_PROFILES": {
+        "FACEBOOK": {
+          "PLACEHOLDER": "نام‌کاربری فیس‌بوک را وارد کنید",
+          "LABEL": "فیس‌بوک"
+        },
+        "TWITTER": {
+          "PLACEHOLDER": "نام‌کاربری توییتر را وارد کنید",
+          "LABEL": "توییتر"
+        },
+        "LINKEDIN": {
+          "PLACEHOLDER": "نام‌کاربری لینکدین را وارد کنید",
+          "LABEL": "لینکدین"
+        },
+        "GITHUB": {
+          "PLACEHOLDER": "نام‌کاربری گیت‌هاب را وارد کنید",
+          "LABEL": "گیت‌هاب"
+        }
+      }
+    },
+    "SUCCESS_MESSAGE": "Contact saved successfully",
+    "CONTACT_ALREADY_EXIST": "این آدرس ایمیل برای مخاطب دیگری در حال استفاده است.",
+    "ERROR_MESSAGE": "خطایی پیش آمد. لطفا دوباره امتحان کنید"
+  },
+  "NEW_CONVERSATION": {
+    "BUTTON_LABEL": "شروع گفتگو",
+    "TITLE": "گفتگوی جدید",
+    "DESC": "با ارسال پیام جدید، گفتگوی جدیدی را شروع کنید.",
+    "NO_INBOX": "Couldn't find an inbox to initiate a new conversation with this contact.",
+    "FORM": {
+      "TO": {
+        "LABEL": "به"
+      },
+      "INBOX": {
+        "LABEL": "صندوق ورودی",
+        "ERROR": "انتخاب صندوق ورودی"
+      },
+      "MESSAGE": {
+        "LABEL": "پیام",
+        "PLACEHOLDER": "پیام خود را اینجا بنویسید",
+        "ERROR": "پیام نمی‌تواند خالی باشد"
+      },
+      "SUBMIT": "ارسال پیام",
+      "CANCEL": "انصراف",
+      "SUCCESS_MESSAGE": "پیام ارسال شد!",
+      "ERROR_MESSAGE": "ارسال نشد! دوباره امتحان کنید"
+    }
+  },
+  "CONTACTS_PAGE": {
+    "HEADER": "مخاطبین",
+    "SEARCH_BUTTON": "جستجو",
+    "SEARCH_INPUT_PLACEHOLDER": "جستجوی مخاطبین",
+    "LIST": {
+      "LOADING_MESSAGE": "در حال بارگذاری مخاطبین...",
+      "404": "هیچ مخاطبی با جستجوی شما مطابقت ندارد 🔍",
+      "TABLE_HEADER": {
+        "NAME": "نام",
+        "PHONE_NUMBER": "شماره تلفن",
+        "CONVERSATIONS": "گفتگوها",
+        "LAST_ACTIVITY": "آخرین فعالیت",
+        "COUNTRY": "کشور",
+        "CITY": "شهر",
+        "SOCIAL_PROFILES": "پروفایل‌های اجتماعی",
+        "COMPANY": "شرکت",
+        "EMAIL_ADDRESS": "ایمیل"
+      },
+      "VIEW_DETAILS": "مشاهده جزئیات"
+    }
+  },
+  "NOTES": {
+    "HEADER": {
+      "TITLE": "Notes"
+    },
+    "ADD": {
+      "BUTTON": "افزودن",
+      "PLACEHOLDER": "افزودن یادداشت",
+      "TITLE": "برای ایجاد یادداشت Shift + Enter را فشار دهید"
+    },
+    "FOOTER": {
+      "BUTTON": "View all notes"
+    }
+  },
+  "CUSTOM_ATTRIBUTES": {
+    "TITLE": "ویژگی‌های سفارشی",
+    "BUTTON": "Add custom attribute",
+    "ADD": {
+      "TITLE": "Create custom attribute",
+      "DESC": "Add custom information to this contact."
+    },
+    "FORM": {
+      "CREATE": "Add attribute",
+      "CANCEL": "انصراف",
+      "NAME": {
+        "LABEL": "Custom attribute name",
+        "PLACEHOLDER": "Eg: shopify id",
+        "ERROR": "Invalid custom attribute name"
+      },
+      "VALUE": {
+        "LABEL": "Attribute value",
+        "PLACEHOLDER": "Eg: 11901 "
+      }
+    }
+  }
+}

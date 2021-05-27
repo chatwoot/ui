@@ -1,0 +1,55 @@
+{
+  "COMPONENTS": {
+    "FILE_BUBBLE": {
+      "DOWNLOAD": "Descărcare",
+      "UPLOADING": "Încărcare..."
+    },
+    "FORM_BUBBLE": {
+      "SUBMIT": "Trimite"
+    }
+  },
+  "TEAM_AVAILABILITY": {
+    "ONLINE": "We are online",
+    "OFFLINE": "We are away at the moment"
+  },
+  "REPLY_TIME": {
+    "IN_A_FEW_MINUTES": "Typically replies in a few minutes",
+    "IN_A_FEW_HOURS": "Typically replies in a few hours",
+    "IN_A_DAY": "Typically replies in a day"
+  },
+  "START_CONVERSATION": "Start Conversation",
+  "UNREAD_VIEW": {
+    "VIEW_MESSAGES_BUTTON": "Vezi mesajele noi",
+    "CLOSE_MESSAGES_BUTTON": "Închide",
+    "COMPANY_FROM": "from",
+    "BOT": "Bot"
+  },
+  "BUBBLE": {
+    "LABEL": "Chat with us"
+  },
+  "POWERED_BY": "Oferit de Chatwoot",
+  "EMAIL_PLACEHOLDER": "Te rugăm să introduci adresa de e-mail",
+  "CHAT_PLACEHOLDER": "Scrie mesajul tău",
+  "TODAY": "Astăzi",
+  "YESTERDAY": "Ieri",
+  "PRE_CHAT_FORM": {
+    "FIELDS": {
+      "FULL_NAME": {
+        "LABEL": "Full Name",
+        "PLACEHOLDER": "Te rugăm să introduci un nume valid",
+        "ERROR": "Full Name is required"
+      },
+      "EMAIL_ADDRESS": {
+        "LABEL": "Adresa Email",
+        "PLACEHOLDER": "Please enter your email address",
+        "ERROR": "Invalid email address"
+      },
+      "MESSAGE": {
+        "LABEL": "Message",
+        "PLACEHOLDER": "Please enter your message",
+        "ERROR": "Message too short"
+      }
+    }
+  },
+  "FILE_SIZE_LIMIT": "File exceeds the {MAXIMUM_FILE_UPLOAD_SIZE} attachment limit"
+}

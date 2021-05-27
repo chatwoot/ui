@@ -1,0 +1,75 @@
+{
+  "GENERAL_SETTINGS": {
+    "TITLE": "Ρυθμίσεις",
+    "SUBMIT": "Ενημέρωση Ρυθμίσεων",
+    "BACK": "Πίσω",
+    "UPDATE": {
+      "ERROR": "Δεν μπορεί να ενημερωθεί η ρύθμιση προσπαθήστε ξανά!",
+      "SUCCESS": "Επιτυχής Ενημέρωση Ρυθμίσεων"
+    },
+    "FORM": {
+      "ERROR": "Παρακαλώ διορθώστε τα λάθη της Φόρμας",
+      "GENERAL_SECTION": {
+        "TITLE": "Γενικές Ρυθμίσεις",
+        "NOTE": ""
+      },
+      "NAME": {
+        "LABEL": "Ονομασία Λογαριασμού",
+        "PLACEHOLDER": "Η ονομασία του Λογαριασμού σας",
+        "ERROR": "Παρακαλώ συμπληρώστε ένα έγκυρο όνομα λογαριασμού"
+      },
+      "LANGUAGE": {
+        "LABEL": "Γλώσσα Ιστοσελίδας (Beta)",
+        "PLACEHOLDER": "Το όνομα του Λογαριασμού",
+        "ERROR": ""
+      },
+      "DOMAIN": {
+        "LABEL": "Τομέας (domain) του εισερχόμενου email",
+        "PLACEHOLDER": "Ο τομέας στον οποίο θα λαμβάνετε τα emails",
+        "ERROR": ""
+      },
+      "SUPPORT_EMAIL": {
+        "LABEL": "Email Υποστήριξης",
+        "PLACEHOLDER": "To email υποστήριξης της εταιρίας σας",
+        "ERROR": ""
+      },
+      "AUTO_RESOLVE_DURATION": {
+        "LABEL": "Αριθμός ημερών μετά τις οποίες η συνομιλία θα επιλύεται αυτόματα, αν δεν υπάρχει δραστηριότητα",
+        "PLACEHOLDER": "30",
+        "ERROR": "Παρακαλώ σημειώστε την περίοδο αυτόματης επίλυσης (ελάχιστο 1 ημέρα)"
+      },
+      "FEATURES": {
+        "INBOUND_EMAIL_ENABLED": "Η συνέχεια της συνομιλίας με emails έχει ενεργοποιηθεί για τον λογαριασμό.",
+        "CUSTOM_EMAIL_DOMAIN_ENABLED": "Τώρα μπορείτε να λαμβάνετε emails στον τομέα (domain) σας."
+      }
+    },
+    "UPDATE_CHATWOOT": "Μια ενημέρωση %{latestChatwootVersion} για το Chatwoot είναι διαθέσιμη. Ενημερώστε την εφαρμογή σας."
+  },
+  "FORMS": {
+    "MULTISELECT": {
+      "ENTER_TO_SELECT": "Πάτησε enter για επιλογή",
+      "ENTER_TO_REMOVE": "Πάτησε enter για αφαίρεση",
+      "SELECT_ONE": "Επιλέξτε ένα"
+    }
+  },
+  "NOTIFICATIONS_PAGE": {
+    "HEADER": "Ειδοποιήσεις",
+    "MARK_ALL_DONE": "Όλες ολοκληρωμένες",
+    "LIST": {
+      "LOADING_MESSAGE": "Φόρτωση ειδοποιήσεων...",
+      "404": "Καμία Ειδοποίηση",
+      "TABLE_HEADER": [
+        "Όνομα",
+        "Αριθμός Τηλεφώνου",
+        "Συζητήσεις",
+        "Τελευταία επικοινωνία"
+      ]
+    },
+    "TYPE_LABEL": {
+      "conversation_creation": "Νέα συνομιλία",
+      "conversation_assignment": "Η Συνομιλία Ανατέθηκε",
+      "assigned_conversation_new_message": "Νέο Μήνυμα",
+      "conversation_mention": "Αναφορά"
+    }
+  }
+}
