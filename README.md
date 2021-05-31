@@ -2,6 +2,8 @@
 
 ## Project setup
 ```
+cp .env.example .env
+
 yarn install
 ```
 
@@ -22,7 +24,7 @@ yarn lint
 
 ### Customize the API Host or Websocket URL
 
-Go to `public/index.html`.
+HOST_URL, API_HOST and WEBSOCKET_URL can be configured via environment variable during build time, if you would like to see the entire config, go to `vue/config.js`.
 
 The basic config is of the format shown below.
 
@@ -50,8 +52,6 @@ window.chatwootConfig = {
 5. `selectedLocale` - Currently active locale, default `en`.
 6. `apiHost` - Base URL of Chatwoot API, make sure that the Chatwoot server is running on API mode, other APIs will fail.
 7. `websocketURL` - Base URL to connect to websocket. If you are running a production server then it would be `wss://<app-domain.com>`
-
-These configs can be moved to a webpack config if needed and can be injected during the build time.
 
 ### Customize build configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

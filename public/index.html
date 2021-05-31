@@ -6,31 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
-    <script>
-      window.chatwootConfig = {
-        hostURL: 'http://localhost:8080',
-        fbAppId: '',
-        signupEnabled: true,
-        enabledLanguages: [
-          {
-            "name":"English (en)",
-            "iso_639_1_code":"en"
-          }
-        ],
-        selectedLocale: 'en',
-        apiHost: 'http://localhost:3000',
-        websocketURL: 'ws://localhost:3000'
-      }
-      window.globalConfig = {
-        "LOGO":"https://app.chatwoot.com/brand-assets/logo.svg",
-        "LOGO_THUMBNAIL":"https://app.chatwoot.com/brand-assets/logo_thumbnail.svg",
-        "INSTALLATION_NAME":"Chatwoot",
-        "WIDGET_BRAND_URL":"https://www.chatwoot.com",
-        "TERMS_URL":"https://www.chatwoot.com/terms-of-service",
-        "PRIVACY_URL":"https://www.chatwoot.com/privacy-policy",
-        "APP_VERSION":"1.16.2"
-      }
-    </script>
+    <%= htmlWebpackPlugin.options.custom %>
   </head>
   <body>
     <noscript>
