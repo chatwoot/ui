@@ -4,6 +4,7 @@ const { API_HOST, WEBSOCKET_URL, HOST_URL } = process.env
 
 module.exports = {
   publicPath: '/app/',
+  outputDir: 'dist/app',
   pages: {
     index: {
       entry: 'src/packs/application.js',
