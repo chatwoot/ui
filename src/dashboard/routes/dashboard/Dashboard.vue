@@ -1,6 +1,5 @@
 <template>
-  <div class="row app-wrapper">
-    <sidebar :route="currentRoute" :class="sidebarClassName"></sidebar>
+  <div>
     <section class="app-content columns" :class="contentClassName">
       <router-view></router-view>
     </section>
@@ -8,12 +7,9 @@
 </template>
 
 <script>
-import Sidebar from '../../components/layout/Sidebar';
+
 
 export default {
-  components: {
-    Sidebar,
-  },
   data() {
     return {
       isSidebarOpen: false,
@@ -21,18 +17,6 @@ export default {
     };
   },
   computed: {
-    currentRoute() {
-      return ' ';
-    },
-    sidebarClassName() {
-      if (this.isOnDesktop) {
-        return '';
-      }
-      if (this.isSidebarOpen) {
-        return 'off-canvas is-open ';
-      }
-      return 'off-canvas position-left is-transition-push is-closed';
-    },
     contentClassName() {
       if (this.isOnDesktop) {
         return '';

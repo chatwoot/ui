@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="app-wrapper app-root">
+  <div id="app">
     <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
@@ -8,12 +8,12 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import WootSnackbarBox from './components/SnackbarContainer';
-import { accountIdFromPathname } from './helper/URLHelper';
+import { mapGetters } from "vuex";
+import WootSnackbarBox from "./components/SnackbarContainer";
+import { accountIdFromPathname } from "./helper/URLHelper";
 
 export default {
-  name: 'App',
+  name: "App",
 
   components: {
     WootSnackbarBox,
@@ -21,12 +21,12 @@ export default {
 
   computed: {
     ...mapGetters({
-      getAccount: 'accounts/getAccount',
+      getAccount: "accounts/getAccount",
     }),
   },
 
   mounted() {
-    this.$store.dispatch('setUser');
+    this.$store.dispatch("setUser");
     this.setLocale(window.chatwootConfig.selectedLocale);
     this.initializeAccount();
   },
@@ -41,7 +41,7 @@ export default {
       const accountId = accountIdFromPathname(pathname);
 
       if (accountId) {
-        await this.$store.dispatch('accounts/get');
+        await this.$store.dispatch("accounts/get");
         const { locale } = this.getAccount(accountId);
         this.setLocale(locale);
       }
@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import './assets/scss/app';
+@import "./assets/scss/app";
 </style>
 
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
