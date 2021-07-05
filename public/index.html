@@ -12,7 +12,12 @@
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
+    <div class="app-wrapper app-root">
+        <div class="row app-wrapper">
+            <div id="appnav"></div> <!-- Here sidebar will be injected -->
+            <div id="app"></div> <!-- here chat widget will be injected-->
+        </div>
+    </div>
     <!-- built files will be auto injected -->
   </body>
 </html>

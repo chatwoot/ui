@@ -18,11 +18,11 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import ChatList from '../../../components/ChatList';
-import ConversationBox from '../../../components/widgets/conversation/ConversationBox';
-import PopOverSearch from './search/PopOverSearch';
-import uiSettingsMixin from 'dashboard/mixins/uiSettings';
+import { mapGetters } from "vuex";
+import ChatList from "../../../components/ChatList";
+import ConversationBox from "../../../components/widgets/conversation/ConversationBox";
+import PopOverSearch from "./search/PopOverSearch";
+import uiSettingsMixin from "dashboard/mixins/uiSettings";
 
 export default {
   components: {
@@ -32,38 +32,34 @@ export default {
   },
   mixins: [uiSettingsMixin],
   props: {
-    inboxId: {
-      type: [String, Number],
-      default: 0,
-    },
     conversationId: {
       type: [String, Number],
       default: 0,
     },
     label: {
       type: String,
-      default: '',
+      default: "",
     },
     teamId: {
       type: String,
-      default: '',
+      default: "",
     },
   },
   data() {
     return {
       showSearchModal: false,
+      inboxId: 0,
     };
   },
   computed: {
     ...mapGetters({
-      chatList: 'getAllConversations',
-      currentChat: 'getSelectedChat',
+      chatList: "getAllConversations",
+      currentChat: "getSelectedChat",
     }),
     isContactPanelOpen() {
       if (this.currentChat.id) {
-        const {
-          is_contact_sidebar_open: isContactSidebarOpen,
-        } = this.uiSettings;
+        const { is_contact_sidebar_open: isContactSidebarOpen } =
+          this.uiSettings;
         return isContactSidebarOpen;
       }
       return false;
@@ -71,11 +67,16 @@ export default {
   },
 
   mounted() {
-    this.$store.dispatch('agents/get');
+    this.$store.dispatch("agents/get");
     this.initialize();
-    this.$watch('$store.state.route', () => this.initialize());
-    this.$watch('chatList.length', () => {
+    this.$watch("$store.state.route", () => this.initialize());
+    this.$watch("chatList.length", () => {
       this.setActiveChat();
+    });
+    bus.$on("activeInboxUpdate", (inboxId) => {
+      this.inboxId = inboxId;
+      this.initialize();
+      console.log("updateee ", inboxId);
     });
   },
 
@@ -84,7 +85,7 @@ export default {
       this.fetchConversationIfUnavailable();
     },
     initialize() {
-      this.$store.dispatch('setActiveInbox', this.inboxId);
+      this.$store.dispatch("setActiveInbox", this.inboxId);
       this.setActiveChat();
     },
     fetchConversationIfUnavailable() {
@@ -93,12 +94,12 @@ export default {
       }
       const chat = this.findConversation();
       if (!chat) {
-        this.$store.dispatch('getConversation', this.conversationId);
+        this.$store.dispatch("getConversation", this.conversationId);
       }
     },
     findConversation() {
       const conversationId = parseInt(this.conversationId, 10);
-      const [chat] = this.chatList.filter(c => c.id === conversationId);
+      const [chat] = this.chatList.filter((c) => c.id === conversationId);
       return chat;
     },
     setActiveChat() {
@@ -107,11 +108,11 @@ export default {
         if (!chat) {
           return;
         }
-        this.$store.dispatch('setActiveChat', chat).then(() => {
-          bus.$emit('scrollToMessage');
+        this.$store.dispatch("setActiveChat", chat).then(() => {
+          bus.$emit("scrollToMessage");
         });
       } else {
-        this.$store.dispatch('clearSelectedState');
+        this.$store.dispatch("clearSelectedState");
       }
     },
     onToggleContactPanel() {

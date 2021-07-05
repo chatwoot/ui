@@ -17,6 +17,7 @@ import Vuelidate from 'vuelidate';
 import VTooltip from 'v-tooltip';
 import WootUiKit from '../dashboard/components';
 import App from '../dashboard/App';
+import AppNav from '../navbar/App';
 import i18n from '../dashboard/i18n';
 import createAxios from '../dashboard/helper/APIHelper';
 import commonHelpers from '../dashboard/helper/commons';
@@ -77,7 +78,14 @@ window.onload = () => {
     components: { App },
     template: '<App/>',
   }).$mount('#app');
-  vueActionCable.init();
+    vueActionCable.init();
+    new Vue({
+        components: { AppNav },
+        template: '<AppNav/>',
+        router,
+        store,
+        i18n: i18nConfig,
+    }).$mount('#appnav');
 };
 window.addEventListener('load', () => {
   verifyServiceWorkerExistence(registration =>
