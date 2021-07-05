@@ -1,14 +1,10 @@
 <template>
-  <div>
-    <section class="app-content columns" :class="contentClassName">
-      <router-view></router-view>
-    </section>
-  </div>
+  <section class="app-content columns" :class="contentClassName">
+    <router-view></router-view>
+  </section>
 </template>
 
 <script>
-
-
 export default {
   data() {
     return {
@@ -19,24 +15,24 @@ export default {
   computed: {
     contentClassName() {
       if (this.isOnDesktop) {
-        return '';
+        return "";
       }
       if (this.isSidebarOpen) {
-        return 'off-canvas-content is-open-left has-transition-push has-position-left';
+        return "off-canvas-content is-open-left has-transition-push has-position-left";
       }
-      return 'off-canvas-content';
+      return "off-canvas-content";
     },
   },
   mounted() {
-    this.$store.dispatch('setCurrentAccountId', this.$route.params.accountId);
-    window.addEventListener('resize', this.handleResize);
+    this.$store.dispatch("setCurrentAccountId", this.$route.params.accountId);
+    window.addEventListener("resize", this.handleResize);
     this.handleResize();
-    bus.$on('sidemenu_icon_click', () => {
+    bus.$on("sidemenu_icon_click", () => {
       this.isSidebarOpen = !this.isSidebarOpen;
     });
   },
   beforeDestroy() {
-    window.removeEventListener('resize', this.handleResize);
+    window.removeEventListener("resize", this.handleResize);
   },
   methods: {
     handleResize() {

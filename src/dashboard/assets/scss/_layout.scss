@@ -18,6 +18,14 @@ body {
   flex-direction: column;
 }
 
+#app {
+    width: 100%;
+}
+
+.row.app-wrapper {
+    flex-flow: unset;
+}
+
 .app-content {
   @include flex;
   @include full-height;

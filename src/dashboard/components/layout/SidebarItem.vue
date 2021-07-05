@@ -23,14 +23,18 @@
       />
     </a>
     <ul v-if="menuItem.hasSubMenu" class="nested vertical menu">
-      <router-link
+      <li
         v-for="child in menuItem.children"
         :key="child.id"
         active-class="active flex-container"
         tag="li"
         :to="child.toState"
       >
-        <a href="#" :class="computedChildClass(child)">
+        <a
+          href="#"
+          @click="setActiveInbox(child.id)"
+          :class="computedChildClass(child)"
+        >
           <div class="wrap">
             <i
               v-if="computedInboxClass(child)"
@@ -50,7 +54,7 @@
             </div>
           </div>
         </a>
-      </router-link>
+      </li>
     </ul>
     <add-label-modal
       v-if="showAddLabel"
@@ -61,12 +65,12 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from "vuex";
 
-import router from '../../routes';
-import adminMixin from '../../mixins/isAdmin';
-import { getInboxClassByType } from 'dashboard/helper/inbox';
-import AddLabelModal from '../../routes/dashboard/settings/labels/AddLabel';
+import router from "../../routes";
+import adminMixin from "../../mixins/isAdmin";
+import { getInboxClassByType } from "dashboard/helper/inbox";
+import AddLabelModal from "../../routes/dashboard/settings/labels/AddLabel";
 export default {
   components: {
     AddLabelModal,
@@ -87,36 +91,40 @@ export default {
   },
   computed: {
     ...mapGetters({
-      activeInbox: 'getSelectedInbox',
+      activeInbox: "getSelectedInbox",
     }),
     getMenuItemClass() {
       return this.menuItem.cssClass
         ? `side-menu ${this.menuItem.cssClass}`
-        : 'side-menu';
+        : "side-menu";
     },
     computedClass() {
       // If active Inbox is present
       // donot highlight conversations
-      if (this.activeInbox) return ' ';
+      if (this.activeInbox) return " ";
 
       if (
-        this.$store.state.route.name === 'inbox_conversation' &&
-        this.menuItem.toStateName === 'home'
+        this.$store.state.route.name === "inbox_conversation" &&
+        this.menuItem.toStateName === "home"
       ) {
-        return 'active';
+        return "active";
       }
-      return ' ';
+      return " ";
     },
   },
   methods: {
+    setActiveInbox(inboxId) {
+        console.log("inbox: ", inboxId);
+       bus.$emit('activeInboxUpdate', inboxId);
+    },
     computedInboxClass(child) {
       const { type, phoneNumber } = child;
       const classByType = getInboxClassByType(type, phoneNumber);
       return classByType;
     },
     computedChildClass(child) {
-      if (!child.truncateLabel) return '';
-      return 'text-truncate';
+      if (!child.truncateLabel) return "";
+      return "text-truncate";
     },
     computedChildTitle(child) {
       if (!child.truncateLabel) return false;
@@ -124,9 +132,9 @@ export default {
     },
     newLinkClick(item) {
       if (item.newLinkRouteName) {
-        router.push({ name: item.newLinkRouteName, params: { page: 'new' } });
+        router.push({ name: item.newLinkRouteName, params: { page: "new" } });
       } else if (item.showModalForNewItem) {
-        if (item.modalName === 'AddLabel') {
+        if (item.modalName === "AddLabel") {
           this.showAddLabelPopup();
         }
       }
@@ -144,7 +152,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import '~dashboard/assets/scss/variables';
+@import "~dashboard/assets/scss/variables";
 
 .sub-menu-title {
   display: flex;
