@@ -3,8 +3,11 @@ const Dotenv = require('dotenv-webpack');
 const { API_HOST, WEBSOCKET_URL, HOST_URL } = process.env
 
 module.exports = {
-  publicPath: '/app/',
-  outputDir: 'dist/app',
+  publicPath: '/',
+  filenameHashing: false,
+  chainWebpack: config => {
+    config.optimization.delete('splitChunks')
+  },
   pages: {
     index: {
       entry: 'src/packs/application.js',
