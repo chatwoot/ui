@@ -70,23 +70,67 @@ commonHelpers();
 window.WootConstants = constants;
 window.axios = createAxios(axios);
 window.bus = new Vue();
-window.onload = () => {
+
+
+let loadedApp = false;
+
+window.loadChatApp = () => {
+  if (loadedApp) {
+    return;
+  }
+  console.log('Loading Hiver Chat');
+  loadedApp = true;
+
+  const main_gmail_body = '.nH.bkK.nn';
+  const chatContainerId = 'h-chat-container';
+  const inboxContainerId = 'h-chat-inbox--container';
+
+  //Check if inbox container is present
+  const inboxContainer = document.getElementById(inboxContainerId);
+  if (!inboxContainer) {
+    console.log('inboxContainer not present');
+    return;
+  }
+
+  //Creates chat conversations container
+  const hiverChatContainer = document.getElementById(chatContainerId);
+  if (!hiverChatContainer) {
+    const chatContainerEle = document.createElement('div');
+    chatContainerEle.setAttribute("id", chatContainerId);
+    document.querySelector(main_gmail_body).appendChild(chatContainerEle);
+  }
+  //Loads Conversations vue instance
   window.WOOT = new Vue({
     router,
     store,
     i18n: i18nConfig,
     components: { App },
     template: '<App/>',
-  }).$mount('#app');
-    vueActionCable.init();
-    new Vue({
-        components: { AppNav },
-        template: '<AppNav/>',
-        router,
-        store,
-        i18n: i18nConfig,
-    }).$mount('#appnav');
-};
+  }).$mount(`#${chatContainerId}`);
+  vueActionCable.init();
+
+  //Loads Inboxes vue instance
+  vueActionCable.init();
+  new Vue({
+      components: { AppNav },
+      template: '<AppNav/>',
+      router,
+      store,
+      i18n: i18nConfig,
+  }).$mount(`#${inboxContainerId}`);
+
+  const onInboxClick = () => {
+    window.location.hash = '#liveChat';
+    const conversationList = document.querySelector(main_gmail_body + '> .nH');
+    conversationList.style.opacity = 0;
+    conversationList.style.transition = 'all .5s ease-in-out';
+    conversationList.style.height = 0;
+    conversationList.style.overflow = 'auto';
+  };
+  const inboxClassName = "h-icon-container hiver-left-sidebar-name-container h-left-sidebar-name-container";
+  setTimeout(onInboxClick, 3000)
+}
+
 window.addEventListener('load', () => {
   verifyServiceWorkerExistence(registration =>
     registration.pushManager.getSubscription().then(subscription => {
