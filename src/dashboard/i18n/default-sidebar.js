@@ -7,10 +7,7 @@ export const getSidebarItems = accountId => ({
       'inbox_dashboard',
       'inbox_conversation',
       'conversation_through_inbox',
-      'contacts_dashboard',
-      'contacts_dashboard_manage',
       'notifications_dashboard',
-      'settings_account_reports',
       'profile_settings',
       'profile_settings_index',
       'label_conversations',
@@ -59,6 +56,55 @@ export const getSidebarItems = accountId => ({
       },
     },
   },
+  contacts: {
+    routes: [
+      'contacts_dashboard',
+      'contacts_dashboard_manage',
+      'contacts_labels_dashboard',
+    ],
+    menuItems: {
+      back: {
+        icon: 'ion-ios-arrow-back',
+        label: 'HOME',
+        hasSubMenu: false,
+        toStateName: 'home',
+        toState: frontendURL(`accounts/${accountId}/dashboard`),
+      },
+      contacts: {
+        icon: 'ion-person',
+        label: 'ALL_CONTACTS',
+        hasSubMenu: false,
+        toState: frontendURL(`accounts/${accountId}/contacts`),
+        toStateName: 'contacts_dashboard',
+      },
+    },
+  },
+  reports: {
+    routes: ['settings_account_reports', 'csat_reports'],
+    menuItems: {
+      back: {
+        icon: 'ion-ios-arrow-back',
+        label: 'HOME',
+        hasSubMenu: false,
+        toStateName: 'home',
+        toState: frontendURL(`accounts/${accountId}/dashboard`),
+      },
+      reportOverview: {
+        icon: 'ion-arrow-graph-up-right',
+        label: 'REPORTS_OVERVIEW',
+        hasSubMenu: false,
+        toState: frontendURL(`accounts/${accountId}/reports/overview`),
+        toStateName: 'settings_account_reports',
+      },
+      csatReports: {
+        icon: 'ion-happy',
+        label: 'CSAT',
+        hasSubMenu: false,
+        toState: frontendURL(`accounts/${accountId}/reports/csat`),
+        toStateName: 'csat_reports',
+      },
+    },
+  },
   settings: {
     routes: [
       'agent_list',
@@ -74,6 +120,9 @@ export const getSidebarItems = accountId => ({
       'settings_integrations',
       'settings_integrations_webhook',
       'settings_integrations_integration',
+      'settings_applications',
+      'settings_applications_webhook',
+      'settings_applications_integration',
       'general_settings',
       'general_settings_index',
       'settings_teams_list',
@@ -135,6 +184,13 @@ export const getSidebarItems = accountId => ({
         hasSubMenu: false,
         toState: frontendURL(`accounts/${accountId}/settings/integrations`),
         toStateName: 'settings_integrations',
+      },
+      settings_applications: {
+        icon: 'ion-asterisk',
+        label: 'APPLICATIONS',
+        hasSubMenu: false,
+        toState: frontendURL(`accounts/${accountId}/settings/applications`),
+        toStateName: 'settings_applications',
       },
       general_settings_index: {
         icon: 'ion-gear-a',

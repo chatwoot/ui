@@ -24,9 +24,15 @@ import { dispatchWindowEvent } from 'shared/helpers/CustomEventHelper';
 
 const EVENT_NAME = 'chatwoot:ready';
 
+const WIDGET_URL = process.env.VUE_APP_WIDGET_URL;
+
 export const IFrameHelper = {
   getUrl({ baseUrl, websiteToken }) {
-    return `${baseUrl}/widget?website_token=${websiteToken}`;
+    let widgetURL = `${baseUrl}/widget`;
+    if (WIDGET_URL) {
+      widgetURL = WIDGET_URL;
+    }
+    return `${widgetURL}?website_token=${websiteToken}`;
   },
   createFrame: ({ baseUrl, websiteToken }) => {
     if (IFrameHelper.getAppFrame()) {
@@ -150,6 +156,16 @@ export const IFrameHelper = {
 
       if (!isOpen && unreadMessageCount > 0) {
         IFrameHelper.sendMessage('set-unread-view');
+        onBubbleClick({ toggleValue });
+        const holderEl = document.querySelector('.woot-widget-holder');
+        addClass(holderEl, 'has-unread-view');
+      }
+    },
+
+    setCampaignMode: () => {
+      const { isOpen } = window.$chatwoot;
+      const toggleValue = true;
+      if (!isOpen) {
         onBubbleClick({ toggleValue });
         const holderEl = document.querySelector('.woot-widget-holder');
         addClass(holderEl, 'has-unread-view');

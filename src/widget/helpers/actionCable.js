@@ -2,7 +2,8 @@ import BaseActionCableConnector from '../../shared/helpers/BaseActionCableConnec
 
 class ActionCableConnector extends BaseActionCableConnector {
   constructor(app, pubsubToken) {
-    super(app, pubsubToken);
+    const { websocketURL = '' } = window.chatwootConfig || {};
+    super(app, pubsubToken, websocketURL);
     this.events = {
       'message.created': this.onMessageCreated,
       'message.updated': this.onMessageUpdated,
@@ -18,13 +19,15 @@ class ActionCableConnector extends BaseActionCableConnector {
   };
 
   onMessageCreated = data => {
-    this.app.$store.dispatch('conversation/addMessage', data).then(() => {
-      window.bus.$emit('on-agent-message-recieved');
-    });
+    this.app.$store
+      .dispatch('conversation/addOrUpdateMessage', data)
+      .then(() => {
+        window.bus.$emit('on-agent-message-recieved');
+      });
   };
 
   onMessageUpdated = data => {
-    this.app.$store.dispatch('conversation/updateMessage', data);
+    this.app.$store.dispatch('conversation/addOrUpdateMessage', data);
   };
 
   onPresenceUpdate = data => {

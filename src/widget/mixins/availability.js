@@ -1,13 +1,15 @@
 import compareAsc from 'date-fns/compareAsc';
 import { buildDateFromTime } from 'shared/helpers/DateHelper';
+import { mapGetters } from 'vuex';
 
 export default {
   computed: {
+    ...mapGetters({ webChannelConfig: 'appConfig/getWebChannelConfig' }),
     channelConfig() {
-      return window.chatwootWebChannel;
+      return this.webChannelConfig;
     },
     replyTime() {
-      return window.chatwootWebChannel.replyTime;
+      return this.webChannelConfig.replyTime;
     },
     replyTimeStatus() {
       switch (this.replyTime) {

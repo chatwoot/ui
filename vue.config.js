@@ -1,6 +1,5 @@
 const path = require('path');
-const Dotenv = require('dotenv-webpack');
-const { API_HOST, WEBSOCKET_URL, HOST_URL } = process.env
+const { API_HOST, WEBSOCKET_URL, HOST_URL, WEBSITE_INBOX_TOKEN } = process.env
 
 module.exports = {
   publicPath: '/app/',
@@ -35,6 +34,35 @@ module.exports = {
           }
         </script>
       `
+    },
+    widget: {
+      entry: 'src/packs/widget.js',
+      custom: `
+        <script>
+        window.chatwootConfig = {
+          apiHost: '${API_HOST}',
+          websocketURL: '${WEBSOCKET_URL}'
+        };
+        </script>
+      `
+    },
+    'sdk-test': {
+      entry: 'src/packs/sdk-test.js',
+      custom: `
+      <script>
+        (function(d,t) {
+          var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+          g.src="/app/js/sdk.js";
+          s.parentNode.insertBefore(g,s);
+          g.onload=function(){
+            window.chatwootSDK.run({
+              websiteToken: '${WEBSITE_INBOX_TOKEN}',
+              baseUrl: ''
+            })
+          }
+        })(document,"script");
+      </script>
+      `
     }
   },
   configureWebpack: {
@@ -53,8 +81,14 @@ module.exports = {
         './iconfont.svg': 'vue-easytable/libs/font/iconfont.svg',
       },
     },
-    plugins: [
-      new Dotenv()
-    ]
+    entry: {
+      'sdk': './src/packs/sdk.js',
+    },
+    output: {
+      filename: chunkData => chunkData.chunk.name === 'sdk' ? 'js/[name].js' : 'js/[name]-[hash].js',
+    }
   },
+  chainWebpack: config => {
+    config.optimization.delete('splitChunks')
+  }
 }

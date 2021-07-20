@@ -3,7 +3,6 @@ import Vuelidate from 'vuelidate';
 import VueI18n from 'vue-i18n';
 import store from '../widget/store';
 import App from '../widget/App.vue';
-import ActionCableConnector from '../widget/helpers/actionCable';
 import i18n from '../widget/i18n';
 
 Vue.use(VueI18n);
@@ -25,9 +24,4 @@ window.onload = () => {
     i18n: i18nConfig,
     render: h => h(App),
   }).$mount('#app');
-
-  window.actionCable = new ActionCableConnector(
-    window.WOOT_WIDGET,
-    window.chatwootPubsubToken
-  );
 };

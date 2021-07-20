@@ -1,7 +1,7 @@
 <template>
   <div class="column content-box">
     <div class="row">
-      <div class="small-8 columns">
+      <div class="small-8 columns with-right-space ">
         <p v-if="!teamsList.length" class="no-items-error-message">
           {{ $t('TEAMS_SETTINGS.LIST.404') }}
           <router-link
@@ -63,15 +63,16 @@
         />
       </div>
     </div>
-
-    <woot-delete-modal
+    <woot-confirm-delete-modal
       :show.sync="showDeletePopup"
-      :on-close="closeDelete"
-      :on-confirm="confirmDeletion"
-      :title="deleteTitle"
+      :title="confirmDeleteTitle"
       :message="$t('TEAMS_SETTINGS.DELETE.CONFIRM.MESSAGE')"
       :confirm-text="deleteConfirmText"
       :reject-text="deleteRejectText"
+      :confirm-value="selectedTeam.name"
+      :confirm-place-holder-text="confirmPlaceHolderText"
+      @on-confirm="confirmDeletion"
+      @on-close="closeDelete"
     />
   </div>
 </template>
@@ -105,10 +106,15 @@ export default {
     deleteRejectText() {
       return this.$t('TEAMS_SETTINGS.DELETE.CONFIRM.NO');
     },
-    deleteTitle() {
+    confirmDeleteTitle() {
       return this.$t('TEAMS_SETTINGS.DELETE.CONFIRM.TITLE', {
         teamName: this.selectedTeam.name,
       });
+    },
+    confirmPlaceHolderText() {
+      return `${this.$t('TEAMS_SETTINGS.DELETE.CONFIRM.PLACE_HOLDER', {
+        teamName: this.selectedTeam.name,
+      })}`;
     },
   },
   methods: {

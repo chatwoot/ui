@@ -7,7 +7,6 @@ import conversation from 'widget/store/modules/conversation';
 import conversationAttributes from 'widget/store/modules/conversationAttributes';
 import conversationLabels from 'widget/store/modules/conversationLabels';
 import events from 'widget/store/modules/events';
-import globalConfig from 'shared/store/globalConfig';
 import message from 'widget/store/modules/message';
 import campaign from 'widget/store/modules/campaign';
 
@@ -21,7 +20,6 @@ export default new Vuex.Store({
     conversationAttributes,
     conversationLabels,
     events,
-    globalConfig,
     message,
     campaign,
   },

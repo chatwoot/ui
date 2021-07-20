@@ -28,9 +28,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters({
-      globalConfig: 'globalConfig/get',
-    }),
+    ...mapGetters({ globalConfig: 'appConfig/getGlobalConfig' }),
     brandRedirectURL() {
       const baseURL = `${this.globalConfig.widgetBrandURL}?utm_source=widget_branding`;
       if (this.referrerHost) {
@@ -46,8 +44,6 @@ export default {
   },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import '~widget/assets/scss/variables.scss';
 

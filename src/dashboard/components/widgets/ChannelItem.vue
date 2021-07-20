@@ -1,6 +1,6 @@
 <template>
   <div
-    class="small-3 columns channel"
+    class="small-6 medium-4 large-3 columns channel"
     :class="{ inactive: !isActive }"
     @click="onItemClick"
   >
@@ -17,8 +17,12 @@
       src="~dashboard/assets/images/channels/telegram.png"
     />
     <img
-      v-if="channel.key === 'api'"
+      v-if="channel.key === 'api' && !channel.thumbnail"
       src="~dashboard/assets/images/channels/api.png"
+    />
+    <img
+      v-if="channel.key === 'api' && channel.thumbnail"
+      :src="channel.thumbnail"
     />
     <img
       v-if="channel.key === 'email'"
@@ -33,8 +37,12 @@
       src="~dashboard/assets/images/channels/website.png"
     />
     <img
-      v-if="channel.key === 'twilio'"
-      src="~dashboard/assets/images/channels/twilio.png"
+      v-if="channel.key === 'sms'"
+      src="~dashboard/assets/images/channels/sms.png"
+    />
+    <img
+      v-if="channel.key === 'whatsapp'"
+      src="~dashboard/assets/images/channels/whatsapp.png"
     />
     <h3 class="channel__title">
       {{ channel.name }}
@@ -68,7 +76,7 @@ export default {
       if (key === 'email') {
         return this.enabledFeatures.channel_email;
       }
-      return ['website', 'twilio', 'api'].includes(key);
+      return ['website', 'twilio', 'api', 'whatsapp', 'sms'].includes(key);
     },
   },
   methods: {

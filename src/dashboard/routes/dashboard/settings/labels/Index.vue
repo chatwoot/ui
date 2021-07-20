@@ -9,7 +9,7 @@
       {{ $t('LABEL_MGMT.HEADER_BTN_TXT') }}
     </woot-button>
     <div class="row">
-      <div class="small-8 columns">
+      <div class="small-8 columns with-right-space ">
         <p
           v-if="!uiFlags.isFetching && !records.length"
           class="no-items-error-message"
@@ -73,19 +73,16 @@
         <span v-html="$t('LABEL_MGMT.SIDEBAR_TXT')"></span>
       </div>
     </div>
+    <woot-modal :show.sync="showAddPopup" :on-close="hideAddPopup">
+      <add-label @close="hideAddPopup" />
+    </woot-modal>
 
-    <add-label
-      v-if="showAddPopup"
-      :show.sync="showAddPopup"
-      :on-close="hideAddPopup"
-    />
-
-    <edit-label
-      v-if="showEditPopup"
-      :show.sync="showEditPopup"
-      :selected-response="selectedResponse"
-      :on-close="hideEditPopup"
-    />
+    <woot-modal :show.sync="showEditPopup" :on-close="hideEditPopup">
+      <edit-label
+        :selected-response="selectedResponse"
+        @close="hideEditPopup"
+      />
+    </woot-modal>
 
     <woot-delete-modal
       :show.sync="showDeleteConfirmationPopup"

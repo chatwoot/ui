@@ -18,6 +18,7 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex';
 import { IFrameHelper, RNHelper } from 'widget/helpers/utils';
 import { buildPopoutURL } from '../helpers/urlParamsHelper';
 
@@ -39,16 +40,21 @@ export default {
     showHeaderActions() {
       return this.isIframe || this.isRNWebView;
     },
+    ...mapGetters({
+      authToken: 'appConfig/getAuthToken',
+      webChannelConfig: 'appConfig/getWebChannelConfig',
+    }),
   },
   methods: {
     popoutWindow() {
       this.closeWindow();
       const {
-        location: { origin },
-        chatwootWebChannel: { websiteToken },
+        webChannelConfig: { websiteToken },
         authToken,
+      } = this;
+      const {
+        location: { origin },
       } = window;
-
       const popoutWindowURL = buildPopoutURL({
         origin,
         websiteToken,

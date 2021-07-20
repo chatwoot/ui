@@ -1,16 +1,16 @@
 # @chatwoot/ui
 
-## Prerequisite 
+## Prerequisite
 
-Clone the repo into your local development environment.  
+Clone the repo into your local development environment.
 
-### Update to latest chatwoot UI (optional) 
+### Update to latest chatwoot UI (optional)
 
 If you want to work over the latest chatwoot UI, replace the `src` directory contents in this repo with the latest chatwoot [app/javascript](https://github.com/chatwoot/chatwoot/tree/develop/app/javascript) folder.
 
 > Doing this step will require you to update the dependencies accordingly in your package.json if you face errors
 
-### Run Chatwoot API server 
+### Run Chatwoot API server
 
 Run the Chatwoot server in API only mode. You can do this by setting the Environment variable `CW_API_ONLY_SERVER` to true before starting the chatwoot app.
 
