@@ -12,7 +12,7 @@ module.exports = {
           window.chatwootConfig = {
             hostURL: '${HOST_URL}',
             fbAppId: '',
-            signupEnabled: true,
+            signupEnabled: 'true',
             enabledLanguages: [
               {
                 "name":"English (en)",
