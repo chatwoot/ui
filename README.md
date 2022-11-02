@@ -1,5 +1,9 @@
 # @chatwoot/ui
 
+> Note: This repository is a POC. For any issues or fixes please use : https://github.com/chatwoot/chatwoot
+> Always update the `src` directory to the latest chatwoot version before starting to work over it.
+
+
 ## Prerequisite
 
 Clone the repo into your local development environment.
