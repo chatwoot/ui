@@ -13,7 +13,9 @@ import videojs from 'video.js';
 import alertMixin from '../../../../shared/mixins/alertMixin';
 
 import Recorder from 'opus-recorder';
-import encoderWorker from 'opus-recorder/dist/encoderWorker.min';
+
+import encoderWorker from 'opus-recorder/dist/encoderWorker.min.js?url';
+
 import waveWorker from 'opus-recorder/dist/waveWorker.min';
 
 import WaveSurfer from 'wavesurfer.js';

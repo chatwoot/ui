@@ -95,5 +95,10 @@ module.exports = {
   },
   chainWebpack: config => {
     config.optimization.delete('splitChunks')
+    config.module
+        .rule('file-loader')
+        .test(/encoderWorker\.min\.js$/)
+        .use('file-loader')
+        .loader('file-loader')
   }
 }
