@@ -14,24 +14,17 @@
 }
 
 .modal--close {
-  border-radius: 50%;
-  color: $color-heading;
-  cursor: pointer;
-  font-size: $font-size-big;
-  line-height: $space-normal;
-  padding: $space-normal $space-two;
   position: absolute;
-  right: $space-micro;
-  top: $space-micro;
+  right: $space-small;
+  top: $space-small;
 
   &:hover {
     background: $color-background;
   }
 }
 
-
 .page-top-bar {
-  @include padding($space-large $space-large $zero);
+  padding: $space-large $space-large $zero;
 
   img {
     max-height: 6rem;
@@ -48,12 +41,15 @@
   position: relative;
   width: 60rem;
 
-
-  .content-box {
-    @include padding($zero);
-    height: auto;
+  &.medium {
+    max-width: 80%;
+    width: 90rem;
   }
 
+  .content-box {
+    height: auto;
+    padding: 0;
+  }
 
   h2 {
     color: $color-heading;
@@ -62,41 +58,46 @@
   }
 
   p {
-    @include margin($zero);
-    @include padding($zero);
     font-size: $font-size-small;
+    margin: 0;
+    padding: 0;
   }
 
   .content {
-    @include padding($space-large);
+    padding: $space-large;
   }
 
-  form {
-    @include padding($space-large);
+  form,
+  .modal-content {
     align-self: center;
+    padding: $space-large;
 
     a {
-      @include padding($space-normal);
+      padding: $space-normal;
     }
   }
 
   .modal-footer {
     @include flex;
-    @include flex-align($x: flex-start, $y: middle);
-    @include padding($space-small $zero);
+    @include flex-align($x: flex-end, $y: middle);
+    padding: $space-small $zero;
 
-    button {
-      font-size: $font-size-small;
+    .button {
+      margin-left: var(--space-small);
+    }
+
+    &.justify-content-end {
+      justify-content: end;
     }
   }
 
   .delete-item {
-    @include padding($space-large);
+    padding: $space-large;
+
     button {
-      @include margin($zero);
+      margin: 0;
     }
   }
-
 }
 
 .modal-enter,

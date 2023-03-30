@@ -11,20 +11,20 @@ describe('#mutations', () => {
     });
   });
 
-  describe('#MARK_MESSAGE_READ', () => {
+  describe('#UPDATE_MESSAGE_UNREAD_COUNT', () => {
     it('mark conversation as read', () => {
       const state = { allConversations: [{ id: 1 }] };
       const lastSeen = new Date().getTime() / 1000;
-      mutations[types.MARK_MESSAGE_READ](state, { id: 1, lastSeen });
+      mutations[types.UPDATE_MESSAGE_UNREAD_COUNT](state, { id: 1, lastSeen });
       expect(state.allConversations).toEqual([
-        { id: 1, agent_last_seen_at: lastSeen },
+        { id: 1, agent_last_seen_at: lastSeen, unread_count: 0 },
       ]);
     });
 
     it('doesnot send any mutation if chat doesnot exist', () => {
       const state = { allConversations: [] };
       const lastSeen = new Date().getTime() / 1000;
-      mutations[types.MARK_MESSAGE_READ](state, { id: 1, lastSeen });
+      mutations[types.UPDATE_MESSAGE_UNREAD_COUNT](state, { id: 1, lastSeen });
       expect(state.allConversations).toEqual([]);
     });
   });
@@ -34,6 +34,19 @@ describe('#mutations', () => {
       const state = { selectedChatId: 1 };
       mutations[types.CLEAR_CURRENT_CHAT_WINDOW](state);
       expect(state.selectedChatId).toEqual(null);
+    });
+  });
+
+  describe('#ASSIGN_TEAM', () => {
+    it('clears current chat window', () => {
+      const state = { allConversations: [{ id: 1, meta: {} }] };
+      mutations[types.ASSIGN_TEAM](state, {
+        team: { id: 1, name: 'Team 1' },
+        conversationId: 1,
+      });
+      expect(state.allConversations).toEqual([
+        { id: 1, meta: { team: { id: 1, name: 'Team 1' } } },
+      ]);
     });
   });
 
@@ -90,6 +103,7 @@ describe('#mutations', () => {
               created_at: 1602256198,
             },
           ],
+          unread_count: 0,
           timestamp: 1602256198,
         },
       ]);
@@ -117,10 +131,11 @@ describe('#mutations', () => {
               created_at: 1602256198,
             },
           ],
+          unread_count: 0,
           timestamp: 1602256198,
         },
       ]);
-      expect(global.bus.$emit).toHaveBeenCalledWith('scrollToMessage');
+      expect(global.bus.$emit).toHaveBeenCalledWith('SCROLL_TO_MESSAGE');
     });
 
     it('update message if it exist in the store', () => {
@@ -158,6 +173,86 @@ describe('#mutations', () => {
         },
       ]);
       expect(global.bus.$emit).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('#CHANGE_CONVERSATION_STATUS', () => {
+    it('updates the conversation status correctly', () => {
+      const state = {
+        allConversations: [
+          {
+            id: 1,
+            messages: [],
+            status: 'open',
+          },
+        ],
+      };
+
+      mutations[types.CHANGE_CONVERSATION_STATUS](state, {
+        conversationId: '1',
+        status: 'resolved',
+      });
+
+      expect(state.allConversations).toEqual([
+        {
+          id: 1,
+          messages: [],
+          status: 'resolved',
+        },
+      ]);
+    });
+
+    describe('#UPDATE_CONVERSATION_CUSTOM_ATTRIBUTES', () => {
+      it('update conversation custom attributes', () => {
+        const custom_attributes = { order_id: 1001 };
+        const state = { allConversations: [{ id: 1 }], selectedChatId: 1 };
+        mutations[types.UPDATE_CONVERSATION_CUSTOM_ATTRIBUTES](state, {
+          conversationId: 1,
+          custom_attributes,
+        });
+        expect(
+          state.allConversations[0].custom_attributes.custom_attributes
+        ).toEqual(custom_attributes);
+      });
+    });
+  });
+
+  describe('#SET_CONVERSATION_FILTERS', () => {
+    it('set conversation filter', () => {
+      const appliedFilters = [
+        {
+          attribute_key: 'status',
+          filter_operator: 'equal_to',
+          values: [{ id: 'snoozed', name: 'Snoozed' }],
+          query_operator: 'and',
+        },
+      ];
+      mutations[types.SET_CONVERSATION_FILTERS](appliedFilters);
+      expect(appliedFilters).toEqual([
+        {
+          attribute_key: 'status',
+          filter_operator: 'equal_to',
+          values: [{ id: 'snoozed', name: 'Snoozed' }],
+          query_operator: 'and',
+        },
+      ]);
+    });
+  });
+
+  describe('#CLEAR_CONVERSATION_FILTERS', () => {
+    it('clears applied conversation filters', () => {
+      const state = {
+        appliedFilters: [
+          {
+            attribute_key: 'status',
+            filter_operator: 'equal_to',
+            values: [{ id: 'snoozed', name: 'Snoozed' }],
+            query_operator: 'and',
+          },
+        ],
+      };
+      mutations[types.CLEAR_CONVERSATION_FILTERS](state);
+      expect(state.appliedFilters).toEqual([]);
     });
   });
 });

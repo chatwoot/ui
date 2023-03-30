@@ -6,6 +6,10 @@
     },
     "FORM_BUBBLE": {
       "SUBMIT": "Kirim"
+    },
+    "MESSAGE_BUBBLE": {
+      "RETRY": "Send message again",
+      "ERROR_MESSAGE": "Couldn't send, try again"
     }
   },
   "TEAM_AVAILABILITY": {
@@ -18,7 +22,9 @@
     "IN_A_DAY": "Biasanya membalas dalam sehari"
   },
   "START_CONVERSATION": "Mulai Percakapan",
-  "START_NEW_CONVERSATION": "Start a new conversation",
+  "END_CONVERSATION": "Akhiri Percakapan",
+  "CONTINUE_CONVERSATION": "Lanjutkan Percakapan",
+  "START_NEW_CONVERSATION": "Mulai Percakapan",
   "UNREAD_VIEW": {
     "VIEW_MESSAGES_BUTTON": "Lihat pesan baru",
     "CLOSE_MESSAGES_BUTTON": "Tutup",
@@ -38,25 +44,39 @@
       "FULL_NAME": {
         "LABEL": "Nama Lengkap",
         "PLACEHOLDER": "Harap masukkan nama lengkap anda yang valid",
-        "ERROR": "Nama Lengkap dibutuhkan"
+        "REQUIRED_ERROR": "Nama Lengkap dibutuhkan"
       },
       "EMAIL_ADDRESS": {
         "LABEL": "Alamat email",
         "PLACEHOLDER": "Harap masukkan alamat email Anda",
-        "ERROR": "Alamat email salah"
+        "REQUIRED_ERROR": "Alamat Email dibutuhkan",
+        "VALID_ERROR": "Harap masukkan alamat email yang valid"
+      },
+      "PHONE_NUMBER": {
+        "LABEL": "Nomor Telpon",
+        "PLACEHOLDER": "Masukan Nomor Telepon",
+        "REQUIRED_ERROR": "Nomor Telepon Dibutuhkan",
+        "VALID_ERROR": "Phone number should be of E.164 format eg: +1415555555"
       },
       "MESSAGE": {
         "LABEL": "Pesan",
         "PLACEHOLDER": "Harap masukkan pesan Anda",
         "ERROR": "Pesan terlalu pendek"
       }
-    }
+    },
+    "CAMPAIGN_HEADER": "Please provide your name and email before starting the conversation",
+    "IS_REQUIRED": "is required",
+    "REQUIRED": "Required"
   },
   "FILE_SIZE_LIMIT": "File melebihi batas {MAXIMUM_FILE_UPLOAD_SIZE} lampiran",
   "CHAT_FORM": {
     "INVALID": {
       "FIELD": "Invalid field"
     }
+  },
+  "EMOJI": {
+    "PLACEHOLDER": "Search emojis",
+    "NOT_FOUND": "No emoji match your search"
   },
   "CSAT": {
     "TITLE": "Rate your conversation",
@@ -67,5 +87,11 @@
     "BUTTON_TEXT": "Request a conversation transcript",
     "SEND_EMAIL_SUCCESS": "Transkrip percakapan berhasil terkirim",
     "SEND_EMAIL_ERROR": "Terjadi kesalahan, harap coba lagi"
+  },
+  "INTEGRATIONS": {
+    "DYTE": {
+      "CLICK_HERE_TO_JOIN": "Click here to join",
+      "LEAVE_THE_ROOM": "Leave the call"
+    }
   }
 }

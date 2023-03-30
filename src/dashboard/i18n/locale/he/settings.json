@@ -1,71 +1,114 @@
 {
   "PROFILE_SETTINGS": {
-    "LINK": "Profile Settings",
-    "TITLE": "Profile Settings",
-    "BTN_TEXT": "Update Profile",
-    "UPDATE_SUCCESS": "Your profile has been updated successfully",
-    "PASSWORD_UPDATE_SUCCESS": "Your password has been changed successfully",
-    "AFTER_EMAIL_CHANGED": "Your profile has been updated successfully, please login again as your login credentials are changed",
+    "LINK": "הגדרות פרופיל",
+    "TITLE": "הגדרות פרופיל",
+    "BTN_TEXT": "עדכון פרופיל",
+    "DELETE_AVATAR": "מחק אווטר",
+    "AVATAR_DELETE_SUCCESS": "תמונת פרופיל נמחקה בהצלחה",
+    "AVATAR_DELETE_FAILED": "אירעה שגיאה במחיקת תמונת הפרופיל, נסה שנית",
+    "UPDATE_SUCCESS": "הפרופיל עודכן בהצלחה",
+    "PASSWORD_UPDATE_SUCCESS": "הסיסמא שונתה בהצלחה",
+    "AFTER_EMAIL_CHANGED": "הפרופיל עודכן בהצלחה, יש להתחבר מחדש",
     "FORM": {
-      "AVATAR": "Profile Image",
-      "ERROR": "Please fix form errors",
-      "REMOVE_IMAGE": "Remove",
-      "UPLOAD_IMAGE": "Upload image",
-      "UPDATE_IMAGE": "Update image",
+      "AVATAR": "תמונת פרופיל",
+      "ERROR": "אנא תקן שגיאות בטופס",
+      "REMOVE_IMAGE": "הסר",
+      "UPLOAD_IMAGE": "העלה תמונה",
+      "UPDATE_IMAGE": "עדכן תמונה",
       "PROFILE_SECTION": {
-        "TITLE": "Profile",
-        "NOTE": "Your email address is your identity and is used to log in."
+        "TITLE": "פרופיל",
+        "NOTE": "כתובת המייל שלך משמשת להתחברות."
+      },
+      "SEND_MESSAGE": {
+        "TITLE": "מקשים חמים לשליחת הודעות",
+        "NOTE": "תוכל לבחור מקש חם (באמצעות Enter או Cmd/Ctrl+Enter) בהתאם להעדפות הכתיבה שלך.",
+        "UPDATE_SUCCESS": "ההגדרות עודכנו בהצלחה",
+        "CARD": {
+          "ENTER_KEY": {
+            "HEADING": "אישור (↵)",
+            "CONTENT": "שלח הודעות באמצעות הקשת Enter במקום ללחוץ על כפתור השליחה."
+          },
+          "CMD_ENTER_KEY": {
+            "HEADING": "Cmd/Ctrl + Enter (⌘ + ↵)",
+            "CONTENT": "שלח הודעות באמצעות הקשת Cmd/Ctrl + Enter במקום ללחוץ על כפתור השליחה."
+          }
+        }
+      },
+      "MESSAGE_SIGNATURE_SECTION": {
+        "TITLE": "חתימת הודעה אישית",
+        "NOTE": "ניתן לרשום חתימה לכל ההודעות שתרשום ללקוחות שלך.",
+        "BTN_TEXT": "שמירה",
+        "API_ERROR": "לא ניתן לשמור את החתימה! אנא נסה שנית",
+        "API_SUCCESS": "החתימה נשמרה בהצלחה"
+      },
+      "MESSAGE_SIGNATURE": {
+        "LABEL": "חתימת הודעה",
+        "ERROR": "חתימת הודעה לא יכולה להיות ריקה",
+        "PLACEHOLDER": "הכנס כאן את חתימת ההודעה האישית שלך."
       },
       "PASSWORD_SECTION": {
         "TITLE": "סיסמה",
-        "NOTE": "Updating your password would reset your logins in multiple devices.",
-        "BTN_TEXT": "Change password"
+        "NOTE": "עדכון הסיסמה שלך יאפס את הכניסות שלך במספר מכשירים.",
+        "BTN_TEXT": "שנה סיסמא"
       },
       "ACCESS_TOKEN": {
-        "TITLE": "Access Token",
-        "NOTE": "This token can be used if you are building an API based integration"
+        "TITLE": "Token",
+        "NOTE": "משמש לחיבורי API"
       },
       "AUDIO_NOTIFICATIONS_SECTION": {
-        "TITLE": "Audio Notifications",
-        "NOTE": "Enable audio notifications in dashboard for new messages and conversations.",
-        "NONE": "None",
-        "ASSIGNED": "Assigned Conversations",
-        "ALL_CONVERSATIONS": "All Conversations"
+        "TITLE": "התראות קוליות",
+        "NOTE": "אפשר התראות קוליות להודעות ושיחות חדשות.",
+        "ALERT_TYPE": {
+          "TITLE": "סוגי התראות:",
+          "NONE": "כלום",
+          "ASSIGNED": "שיחות משוייכות",
+          "ALL_CONVERSATIONS": "כל השיחות"
+        },
+        "DEFAULT_TONE": {
+          "TITLE": "צליל התראה:"
+        },
+        "CONDITIONS": {
+          "TITLE": "העדפות התראה:",
+          "CONDITION_ONE": "שלח התראות קוליות רק במידה והדפדפן לא פעיל",
+          "CONDITION_TWO": "שלח התראות כל 30 שניות עד שכל ההודעות המשוייכות נקראו"
+        }
       },
       "EMAIL_NOTIFICATIONS_SECTION": {
-        "TITLE": "Email Notifications",
-        "NOTE": "Update your email notification preferences here",
+        "TITLE": "התראות דוא\"ל",
+        "NOTE": "עדכן כאן את העדפות קבלת ההתראות בדוא''ל",
         "CONVERSATION_ASSIGNMENT": "שלח התראה באימייל כאשר שיחה מוקצית עבורי",
         "CONVERSATION_CREATION": "שלח התראה באימייל כאשר נפתחת שיחה חדשה",
-        "CONVERSATION_MENTION": "Send email notifications when you are mentioned in a conversation",
-        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "שלח התראה באימייל כאשר יש הודעה חדשה בשיחה המוקצית עבורי"
+        "CONVERSATION_MENTION": "שלח הודעות דחיפה כאשר אתה מוזכר בשיחה",
+        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "שלח התראה באימייל כאשר יש הודעה חדשה בשיחה המוקצית עבורי",
+        "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "שלח הודעות דחיפה כאשר נוצרת הודעה חדשה בשיחה המיועדת עבורי"
       },
       "API": {
-        "UPDATE_SUCCESS": "Your notification preferences are updated successfully",
-        "UPDATE_ERROR": "There is an error while updating the preferences, please try again"
+        "UPDATE_SUCCESS": "העדפות ההתראות עודכנו בהצלחה",
+        "UPDATE_ERROR": "אירעה שגיאה בעדכון ההעדפות, אנא נסה שנית"
       },
       "PUSH_NOTIFICATIONS_SECTION": {
-        "TITLE": "Push Notifications",
-        "NOTE": "Update your push notification preferences here",
+        "TITLE": "הודעות דחיפה (Push)",
+        "NOTE": "עדכן כאן את העדפות קבלת הודעות הדחיפה שלך",
         "CONVERSATION_ASSIGNMENT": "שלח התראת פוש כאשר שיחה מוקצית עבורי",
         "CONVERSATION_CREATION": "שלח התראת פוש כאשר נפתחת שיחה חדשה",
-        "CONVERSATION_MENTION": "Send push notifications when you are mentioned in a conversation",
+        "CONVERSATION_MENTION": "שלח הודעות דחיפה כאשר אתה מוזכר בשיחה",
         "ASSIGNED_CONVERSATION_NEW_MESSAGE": "שלח התראת פוש כאשר יש הודעה חדשה בשיחה המוקצית עבורי",
-        "HAS_ENABLED_PUSH": "You have enabled push for this browser.",
-        "REQUEST_PUSH": "Enable push notifications"
+        "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "שלח הודעות דחיפה כאשר נוצרת הודעה חדשה בשיחה המיועדת עבורי",
+        "HAS_ENABLED_PUSH": "הודעות דחיפה בדפדפן זה הופעלו.",
+        "REQUEST_PUSH": "אפשר הודעות דחיפה"
       },
       "PROFILE_IMAGE": {
-        "LABEL": "Profile Image"
+        "LABEL": "תמונת פרופיל"
       },
       "NAME": {
-        "LABEL": "Your full name",
-        "ERROR": "Please enter a valid full name",
-        "PLACEHOLDER": "Please enter your full name"
+        "LABEL": "שמך המלא",
+        "ERROR": "נא הכנס שם תקני",
+        "PLACEHOLDER": "הכנס שם מלא בבקשה"
       },
       "DISPLAY_NAME": {
-        "LABEL": "Display name",
-        "ERROR": "Please enter a valid display name",
-        "PLACEHOLDER": "Please enter a display name, this would be displayed in conversations"
+        "LABEL": "שם תצוגה",
+        "ERROR": "נא הכנס שם תצוגה תקני",
+        "PLACEHOLDER": "נא הכנס שם תצוגה, שם זה יוצג בשיחות"
       },
       "AVAILABILITY": {
         "LABEL": "זמינות",
@@ -73,49 +116,67 @@
           "מחובר",
           "עסוק",
           "לא מחובר"
-        ]
+        ],
+        "SET_AVAILABILITY_SUCCESS": "זמינות הוגדרה בהצלחה",
+        "SET_AVAILABILITY_ERROR": "לא ניתן להגדיר זמינות, אנא נסה שנית"
       },
       "EMAIL": {
-        "LABEL": "Your email address",
-        "ERROR": "Please enter a valid email address",
-        "PLACEHOLDER": "Please enter your email address, this would be displayed in conversations"
+        "LABEL": "כתובת הדוא\"ל שלך",
+        "ERROR": "נא הכנס כתובת דוא\"ל תקינה",
+        "PLACEHOLDER": "נא הכנס את כתובת הדוא\"ל שלך, כתובת זו תוצג בשיחות"
       },
       "CURRENT_PASSWORD": {
-        "LABEL": "Current password",
+        "LABEL": "סיסמא נוכחית",
         "ERROR": "Please enter the current password",
         "PLACEHOLDER": "Please enter the current password"
       },
       "PASSWORD": {
-        "LABEL": "סיסמה",
+        "LABEL": "New password",
         "ERROR": "Please enter a password of length 6 or more",
         "PLACEHOLDER": "Please enter a new password"
       },
       "PASSWORD_CONFIRMATION": {
         "LABEL": "Confirm new password",
         "ERROR": "Confirm password should match the password",
-        "PLACEHOLDER": "Please re-enter your password"
+        "PLACEHOLDER": "Please re-enter your new password"
       }
     }
   },
   "SIDEBAR_ITEMS": {
     "CHANGE_AVAILABILITY_STATUS": "Change",
     "CHANGE_ACCOUNTS": "החלף חשבון",
+    "CONTACT_SUPPORT": "Contact Support",
     "SELECTOR_SUBTITLE": "Select an account from the following list",
-    "PROFILE_SETTINGS": "Profile Settings",
+    "PROFILE_SETTINGS": "הגדרות פרופיל",
+    "KEYBOARD_SHORTCUTS": "Keyboard Shortcuts",
+    "SUPER_ADMIN_CONSOLE": "Super Admin Console",
     "LOGOUT": "התנתק"
   },
   "APP_GLOBAL": {
     "TRIAL_MESSAGE": "days trial remaining.",
-    "TRAIL_BUTTON": "Buy Now"
+    "TRAIL_BUTTON": "Buy Now",
+    "DELETED_USER": "Deleted User",
+    "ACCOUNT_SUSPENDED": {
+      "TITLE": "Account Suspended",
+      "MESSAGE": "Your account is suspended. Please reach out to the support team for more information."
+    }
   },
   "COMPONENTS": {
     "CODE": {
       "BUTTON_TEXT": "Copy",
       "COPY_SUCCESSFUL": "Code copied to clipboard successfully"
     },
+    "SHOW_MORE_BLOCK": {
+      "SHOW_MORE": "Show More",
+      "SHOW_LESS": "Show Less"
+    },
     "FILE_BUBBLE": {
       "DOWNLOAD": "הורד",
-      "UPLOADING": "מעלה..."
+      "UPLOADING": "מעלה...",
+      "INSTAGRAM_STORY_UNAVAILABLE": "This story is no longer available."
+    },
+    "LOCATION_BUBBLE": {
+      "SEE_ON_MAP": "See on map"
     },
     "FORM_BUBBLE": {
       "SUBMIT": "שלח"
@@ -128,26 +189,88 @@
     }
   },
   "SIDEBAR": {
+    "CURRENTLY_VIEWING_ACCOUNT": "Currently viewing:",
+    "SWITCH": "Switch",
     "CONVERSATIONS": "שיחות",
+    "ALL_CONVERSATIONS": "כל השיחות",
+    "MENTIONED_CONVERSATIONS": "אִזְכּוּרים",
+    "PARTICIPATING_CONVERSATIONS": "Participating",
+    "UNATTENDED_CONVERSATIONS": "Unattended",
     "REPORTS": "Reports",
-    "CONTACTS": "Contacts",
     "SETTINGS": "הגדרות",
+    "CONTACTS": "איש קשר",
     "HOME": "בית",
     "AGENTS": "סוכנים",
-    "INBOXES": "Inboxes",
+    "AGENT_BOTS": "בוטים",
+    "INBOXES": "תיבות דואר נכנס",
     "NOTIFICATIONS": "התראות",
-    "CANNED_RESPONSES": "Canned Responses",
-    "INTEGRATIONS": "Integrations",
+    "CANNED_RESPONSES": "תגובות מוכנות",
+    "INTEGRATIONS": "אינטגרציות",
+    "PROFILE_SETTINGS": "הגדרות פרופיל",
     "ACCOUNT_SETTINGS": "Account Settings",
-    "APPLICATIONS": "Applications",
+    "APPLICATIONS": "יישומים",
     "LABELS": "Labels",
+    "CUSTOM_ATTRIBUTES": "מאפיינים בהתאמה אישית",
+    "AUTOMATION": "Automation",
+    "MACROS": "Macros",
     "TEAMS": "Teams",
+    "BILLING": "Billing",
+    "CUSTOM_VIEWS_FOLDER": "Folders",
+    "CUSTOM_VIEWS_SEGMENTS": "Segments",
     "ALL_CONTACTS": "All Contacts",
     "TAGGED_WITH": "Tagged with",
+    "NEW_LABEL": "New label",
+    "NEW_TEAM": "New team",
+    "NEW_INBOX": "New inbox",
+    "REPORTS_CONVERSATION": "שיחות",
+    "CSAT": "CSAT",
+    "CAMPAIGNS": "קמפיין",
+    "ONGOING": "Ongoing",
+    "ONE_OFF": "One off",
+    "REPORTS_AGENT": "סוכנים",
+    "REPORTS_LABEL": "Labels",
+    "REPORTS_INBOX": "תיבת הדואר הנכנס",
+    "REPORTS_TEAM": "Team",
+    "SET_AVAILABILITY_TITLE": "Set yourself as",
+    "BETA": "Beta",
     "REPORTS_OVERVIEW": "Overview",
-    "CSAT": "CSAT"
+    "FACEBOOK_REAUTHORIZE": "פג תוקף החיבור שלך לפייסבוק, אנא חבר מחדש את דף הפייסבוק שלך כדי להמשיך בשירותים",
+    "HELP_CENTER": {
+      "TITLE": "Help Center (Beta)",
+      "ALL_ARTICLES": "All Articles",
+      "MY_ARTICLES": "My Articles",
+      "DRAFT": "Draft",
+      "ARCHIVED": "Archived",
+      "CATEGORY": "Category",
+      "SETTINGS": "הגדרות",
+      "CATEGORY_EMPTY_MESSAGE": "No categories found"
+    },
+    "SET_AUTO_OFFLINE": {
+      "TEXT": "Mark offline automatically",
+      "INFO_TEXT": "Let the system automatically mark you offline when you aren't using the app or dashboard."
+    },
+    "DOCS": "Read docs"
+  },
+  "BILLING_SETTINGS": {
+    "TITLE": "Billing",
+    "CURRENT_PLAN": {
+      "TITLE": "Current Plan",
+      "PLAN_NOTE": "You are currently subscribed to the **%{plan}** plan with **%{quantity}** licenses"
+    },
+    "MANAGE_SUBSCRIPTION": {
+      "TITLE": "Manage your subscription",
+      "DESCRIPTION": "View your previous invoices, edit your billing details, or cancel your subscription.",
+      "BUTTON_TXT": "Go to the billing portal"
+    },
+    "CHAT_WITH_US": {
+      "TITLE": "Need help?",
+      "DESCRIPTION": "Do you face any issues in billing? We are here to help.",
+      "BUTTON_TXT": "דבר איתנו"
+    },
+    "NO_BILLING_USER": "Your billing account is being configured. Please refresh the page and try again."
   },
   "CREATE_ACCOUNT": {
+    "NO_ACCOUNT_WARNING": "Uh oh! We could not find any Chatwoot accounts. Please create a new account to continue.",
     "NEW_ACCOUNT": "New Account",
     "SELECTOR_SUBTITLE": "Create a new account",
     "API": {
@@ -157,10 +280,35 @@
     },
     "FORM": {
       "NAME": {
-        "LABEL": "Account Name",
+        "LABEL": "שם החברה",
         "PLACEHOLDER": "Wayne Enterprises"
       },
       "SUBMIT": "שלח"
+    }
+  },
+  "KEYBOARD_SHORTCUTS": {
+    "TOGGLE_MODAL": "View all shortcuts",
+    "TITLE": {
+      "OPEN_CONVERSATION": "Open conversation",
+      "RESOLVE_AND_NEXT": "Resolve and move to next",
+      "NAVIGATE_DROPDOWN": "Navigate dropdown items",
+      "RESOLVE_CONVERSATION": "Resolve Conversation",
+      "GO_TO_CONVERSATION_DASHBOARD": "Go to Conversation Dashboard",
+      "ADD_ATTACHMENT": "Add Attachment",
+      "GO_TO_CONTACTS_DASHBOARD": "Go to Contacts Dashboard",
+      "TOGGLE_SIDEBAR": "Toggle Sidebar",
+      "GO_TO_REPORTS_SIDEBAR": "Go to Reports sidebar",
+      "MOVE_TO_NEXT_TAB": "Move to next tab in conversation list",
+      "GO_TO_SETTINGS": "Go to Settings",
+      "SWITCH_CONVERSATION_STATUS": "Switch to the next conversation status",
+      "SWITCH_TO_PRIVATE_NOTE": "Switch to Private Note",
+      "SWITCH_TO_REPLY": "Switch to Reply",
+      "TOGGLE_SNOOZE_DROPDOWN": "Toggle snooze dropdown"
+    },
+    "KEYS": {
+      "WINDOWS_KEY_AND_COMMAND_KEY": "Win / ⌘",
+      "ALT_OR_OPTION_KEY": "Alt / ⌥",
+      "FORWARD_SLASH_KEY": "/"
     }
   }
 }

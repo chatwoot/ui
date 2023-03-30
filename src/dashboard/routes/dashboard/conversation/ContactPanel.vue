@@ -1,157 +1,164 @@
 <template>
   <div class="medium-3 bg-white contact--panel">
-    <span class="close-button" @click="onPanelToggle">
-      <i class="ion-chevron-right" />
-    </span>
-    <contact-info :contact="contact" :channel-type="channelType" />
-    <div class="conversation--actions">
-      <div class="multiselect-wrap--small">
-        <contact-details-item
-          :title="$t('CONVERSATION_SIDEBAR.ASSIGNEE_LABEL')"
-          icon="ion-headphone"
-          emoji="🧑‍🚀"
+    <contact-info
+      :contact="contact"
+      :channel-type="channelType"
+      @toggle-panel="onPanelToggle"
+    />
+    <draggable
+      :list="conversationSidebarItems"
+      :disabled="!dragEnabled"
+      animation="200"
+      class="list-group"
+      ghost-class="ghost"
+      handle=".drag-handle"
+      @start="dragging = true"
+      @end="onDragEnd"
+    >
+      <transition-group>
+        <div
+          v-for="element in conversationSidebarItems"
+          :key="element.name"
+          class="list-group-item"
         >
-          <template v-slot:button>
-            <woot-button
-              v-if="showSelfAssign"
-              icon="ion-arrow-right-c"
-              variant="link"
-              size="small"
-              class-names="button-content"
-              @click="onSelfAssign"
+          <div
+            v-if="element.name === 'conversation_actions'"
+            class="conversation--actions"
+          >
+            <accordion-item
+              :title="$t('CONVERSATION_SIDEBAR.ACCORDION.CONVERSATION_ACTIONS')"
+              :is-open="isContactSidebarItemOpen('is_conv_actions_open')"
+              @click="
+                value => toggleSidebarUIState('is_conv_actions_open', value)
+              "
             >
-              {{ $t('CONVERSATION_SIDEBAR.SELF_ASSIGN') }}
-            </woot-button>
-          </template>
-        </contact-details-item>
-        <multiselect
-          v-model="assignedAgent"
-          :options="agentsList"
-          label="name"
-          track-by="id"
-          deselect-label=""
-          select-label=""
-          selected-label=""
-          :placeholder="$t('CONVERSATION_SIDEBAR.SELECT.PLACEHOLDER')"
-          :allow-empty="true"
-        >
-          <template slot="option" slot-scope="props">
-            <div class="option__desc">
-              <availability-status-badge
-                :status="props.option.availability_status"
+              <conversation-action
+                :conversation-id="conversationId"
+                :inbox-id="inboxId"
               />
-              <span class="option__title">{{ props.option.name }}</span>
-            </div>
-          </template>
-          <span slot="noResult">{{ $t('AGENT_MGMT.SEARCH.NO_RESULTS') }}</span>
-        </multiselect>
-      </div>
-      <div class="multiselect-wrap--small">
-        <contact-details-item
-          :title="$t('CONVERSATION_SIDEBAR.TEAM_LABEL')"
-          icon="ion-ios-people"
-          emoji="🎢"
-        />
-        <multiselect
-          v-model="assignedTeam"
-          :options="teamsList"
-          label="name"
-          track-by="id"
-          deselect-label=""
-          select-label=""
-          selected-label=""
-          :placeholder="$t('CONVERSATION_SIDEBAR.SELECT.PLACEHOLDER')"
-          :allow-empty="true"
-        >
-          <span slot="noResult">{{ $t('AGENT_MGMT.SEARCH.NO_RESULTS') }}</span>
-        </multiselect>
-      </div>
-    </div>
-    <conversation-labels :conversation-id="conversationId" />
-    <div v-if="browser.browser_name" class="conversation--details">
-      <contact-details-item
-        v-if="location"
-        :title="$t('CONTACT_FORM.FORM.LOCATION.LABEL')"
-        :value="location"
-        icon="ion-map"
-        emoji="📍"
-      />
-      <contact-details-item
-        v-if="ipAddress"
-        :title="$t('CONTACT_PANEL.IP_ADDRESS')"
-        :value="ipAddress"
-        icon="ion-android-locate"
-        emoji="🧭"
-      />
-      <contact-details-item
-        v-if="browser.browser_name"
-        :title="$t('CONTACT_PANEL.BROWSER')"
-        :value="browserName"
-        icon="ion-ios-world-outline"
-        emoji="🌐"
-      />
-      <contact-details-item
-        v-if="browser.platform_name"
-        :title="$t('CONTACT_PANEL.OS')"
-        :value="platformName"
-        icon="ion-laptop"
-        emoji="💻"
-      />
-      <contact-details-item
-        v-if="referer"
-        :title="$t('CONTACT_PANEL.INITIATED_FROM')"
-        :value="referer"
-        icon="ion-link"
-        emoji="🔗"
-      >
-        <a :href="referer" rel="noopener noreferrer nofollow" target="_blank">
-          {{ referer }}
-        </a>
-      </contact-details-item>
-      <contact-details-item
-        v-if="initiatedAt"
-        :title="$t('CONTACT_PANEL.INITIATED_AT')"
-        :value="initiatedAt.timestamp"
-        icon="ion-clock"
-        emoji="🕰"
-      />
-    </div>
-    <contact-custom-attributes
-      v-if="hasContactAttributes"
-      :custom-attributes="contact.custom_attributes"
-    />
-    <contact-conversations
-      v-if="contact.id"
-      :contact-id="contact.id"
-      :conversation-id="conversationId"
-    />
+            </accordion-item>
+          </div>
+          <div
+            v-else-if="element.name === 'conversation_participants'"
+            class="conversation--actions"
+          >
+            <accordion-item
+              :title="$t('CONVERSATION_PARTICIPANTS.SIDEBAR_TITLE')"
+              :is-open="isContactSidebarItemOpen('is_conv_participants_open')"
+              @click="
+                value =>
+                  toggleSidebarUIState('is_conv_participants_open', value)
+              "
+            >
+              <conversation-participant
+                :conversation-id="conversationId"
+                :inbox-id="inboxId"
+              />
+            </accordion-item>
+          </div>
+          <div v-else-if="element.name === 'conversation_info'">
+            <accordion-item
+              :title="$t('CONVERSATION_SIDEBAR.ACCORDION.CONVERSATION_INFO')"
+              :is-open="isContactSidebarItemOpen('is_conv_details_open')"
+              compact
+              @click="
+                value => toggleSidebarUIState('is_conv_details_open', value)
+              "
+            >
+              <conversation-info
+                :conversation-attributes="conversationAdditionalAttributes"
+                :contact-attributes="contactAdditionalAttributes"
+              />
+            </accordion-item>
+          </div>
+          <div v-else-if="element.name === 'contact_attributes'">
+            <accordion-item
+              :title="$t('CONVERSATION_SIDEBAR.ACCORDION.CONTACT_ATTRIBUTES')"
+              :is-open="isContactSidebarItemOpen('is_contact_attributes_open')"
+              compact
+              @click="
+                value =>
+                  toggleSidebarUIState('is_contact_attributes_open', value)
+              "
+            >
+              <custom-attributes
+                attribute-type="contact_attribute"
+                attribute-class="conversation--attribute"
+                class="even"
+                :contact-id="contact.id"
+              />
+              <custom-attribute-selector
+                attribute-type="contact_attribute"
+                :contact-id="contact.id"
+              />
+            </accordion-item>
+          </div>
+          <div v-else-if="element.name === 'previous_conversation'">
+            <accordion-item
+              v-if="contact.id"
+              :title="
+                $t('CONVERSATION_SIDEBAR.ACCORDION.PREVIOUS_CONVERSATION')
+              "
+              :is-open="isContactSidebarItemOpen('is_previous_conv_open')"
+              @click="
+                value => toggleSidebarUIState('is_previous_conv_open', value)
+              "
+            >
+              <contact-conversations
+                :contact-id="contact.id"
+                :conversation-id="conversationId"
+              />
+            </accordion-item>
+          </div>
+          <woot-feature-toggle
+            v-else-if="element.name === 'macros'"
+            feature-key="macros"
+          >
+            <accordion-item
+              :title="$t('CONVERSATION_SIDEBAR.ACCORDION.MACROS')"
+              :is-open="isContactSidebarItemOpen('is_macro_open')"
+              compact
+              @click="value => toggleSidebarUIState('is_macro_open', value)"
+            >
+              <macros-list :conversation-id="conversationId" />
+            </accordion-item>
+          </woot-feature-toggle>
+        </div>
+      </transition-group>
+    </draggable>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 import alertMixin from 'shared/mixins/alertMixin';
-import agentMixin from '../../../mixins/agentMixin';
-
+import AccordionItem from 'dashboard/components/Accordion/AccordionItem';
 import ContactConversations from './ContactConversations.vue';
-import ContactDetailsItem from './ContactDetailsItem.vue';
-import ContactInfo from './contact/ContactInfo';
-import ConversationLabels from './labels/LabelBox.vue';
-import ContactCustomAttributes from './ContactCustomAttributes';
-import AvailabilityStatusBadge from 'dashboard/components/widgets/conversation/AvailabilityStatusBadge.vue';
+import ConversationAction from './ConversationAction.vue';
+import ConversationParticipant from './ConversationParticipant.vue';
 
-import flag from 'country-code-emoji';
+import ContactInfo from './contact/ContactInfo';
+import ConversationInfo from './ConversationInfo';
+import CustomAttributes from './customAttributes/CustomAttributes.vue';
+import CustomAttributeSelector from './customAttributes/CustomAttributeSelector.vue';
+import draggable from 'vuedraggable';
+import uiSettingsMixin from 'dashboard/mixins/uiSettings';
+import MacrosList from './Macros/List';
 
 export default {
   components: {
-    ContactCustomAttributes,
+    AccordionItem,
     ContactConversations,
-    ContactDetailsItem,
     ContactInfo,
-    ConversationLabels,
-    AvailabilityStatusBadge,
+    ConversationInfo,
+    CustomAttributes,
+    CustomAttributeSelector,
+    ConversationAction,
+    ConversationParticipant,
+    draggable,
+    MacrosList,
   },
-  mixins: [alertMixin, agentMixin],
+  mixins: [alertMixin, uiSettingsMixin],
   props: {
     conversationId: {
       type: [Number, String],
@@ -166,121 +173,42 @@ export default {
       default: () => {},
     },
   },
+  data() {
+    return {
+      dragEnabled: true,
+      conversationSidebarItems: [],
+      dragging: false,
+    };
+  },
   computed: {
     ...mapGetters({
       currentChat: 'getSelectedChat',
-      teams: 'teams/getTeams',
       currentUser: 'getCurrentUser',
       uiFlags: 'inboxAssignableAgents/getUIFlags',
     }),
+    conversationAdditionalAttributes() {
+      return this.currentConversationMetaData.additional_attributes || {};
+    },
+    channelType() {
+      return this.currentChat.meta?.channel;
+    },
+    contact() {
+      return this.$store.getters['contacts/getContact'](this.contactId);
+    },
+    contactAdditionalAttributes() {
+      return this.contact.additional_attributes || {};
+    },
+    contactId() {
+      return this.currentChat.meta?.sender?.id;
+    },
     currentConversationMetaData() {
       return this.$store.getters[
         'conversationMetadata/getConversationMetadata'
       ](this.conversationId);
     },
-    additionalAttributes() {
-      return this.currentConversationMetaData.additional_attributes || {};
-    },
     hasContactAttributes() {
       const { custom_attributes: customAttributes } = this.contact;
       return customAttributes && Object.keys(customAttributes).length;
-    },
-    browser() {
-      return this.additionalAttributes.browser || {};
-    },
-    referer() {
-      return this.additionalAttributes.referer;
-    },
-    initiatedAt() {
-      return this.additionalAttributes.initiated_at;
-    },
-    browserName() {
-      return `${this.browser.browser_name || ''} ${
-        this.browser.browser_version || ''
-      }`;
-    },
-    contactAdditionalAttributes() {
-      return this.contact.additional_attributes || {};
-    },
-    ipAddress() {
-      const { created_at_ip: createdAtIp } = this.contactAdditionalAttributes;
-      return createdAtIp;
-    },
-    location() {
-      const {
-        country = '',
-        city = '',
-        country_code: countryCode,
-      } = this.contactAdditionalAttributes;
-      const cityAndCountry = [city, country].filter(item => !!item).join(', ');
-
-      if (!cityAndCountry) {
-        return '';
-      }
-      const countryFlag = countryCode ? flag(countryCode) : '🌎';
-      return `${cityAndCountry} ${countryFlag}`;
-    },
-    platformName() {
-      const {
-        platform_name: platformName,
-        platform_version: platformVersion,
-      } = this.browser;
-      return `${platformName || ''} ${platformVersion || ''}`;
-    },
-    channelType() {
-      return this.currentChat.meta?.channel;
-    },
-    contactId() {
-      return this.currentChat.meta?.sender?.id;
-    },
-    contact() {
-      return this.$store.getters['contacts/getContact'](this.contactId);
-    },
-    teamsList() {
-      return [{ id: 0, name: 'None' }, ...this.teams];
-    },
-    assignedAgent: {
-      get() {
-        return this.currentChat.meta.assignee;
-      },
-      set(agent) {
-        const agentId = agent ? agent.id : 0;
-        this.$store.dispatch('setCurrentChatAssignee', agent);
-        this.$store
-          .dispatch('assignAgent', {
-            conversationId: this.currentChat.id,
-            agentId,
-          })
-          .then(() => {
-            this.showAlert(this.$t('CONVERSATION.CHANGE_AGENT'));
-          });
-      },
-    },
-    assignedTeam: {
-      get() {
-        return this.currentChat.meta.team;
-      },
-      set(team) {
-        const teamId = team ? team.id : 0;
-        this.$store.dispatch('setCurrentChatTeam', team);
-        this.$store
-          .dispatch('assignTeam', {
-            conversationId: this.currentChat.id,
-            teamId,
-          })
-          .then(() => {
-            this.showAlert(this.$t('CONVERSATION.CHANGE_TEAM'));
-          });
-      },
-    },
-    showSelfAssign() {
-      if (!this.assignedAgent) {
-        return true;
-      }
-      if (this.assignedAgent.id !== this.currentUser.id) {
-        return true;
-      }
-      return false;
     },
   },
   watch: {
@@ -294,7 +222,9 @@ export default {
     },
   },
   mounted() {
+    this.conversationSidebarItems = this.conversationSidebarItemsOrder;
     this.getContactDetails();
+    this.$store.dispatch('attributes/get', 0);
   },
   methods: {
     onPanelToggle() {
@@ -305,31 +235,20 @@ export default {
         this.$store.dispatch('contacts/show', { id: this.contactId });
       }
     },
+    getAttributesByModel() {
+      if (this.contactId) {
+        this.$store.dispatch('contacts/show', { id: this.contactId });
+      }
+    },
     openTranscriptModal() {
       this.showTranscriptModal = true;
     },
-    onSelfAssign() {
-      const {
-        account_id,
-        availability_status,
-        available_name,
-        email,
-        id,
-        name,
-        role,
-        thumbnail,
-      } = this.currentUser;
-      const selfAssign = {
-        account_id,
-        availability_status,
-        available_name,
-        email,
-        id,
-        name,
-        role,
-        thumbnail,
-      };
-      this.assignedAgent = selfAssign;
+
+    onDragEnd() {
+      this.dragging = false;
+      this.updateUISettings({
+        conversation_sidebar_items_order: this.conversationSidebarItems,
+      });
     },
   },
 };
@@ -351,11 +270,16 @@ export default {
   }
 }
 
+.list-group {
+  .list-group-item {
+    background-color: var(--white);
+  }
+}
+
 ::v-deep {
   .contact--profile {
     padding-bottom: var(--space-slab);
-    margin-bottom: var(--space-normal);
-    border-bottom: 1px solid var(--color-border-light);
+    border-bottom: 1px solid var(--color-border);
   }
   .conversation--actions .multiselect-wrap--small {
     .multiselect {
@@ -368,14 +292,6 @@ export default {
       }
     }
   }
-}
-
-.close-button {
-  position: absolute;
-  right: $space-normal;
-  top: $space-slab;
-  font-size: $font-size-default;
-  color: $color-heading;
 }
 
 .conversation--labels {
@@ -405,18 +321,7 @@ export default {
   justify-content: center;
 }
 
-.conversation--actions {
-  margin-bottom: var(--space-normal);
-}
-
-.option__desc {
-  display: flex;
-  align-items: center;
-
-  &::v-deep .status-badge {
-    margin-right: var(--space-small);
-    min-width: 0;
-    flex-shrink: 0;
-  }
+.contact-info {
+  margin-top: var(--space-two);
 }
 </style>

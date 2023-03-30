@@ -1,6 +1,8 @@
+// scss-lint:disable MergeableSelector
+
 @mixin bubble-with-types {
-  @include padding($space-small $space-normal);
-  @include margin($zero);
+  padding: $space-small $space-normal;
+  margin: 0;
   background: $color-woot;
   border-radius: $space-one;
   color: var(--white);
@@ -17,7 +19,8 @@
     }
   }
 
-  .image {
+  .image,
+  .video {
     cursor: pointer;
     position: relative;
 
@@ -26,24 +29,45 @@
     }
 
     .modal-image {
-      max-width: 85%;
+      max-height: 90%;
+      max-width: 90%;
+    }
+
+    .modal-video {
+      max-height: 75vh;
+      max-width: 100%;
     }
 
     &::before {
-      background-image: linear-gradient(-180deg, transparent 3%, $color-heading 130%);
+      background-image: linear-gradient(
+        -180deg,
+        transparent 3%,
+        $color-heading 130%
+      );
       bottom: 0;
       content: '';
       height: 20%;
       left: 0;
-      opacity: .8;
+      opacity: 0.8;
       position: absolute;
       width: 100%;
+    }
+  }
+
+  .video {
+    .modal-container {
+      width: auto;
+
+      .modal--close {
+        z-index: var(--z-index-low);
+      }
     }
   }
 }
 
 .conversations-list-wrap {
   @include flex;
+  border-right: 1px solid var(--s-50);
   flex-direction: column;
 
   .load-more-conversations {
@@ -58,31 +82,22 @@
   }
 
   .conversations-list {
-    @include flex-weight(1);
-    @include scroll-on-hover;
+    flex: 1 1;
+    overflow-y: auto;
+
+    @include breakpoint(large up) {
+      @include scroll-on-hover;
+    }
   }
 
   .chat-list__top {
     @include flex;
-    @include padding($zero $zero $space-micro $zero);
-
     align-items: center;
     justify-content: space-between;
+    padding: 0 var(--space-normal);
 
     .page-title {
-      margin-bottom: $zero;
-      margin-left: $space-normal;
-    }
-
-    .status--filter {
-      @include padding($zero null $zero $space-normal);
-      @include margin($space-smaller $space-slab $zero $zero);
-      background-color: $color-background-light;
-      border: 1px solid $color-border;
-      float: right;
-      font-size: $font-size-mini;
-      height: $space-medium;
-      width: auto;
+      margin-bottom: 0;
     }
   }
 
@@ -93,19 +108,19 @@
 
 .conversation-panel {
   @include flex;
-  @include flex-weight(1);
-  @include margin($zero);
+  flex: 1 1 1px;
   flex-direction: column;
   height: 100%;
+  margin: 0;
   overflow-y: auto;
   padding-bottom: var(--space-normal);
   position: relative;
 }
 
-.conversation-panel>li {
+.conversation-panel > li {
   @include flex;
   @include flex-shrink;
-  @include margin($zero $zero $space-micro);
+  margin: $zero $zero $space-micro;
   position: relative;
 
   &:first-child {
@@ -113,10 +128,18 @@
   }
 
   &:last-child {
-    margin-bottom: $space-small;
+    margin-bottom: 0;
   }
 
   &.unread--toast {
+    + .right {
+      margin-bottom: var(--space-micro);
+    }
+
+    + .left {
+      margin-bottom: 0;
+    }
+
     span {
       @include elegant-card;
       @include round-corner;
@@ -141,7 +164,6 @@
   }
 
   &.left {
-
     .bubble {
       @include border-normal;
       background: $white;
@@ -172,10 +194,9 @@
           color: $color-primary-dark;
         }
       }
-
     }
 
-    +.right {
+    + .right {
       margin-top: $space-one;
 
       .bubble {
@@ -183,14 +204,33 @@
       }
     }
 
+    + .unread--toast {
+      + .right {
+        margin-top: $space-one;
+
+        .bubble {
+          border-top-right-radius: $space-one;
+        }
+      }
+
+      + .left {
+        margin-top: 0;
+      }
+    }
   }
 
   &.right {
     @include flex-align(right, null);
 
     .wrap {
+      align-items: flex-end;
+      display: flex;
       margin-right: $space-normal;
       text-align: right;
+
+      .sender--info {
+        padding: var(--space-small) 0 var(--space-smaller) var(--space-small);
+      }
     }
 
     .bubble {
@@ -219,11 +259,25 @@
       }
     }
 
-    +.left {
+    + .left {
       margin-top: $space-one;
 
       .bubble {
         border-top-left-radius: $space-one;
+      }
+    }
+
+    + .unread--toast {
+      + .left {
+        margin-top: $space-one;
+
+        .bubble {
+          border-top-left-radius: $space-one;
+        }
+      }
+
+      + .right {
+        margin-top: 0;
       }
     }
   }
@@ -233,10 +287,9 @@
   }
 
   .wrap {
-    @include margin($zero $space-normal);
-
     --bubble-max-width: 49.6rem;
-    max-width: Min(var(--bubble-max-width), 85%);
+    margin: $zero $space-normal;
+    max-width: Min(var(--bubble-max-width), 84%);
 
     .sender--name {
       font-size: $font-size-mini;
@@ -259,11 +312,13 @@
     display: flex;
     font-size: var(--font-size-small);
     justify-content: center;
-    margin: var(--space-small) var(--space-normal);
-    padding: var(--space-small) var(--space-normal);
+    margin: var(--space-smaller) 0;
+    padding: var(--space-smaller) var(--space-micro) var(--space-smaller)
+      var(--space-one);
 
     .is-text {
-      display: inline-block;
+      align-items: center;
+      display: inline-flex;
       text-align: start;
 
       @include breakpoint(xxxlarge up) {
@@ -311,7 +366,6 @@
 }
 
 .left .bubble .text-content {
-
   h1,
   h2,
   h3,
@@ -326,21 +380,12 @@
     text-decoration: underline;
   }
 
-  blockquote {
-    border-left-color: var(--s-300);
-
-    p {
-      color: var(--s-300);
-    }
-  }
-
   p:last-child {
     margin-bottom: 0;
   }
 }
 
 .right .bubble .text-content {
-
   h1,
   h2,
   h3,
@@ -355,19 +400,8 @@
     text-decoration: underline;
   }
 
-  blockquote {
-    border-left-color: var(--w-100);
-
-    p {
-      color: var(--w-100);
-    }
-  }
-
-  pre code {
-    background: var(--color-background);
-  }
-
   p:last-child {
     margin-bottom: 0;
   }
 }
+

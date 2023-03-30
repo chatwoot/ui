@@ -2,7 +2,12 @@
   <div class="medium-2 small-6 csat--metric-card">
     <h3 class="heading">
       <span>{{ label }}</span>
-      <i v-tooltip="infoText" class="csat--icon ion-ios-information" />
+      <fluent-icon
+        v-tooltip="infoText"
+        size="14"
+        icon="info"
+        class="csat--icon"
+      />
     </h3>
     <h4 class="metric">
       {{ value }}
@@ -30,11 +35,12 @@ export default {
 <style lang="scss" scoped>
 .csat--metric-card {
   margin: 0;
-  padding: var(--space-normal) var(--space-small) var(--space-normal)
-    var(--space-two);
+  padding: var(--space-normal);
 
   .heading {
+    align-items: center;
     color: var(--color-heading);
+    display: flex;
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-bold);
     margin: 0;
@@ -50,6 +56,6 @@ export default {
 
 .csat--icon {
   color: var(--b-400);
-  margin-left: var(--space-micro);
+  margin: 0 var(--space-micro);
 }
 </style>

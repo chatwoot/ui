@@ -62,7 +62,10 @@
               "
             />
           </label>
-          <label :class="{ error: $v.autoResolveDuration.$error }">
+          <label
+            v-if="showAutoResolutionConfig"
+            :class="{ error: $v.autoResolveDuration.$error }"
+          >
             {{ $t('GENERAL_SETTINGS.FORM.AUTO_RESOLVE_DURATION.LABEL') }}
             <input
               v-model="autoResolveDuration"
@@ -78,6 +81,20 @@
           </label>
         </div>
       </div>
+
+      <div class="profile--settings--row row">
+        <div class="columns small-3">
+          <h4 class="block-title">
+            {{ $t('GENERAL_SETTINGS.FORM.ACCOUNT_ID.TITLE') }}
+          </h4>
+          <p>
+            {{ $t('GENERAL_SETTINGS.FORM.ACCOUNT_ID.NOTE') }}
+          </p>
+        </div>
+        <div class="columns small-9 medium-5">
+          <woot-code :script="getAccountId" />
+        </div>
+      </div>
       <div class="current-version">
         <div>{{ `v${globalConfig.appVersion}` }}</div>
         <div v-if="hasAnUpdateAvailable && globalConfig.displayManifest">
@@ -90,11 +107,10 @@
       </div>
 
       <woot-submit-button
-        class="button nice success button--fixed-right-top"
+        class="button nice success button--fixed-top"
         :button-text="$t('GENERAL_SETTINGS.SUBMIT')"
         :loading="isUpdating"
-      >
-      </woot-submit-button>
+      />
     </form>
 
     <woot-loading-state v-if="uiFlags.isFetchingItem" />
@@ -102,15 +118,18 @@
 </template>
 
 <script>
-import { required, minValue } from 'vuelidate/lib/validators';
+import { required, minValue, maxValue } from 'vuelidate/lib/validators';
 import { mapGetters } from 'vuex';
 import alertMixin from 'shared/mixins/alertMixin';
 import configMixin from 'shared/mixins/configMixin';
 import accountMixin from '../../../../mixins/account';
+import { FEATURE_FLAGS } from '../../../../featureFlags';
 const semver = require('semver');
+import uiSettingsMixin from 'dashboard/mixins/uiSettings';
+import { getLanguageDirection } from 'dashboard/components/widgets/conversation/advancedFilterItems/languages';
 
 export default {
-  mixins: [accountMixin, alertMixin, configMixin],
+  mixins: [accountMixin, alertMixin, configMixin, uiSettingsMixin],
   data() {
     return {
       id: '',
@@ -132,6 +151,7 @@ export default {
     },
     autoResolveDuration: {
       minValue: minValue(1),
+      maxValue: maxValue(999),
     },
   },
   computed: {
@@ -139,7 +159,15 @@ export default {
       globalConfig: 'globalConfig/get',
       getAccount: 'accounts/getAccount',
       uiFlags: 'accounts/getUIFlags',
+      accountId: 'getCurrentAccountId',
+      isFeatureEnabledonAccount: 'accounts/isFeatureEnabledonAccount',
     }),
+    showAutoResolutionConfig() {
+      return this.isFeatureEnabledonAccount(
+        this.accountId,
+        FEATURE_FLAGS.AUTO_RESOLVE_CONVERSATIONS
+      );
+    },
     hasAnUpdateAvailable() {
       if (!semver.valid(this.latestChatwootVersion)) {
         return false;
@@ -166,6 +194,10 @@ export default {
 
     featureCustomDomainEmailEnabled() {
       return this.featureInboundEmailEnabled && !!this.customEmailDomainEnabled;
+    },
+
+    getAccountId() {
+      return this.id.toString();
     },
   },
   mounted() {
@@ -219,10 +251,19 @@ export default {
           auto_resolve_duration: this.autoResolveDuration,
         });
         this.$root.$i18n.locale = this.locale;
+        this.getAccount(this.id).locale = this.locale;
+        this.updateDirectionView(this.locale);
         this.showAlert(this.$t('GENERAL_SETTINGS.UPDATE.SUCCESS'));
       } catch (error) {
         this.showAlert(this.$t('GENERAL_SETTINGS.UPDATE.ERROR'));
       }
+    },
+
+    updateDirectionView(locale) {
+      const isRTLSupported = getLanguageDirection(locale);
+      this.updateUISettings({
+        rtl_view: isRTLSupported,
+      });
     },
   },
 };

@@ -7,80 +7,65 @@
       "404": "V této skupině nejsou žádné aktivní konverzace."
     },
     "TAB_HEADING": "Konverzace",
+    "MENTION_HEADING": "Zmínky",
+    "UNATTENDED_HEADING": "Unattended",
     "SEARCH": {
       "INPUT": "Hledat lidi, chaty, Uložené odpovědi .."
     },
-    "STATUS_TABS": [
-      {
-        "NAME": "Otevřít",
-        "KEY": "openCount"
+    "FILTER_ALL": "Vše",
+    "ASSIGNEE_TYPE_TABS": {
+      "me": "Moje",
+      "unassigned": "Nepřiřazeno",
+      "all": "Vše"
+    },
+    "CHAT_STATUS_FILTER_ITEMS": {
+      "open": {
+        "TEXT": "Otevřené"
       },
-      {
-        "NAME": "Vyřešeno",
-        "KEY": "allConvCount"
+      "resolved": {
+        "TEXT": "Vyřešené"
+      },
+      "pending": {
+        "TEXT": "Čekající"
+      },
+      "snoozed": {
+        "TEXT": "Odložené"
+      },
+      "all": {
+        "TEXT": "Vše"
       }
-    ],
-    "ASSIGNEE_TYPE_TABS": [
-      {
-        "NAME": "Důl",
-        "KEY": "me",
-        "COUNT_KEY": "mineCount"
-      },
-      {
-        "NAME": "Nepřiřazeno",
-        "KEY": "unassigned",
-        "COUNT_KEY": "unAssignedCount"
-      },
-      {
-        "NAME": "Vše",
-        "KEY": "all",
-        "COUNT_KEY": "allCount"
-      }
-    ],
-    "CHAT_STATUS_ITEMS": [
-      {
-        "TEXT": "Otevřít",
-        "VALUE": "open"
-      },
-      {
-        "TEXT": "Vyřešeno",
-        "VALUE": "resolved"
-      },
-      {
-        "TEXT": "Bot",
-        "VALUE": "bot"
-      }
-    ],
+    },
     "ATTACHMENTS": {
       "image": {
-        "ICON": "ion-image",
         "CONTENT": "Zpráva obrázku"
       },
       "audio": {
-        "ICON": "ion-volume-high",
         "CONTENT": "Zvuková zpráva"
       },
       "video": {
-        "ICON": "ion-ios-videocam",
         "CONTENT": "Video zpráva"
       },
       "file": {
-        "ICON": "ion-document",
         "CONTENT": "Přílohu souboru"
       },
       "location": {
-        "ICON": "ion-ios-location",
         "CONTENT": "Poloha"
       },
       "fallback": {
-        "ICON": "ion-link",
         "CONTENT": "sdílel URL"
       }
     },
     "RECEIVED_VIA_EMAIL": "Obdrženo e-mailem",
     "VIEW_TWEET_IN_TWITTER": "Zobrazit tweet na Twitteru",
     "REPLY_TO_TWEET": "Odpovědět na tento tweet",
+    "LINK_TO_STORY": "Přejít na instagram příběh",
+    "SENT": "Úspěšně odesláno",
+    "READ": "Read successfully",
+    "DELIVERED": "Delivered successfully",
     "NO_MESSAGES": "Žádné zprávy",
-    "NO_CONTENT": "No content available"
+    "NO_CONTENT": "Žádný obsah k dispozici",
+    "HIDE_QUOTED_TEXT": "Skrýt citovaný text",
+    "SHOW_QUOTED_TEXT": "Zobrazit citovaný text",
+    "MESSAGE_READ": "Přečtené"
   }
 }

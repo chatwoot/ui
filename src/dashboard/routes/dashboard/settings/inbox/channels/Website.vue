@@ -1,5 +1,5 @@
 <template>
-  <div class="wizard-body small-9 columns">
+  <div class="wizard-body height-auto small-9 columns">
     <page-header
       :header-title="$t('INBOX_MGMT.ADD.WEBSITE_CHANNEL.TITLE')"
       :header-content="$t('INBOX_MGMT.ADD.WEBSITE_CHANNEL.DESC')"
@@ -99,23 +99,20 @@
           }}
         </p>
       </label>
-      <div v-if="greetingEnabled" class="medium-12 columns">
-        <label>
-          {{
-            $t('INBOX_MGMT.ADD.WEBSITE_CHANNEL.CHANNEL_GREETING_MESSAGE.LABEL')
-          }}
-          <input
-            v-model.trim="greetingMessage"
-            type="text"
-            :placeholder="
-              $t(
-                'INBOX_MGMT.ADD.WEBSITE_CHANNEL.CHANNEL_GREETING_MESSAGE.PLACEHOLDER'
-              )
-            "
-          />
-        </label>
-      </div>
-
+      <greetings-editor
+        v-if="greetingEnabled"
+        v-model.trim="greetingMessage"
+        class="medium-12 columns"
+        :label="
+          $t('INBOX_MGMT.ADD.WEBSITE_CHANNEL.CHANNEL_GREETING_MESSAGE.LABEL')
+        "
+        :placeholder="
+          $t(
+            'INBOX_MGMT.ADD.WEBSITE_CHANNEL.CHANNEL_GREETING_MESSAGE.PLACEHOLDER'
+          )
+        "
+        :richtext="!textAreaChannels"
+      />
       <div class="modal-footer">
         <div class="medium-12 columns">
           <woot-submit-button
@@ -133,11 +130,15 @@
 import { mapGetters } from 'vuex';
 import router from '../../../../index';
 import PageHeader from '../../SettingsSubPageHeader';
+import GreetingsEditor from 'shared/components/GreetingsEditor';
+import alertMixin from 'shared/mixins/alertMixin';
 
 export default {
   components: {
     PageHeader,
+    GreetingsEditor,
   },
+  mixins: [alertMixin],
   data() {
     return {
       inboxName: '',
@@ -153,31 +154,47 @@ export default {
     ...mapGetters({
       uiFlags: 'inboxes/getUIFlags',
     }),
+    textAreaChannels() {
+      if (
+        this.isATwilioChannel ||
+        this.isATwitterInbox ||
+        this.isAFacebookInbox
+      )
+        return true;
+      return false;
+    },
   },
   methods: {
     async createChannel() {
-      const website = await this.$store.dispatch(
-        'inboxes/createWebsiteChannel',
-        {
-          name: this.inboxName,
-          greeting_enabled: this.greetingEnabled,
-          greeting_message: this.greetingMessage,
-          channel: {
-            type: 'web_widget',
-            website_url: this.channelWebsiteUrl,
-            widget_color: this.channelWidgetColor,
-            welcome_title: this.channelWelcomeTitle,
-            welcome_tagline: this.channelWelcomeTagline,
+      try {
+        const website = await this.$store.dispatch(
+          'inboxes/createWebsiteChannel',
+          {
+            name: this.inboxName,
+            greeting_enabled: this.greetingEnabled,
+            greeting_message: this.greetingMessage,
+            channel: {
+              type: 'web_widget',
+              website_url: this.channelWebsiteUrl,
+              widget_color: this.channelWidgetColor,
+              welcome_title: this.channelWelcomeTitle,
+              welcome_tagline: this.channelWelcomeTagline,
+            },
+          }
+        );
+        router.replace({
+          name: 'settings_inboxes_add_agents',
+          params: {
+            page: 'new',
+            inbox_id: website.id,
           },
-        }
-      );
-      router.replace({
-        name: 'settings_inboxes_add_agents',
-        params: {
-          page: 'new',
-          inbox_id: website.id,
-        },
-      });
+        });
+      } catch (error) {
+        this.showAlert(
+          error.message ||
+            this.$t('INBOX_MGMT.ADD.WEBSITE_CHANNEL.API.ERROR_MESSAGE')
+        );
+      }
     },
   },
 };

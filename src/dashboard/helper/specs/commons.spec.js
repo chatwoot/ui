@@ -1,4 +1,10 @@
-import { getTypingUsersText, createPendingMessage } from '../commons';
+import {
+  getTypingUsersText,
+  createPendingMessage,
+  convertToAttributeSlug,
+  convertToCategorySlug,
+  convertToPortalSlug,
+} from '../commons';
 
 describe('#getTypingUsersText', () => {
   it('returns the correct text is there is only one typing user', () => {
@@ -81,5 +87,27 @@ describe('#createPendingMessage', () => {
     };
     const pending = createPendingMessage(messageWithFile);
     expect(pending.attachments.length).toBe(1);
+  });
+});
+
+describe('convertToAttributeSlug', () => {
+  it('should convert to slug', () => {
+    expect(convertToAttributeSlug('Test@%^&*(){}>.!@`~_ ing')).toBe(
+      'test__ing'
+    );
+  });
+});
+
+describe('convertToCategorySlug', () => {
+  it('should convert to slug', () => {
+    expect(convertToCategorySlug('User profile guide')).toBe(
+      'user-profile-guide'
+    );
+  });
+});
+
+describe('convertToPortalSlug', () => {
+  it('should convert to slug', () => {
+    expect(convertToPortalSlug('Room rental')).toBe('room-rental');
   });
 });

@@ -1,9 +1,34 @@
-.tabs {
-  @include padding($zero $space-normal);
+.tabs--container {
+  display: flex;
+}
+
+.tabs--container--with-border {
   @include border-normal-bottom;
+}
+
+.tabs {
   border-left-width: 0;
   border-right-width: 0;
   border-top-width: 0;
+  display: flex;
+  min-width: var(--space-mega);
+  padding: 0 var(--space-normal);
+}
+
+.tabs--with-scroll {
+  max-width: calc(100% - 64px);
+  overflow: hidden;
+  padding: 0 var(--space-smaller);
+}
+
+.tabs--scroll-button {
+  align-items: center;
+  border-radius: 0;
+  cursor: pointer;
+  display: flex;
+  height: auto;
+  justify-content: center;
+  min-width: var(--space-large);
 }
 
 // Tab chat type
@@ -12,25 +37,26 @@
 
   .tabs-title {
     a {
-      font-size: $font-size-default;
-      font-weight: $font-weight-medium;
-      padding-bottom: $space-slab;
-      padding-top: $space-slab;
+      font-size: var(--font-size-default);
+      font-weight: var(--font-weight-medium);
+      padding-bottom: var(--space-slab);
+      padding-top: var(--space-slab);
     }
   }
 }
 
 .tabs-title {
-  @include margin($zero $space-slab);
+  flex-shrink: 0;
+  margin: 0 var(--space-small);
 
   .badge {
-    background: $color-background;
-    border-radius: $space-small;
-    color: $color-gray;
-    font-size: $font-size-micro;
-    font-weight: $font-weight-black;
-    margin-left: $space-smaller;
-    padding: $space-smaller;
+    background: var(--color-background);
+    border-radius: var(--space-small);
+    color: var(--color-gray);
+    font-size: var(--font-size-micro);
+    font-weight: var(--font-weight-black);
+    margin: 0 var(--space-smaller);
+    padding: var(--space-smaller);
   }
 
   &:first-child {
@@ -49,25 +75,26 @@
   }
 
   a {
-    @include position(relative, 1px null null null);
     align-items: center;
     border-bottom: 2px solid transparent;
     color: $medium-gray;
     display: flex;
     flex-direction: row;
-    font-size: $font-size-small;
-    transition: border-color .15s $swift-ease-out-function;
+    font-size: var(--font-size-small);
+    position: relative;
+    top: 1px;
+    transition: border-color 0.15s $swift-ease-out-function;
   }
 
   &.is-active {
     a {
-      border-bottom-color: $color-woot;
-      color: $color-woot;
+      border-bottom-color: var(--color-woot);
+      color: var(--color-woot);
     }
 
     .badge {
       background: $color-extra-light-blue;
-      color: $color-woot;
+      color: var(--color-woot);
     }
   }
 }

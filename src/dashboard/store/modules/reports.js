@@ -1,11 +1,13 @@
 /* eslint no-console: 0 */
-/* eslint no-param-reassign: 0 */
-/* eslint no-shadow: 0 */
-import compareAsc from 'date-fns/compareAsc';
-import fromUnixTime from 'date-fns/fromUnixTime';
-
 import * as types from '../mutation-types';
 import Report from '../../api/reports';
+import { downloadCsvFile, generateFileName } from '../../helper/downloadHelper';
+import AnalyticsHelper from '../../helper/AnalyticsHelper';
+import { REPORTS_EVENTS } from '../../helper/AnalyticsHelper/events';
+import {
+  reconcileHeatmapData,
+  clampDataBetweenTimeline,
+} from 'helpers/ReportsDataHelper';
 
 const state = {
   fetchingStatus: false,
@@ -21,6 +23,17 @@ const state = {
     incoming_messages_count: 0,
     outgoing_messages_count: 0,
     resolutions_count: 0,
+    previous: {},
+  },
+  overview: {
+    uiFlags: {
+      isFetchingAccountConversationMetric: false,
+      isFetchingAccountConversationsHeatmap: false,
+      isFetchingAgentConversationMetric: false,
+    },
+    accountConversationMetric: {},
+    accountConversationHeatmap: [],
+    agentConversationMetric: [],
   },
 };
 
@@ -31,36 +44,54 @@ const getters = {
   getAccountSummary(_state) {
     return _state.accountSummary;
   },
+  getAccountConversationMetric(_state) {
+    return _state.overview.accountConversationMetric;
+  },
+  getAccountConversationHeatmapData(_state) {
+    return _state.overview.accountConversationHeatmap;
+  },
+  getAgentConversationMetric(_state) {
+    return _state.overview.agentConversationMetric;
+  },
+  getOverviewUIFlags($state) {
+    return $state.overview.uiFlags;
+  },
 };
 
 export const actions = {
   fetchAccountReport({ commit }, reportObj) {
     commit(types.default.TOGGLE_ACCOUNT_REPORT_LOADING, true);
-    Report.getAccountReports(
-      reportObj.metric,
-      reportObj.from,
-      reportObj.to
-    ).then(accountReport => {
+    Report.getReports(reportObj).then(accountReport => {
       let { data } = accountReport;
-      data = data.filter(
-        el => compareAsc(new Date(), fromUnixTime(el.timestamp)) > -1
-      );
-      if (
-        reportObj.metric === 'avg_first_response_time' ||
-        reportObj.metric === 'avg_resolution_time'
-      ) {
-        data = data.map(element => {
-          /* eslint-disable operator-assignment */
-          element.value = (element.value / 3600).toFixed(2);
-          return element;
-        });
-      }
+      data = clampDataBetweenTimeline(data, reportObj.from, reportObj.to);
       commit(types.default.SET_ACCOUNT_REPORTS, data);
       commit(types.default.TOGGLE_ACCOUNT_REPORT_LOADING, false);
     });
   },
+  fetchAccountConversationHeatmap({ commit }, reportObj) {
+    commit(types.default.TOGGLE_HEATMAP_LOADING, true);
+    Report.getReports({ ...reportObj, group_by: 'hour' }).then(heatmapData => {
+      let { data } = heatmapData;
+      data = clampDataBetweenTimeline(data, reportObj.from, reportObj.to);
+
+      data = reconcileHeatmapData(
+        data,
+        state.overview.accountConversationHeatmap
+      );
+
+      commit(types.default.SET_HEATMAP_DATA, data);
+      commit(types.default.TOGGLE_HEATMAP_LOADING, false);
+    });
+  },
   fetchAccountSummary({ commit }, reportObj) {
-    Report.getAccountSummary(reportObj.from, reportObj.to)
+    Report.getSummary(
+      reportObj.from,
+      reportObj.to,
+      reportObj.type,
+      reportObj.id,
+      reportObj.groupBy,
+      reportObj.businessHours
+    )
       .then(accountSummary => {
         commit(types.default.SET_ACCOUNT_SUMMARY, accountSummary.data);
       })
@@ -68,12 +99,101 @@ export const actions = {
         commit(types.default.TOGGLE_ACCOUNT_REPORT_LOADING, false);
       });
   },
+  fetchAccountConversationMetric({ commit }, reportObj) {
+    commit(types.default.TOGGLE_ACCOUNT_CONVERSATION_METRIC_LOADING, true);
+    Report.getConversationMetric(reportObj.type)
+      .then(accountConversationMetric => {
+        commit(
+          types.default.SET_ACCOUNT_CONVERSATION_METRIC,
+          accountConversationMetric.data
+        );
+        commit(types.default.TOGGLE_ACCOUNT_CONVERSATION_METRIC_LOADING, false);
+      })
+      .catch(() => {
+        commit(types.default.TOGGLE_ACCOUNT_CONVERSATION_METRIC_LOADING, false);
+      });
+  },
+  fetchAgentConversationMetric({ commit }, reportObj) {
+    commit(types.default.TOGGLE_AGENT_CONVERSATION_METRIC_LOADING, true);
+    Report.getConversationMetric(reportObj.type, reportObj.page)
+      .then(agentConversationMetric => {
+        commit(
+          types.default.SET_AGENT_CONVERSATION_METRIC,
+          agentConversationMetric.data
+        );
+        commit(types.default.TOGGLE_AGENT_CONVERSATION_METRIC_LOADING, false);
+      })
+      .catch(() => {
+        commit(types.default.TOGGLE_AGENT_CONVERSATION_METRIC_LOADING, false);
+      });
+  },
   downloadAgentReports(_, reportObj) {
-    return Report.getAgentReports(reportObj.from, reportObj.to)
+    return Report.getAgentReports(reportObj)
       .then(response => {
-        let csvContent = 'data:text/csv;charset=utf-8,' + response.data;
-        var encodedUri = encodeURI(csvContent);
-        window.open(encodedUri);
+        downloadCsvFile(reportObj.fileName, response.data);
+        AnalyticsHelper.track(REPORTS_EVENTS.DOWNLOAD_REPORT, {
+          reportType: 'agent',
+          businessHours: reportObj?.businessHours,
+        });
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  },
+  downloadLabelReports(_, reportObj) {
+    return Report.getLabelReports(reportObj)
+      .then(response => {
+        downloadCsvFile(reportObj.fileName, response.data);
+        AnalyticsHelper.track(REPORTS_EVENTS.DOWNLOAD_REPORT, {
+          reportType: 'label',
+          businessHours: reportObj?.businessHours,
+        });
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  },
+  downloadInboxReports(_, reportObj) {
+    return Report.getInboxReports(reportObj)
+      .then(response => {
+        downloadCsvFile(reportObj.fileName, response.data);
+        AnalyticsHelper.track(REPORTS_EVENTS.DOWNLOAD_REPORT, {
+          reportType: 'inbox',
+          businessHours: reportObj?.businessHours,
+        });
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  },
+  downloadTeamReports(_, reportObj) {
+    return Report.getTeamReports(reportObj)
+      .then(response => {
+        downloadCsvFile(reportObj.fileName, response.data);
+        AnalyticsHelper.track(REPORTS_EVENTS.DOWNLOAD_REPORT, {
+          reportType: 'team',
+          businessHours: reportObj?.businessHours,
+        });
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  },
+  downloadAccountConversationHeatmap(_, reportObj) {
+    Report.getConversationTrafficCSV(reportObj)
+      .then(response => {
+        downloadCsvFile(
+          generateFileName({
+            type: 'Conversation traffic',
+            to: reportObj.to,
+          }),
+          response.data
+        );
+
+        AnalyticsHelper.track(REPORTS_EVENTS.DOWNLOAD_REPORT, {
+          reportType: 'conversation_heatmap',
+          businessHours: false,
+        });
       })
       .catch(error => {
         console.error(error);
@@ -85,29 +205,29 @@ const mutations = {
   [types.default.SET_ACCOUNT_REPORTS](_state, accountReport) {
     _state.accountReport.data = accountReport;
   },
+  [types.default.SET_HEATMAP_DATA](_state, heatmapData) {
+    _state.overview.accountConversationHeatmap = heatmapData;
+  },
   [types.default.TOGGLE_ACCOUNT_REPORT_LOADING](_state, flag) {
     _state.accountReport.isFetching = flag;
   },
+  [types.default.TOGGLE_HEATMAP_LOADING](_state, flag) {
+    _state.overview.uiFlags.isFetchingAccountConversationsHeatmap = flag;
+  },
   [types.default.SET_ACCOUNT_SUMMARY](_state, summaryData) {
     _state.accountSummary = summaryData;
-    // Average First Response Time
-    let avgFirstResTimeInHr = 0;
-    if (summaryData.avg_first_response_time) {
-      avgFirstResTimeInHr = (
-        summaryData.avg_first_response_time / 3600
-      ).toFixed(2);
-      avgFirstResTimeInHr = `${avgFirstResTimeInHr} Hr`;
-    }
-    // Average Resolution Time
-    let avgResolutionTimeInHr = 0;
-    if (summaryData.avg_resolution_time) {
-      avgResolutionTimeInHr = (summaryData.avg_resolution_time / 3600).toFixed(
-        2
-      );
-      avgResolutionTimeInHr = `${avgResolutionTimeInHr} Hr`;
-    }
-    _state.accountSummary.avg_first_response_time = avgFirstResTimeInHr;
-    _state.accountSummary.avg_resolution_time = avgResolutionTimeInHr;
+  },
+  [types.default.SET_ACCOUNT_CONVERSATION_METRIC](_state, metricData) {
+    _state.overview.accountConversationMetric = metricData;
+  },
+  [types.default.TOGGLE_ACCOUNT_CONVERSATION_METRIC_LOADING](_state, flag) {
+    _state.overview.uiFlags.isFetchingAccountConversationMetric = flag;
+  },
+  [types.default.SET_AGENT_CONVERSATION_METRIC](_state, metricData) {
+    _state.overview.agentConversationMetric = metricData;
+  },
+  [types.default.TOGGLE_AGENT_CONVERSATION_METRIC_LOADING](_state, flag) {
+    _state.overview.uiFlags.isFetchingAgentConversationMetric = flag;
   },
 };
 

@@ -1,33 +1,29 @@
 import Cookies from 'js-cookie';
 import { IFrameHelper } from '../sdk/IFrameHelper';
-import { getBubbleView } from '../sdk/bubbleHelpers';
-import md5 from 'md5';
-
-const REQUIRED_USER_KEYS = ['avatar_url', 'email', 'name'];
-
-const ALLOWED_USER_ATTRIBUTES = [...REQUIRED_USER_KEYS, 'identifier_hash'];
-
-export const getUserCookieName = () => {
-  const SET_USER_COOKIE_PREFIX = 'cw_user_';
-  const { websiteToken: websiteIdentifier } = window.$chatwoot;
-  return `${SET_USER_COOKIE_PREFIX}${websiteIdentifier}`;
-};
-
-export const getUserString = ({ identifier = '', user }) => {
-  const userStringWithSortedKeys = ALLOWED_USER_ATTRIBUTES.reduce(
-    (acc, key) => `${acc}${key}${user[key] || ''}`,
-    ''
-  );
-  return `${userStringWithSortedKeys}identifier${identifier}`;
-};
-
-const computeHashForUserData = (...args) => md5(getUserString(...args));
-
-export const hasUserKeys = user =>
-  REQUIRED_USER_KEYS.reduce((acc, key) => acc || !!user[key], false);
-
+import {
+  getBubbleView,
+  getDarkMode,
+  getWidgetStyle,
+} from '../sdk/settingsHelper';
+import {
+  computeHashForUserData,
+  getUserCookieName,
+  hasUserKeys,
+} from '../sdk/cookieHelpers';
+import { addClasses, removeClasses } from '../sdk/DOMHelpers';
+import { SDK_SET_BUBBLE_VISIBILITY } from 'shared/constants/sharedFrameEvents';
 const runSDK = ({ baseUrl, websiteToken }) => {
+  if (window.$chatwoot) {
+    return;
+  }
+
   const chatwootSettings = window.chatwootSettings || {};
+  let locale = chatwootSettings.locale;
+
+  if (chatwootSettings.useBrowserLanguage) {
+    locale = window.navigator.language.replace('-', '_');
+  }
+
   window.$chatwoot = {
     baseUrl,
     hasLoaded: false,
@@ -35,13 +31,42 @@ const runSDK = ({ baseUrl, websiteToken }) => {
     isOpen: false,
     position: chatwootSettings.position === 'left' ? 'left' : 'right',
     websiteToken,
-    locale: chatwootSettings.locale,
+    locale,
+    useBrowserLanguage: chatwootSettings.useBrowserLanguage || false,
     type: getBubbleView(chatwootSettings.type),
     launcherTitle: chatwootSettings.launcherTitle || '',
     showPopoutButton: chatwootSettings.showPopoutButton || false,
+    widgetStyle: getWidgetStyle(chatwootSettings.widgetStyle) || 'standard',
+    resetTriggered: false,
+    darkMode: getDarkMode(chatwootSettings.darkMode),
 
-    toggle() {
-      IFrameHelper.events.toggleBubble();
+    toggle(state) {
+      IFrameHelper.events.toggleBubble(state);
+    },
+
+    toggleBubbleVisibility(visibility) {
+      let widgetElm = document.querySelector('.woot--bubble-holder');
+      let widgetHolder = document.querySelector('.woot-widget-holder');
+      if (visibility === 'hide') {
+        addClasses(widgetHolder, 'woot-widget--without-bubble');
+        addClasses(widgetElm, 'woot-hidden');
+        window.$chatwoot.hideMessageBubble = true;
+      } else if (visibility === 'show') {
+        removeClasses(widgetElm, 'woot-hidden');
+        removeClasses(widgetHolder, 'woot-widget--without-bubble');
+        window.$chatwoot.hideMessageBubble = false;
+      }
+      IFrameHelper.sendMessage(SDK_SET_BUBBLE_VISIBILITY, {
+        hideMessageBubble: window.$chatwoot.hideMessageBubble,
+      });
+    },
+
+    popoutChatWindow() {
+      IFrameHelper.events.popoutChatWindow({
+        baseUrl: window.$chatwoot.baseUrl,
+        websiteToken: window.$chatwoot.websiteToken,
+        locale,
+      });
     },
 
     setUser(identifier, user) {
@@ -114,6 +139,8 @@ const runSDK = ({ baseUrl, websiteToken }) => {
         baseUrl: window.$chatwoot.baseUrl,
         websiteToken: window.$chatwoot.websiteToken,
       });
+
+      window.$chatwoot.resetTriggered = true;
     },
   };
 

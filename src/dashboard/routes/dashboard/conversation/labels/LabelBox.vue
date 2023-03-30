@@ -4,12 +4,11 @@
       v-if="!conversationUiFlags.isFetching"
       class="contact-conversation--list"
     >
-      <contact-details-item
-        :title="$t('CONTACT_PANEL.LABELS.CONVERSATION.TITLE')"
-        icon="ion-pricetags"
-        emoji="🏷️"
-      />
-      <div v-on-clickaway="closeDropdownLabel" class="label-wrap">
+      <div
+        v-on-clickaway="closeDropdownLabel"
+        class="label-wrap"
+        @keyup.esc="closeDropdownLabel"
+      >
         <add-label @add="toggleLabels" />
         <woot-label
           v-for="label in activeLabels"
@@ -17,8 +16,9 @@
           :title="label.title"
           :description="label.description"
           :show-close="true"
-          :bg-color="label.color"
-          @click="removeItem"
+          :color="label.color"
+          variant="smooth"
+          @click="removeLabelFromConversation"
         />
 
         <div class="dropdown-wrap">
@@ -30,34 +30,33 @@
               v-if="showSearchDropdownLabel"
               :account-labels="accountLabels"
               :selected-labels="savedLabels"
-              @add="addItem"
-              @remove="removeItem"
+              @add="addLabelToConversation"
+              @remove="removeLabelFromConversation"
             />
           </div>
         </div>
       </div>
     </div>
-    <spinner v-else></spinner>
+    <spinner v-else />
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
-import ContactDetailsItem from '../ContactDetailsItem';
 import Spinner from 'shared/components/Spinner';
 import LabelDropdown from 'shared/components/ui/label/LabelDropdown';
 import AddLabel from 'shared/components/ui/dropdown/AddLabel';
 import { mixin as clickaway } from 'vue-clickaway';
+import conversationLabelMixin from 'dashboard/mixins/conversation/labelMixin';
 
 export default {
   components: {
-    ContactDetailsItem,
     Spinner,
     LabelDropdown,
     AddLabel,
   },
 
-  mixins: [clickaway],
+  mixins: [clickaway, conversationLabelMixin],
   props: {
     conversationId: {
       type: Number,
@@ -73,76 +72,17 @@ export default {
   },
 
   computed: {
-    savedLabels() {
-      return this.$store.getters['conversationLabels/getConversationLabels'](
-        this.conversationId
-      );
-    },
-
     ...mapGetters({
-      conversationUiFlags: 'contactConversations/getUIFlags',
+      conversationUiFlags: 'conversationLabels/getUIFlags',
       labelUiFlags: 'conversationLabels/getUIFlags',
-      accountLabels: 'labels/getLabels',
     }),
-
-    activeLabels() {
-      return this.accountLabels.filter(({ title }) =>
-        this.savedLabels.includes(title)
-      );
-    },
   },
-
-  watch: {
-    conversationId(newConversationId, prevConversationId) {
-      if (newConversationId && newConversationId !== prevConversationId) {
-        this.fetchLabels(newConversationId);
-      }
-    },
-  },
-
-  mounted() {
-    const { conversationId } = this;
-    this.fetchLabels(conversationId);
-  },
-
   methods: {
-    async onUpdateLabels(selectedLabels) {
-      try {
-        await this.$store.dispatch('conversationLabels/update', {
-          conversationId: this.conversationId,
-          labels: selectedLabels,
-        });
-      } catch (error) {
-        // Ignore error
-      }
-    },
-
     toggleLabels() {
       this.showSearchDropdownLabel = !this.showSearchDropdownLabel;
     },
-
-    addItem(value) {
-      const result = this.activeLabels.map(item => item.title);
-      result.push(value.title);
-      this.onUpdateLabels(result);
-    },
-
-    removeItem(value) {
-      const result = this.activeLabels
-        .map(label => label.title)
-        .filter(label => label !== value);
-      this.onUpdateLabels(result);
-    },
-
     closeDropdownLabel() {
       this.showSearchDropdownLabel = false;
-    },
-
-    async fetchLabels(conversationId) {
-      if (!conversationId) {
-        return;
-      }
-      this.$store.dispatch('conversationLabels/get', conversationId);
     },
   },
 };
@@ -150,23 +90,22 @@ export default {
 
 <style lang="scss" scoped>
 .sidebar-labels-wrap {
-  margin-bottom: var(--space-normal);
+  margin-bottom: 0;
 }
 .contact-conversation--list {
   width: 100%;
 
   .label-wrap {
-    margin-left: var(--space-medium);
-    position: relative;
     line-height: var(--space-medium);
+    position: relative;
 
     .dropdown-wrap {
       display: flex;
-      position: absolute;
+      left: -1px;
       margin-right: var(--space-medium);
+      position: absolute;
       top: var(--space-medium);
       width: 100%;
-      left: -1px;
 
       .dropdown-pane {
         width: 100%;

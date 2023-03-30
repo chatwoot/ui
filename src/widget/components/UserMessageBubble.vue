@@ -1,13 +1,14 @@
 <template>
   <div
+    v-dompurify-html="formatMessage(message, false)"
     class="chat-bubble user"
-    :style="{ background: widgetColor }"
-    v-html="formatMessage(message, false)"
+    :style="{ background: widgetColor, color: textColor }"
   />
 </template>
 
 <script>
 import messageFormatterMixin from 'shared/mixins/messageFormatterMixin';
+import { getContrastingTextColor } from '@chatwoot/utils';
 
 export default {
   name: 'UserMessageBubble',
@@ -26,51 +27,42 @@ export default {
       default: '',
     },
   },
+  computed: {
+    textColor() {
+      return getContrastingTextColor(this.widgetColor);
+    },
+  },
 };
 </script>
 
-<style lang="scss">
-@import '~widget/assets/scss/variables.scss';
-@import '~widget/assets/scss/mixins.scss';
-
-.chat-bubble {
-  @include light-shadow;
-  background: $color-woot;
-  border-radius: $space-two;
-  color: $color-white;
-  display: inline-block;
-  font-size: $font-size-default;
-  line-height: 1.5;
-  padding: $space-slab $space-normal $space-slab $space-normal;
-  text-align: left;
-  word-break: break-word;
-  max-width: 100%;
-
-  > a {
-    color: $color-primary;
-    word-break: break-all;
-  }
-
-  .link {
-    text-decoration: underline;
-  }
-
-  &.user {
-    border-bottom-right-radius: $space-smaller;
-
-    > a {
-      color: $color-white;
-    }
-  }
-}
-</style>
 <style lang="scss" scoped>
 @import '~widget/assets/scss/variables.scss';
 
-.chat-bubble.user::v-deep pre {
-  background: $color-primary-light;
-  color: $color-body;
-  overflow: scroll;
-  padding: $space-smaller;
+.chat-bubble.user::v-deep {
+  p code {
+    background-color: var(--w-600);
+    color: var(--white);
+  }
+
+  pre {
+    background-color: var(--w-800);
+    border-color: var(--w-700);
+    color: var(--white);
+
+    code {
+      background-color: transparent;
+      color: var(--white);
+    }
+  }
+
+  blockquote {
+    border-left: $space-micro solid var(--w-400);
+    background: var(--s-25);
+    border-color: var(--s-200);
+
+    p {
+      color: var(--s-800);
+    }
+  }
 }
 </style>

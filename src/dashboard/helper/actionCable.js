@@ -1,6 +1,6 @@
 import AuthAPI from '../api/auth';
 import BaseActionCableConnector from '../../shared/helpers/BaseActionCableConnector';
-import { newMessageNotification } from 'shared/helpers/AudioNotificationHelper';
+import DashboardAudioNotificationHelper from './AudioAlerts/DashboardAudioNotificationHelper';
 
 class ActionCableConnector extends BaseActionCableConnector {
   constructor(app, pubsubToken) {
@@ -19,6 +19,13 @@ class ActionCableConnector extends BaseActionCableConnector {
       'conversation.typing_off': this.onTypingOff,
       'conversation.contact_changed': this.onConversationContactChange,
       'presence.update': this.onPresenceUpdate,
+      'contact.deleted': this.onContactDelete,
+      'contact.updated': this.onContactUpdate,
+      'conversation.mentioned': this.onConversationMentioned,
+      'notification.created': this.onNotificationCreated,
+      'first.reply.created': this.onFirstReplyCreated,
+      'conversation.read': this.onConversationRead,
+      'conversation.updated': this.onConversationUpdated,
     };
   }
 
@@ -33,7 +40,7 @@ class ActionCableConnector extends BaseActionCableConnector {
   onPresenceUpdate = data => {
     this.app.$store.dispatch('contacts/updatePresence', data.contacts);
     this.app.$store.dispatch('agents/updatePresence', data.users);
-    this.app.$store.dispatch('setCurrentUserAvailabilityStatus', data.users);
+    this.app.$store.dispatch('setCurrentUserAvailability', data.users);
   };
 
   onConversationContactChange = payload => {
@@ -60,16 +67,25 @@ class ActionCableConnector extends BaseActionCableConnector {
     this.fetchConversationStats();
   };
 
+  onConversationRead = data => {
+    this.app.$store.dispatch('updateConversation', data);
+  };
+
   onLogout = () => AuthAPI.logout();
 
   onMessageCreated = data => {
-    newMessageNotification(data);
+    DashboardAudioNotificationHelper.onNewMessage(data);
     this.app.$store.dispatch('addMessage', data);
   };
 
   onReload = () => window.location.reload();
 
   onStatusChange = data => {
+    this.app.$store.dispatch('updateConversation', data);
+    this.fetchConversationStats();
+  };
+
+  onConversationUpdated = data => {
     this.app.$store.dispatch('updateConversation', data);
     this.fetchConversationStats();
   };
@@ -95,6 +111,10 @@ class ActionCableConnector extends BaseActionCableConnector {
     });
   };
 
+  onConversationMentioned = data => {
+    this.app.$store.dispatch('addMentions', data);
+  };
+
   clearTimer = conversationId => {
     const timerEvent = this.CancelTyping[conversationId];
 
@@ -114,18 +134,32 @@ class ActionCableConnector extends BaseActionCableConnector {
 
   fetchConversationStats = () => {
     bus.$emit('fetch_conversation_stats');
+    bus.$emit('fetch_overview_reports');
+  };
+
+  onContactDelete = data => {
+    this.app.$store.dispatch(
+      'contacts/deleteContactThroughConversations',
+      data.id
+    );
+    this.fetchConversationStats();
+  };
+
+  onContactUpdate = data => {
+    this.app.$store.dispatch('contacts/updateContact', data);
+  };
+
+  onNotificationCreated = data => {
+    this.app.$store.dispatch('notifications/addNotification', data);
+  };
+
+  onFirstReplyCreated = () => {
+    bus.$emit('fetch_overview_reports');
   };
 }
 
 export default {
-  init() {
-    if (AuthAPI.isLoggedIn()) {
-      const actionCable = new ActionCableConnector(
-        window.WOOT,
-        AuthAPI.getPubSubToken()
-      );
-      return actionCable;
-    }
-    return null;
+  init(pubsubToken) {
+    return new ActionCableConnector(window.WOOT, pubsubToken);
   },
 };

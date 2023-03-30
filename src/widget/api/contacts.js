@@ -6,15 +6,23 @@ export default {
   get() {
     return API.get(buildUrl('widget/contact'));
   },
-  update(identifier, userObject) {
-    return API.patch(buildUrl('widget/contact'), {
+  update(userObject) {
+    return API.patch(buildUrl('widget/contact'), userObject);
+  },
+  setUser(identifier, userObject) {
+    return API.patch(buildUrl('widget/contact/set_user'), {
       identifier,
       ...userObject,
     });
   },
-  setCustomAttibutes(customAttributes = {}) {
+  setCustomAttributes(customAttributes = {}) {
     return API.patch(buildUrl('widget/contact'), {
       custom_attributes: customAttributes,
+    });
+  },
+  deleteCustomAttribute(customAttribute) {
+    return API.post(buildUrl('widget/contact/destroy_custom_attributes'), {
+      custom_attributes: [customAttribute],
     });
   },
 };

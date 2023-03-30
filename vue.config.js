@@ -46,24 +46,24 @@ module.exports = {
         </script>
       `
     },
-    'sdk-test': {
-      entry: 'src/packs/sdk-test.js',
-      custom: `
-      <script>
-        (function(d,t) {
-          var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-          g.src="/app/js/sdk.js";
-          s.parentNode.insertBefore(g,s);
-          g.onload=function(){
-            window.chatwootSDK.run({
-              websiteToken: '${WEBSITE_INBOX_TOKEN}',
-              baseUrl: ''
-            })
-          }
-        })(document,"script");
-      </script>
-      `
-    }
+    // 'sdk-test': {
+    //   entry: 'src/packs/sdk-test.js',
+    //   custom: `
+    //   <script>
+    //     (function(d,t) {
+    //       var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    //       g.src="/app/js/sdk.js";
+    //       s.parentNode.insertBefore(g,s);
+    //       g.onload=function(){
+    //         window.chatwootSDK.run({
+    //           websiteToken: '${WEBSITE_INBOX_TOKEN}',
+    //           baseUrl: ''
+    //         })
+    //       }
+    //     })(document,"script");
+    //   </script>
+    //   `
+    // }
   },
   configureWebpack: {
     resolve: {
@@ -75,18 +75,23 @@ module.exports = {
         widget: path.resolve('./src/widget'),
         assets: path.resolve('./src/dashboard/assets'),
         components: path.resolve('./src/dashboard/components'),
+        helpers: path.resolve('./src/shared/helpers'),
         './iconfont.eot': 'vue-easytable/libs/font/iconfont.eot',
         './iconfont.woff': 'vue-easytable/libs/font/iconfont.woff',
         './iconfont.ttf': 'vue-easytable/libs/font/iconfont.ttf',
         './iconfont.svg': 'vue-easytable/libs/font/iconfont.svg',
       },
+      fallback: {
+        'fs': false,
+        'path': false,
+      }
     },
     entry: {
       'sdk': './src/packs/sdk.js',
     },
     output: {
       filename: chunkData => chunkData.chunk.name === 'sdk' ? 'js/[name].js' : 'js/[name]-[hash].js',
-    }
+    },
   },
   chainWebpack: config => {
     config.optimization.delete('splitChunks')

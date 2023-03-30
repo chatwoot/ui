@@ -3,8 +3,8 @@
     <woot-button
       v-if="showAddButton"
       color-scheme="success"
-      class-names="button--fixed-right-top"
-      icon="ion-android-add-circle"
+      class-names="button--fixed-top"
+      icon="add-circle"
       @click="openAddHookModal"
     >
       {{ $t('INTEGRATION_APPS.ADD_BUTTON') }}

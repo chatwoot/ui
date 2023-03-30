@@ -12,6 +12,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
+
 export default {
   components: {},
   props: {
@@ -41,18 +42,22 @@ export default {
 @import '~widget/assets/scss/variables.scss';
 
 .option {
-  border: 1px solid $color-woot;
   border-radius: $space-jumbo;
+  border: 1px solid $color-woot;
   float: left;
   margin: $space-smaller;
+  max-width: 100%;
 
   .option-button {
     background: transparent;
     border-radius: $space-large;
     border: 0;
-    color: $color-woot;
     cursor: pointer;
+    height: auto;
+    line-height: 1.5;
+    min-height: $space-two * 2;
     text-align: left;
+    white-space: normal;
 
     span {
       display: inline-block;

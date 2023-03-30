@@ -7,26 +7,32 @@
   }
 }
 
-.card {
-  margin-bottom: var(--space-small);
-  padding: var(--space-small);
+select {
+  height: 4.0rem;
 }
 
-.button-wrapper .button.link.grey-btn {
+.card {
+  margin-bottom: var(--space-small);
+  padding: var(--space-normal);
+}
+
+.button-wrapper .button.grey-btn {
   margin-left: var(--space-normal);
 }
 
 .tooltip {
+  background-color: var(--black-transparent);
   border-radius: $space-smaller;
   font-size: $font-size-mini;
-  max-width: 15rem;
+  max-width: var(--space-giga);
   padding: $space-smaller $space-small;
-  z-index: 9999;
+  z-index: 999;
 }
 
 code {
   border: 0;
-  font-family: 'Monaco', Verdana;
+  font-family: 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas',
+    '"Liberation Mono"', '"Courier New"', 'monospace';
   font-size: $font-size-mini;
 
   &.hljs {
@@ -49,7 +55,16 @@ code {
 .cursor-pointer {
   cursor: pointer;
 }
+
 // remove when grid gutters are fixed
 .columns.with-right-space {
   padding-right: var(--space-normal);
+}
+
+.badge {
+  border-radius: var(--border-radius-normal);
+}
+
+.padding-right-small {
+  padding-right: var(--space-one);
 }

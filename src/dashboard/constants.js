@@ -8,7 +8,21 @@ export default {
   STATUS_TYPE: {
     OPEN: 'open',
     RESOLVED: 'resolved',
-    BOT: 'bot',
+    PENDING: 'pending',
+    SNOOZED: 'snoozed',
+    ALL: 'all',
   },
+  ARTICLE_STATUS_TYPES: {
+    DRAFT: 0,
+    PUBLISH: 1,
+    ARCHIVE: 2,
+  },
+  LAYOUT_TYPES: {
+    CONDENSED: 'condensed',
+    EXPANDED: 'expanded',
+  },
+  DOCS_URL: '//www.chatwoot.com/docs/product/',
+  TESTIMONIAL_URL: 'https://testimonials.cdn.chatwoot.com/content.json',
+  SMALL_SCREEN_BREAKPOINT: 1024,
 };
 export const DEFAULT_REDIRECT_URL = '/app/';

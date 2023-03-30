@@ -2,9 +2,14 @@
   <div class="wizard-body small-12 medium-9 columns height-auto">
     <page-header
       :header-title="$t('INBOX_MGMT.ADD.AUTH.TITLE')"
-      :header-content="$t('INBOX_MGMT.ADD.AUTH.DESC')"
+      :header-content="
+        useInstallationName(
+          $t('INBOX_MGMT.ADD.AUTH.DESC'),
+          globalConfig.installationName
+        )
+      "
     />
-    <div class="row channels">
+    <div class="row channel-list">
       <channel-item
         v-for="channel in channelList"
         :key="channel.key"
@@ -21,12 +26,14 @@ import ChannelItem from 'dashboard/components/widgets/ChannelItem';
 import router from '../../../index';
 import PageHeader from '../SettingsSubPageHeader';
 import { mapGetters } from 'vuex';
+import globalConfigMixin from 'shared/mixins/globalConfigMixin';
 
 export default {
   components: {
     ChannelItem,
     PageHeader,
   },
+  mixins: [globalConfigMixin],
   data() {
     return {
       enabledFeatures: {},
@@ -40,10 +47,10 @@ export default {
       const { apiChannelName, apiChannelThumbnail } = this.globalConfig;
       return [
         { key: 'website', name: 'Website' },
-        { key: 'facebook', name: 'Facebook' },
+        { key: 'facebook', name: 'Messenger' },
         { key: 'twitter', name: 'Twitter' },
-        { key: 'whatsapp', name: 'WhatsApp via Twilio' },
-        { key: 'sms', name: 'SMS via Twilio' },
+        { key: 'whatsapp', name: 'WhatsApp' },
+        { key: 'sms', name: 'SMS' },
         { key: 'email', name: 'Email' },
         {
           key: 'api',
@@ -80,5 +87,9 @@ export default {
 <style scoped>
 .height-auto {
   height: auto;
+}
+
+.channel-list {
+  margin-top: var(--space-medium);
 }
 </style>

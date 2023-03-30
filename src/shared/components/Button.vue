@@ -1,6 +1,11 @@
 <template>
-  <button :class="buttonClassName" :style="buttonStyles" @click="onClick">
-    <slot></slot>
+  <button
+    :class="buttonClassName"
+    :style="buttonStyles"
+    :disabled="disabled"
+    @click="onClick"
+  >
+    <slot />
   </button>
 </template>
 <script>
@@ -21,6 +26,10 @@ export default {
     textColor: {
       type: String,
       default: '',
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {

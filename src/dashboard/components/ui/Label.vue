@@ -1,13 +1,28 @@
 <template>
   <div :class="labelClass" :style="labelStyle" :title="description">
-    <i v-if="icon" class="label--icon" :class="icon" @click="onClick" />
+    <span v-if="icon" class="label-action--button">
+      <fluent-icon :icon="icon" size="12" class="label--icon" />
+    </span>
+    <span
+      v-if="variant === 'smooth' && title && !icon"
+      :style="{ background: color }"
+      class="label-color-dot"
+    />
     <span v-if="!href">{{ title }}</span>
     <a v-else :href="href" :style="anchorStyle">{{ title }}</a>
-    <i v-if="showClose" class="close--icon ion-close" @click="onClick" />
+    <button
+      v-if="showClose"
+      class="label-close--button"
+      :style="{ color: textColor }"
+      @click="onClick"
+    >
+      <fluent-icon icon="dismiss" size="12" class="close--icon" />
+    </button>
   </div>
 </template>
 <script>
 import { getContrastingTextColor } from '@chatwoot/utils';
+
 export default {
   props: {
     title: {
@@ -38,17 +53,28 @@ export default {
       type: String,
       default: '',
     },
+    color: {
+      type: String,
+      default: '',
+    },
     colorScheme: {
+      type: String,
+      default: '',
+    },
+    variant: {
       type: String,
       default: '',
     },
   },
   computed: {
     textColor() {
-      return getContrastingTextColor(this.bgColor);
+      if (this.variant === 'smooth') return '';
+      return this.color || getContrastingTextColor(this.bgColor);
     },
     labelClass() {
-      return `label ${this.colorScheme} ${this.small ? 'small' : ''}`;
+      return `label ${this.colorScheme} ${this.variant} ${
+        this.small ? 'small' : ''
+      }`;
     },
     labelStyle() {
       if (this.bgColor) {
@@ -79,20 +105,26 @@ export default {
 @import '~dashboard/assets/scss/variables';
 
 .label {
+  display: inline-flex;
+  align-items: center;
   font-weight: var(--font-weight-medium);
+  gap: var(--space-smaller);
   margin-right: var(--space-smaller);
   margin-bottom: var(--space-smaller);
+  padding: var(--space-smaller);
+  background: var(--s-50);
+  color: var(--s-800);
+  border: 1px solid var(--s-75);
+  height: var(--space-medium);
 
   &.small {
-    font-size: var(--font-size-micro);
+    font-size: var(--font-size-mini);
+    padding: var(--space-micro) var(--space-smaller);
+    line-height: 1.2;
+    height: var(--space-two);
   }
 
   .label--icon {
-    cursor: pointer;
-  }
-  .label--icon,
-  .close--icon {
-    font-size: var(--font-size-micro);
     cursor: pointer;
   }
 
@@ -116,6 +148,9 @@ export default {
     a {
       color: var(--w-900);
     }
+    .label-color-dot {
+      background: var(--w-600);
+    }
   }
   &.secondary {
     background: var(--s-100);
@@ -123,6 +158,9 @@ export default {
     border: 1px solid var(--s-200);
     a {
       color: var(--s-900);
+    }
+    .label-color-dot {
+      background: var(--s-600);
     }
   }
   &.success {
@@ -132,6 +170,9 @@ export default {
     a {
       color: var(--g-900);
     }
+    .label-color-dot {
+      background: var(--g-600);
+    }
   }
   &.alert {
     background: var(--r-100);
@@ -140,14 +181,60 @@ export default {
     a {
       color: var(--r-900);
     }
+    .label-color-dot {
+      background: var(--r-600);
+    }
   }
   &.warning {
     background: var(--y-100);
     color: var(--y-900);
-    border: 1px solid var(--y-300);
+    border: 1px solid var(--y-200);
     a {
       color: var(--y-900);
     }
+    .label-color-dot {
+      background: var(--y-900);
+    }
   }
+
+  &.smooth {
+    background: transparent;
+    border: 1px solid var(--s-100);
+    color: var(--s-700);
+  }
+}
+
+.label-close--button {
+  color: var(--s-800);
+  margin-bottom: var(--space-minus-micro);
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background: var(--s-100);
+  }
+}
+
+.label-action--button {
+  display: flex;
+  margin-right: var(--space-smaller);
+}
+
+.label-color-dot {
+  display: inline-block;
+  width: var(--space-slab);
+  height: var(--space-slab);
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--shadow-small);
+}
+.label.small .label-color-dot {
+  width: var(--space-small);
+  height: var(--space-small);
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--shadow-small);
 }
 </style>

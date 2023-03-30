@@ -1,17 +1,22 @@
 <template>
   <div class="settings-header">
     <h1 class="page-title">
-      <woot-sidemenu-icon></woot-sidemenu-icon>
-      <back-button v-if="showBackButton" :back-url="backUrl"></back-button>
-      <i :class="iconClass"></i>
+      <woot-sidemenu-icon v-if="showSidemenuIcon" />
+      <back-button
+        v-if="showBackButton"
+        :button-label="backButtonLabel"
+        :back-url="backUrl"
+      />
+      <fluent-icon v-if="icon" :icon="icon" :class="iconClass" />
+      <slot />
       <span>{{ headerTitle }}</span>
     </h1>
     <router-link
       v-if="showNewButton && isAdmin"
       :to="buttonRoute"
-      class="button success button--fixed-right-top"
+      class="button success button--fixed-top"
     >
-      <i class="icon ion-android-add-circle"></i>
+      <fluent-icon icon="add-circle" />
       <span class="button__content">
         {{ buttonText }}
       </span>
@@ -50,6 +55,14 @@ export default {
     backUrl: {
       type: [String, Object],
       default: '',
+    },
+    backButtonLabel: {
+      type: String,
+      default: '',
+    },
+    showSidemenuIcon: {
+      type: Boolean,
+      default: true,
     },
   },
   computed: {

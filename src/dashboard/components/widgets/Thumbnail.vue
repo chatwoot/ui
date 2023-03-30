@@ -1,39 +1,29 @@
 <template>
-  <div class="user-thumbnail-box" :style="{ height: size, width: size }">
+  <div
+    :class="thumbnailBoxClass"
+    :style="{ height: size, width: size }"
+    :title="title"
+  >
+    <!-- Using v-show instead of v-if to avoid flickering as v-if removes dom elements.  -->
     <img
-      v-if="!imgError && Boolean(src)"
-      id="image"
+      v-show="shouldShowImage"
       :src="src"
       :class="thumbnailClass"
-      @error="onImgError()"
+      @load="onImgLoad"
+      @error="onImgError"
     />
     <Avatar
-      v-else
-      :username="username"
+      v-show="!shouldShowImage"
+      :username="userNameWithoutEmoji"
       :class="thumbnailClass"
-      color="white"
       :size="avatarSize"
     />
     <img
-      v-if="badge === 'Channel::FacebookPage'"
-      id="badge"
+      v-if="badgeSrc"
       class="source-badge"
       :style="badgeStyle"
-      src="~dashboard/assets/images/fb-badge.png"
-    />
-    <img
-      v-if="badge === 'Channel::TwitterProfile'"
-      id="badge"
-      class="source-badge"
-      :style="badgeStyle"
-      src="~dashboard/assets/images/twitter-badge.png"
-    />
-    <img
-      v-if="badge === 'Channel::TwilioSms'"
-      id="badge"
-      class="source-badge"
-      :style="badgeStyle"
-      src="~dashboard/assets/images/channels/whatsapp.png"
+      :src="`/integrations/channels/badges/${badgeSrc}.png`"
+      alt="Badge"
     />
     <div
       v-if="showStatusIndicator"
@@ -48,9 +38,10 @@
  * Src - source for round image
  * Size - Size of the thumbnail
  * Badge - Chat source indication { fb / telegram }
- * Username - User name for avatar
+ * Username - Username for avatar
  */
 import Avatar from './Avatar';
+import { removeEmoji } from 'shared/helpers/emoji';
 
 export default {
   components: {
@@ -67,7 +58,7 @@ export default {
     },
     badge: {
       type: String,
-      default: 'fb',
+      default: '',
     },
     username: {
       type: String,
@@ -81,22 +72,54 @@ export default {
       type: Boolean,
       default: false,
     },
+    shouldShowStatusAlways: {
+      type: Boolean,
+      default: false,
+    },
+    title: {
+      type: String,
+      default: '',
+    },
+    variant: {
+      type: String,
+      default: 'circle',
+    },
   },
   data() {
     return {
+      hasImageLoaded: false,
       imgError: false,
     };
   },
   computed: {
+    userNameWithoutEmoji() {
+      return removeEmoji(this.username);
+    },
     showStatusIndicator() {
+      if (this.shouldShowStatusAlways) return true;
       return this.status === 'online' || this.status === 'busy';
     },
     avatarSize() {
       return Number(this.size.replace(/\D+/g, ''));
     },
+    badgeSrc() {
+      return {
+        instagram_direct_message: 'instagram-dm',
+        facebook: 'messenger',
+        'twitter-tweet': 'twitter-tweet',
+        'twitter-dm': 'twitter-dm',
+        whatsapp: 'whatsapp',
+        sms: 'sms',
+        'Channel::Line': 'line',
+        'Channel::Telegram': 'telegram',
+        'Channel::WebWidget': '',
+      }[this.badge];
+    },
     badgeStyle() {
-      const badgeSize = `${this.avatarSize / 3}px`;
-      return { width: badgeSize, height: badgeSize };
+      const size = Math.floor(this.avatarSize / 3);
+      const badgeSize = `${size + 2}px`;
+      const borderRadius = `${size / 2}px`;
+      return { width: badgeSize, height: badgeSize, borderRadius };
     },
     statusStyle() {
       const statusSize = `${this.avatarSize / 4}px`;
@@ -104,40 +127,62 @@ export default {
     },
     thumbnailClass() {
       const classname = this.hasBorder ? 'border' : '';
-      return `user-thumbnail ${classname}`;
+      const variant =
+        this.variant === 'circle' ? 'thumbnail-rounded' : 'thumbnail-square';
+      return `user-thumbnail ${classname} ${variant}`;
+    },
+    thumbnailBoxClass() {
+      const boxClass = this.variant === 'circle' ? 'is-rounded' : '';
+      return `user-thumbnail-box ${boxClass}`;
+    },
+    shouldShowImage() {
+      if (!this.src) {
+        return false;
+      }
+      if (this.hasImageLoaded) {
+        return !this.imgError;
+      }
+      return false;
     },
   },
   watch: {
-    src: {
-      handler(value, oldValue) {
-        if (value !== oldValue && this.imgError) {
-          this.imgError = false;
-        }
-      },
+    src(value, oldValue) {
+      if (value !== oldValue && this.imgError) {
+        this.imgError = false;
+      }
     },
   },
   methods: {
     onImgError() {
       this.imgError = true;
     },
+    onImgLoad() {
+      this.hasImageLoaded = true;
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-@import '~dashboard/assets/scss/variables';
-@import '~dashboard/assets/scss/foundation-settings';
-@import '~dashboard/assets/scss/mixins';
-
 .user-thumbnail-box {
-  @include flex-shrink;
+  flex: 0 0 auto;
+  max-width: 100%;
   position: relative;
+
+  &.is-rounded {
+    border-radius: 50%;
+  }
 
   .user-thumbnail {
     border-radius: 50%;
+    &.thumbnail-square {
+      border-radius: var(--border-radius-large);
+    }
     height: 100%;
     width: 100%;
     box-sizing: border-box;
+    object-fit: cover;
+    vertical-align: initial;
 
     &.border {
       border: 1px solid white;
@@ -145,16 +190,20 @@ export default {
   }
 
   .source-badge {
-    bottom: -$space-micro;
-    height: $space-slab;
+    background: white;
+    border-radius: var(--border-radius-small);
+    bottom: var(--space-minus-micro);
+    box-shadow: var(--shadow-small);
+    height: var(--space-slab);
+    padding: var(--space-micro);
     position: absolute;
-    right: $zero;
-    width: $space-slab;
+    right: 0;
+    width: var(--space-slab);
   }
 
   .user-online-status {
     border-radius: 50%;
-    bottom: $space-micro;
+    bottom: var(--space-micro);
 
     &:after {
       content: ' ';
@@ -162,11 +211,15 @@ export default {
   }
 
   .user-online-status--online {
-    background: $success-color;
+    background: var(--g-400);
   }
 
   .user-online-status--busy {
-    background: $warning-color;
+    background: var(--y-500);
+  }
+
+  .user-online-status--offline {
+    background: var(--s-500);
   }
 }
 </style>

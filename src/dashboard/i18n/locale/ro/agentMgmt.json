@@ -55,7 +55,7 @@
         "TITLE": "Confirmă ștergerea",
         "MESSAGE": "Sigur doriți să ștergeți ",
         "YES": "Da, șterge ",
-        "NO": "Nu, păstreaza"
+        "NO": "Nu, păstreaza "
       }
     },
     "EDIT": {
@@ -90,7 +90,24 @@
       }
     },
     "SEARCH": {
-      "NO_RESULTS": "No results found."
+      "NO_RESULTS": "Niciun rezultat găsit."
+    },
+    "MULTI_SELECTOR": {
+      "PLACEHOLDER": "Nimic",
+      "TITLE": {
+        "AGENT": "Selectați agentul",
+        "TEAM": "Selectați echipa"
+      },
+      "SEARCH": {
+        "NO_RESULTS": {
+          "AGENT": "Niciun agent găsit",
+          "TEAM": "Nu au fost găsite echipe"
+        },
+        "PLACEHOLDER": {
+          "AGENT": "Agenți de căutare",
+          "TEAM": "Echipele de căutare"
+        }
+      }
     }
   }
 }

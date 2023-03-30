@@ -14,6 +14,21 @@ describe('#getters', () => {
     expect(getters.getWebsiteInboxes(state).length).toEqual(3);
   });
 
+  it('getTwilioInboxes', () => {
+    const state = { records: inboxList };
+    expect(getters.getTwilioInboxes(state).length).toEqual(1);
+  });
+
+  it('getSMSInboxes', () => {
+    const state = { records: inboxList };
+    expect(getters.getSMSInboxes(state).length).toEqual(2);
+  });
+
+  it('dialogFlowEnabledInboxes', () => {
+    const state = { records: inboxList };
+    expect(getters.dialogFlowEnabledInboxes(state).length).toEqual(6);
+  });
+
   it('getInbox', () => {
     const state = {
       records: inboxList,
@@ -38,7 +53,6 @@ describe('#getters', () => {
         isFetchingItem: false,
         isCreating: false,
         isUpdating: false,
-        isUpdatingAutoAssignment: false,
         isDeleting: false,
       },
     };
@@ -47,7 +61,6 @@ describe('#getters', () => {
       isFetchingItem: false,
       isCreating: false,
       isUpdating: false,
-      isUpdatingAutoAssignment: false,
       isDeleting: false,
     });
   });

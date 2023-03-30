@@ -25,8 +25,7 @@
               :deselect-label="$t('FORMS.MULTISELECT.ENTER_TO_REMOVE')"
               :placeholder="$t('INBOX_MGMT.ADD.AGENTS.PICK_AGENTS')"
               @select="$v.selectedAgents.$touch"
-            >
-            </multiselect>
+            />
             <span v-if="$v.selectedAgents.$error" class="message">
               {{ $t('INBOX_MGMT.ADD.AGENTS.VALIDATION_ERROR') }}
             </span>
@@ -88,7 +87,7 @@ export default {
       const selectedAgents = this.selectedAgents.map(x => x.id);
 
       try {
-        await InboxMembersAPI.create({ inboxId, agentList: selectedAgents });
+        await InboxMembersAPI.update({ inboxId, agentList: selectedAgents });
         router.replace({
           name: 'settings_inbox_finish',
           params: {

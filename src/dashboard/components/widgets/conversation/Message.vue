@@ -1,12 +1,23 @@
 <template>
-  <li v-if="hasAttachments || data.content" :class="alignBubble">
+  <li v-if="shouldRenderMessage" :class="alignBubble">
     <div :class="wrapClass">
-      <div v-tooltip.top-start="sentByMessage" :class="bubbleClass">
+      <div v-tooltip.top-start="messageToolTip" :class="bubbleClass">
+        <bubble-mail-head
+          :email-attributes="contentAttributes.email"
+          :cc="emailHeadAttributes.cc"
+          :bcc="emailHeadAttributes.bcc"
+          :is-incoming="isIncoming"
+        />
         <bubble-text
           v-if="data.content"
           :message="message"
           :is-email="isEmailContentType"
-          :readable-time="readableTime"
+          :display-quoted-button="displayQuotedButton"
+        />
+        <bubble-integration
+          :message-id="data.id"
+          :content-attributes="contentAttributes"
+          :inbox-id="data.inbox_id"
         />
         <span
           v-if="isPending && hasAttachments"
@@ -17,91 +28,168 @@
         <div v-if="!isPending && hasAttachments">
           <div v-for="attachment in data.attachments" :key="attachment.id">
             <bubble-image
-              v-if="attachment.file_type === 'image'"
+              v-if="attachment.file_type === 'image' && !hasImageError"
               :url="attachment.data_url"
-              :readable-time="readableTime"
+              @error="onImageLoadError"
             />
             <audio v-else-if="attachment.file_type === 'audio'" controls>
               <source :src="attachment.data_url" />
             </audio>
-            <bubble-file
-              v-else
+            <bubble-video
+              v-else-if="attachment.file_type === 'video'"
               :url="attachment.data_url"
-              :readable-time="readableTime"
             />
+            <bubble-location
+              v-else-if="attachment.file_type === 'location'"
+              :latitude="attachment.coordinates_lat"
+              :longitude="attachment.coordinates_long"
+              :name="attachment.fallback_title"
+            />
+            <bubble-contact
+              v-else-if="attachment.file_type === 'contact'"
+              :name="data.content"
+              :phone-number="attachment.fallback_title"
+            />
+            <instagram-image-error-placeholder
+              v-else-if="hasImageError && hasInstagramStory"
+            />
+            <bubble-file v-else :url="attachment.data_url" />
           </div>
         </div>
-
         <bubble-actions
           :id="data.id"
           :sender="data.sender"
+          :story-sender="storySender"
+          :story-id="storyId"
           :is-a-tweet="isATweet"
+          :is-a-whatsapp-channel="isAWhatsAppChannel"
+          :has-instagram-story="hasInstagramStory"
           :is-email="isEmailContentType"
           :is-private="data.private"
           :message-type="data.message_type"
-          :readable-time="readableTime"
+          :message-status="status"
           :source-id="data.source_id"
+          :inbox-id="data.inbox_id"
+          :created-at="createdAt"
         />
       </div>
+      <woot-modal
+        v-if="showTranslateModal"
+        modal-type="right-aligned"
+        show
+        :on-close="onCloseTranslateModal"
+      >
+        <div class="column content">
+          <p>
+            <b>{{ $t('TRANSLATE_MODAL.ORIGINAL_CONTENT') }}</b>
+          </p>
+          <p v-dompurify-html="data.content" />
+          <br />
+          <hr />
+          <div v-if="translationsAvailable">
+            <p>
+              <b>{{ $t('TRANSLATE_MODAL.TRANSLATED_CONTENT') }}</b>
+            </p>
+            <div
+              v-for="(translation, language) in translations"
+              :key="language"
+            >
+              <p>
+                <strong>{{ language }}:</strong>
+              </p>
+              <p v-dompurify-html="translation" />
+              <br />
+            </div>
+          </div>
+          <p v-else>
+            {{ $t('TRANSLATE_MODAL.NO_TRANSLATIONS_AVAILABLE') }}
+          </p>
+        </div>
+      </woot-modal>
       <spinner v-if="isPending" size="tiny" />
-      <a
-        v-if="isATweet && isIncoming && sender"
+      <div
+        v-if="showAvatar"
+        v-tooltip.left="tooltipForSender"
         class="sender--info"
-        :href="twitterProfileLink"
-        target="_blank"
-        rel="noopener noreferrer nofollow"
       >
         <woot-thumbnail
           :src="sender.thumbnail"
-          :username="sender.name"
+          :username="senderNameForAvatar"
           size="16px"
         />
-        <div class="sender--available-name">
+        <a
+          v-if="isATweet && isIncoming"
+          class="sender--available-name"
+          :href="twitterProfileLink"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+        >
           {{ sender.name }}
-        </div>
-      </a>
+        </a>
+      </div>
+      <div v-if="isFailed" class="message-failed--alert">
+        <woot-button
+          v-tooltip.top-end="$t('CONVERSATION.TRY_AGAIN')"
+          size="tiny"
+          color-scheme="alert"
+          variant="clear"
+          icon="arrow-clockwise"
+          @click="retrySendMessage"
+        />
+      </div>
     </div>
-    <div class="context-menu-wrap">
+    <div v-if="shouldShowContextMenu" class="context-menu-wrap">
       <context-menu
         v-if="isBubble && !isMessageDeleted"
         :is-open="showContextMenu"
         :show-copy="hasText"
+        :show-delete="hasText || hasAttachments"
+        :show-canned-response-option="isOutgoing && hasText"
         :menu-position="contextMenuPosition"
+        :message-content="data.content"
         @toggle="handleContextMenuClick"
         @delete="handleDelete"
-        @copy="handleCopy"
+        @translate="handleTranslate"
       />
     </div>
   </li>
 </template>
 <script>
-import copy from 'copy-text-to-clipboard';
-
 import messageFormatterMixin from 'shared/mixins/messageFormatterMixin';
-import timeMixin from '../../../mixins/time';
-import BubbleText from './bubble/Text';
-import BubbleImage from './bubble/Image';
+import BubbleActions from './bubble/Actions';
 import BubbleFile from './bubble/File';
+import BubbleImage from './bubble/Image';
+import BubbleIntegration from './bubble/Integration.vue';
+import BubbleLocation from './bubble/Location';
+import BubbleMailHead from './bubble/MailHead';
+import BubbleText from './bubble/Text';
+import BubbleVideo from './bubble/Video.vue';
+import BubbleContact from './bubble/Contact';
 import Spinner from 'shared/components/Spinner';
 import ContextMenu from 'dashboard/modules/conversations/components/MessageContextMenu';
-
-import { isEmptyObject } from 'dashboard/helper/commons';
+import instagramImageErrorPlaceholder from './instagramImageErrorPlaceholder.vue';
 import alertMixin from 'shared/mixins/alertMixin';
 import contentTypeMixin from 'shared/mixins/contentTypeMixin';
-import BubbleActions from './bubble/Actions';
 import { MESSAGE_TYPE, MESSAGE_STATUS } from 'shared/constants/messages';
 import { generateBotMessageContent } from './helpers/botMessageContentHelper';
+import { mapGetters } from 'vuex';
 
 export default {
   components: {
     BubbleActions,
-    BubbleText,
-    BubbleImage,
     BubbleFile,
+    BubbleImage,
+    BubbleIntegration,
+    BubbleLocation,
+    BubbleMailHead,
+    BubbleText,
+    BubbleVideo,
+    BubbleContact,
     ContextMenu,
     Spinner,
+    instagramImageErrorPlaceholder,
   },
-  mixins: [alertMixin, timeMixin, messageFormatterMixin, contentTypeMixin],
+  mixins: [alertMixin, messageFormatterMixin, contentTypeMixin],
   props: {
     data: {
       type: Object,
@@ -111,14 +199,70 @@ export default {
       type: Boolean,
       default: false,
     },
+    isAWhatsAppChannel: {
+      type: Boolean,
+      default: false,
+    },
+    hasInstagramStory: {
+      type: Boolean,
+      default: false,
+    },
+    isWebWidgetInbox: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
       showContextMenu: false,
+      hasImageError: false,
+      showTranslateModal: false,
     };
   },
   computed: {
+    ...mapGetters({
+      getAccount: 'accounts/getAccount',
+      currentAccountId: 'getCurrentAccountId',
+    }),
+    shouldRenderMessage() {
+      return (
+        this.hasAttachments ||
+        this.data.content ||
+        this.isEmailContentType ||
+        this.isAnIntegrationMessage
+      );
+    },
+    emailMessageContent() {
+      const {
+        html_content: { full: fullHTMLContent } = {},
+        text_content: { full: fullTextContent } = {},
+      } = this.contentAttributes.email || {};
+      return fullHTMLContent || fullTextContent || '';
+    },
+    translations() {
+      return this.contentAttributes.translations || {};
+    },
+    displayQuotedButton() {
+      if (this.emailMessageContent.includes('<blockquote')) {
+        return true;
+      }
+
+      if (!this.isIncoming) {
+        return false;
+      }
+
+      return false;
+    },
+    translationsAvailable() {
+      return !!Object.keys(this.translations).length;
+    },
     message() {
+      // If the message is an email, emailMessageContent would be present
+      // In that case, we would use letter package to render the email
+      if (this.emailMessageContent && this.isIncoming) {
+        return this.emailMessageContent;
+      }
+
       const botMessageContent = generateBotMessageContent(
         this.contentType,
         this.contentAttributes,
@@ -131,27 +275,16 @@ export default {
         }
       );
 
-      const {
-        email: {
-          html_content: { full: fullHTMLContent, reply: replyHTMLContent } = {},
-          text_content: { full: fullTextContent, reply: replyTextContent } = {},
-        } = {},
-      } = this.contentAttributes;
-
-      let contentToBeParsed =
-        replyHTMLContent ||
-        replyTextContent ||
-        fullHTMLContent ||
-        fullTextContent ||
-        '';
-      if (contentToBeParsed && this.isIncoming) {
-        const parsedContent = this.stripStyleCharacters(contentToBeParsed);
-        if (parsedContent) {
-          return parsedContent;
-        }
+      if (this.contentType === 'input_csat') {
+        return this.$t('CONVERSATION.CSAT_REPLY_MESSAGE') + botMessageContent;
       }
+
       return (
-        this.formatMessage(this.data.content, this.isATweet) + botMessageContent
+        this.formatMessage(
+          this.data.content,
+          this.isATweet,
+          this.data.private
+        ) + botMessageContent
       );
     },
     contentAttributes() {
@@ -159,6 +292,15 @@ export default {
     },
     sender() {
       return this.data.sender || {};
+    },
+    status() {
+      return this.data.status;
+    },
+    storySender() {
+      return this.contentAttributes.story_sender || null;
+    },
+    storyId() {
+      return this.contentAttributes.story_id || null;
     },
     contentType() {
       const {
@@ -187,11 +329,8 @@ export default {
         'has-tweet-menu': this.isATweet,
       };
     },
-    readableTime() {
-      return this.messageStamp(
-        this.contentAttributes.external_created_at || this.data.created_at,
-        'LLL d, h:mm a'
-      );
+    createdAt() {
+      return this.contentAttributes.external_created_at || this.data.created_at;
     },
     isBubble() {
       return [0, 1, 3].includes(this.data.message_type);
@@ -199,64 +338,125 @@ export default {
     isIncoming() {
       return this.data.message_type === MESSAGE_TYPE.INCOMING;
     },
+    isOutgoing() {
+      return this.data.message_type === MESSAGE_TYPE.OUTGOING;
+    },
+    isTemplate() {
+      return this.data.message_type === MESSAGE_TYPE.TEMPLATE;
+    },
+    isAnIntegrationMessage() {
+      return this.contentType === 'integrations';
+    },
+    emailHeadAttributes() {
+      return {
+        email: this.contentAttributes.email,
+        cc: this.contentAttributes.cc_emails,
+        bcc: this.contentAttributes.bcc_emails,
+      };
+    },
     hasAttachments() {
       return !!(this.data.attachments && this.data.attachments.length > 0);
     },
     isMessageDeleted() {
       return this.contentAttributes.deleted;
     },
-    hasImageAttachment() {
-      if (this.hasAttachments && this.data.attachments.length > 0) {
-        const { attachments = [{}] } = this.data;
-        const { file_type: fileType } = attachments[0];
-        return fileType === 'image';
-      }
-      return false;
-    },
     hasText() {
       return !!this.data.content;
     },
-    sentByMessage() {
+    tooltipForSender() {
+      const name = this.senderNameForAvatar;
+      const { message_type: messageType } = this.data;
+      const showTooltip =
+        messageType === MESSAGE_TYPE.OUTGOING ||
+        messageType === MESSAGE_TYPE.TEMPLATE;
+      return showTooltip
+        ? {
+            content: `${this.$t('CONVERSATION.SENT_BY')} ${name}`,
+          }
+        : false;
+    },
+    messageToolTip() {
       if (this.isMessageDeleted) {
         return false;
       }
-      const { sender } = this;
-      return this.data.message_type === 1 && !isEmptyObject(sender)
-        ? {
-            content: `${this.$t('CONVERSATION.SENT_BY')} ${sender.name}`,
-            classes: 'top',
-          }
-        : false;
+      if (this.isFailed) {
+        return this.$t(`CONVERSATION.SEND_FAILED`);
+      }
+      return false;
     },
     wrapClass() {
       return {
         wrap: this.isBubble,
         'activity-wrap': !this.isBubble,
         'is-pending': this.isPending,
+        'is-failed': this.isFailed,
+        'is-email': this.isEmailContentType,
       };
     },
     bubbleClass() {
       return {
         bubble: this.isBubble,
         'is-private': this.data.private,
-        'is-image': this.hasImageAttachment,
+        'is-image': this.hasMediaAttachment('image'),
+        'is-video': this.hasMediaAttachment('video'),
         'is-text': this.hasText,
         'is-from-bot': this.isSentByBot,
+        'is-failed': this.isFailed,
+        'is-email': this.isEmailContentType,
       };
     },
     isPending() {
       return this.data.status === MESSAGE_STATUS.PROGRESS;
     },
+    isFailed() {
+      return this.data.status === MESSAGE_STATUS.FAILED;
+    },
     isSentByBot() {
-      if (this.isPending) return false;
+      if (this.isPending || this.isFailed) return false;
       return !this.sender.type || this.sender.type === 'agent_bot';
     },
     contextMenuPosition() {
       const { message_type: messageType } = this.data;
       return messageType ? 'right' : 'left';
     },
+    shouldShowContextMenu() {
+      return !(this.isFailed || this.isPending);
+    },
+    errorMessage() {
+      const { meta } = this.data;
+      return meta ? meta.error : '';
+    },
+    showAvatar() {
+      if (this.isOutgoing || this.isTemplate) {
+        return true;
+      }
+      return this.isATweet && this.isIncoming && this.sender;
+    },
+    senderNameForAvatar() {
+      if (this.isOutgoing || this.isTemplate) {
+        const { name = this.$t('CONVERSATION.BOT') } = this.sender || {};
+        return name;
+      }
+      return '';
+    },
+  },
+  watch: {
+    data() {
+      this.hasImageError = false;
+    },
+  },
+  mounted() {
+    this.hasImageError = false;
   },
   methods: {
+    hasMediaAttachment(type) {
+      if (this.hasAttachments && this.data.attachments.length > 0) {
+        const { attachments = [{}] } = this.data;
+        const { file_type: fileType } = attachments[0];
+        return fileType === type && !this.hasImageError;
+      }
+      return false;
+    },
     handleContextMenuClick() {
       this.showContextMenu = !this.showContextMenu;
     },
@@ -273,10 +473,24 @@ export default {
         this.showAlert(this.$t('CONVERSATION.FAIL_DELETE_MESSSAGE'));
       }
     },
-    handleCopy() {
-      copy(this.data.content);
-      this.showAlert(this.$t('CONTACT_PANEL.COPY_SUCCESSFUL'));
-      this.showContextMenu = false;
+    async retrySendMessage() {
+      await this.$store.dispatch('sendMessageWithData', this.data);
+    },
+    onImageLoadError() {
+      this.hasImageError = true;
+    },
+    handleTranslate() {
+      const { locale } = this.getAccount(this.currentAccountId);
+      const { conversation_id: conversationId, id: messageId } = this.data;
+      this.$store.dispatch('translateMessage', {
+        conversationId,
+        messageId,
+        targetLanguage: locale || 'en',
+      });
+      this.showTranslateModal = true;
+    },
+    onCloseTranslateModal() {
+      this.showTranslateModal = false;
     },
   },
 };
@@ -284,17 +498,30 @@ export default {
 <style lang="scss">
 .wrap {
   > .bubble {
-    &.is-image {
+    min-width: 128px;
+
+    &.is-image,
+    &.is-video {
       padding: 0;
       overflow: hidden;
 
-      .image {
+      .image,
+      .video {
         max-width: 32rem;
         padding: var(--space-micro);
 
-        > img {
+        > img,
+        > video {
           border-radius: var(--border-radius-medium);
         }
+        > video {
+          height: 100%;
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+      .video {
+        height: 18rem;
       }
     }
 
@@ -304,7 +531,7 @@ export default {
     }
 
     &.is-private .file.message-text__wrap {
-      .ion-document-text {
+      .file--icon {
         color: var(--w-400);
       }
       .text-block-title {
@@ -332,6 +559,17 @@ export default {
       .message-text--metadata .time {
         color: var(--v-50);
       }
+      &.is-private .message-text--metadata .time {
+        color: var(--s-400);
+      }
+    }
+
+    &.is-failed {
+      background: var(--r-200);
+
+      .message-text--metadata .time {
+        color: var(--r-50);
+      }
     }
   }
 
@@ -351,6 +589,10 @@ export default {
   }
 }
 
+.wrap.is-email {
+  --bubble-max-width: 84% !important;
+}
+
 .sender--info {
   align-items: center;
   color: var(--b-700);
@@ -361,6 +603,13 @@ export default {
     font-size: var(--font-size-mini);
     margin-left: var(--space-smaller);
   }
+}
+
+.message-failed--alert {
+  color: var(--r-900);
+  flex-grow: 1;
+  text-align: right;
+  margin-top: var(--space-smaller) var(--space-smaller) 0 0;
 }
 
 .button--delete-message {
@@ -388,6 +637,17 @@ li.right .context-menu-wrap {
 li.right {
   flex-direction: row-reverse;
   justify-content: flex-end;
+
+  .wrap.is-pending {
+    margin-left: auto;
+  }
+
+  .wrap.is-failed {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    margin-left: auto;
+  }
 }
 
 .has-context-menu {
@@ -399,5 +659,72 @@ li.right {
 
 .context-menu {
   position: relative;
+}
+
+/* Markdown styling */
+
+.bubble .text-content {
+  p code {
+    background-color: var(--s-75);
+    display: inline-block;
+    line-height: 1;
+
+    border-radius: var(--border-radius-small);
+    padding: var(--space-smaller);
+  }
+
+  pre {
+    background-color: var(--s-75);
+    border-color: var(--s-75);
+    color: var(--s-800);
+    border-radius: var(--border-radius-normal);
+    padding: var(--space-small);
+    margin-top: var(--space-smaller);
+    margin-bottom: var(--space-small);
+    display: block;
+    line-height: 1.7;
+    white-space: pre-wrap;
+
+    code {
+      background-color: transparent;
+      color: var(--s-800);
+      padding: 0;
+    }
+  }
+
+  blockquote {
+    border-left: var(--space-micro) solid var(--s-75);
+    color: var(--s-800);
+    padding: var(--space-smaller) var(--space-small);
+    margin: var(--space-smaller) 0;
+    padding: var(--space-small) var(--space-small) 0 var(--space-normal);
+  }
+}
+
+.right .bubble .text-content {
+  p code {
+    background-color: var(--w-600);
+    color: var(--white);
+  }
+
+  pre {
+    background-color: var(--w-800);
+    border-color: var(--w-700);
+    color: var(--white);
+
+    code {
+      background-color: transparent;
+      color: var(--white);
+    }
+  }
+
+  blockquote {
+    border-left: var(--space-micro) solid var(--w-400);
+    color: var(--white);
+
+    p {
+      color: var(--w-75);
+    }
+  }
 }
 </style>
