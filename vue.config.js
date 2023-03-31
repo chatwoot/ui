@@ -1,5 +1,4 @@
 const path = require('path');
-const { API_HOST, WEBSOCKET_URL, HOST_URL, WEBSITE_INBOX_TOKEN } = process.env
 
 module.exports = {
   publicPath: '/app/',
@@ -7,9 +6,11 @@ module.exports = {
   pages: {
     index: {
       entry: 'src/packs/application.js'
+      //FIXME
     },
     widget: {
       entry: 'src/packs/widget.js'
+      //FIXME
     },
     'sdk-test': {
       entry: 'src/packs/sdk.js',
