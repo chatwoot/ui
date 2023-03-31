@@ -1,4 +1,5 @@
 const path = require('path');
+const { WEBSITE_INBOX_TOKEN } = process.env
 
 module.exports = {
   publicPath: '/app/',
