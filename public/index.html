@@ -6,6 +6,31 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="icon" href="favicon.ico" />
     <script type="module" src="js/sdk.js"></script>
+      <script>
+          window.chatwootConfig = {
+              hostURL: '${HOST_URL}',
+              fbAppId: '',
+              signupEnabled: 'true',
+              enabledLanguages: [
+                  {
+                      "name":"English (en)",
+                      "iso_639_1_code":"en"
+                  }
+              ],
+              selectedLocale: 'en',
+              apiHost: '${API_HOST}',
+              websocketURL: '${WEBSOCKET_URL}'
+          }
+          window.globalConfig = {
+              "LOGO":"https://app.chatwoot.com/brand-assets/logo.svg",
+              "LOGO_THUMBNAIL":"https://app.chatwoot.com/brand-assets/logo_thumbnail.svg",
+              "INSTALLATION_NAME":"Chatwoot",
+              "WIDGET_BRAND_URL":"https://www.chatwoot.com",
+              "TERMS_URL":"https://www.chatwoot.com/terms-of-service",
+              "PRIVACY_URL":"https://www.chatwoot.com/privacy-policy",
+              "APP_VERSION":"1.16.2"
+          }
+      </script>
     <title>Chatwoot</title>
   </head>
   <body>
